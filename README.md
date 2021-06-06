@@ -613,7 +613,7 @@ $date->add($amount, $timeUnit);
 
 Set the date to the end of a unit of time in current time zone.
 
-- `$timeUnit` is a string representing the unit of time to use, and can be one of either "*year*", "*quarter*", "*month*", "*week*", "*date*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$timeUnit` is a string representing the unit of time to use, and can be one of either "*year*", "*quarter*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
 $date->endOf($timeUnit);
@@ -623,7 +623,7 @@ $date->endOf($timeUnit);
 
 Set the date to the start of a unit of time in current time zone.
 
-- `$timeUnit` is a string representing the unit of time to use, and can be one of either "*year*", "*quarter*", "*month*", "*week*", "*date*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$timeUnit` is a string representing the unit of time to use, and can be one of either "*year*", "*quarter*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
 $date->startOf($timeUnit);
@@ -723,7 +723,7 @@ $era = $date->era($type);
 Return *true* if the *DateTime* is after another date.
 
 - `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*date*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
 $isAfter = $date->isAfter($other, $granularity);
@@ -736,7 +736,7 @@ If a `$granularity` is not specified, this method will compare the dates in mill
 Return *true* if the *DateTime* is before another date.
 
 - `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*date*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
 $isBefore = $date->isBefore($other, $granularity);
@@ -750,7 +750,7 @@ Return *true* if the *DateTime* is between two other dates.
 
 - `$start` is the starting *DateTime* object to compare to.
 - `$end` is the ending *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*date*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
 $isBetween = $date->isBetween($start, $end, $granularity);
@@ -779,7 +779,7 @@ $isLeapYear = $date->isLeapYear();
 Return *true* if the *DateTime* is the same as another date.
 
 - `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*date*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
 $isSame = $date->isSame($other, $granularity);
@@ -792,7 +792,7 @@ If a `$granularity` is not specified, this method will compare the dates in mill
 Return *true* if the *DateTime* is the same or after another date.
 
 - `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*date*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
 $isSameOrAfter = $date->isSameOrAfter($other, $granularity);
@@ -805,7 +805,7 @@ If a `$granularity` is not specified, this method will compare the dates in mill
 Return *true* if the *DateTime* is the same or before another date.
 
 - `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*date*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
 $isSameOrBefore = $date->isSameOrBefore($other, $granularity);
