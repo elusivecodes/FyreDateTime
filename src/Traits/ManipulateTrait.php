@@ -117,7 +117,7 @@ trait ManipulateTrait
      * @param string $timeUnit The unit of time.
      * @return DateTime The DateTime object.
      */
-    private function modify(int $amount, string $timeUnit): static
+    protected function modify(int $amount, string $timeUnit): static
     {
         $timeUnit = strtolower($timeUnit);
 
