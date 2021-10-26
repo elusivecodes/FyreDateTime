@@ -31,8 +31,8 @@ composer install fyre/datetime
 In PHP:
 
 ```php
-use Fyre\DateTime;
-use Fyre\DateTimeImmutable;
+use Fyre\DateTime\DateTime;
+use Fyre\DateTime\DateTimeImmutable;
 ```
 
 

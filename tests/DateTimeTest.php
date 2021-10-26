@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use
-    Fyre\DateTime,
+    Fyre\DateTime\DateTime,
     PHPUnit\Framework\TestCase;
 
 final class DateTimeTest extends TestCase

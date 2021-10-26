@@ -11,8 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Fyre\\": "src/",
-            "Fyre\\DateTime\\Traits\\": "src/traits"
+            "Fyre\\DateTime\\": "src/"
         }
     },
     "autoload-dev": {

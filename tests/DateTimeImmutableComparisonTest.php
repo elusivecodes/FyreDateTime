@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use
-    Fyre\DateTimeImmutable;
+    Fyre\DateTime\DateTimeImmutable;
 
 trait DateTimeImmutableComparisonsTest
 {

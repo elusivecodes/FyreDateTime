@@ -5,7 +5,7 @@ namespace Fyre\DateTime\Traits;
 
 use
     DateInterval,
-    Fyre\DateTimeInterface;
+    Fyre\DateTime\DateTimeInterface;
 
 use function
     strtolower;
