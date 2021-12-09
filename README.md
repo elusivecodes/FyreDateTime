@@ -25,7 +25,7 @@ It is a modern library, and features support for ICU formats, time zones and loc
 **Using Composer**
 
 ```
-composer install fyre/datetime
+composer require fyre/datetime
 ```
 
 In PHP:
