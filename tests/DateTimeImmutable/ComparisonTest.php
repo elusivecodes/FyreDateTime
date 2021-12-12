@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTimeImmutable;
 
 use
     Fyre\DateTime\DateTimeImmutable;
 
-trait DateTimeImmutableComparisonsTest
+trait ComparisonsTest
 {
 
     /**
      * #isAfter
      */
 
-    public function testDateTimeImmutableIsAfterAfter(): void
+    public function testIsAfterAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
@@ -22,7 +22,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterBefore(): void
+    public function testIsAfterBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -31,7 +31,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterYearAfter(): void
+    public function testIsAfterYearAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1]);
         $date2 = DateTimeImmutable::fromArray([2019, 2]);
@@ -40,7 +40,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterYearBefore(): void
+    public function testIsAfterYearBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1]);
@@ -49,7 +49,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterMonthAfter(): void
+    public function testIsAfterMonthAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 2, 2]);
@@ -58,7 +58,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterMonthBefore(): void
+    public function testIsAfterMonthBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1]);
@@ -67,7 +67,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterDayAfter(): void
+    public function testIsAfterDayAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 2, 2]);
@@ -76,7 +76,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterDayBefore(): void
+    public function testIsAfterDayBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
@@ -85,7 +85,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterHourAfter(): void
+    public function testIsAfterHourAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 2]);
@@ -94,7 +94,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterHourBefore(): void
+    public function testIsAfterHourBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
@@ -103,7 +103,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterMinuteAfter(): void
+    public function testIsAfterMinuteAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
@@ -112,7 +112,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterMinuteBefore(): void
+    public function testIsAfterMinuteBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -121,7 +121,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterSecondAfter(): void
+    public function testIsAfterSecondAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2, 2]);
@@ -130,7 +130,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsAfterSecondBefore(): void
+    public function testIsAfterSecondBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 1]);
@@ -143,7 +143,7 @@ trait DateTimeImmutableComparisonsTest
      * #isBefore
      */
 
-    public function testDateTimeImmutableIsBeforeAfter(): void
+    public function testIsBeforeAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
@@ -152,7 +152,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeBefore(): void
+    public function testIsBeforeBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -161,7 +161,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeYearAfter(): void
+    public function testIsBeforeYearAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1]);
         $date2 = DateTimeImmutable::fromArray([2019, 2]);
@@ -170,7 +170,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeYearBefore(): void
+    public function testIsBeforeYearBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1]);
@@ -179,7 +179,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeMonthAfter(): void
+    public function testIsBeforeMonthAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 2, 2]);
@@ -188,7 +188,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeMonthBefore(): void
+    public function testIsBeforeMonthBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1]);
@@ -197,7 +197,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeDayAfter(): void
+    public function testIsBeforeDayAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 2, 2]);
@@ -206,7 +206,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeDayBefore(): void
+    public function testIsBeforeDayBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
@@ -215,7 +215,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeHourAfter(): void
+    public function testIsBeforeHourAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 2]);
@@ -224,7 +224,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeHourBefore(): void
+    public function testIsBeforeHourBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
@@ -233,7 +233,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeMinuteAfter(): void
+    public function testIsBeforeMinuteAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
@@ -242,7 +242,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeMinuteBefore(): void
+    public function testIsBeforeMinuteBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -251,7 +251,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeSecondAfter(): void
+    public function testIsBeforeSecondAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2, 2]);
@@ -260,7 +260,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBeforeSecondBefore(): void
+    public function testIsBeforeSecondBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 1]);
@@ -273,7 +273,7 @@ trait DateTimeImmutableComparisonsTest
      * #isBetween
      */
 
-    public function testDateTimeImmutableIsBetweenBetween(): void
+    public function testIsBetweenBetween(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 3]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 2]);
@@ -283,7 +283,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenAfter(): void
+    public function testIsBetweenAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 2]);
@@ -293,7 +293,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenBefore(): void
+    public function testIsBetweenBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 5]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1, 2]);
@@ -303,7 +303,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenYearBetween(): void
+    public function testIsBetweenYearBetween(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019]);
         $date2 = DateTimeImmutable::fromArray([2018]);
@@ -313,7 +313,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenYearAfter(): void
+    public function testIsBetweenYearAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2017]);
         $date2 = DateTimeImmutable::fromArray([2018]);
@@ -323,7 +323,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenYearBefore(): void
+    public function testIsBetweenYearBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2021]);
         $date2 = DateTimeImmutable::fromArray([2018]);
@@ -333,7 +333,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenMonthBetween(): void
+    public function testIsBetweenMonthBetween(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 3]);
         $date2 = DateTimeImmutable::fromArray([2018, 2]);
@@ -343,7 +343,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenMonthAfter(): void
+    public function testIsBetweenMonthAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 2]);
@@ -353,7 +353,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenMonthBefore(): void
+    public function testIsBetweenMonthBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 5]);
         $date2 = DateTimeImmutable::fromArray([2018, 2]);
@@ -363,7 +363,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenDayBetween(): void
+    public function testIsBetweenDayBetween(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 3]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 2]);
@@ -373,7 +373,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenDayAfter(): void
+    public function testIsBetweenDayAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 2]);
@@ -383,7 +383,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenDayBefore(): void
+    public function testIsBetweenDayBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 5]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 2]);
@@ -393,7 +393,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenHourBetween(): void
+    public function testIsBetweenHourBetween(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 3]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
@@ -403,7 +403,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenHourAfter(): void
+    public function testIsBetweenHourAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
@@ -413,7 +413,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenHourBefore(): void
+    public function testIsBetweenHourBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 5]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
@@ -423,7 +423,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenMinuteBetween(): void
+    public function testIsBetweenMinuteBetween(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 3]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
@@ -433,7 +433,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenMinuteAfter(): void
+    public function testIsBetweenMinuteAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
@@ -443,7 +443,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenMinuteBefore(): void
+    public function testIsBetweenMinuteBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 5]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
@@ -453,7 +453,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenSecondBetween(): void
+    public function testIsBetweenSecondBetween(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 3]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -463,7 +463,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenSecondAfter(): void
+    public function testIsBetweenSecondAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -473,7 +473,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsBetweenSecondBefore(): void
+    public function testIsBetweenSecondBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 5]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -487,7 +487,7 @@ trait DateTimeImmutableComparisonsTest
      * #isSame
      */
 
-    public function testDateTimeImmutableIsSameSame(): void
+    public function testIsSameSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -496,7 +496,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameAfter(): void
+    public function testIsSameAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -505,7 +505,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameBefore(): void
+    public function testIsSameBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -514,7 +514,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameYearSame(): void
+    public function testIsSameYearSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1]);
@@ -523,7 +523,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameYearAfter(): void
+    public function testIsSameYearAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2019, 1]);
@@ -532,7 +532,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameYearBefore(): void
+    public function testIsSameYearBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2017, 1]);
@@ -541,7 +541,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameMonthSame(): void
+    public function testIsSameMonthSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1]);
@@ -550,7 +550,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameMonthAfter(): void
+    public function testIsSameMonthAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 2, 1]);
@@ -559,7 +559,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameMonthBefore(): void
+    public function testIsSameMonthBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1]);
@@ -568,7 +568,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameDaySame(): void
+    public function testIsSameDaySame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
@@ -577,7 +577,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameDayAfter(): void
+    public function testIsSameDayAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 2, 1]);
@@ -586,7 +586,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameDayBefore(): void
+    public function testIsSameDayBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
@@ -595,7 +595,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameHourSame(): void
+    public function testIsSameHourSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
@@ -604,7 +604,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameHourAfter(): void
+    public function testIsSameHourAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 1]);
@@ -613,7 +613,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameHourBefore(): void
+    public function testIsSameHourBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
@@ -622,7 +622,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameMinuteSame(): void
+    public function testIsSameMinuteSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -631,7 +631,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameMinuteAfter(): void
+    public function testIsSameMinuteAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 1]);
@@ -640,7 +640,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameMinuteBefore(): void
+    public function testIsSameMinuteBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -649,7 +649,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameSecondSame(): void
+    public function testIsSameSecondSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -658,7 +658,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameSecondAfter(): void
+    public function testIsSameSecondAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -667,7 +667,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameSecondBefore(): void
+    public function testIsSameSecondBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -680,7 +680,7 @@ trait DateTimeImmutableComparisonsTest
      * #isSameOrAfter
      */
 
-    public function testDateTimeImmutableIsSameOrAfterSame(): void
+    public function testIsSameOrAfterSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -689,7 +689,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterAfter(): void
+    public function testIsSameOrAfterAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -698,7 +698,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterBefore(): void
+    public function testIsSameOrAfterBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -707,7 +707,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterYearSame(): void
+    public function testIsSameOrAfterYearSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1]);
@@ -716,7 +716,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterYearAfter(): void
+    public function testIsSameOrAfterYearAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2019, 1]);
@@ -725,7 +725,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterYearBefore(): void
+    public function testIsSameOrAfterYearBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2017, 1]);
@@ -734,7 +734,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterMonthSame(): void
+    public function testIsSameOrAfterMonthSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1]);
@@ -743,7 +743,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterMonthAfter(): void
+    public function testIsSameOrAfterMonthAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 2, 1]);
@@ -752,7 +752,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterMonthBefore(): void
+    public function testIsSameOrAfterMonthBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1]);
@@ -761,7 +761,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterDaySame(): void
+    public function testIsSameOrAfterDaySame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
@@ -770,7 +770,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterDayAfter(): void
+    public function testIsSameOrAfterDayAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 2, 1]);
@@ -779,7 +779,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterDayBefore(): void
+    public function testIsSameOrAfterDayBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
@@ -788,7 +788,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterHourSame(): void
+    public function testIsSameOrAfterHourSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
@@ -797,7 +797,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterHourAfter(): void
+    public function testIsSameOrAfterHourAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 1]);
@@ -806,7 +806,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterHourBefore(): void
+    public function testIsSameOrAfterHourBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
@@ -815,7 +815,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterMinuteSame(): void
+    public function testIsSameOrAfterMinuteSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -824,7 +824,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterMinuteAfter(): void
+    public function testIsSameOrAfterMinuteAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 1]);
@@ -833,7 +833,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterMinuteBefore(): void
+    public function testIsSameOrAfterMinuteBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -842,7 +842,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterSecondSame(): void
+    public function testIsSameOrAfterSecondSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -851,7 +851,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterSecondAfter(): void
+    public function testIsSameOrAfterSecondAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -860,7 +860,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrAfterSecondBefore(): void
+    public function testIsSameOrAfterSecondBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -873,7 +873,7 @@ trait DateTimeImmutableComparisonsTest
      * #isSameOrBefore
      */
 
-    public function testDateTimeImmutableIsSameOrBeforeSame(): void
+    public function testIsSameOrBeforeSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -882,7 +882,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeAfter(): void
+    public function testIsSameOrBeforeAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -891,7 +891,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeBefore(): void
+    public function testIsSameOrBeforeBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -900,7 +900,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeYearSame(): void
+    public function testIsSameOrBeforeYearSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1]);
@@ -909,7 +909,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeYearAfter(): void
+    public function testIsSameOrBeforeYearAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2019, 1]);
@@ -918,7 +918,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeYearBefore(): void
+    public function testIsSameOrBeforeYearBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2]);
         $date2 = DateTimeImmutable::fromArray([2017, 1]);
@@ -927,7 +927,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeMonthSame(): void
+    public function testIsSameOrBeforeMonthSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1]);
@@ -936,7 +936,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeMonthAfter(): void
+    public function testIsSameOrBeforeMonthAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 2, 1]);
@@ -945,7 +945,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeMonthBefore(): void
+    public function testIsSameOrBeforeMonthBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1]);
@@ -954,7 +954,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeDaySame(): void
+    public function testIsSameOrBeforeDaySame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
@@ -963,7 +963,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeDayAfter(): void
+    public function testIsSameOrBeforeDayAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 2, 1]);
@@ -972,7 +972,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeDayBefore(): void
+    public function testIsSameOrBeforeDayBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1]);
@@ -981,7 +981,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeHourSame(): void
+    public function testIsSameOrBeforeHourSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
@@ -990,7 +990,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeHourAfter(): void
+    public function testIsSameOrBeforeHourAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 1]);
@@ -999,7 +999,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeHourBefore(): void
+    public function testIsSameOrBeforeHourBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1]);
@@ -1008,7 +1008,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeMinuteSame(): void
+    public function testIsSameOrBeforeMinuteSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -1017,7 +1017,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeMinuteAfter(): void
+    public function testIsSameOrBeforeMinuteAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 1]);
@@ -1026,7 +1026,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeMinuteBefore(): void
+    public function testIsSameOrBeforeMinuteBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -1035,7 +1035,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeSecondSame(): void
+    public function testIsSameOrBeforeSecondSame(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -1044,7 +1044,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeSecondAfter(): void
+    public function testIsSameOrBeforeSecondAfter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -1053,7 +1053,7 @@ trait DateTimeImmutableComparisonsTest
         );
     }
 
-    public function testDateTimeImmutableIsSameOrBeforeSecondBefore(): void
+    public function testIsSameOrBeforeSecondBefore(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTimeImmutable::fromArray([2018, 1, 1, 1, 1, 1]);

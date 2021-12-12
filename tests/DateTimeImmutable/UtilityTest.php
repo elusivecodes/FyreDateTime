@@ -1,21 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTimeImmutable;
 
 use
-    Fyre\DateTime\DateTime;
+    Fyre\DateTime\DateTimeImmutable;
 
-trait DateTimeUtilityTest
+trait UtilityTest
 {
 
     /**
      * #clone
      */
 
-    public function testDateTimeClone(): void
+    public function testClone(): void
     {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->clone();
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -27,18 +27,22 @@ trait DateTimeUtilityTest
         );
     }
 
-    public function testDateTimeCloneNotReference(): void
+    public function testCloneNotReference(): void
     {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->clone();
-        $date2->setYear(2018);
+        $date3 = $date2->setYear(2018);
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
             $date1->toISOString()
         );
         $this->assertEquals(
-            '2018-01-01T00:00:00.000+00:00',
+            '2019-01-01T00:00:00.000+00:00',
             $date2->toISOString()
+        );
+        $this->assertEquals(
+            '2018-01-01T00:00:00.000+00:00',
+            $date3->toISOString()
         );
     }
 
@@ -46,39 +50,39 @@ trait DateTimeUtilityTest
      * #dayName
      */
 
-    public function testDateTimeDayName(): void
+    public function testDayName(): void
     {
         $dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         foreach ($dayNames AS $i => $dayName) {
             $this->assertEquals(
                 $dayName,
-                DateTime::fromArray([2019, 1, 1])
+                DateTimeImmutable::fromArray([2019, 1, 1])
                     ->setDay($i)
                     ->dayName(),
             );
         }
     }
 
-    public function testDateTimeDayNameShort(): void
+    public function testDayNameShort(): void
     {
         $dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         foreach ($dayNames AS $i => $dayName) {
             $this->assertEquals(
                 $dayName,
-                DateTime::fromArray([2019, 1, 1])
+                DateTimeImmutable::fromArray([2019, 1, 1])
                     ->setDay($i)
                     ->dayName('short'),
             );
         }
     }
 
-    public function testDateTimeDayNameNarrow(): void
+    public function testDayNameNarrow(): void
     {
         $dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
         foreach ($dayNames AS $i => $dayName) {
             $this->assertEquals(
                 $dayName,
-                DateTime::fromArray([2019, 1, 1])
+                DateTimeImmutable::fromArray([2019, 1, 1])
                     ->setDay($i)
                     ->dayName('narrow'),
             );
@@ -89,38 +93,38 @@ trait DateTimeUtilityTest
      * #dayPeriod
      */
 
-    public function testDateTimeDayPeriod(): void
+    public function testDayPeriod(): void
     {
         $this->assertEquals(
             'AM',
-            DateTime::fromArray([2019, 1, 1, 0])
+            DateTimeImmutable::fromArray([2019, 1, 1, 0])
                 ->dayPeriod(),
         );
     }
 
-    public function testDateTimeDayPeriodPm(): void
+    public function testDayPeriodPm(): void
     {
         $this->assertEquals(
             'PM',
-            DateTime::fromArray([2019, 1, 1, 12])
+            DateTimeImmutable::fromArray([2019, 1, 1, 12])
                 ->dayPeriod(),
         );
     }
 
-    public function testDateTimeDayPeriodShort(): void
+    public function testDayPeriodShort(): void
     {
         $this->assertEquals(
             'AM',
-            DateTime::fromArray([2019, 1, 1, 0])
+            DateTimeImmutable::fromArray([2019, 1, 1, 0])
                 ->dayPeriod('short'),
         );
     }
 
-    public function testDateTimeDayPeriodShortPm(): void
+    public function testDayPeriodShortPm(): void
     {
         $this->assertEquals(
             'PM',
-            DateTime::fromArray([2019, 1, 1, 12])
+            DateTimeImmutable::fromArray([2019, 1, 1, 12])
                 ->dayPeriod('short'),
         );
     }
@@ -129,23 +133,23 @@ trait DateTimeUtilityTest
      * #daysInMonth
      */
 
-    public function testDateTimeDaysInMonth(): void
+    public function testDaysInMonth(): void
     {
         $monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         foreach ($monthDays AS $i => $daysInMonth) {
             $this->assertEquals(
                 $daysInMonth,
-                DateTime::fromArray([2018, $i + 1, 1])
+                DateTimeImmutable::fromArray([2018, $i + 1, 1])
                     ->daysInMonth(),
             );
         }
     }
 
-    public function testDateTimeDaysInMonthLeapYear(): void
+    public function testDaysInMonthLeapYear(): void
     {
         $this->assertEquals(
             29,
-            DateTime::fromArray([2020, 2, 1])
+            DateTimeImmutable::fromArray([2020, 2, 1])
                 ->daysInMonth(),
         );
     }
@@ -154,20 +158,20 @@ trait DateTimeUtilityTest
      * #daysInYear
      */
 
-    public function testDateTimeDaysInYear(): void
+    public function testDaysInYear(): void
     {
         $this->assertEquals(
             365,
-            DateTime::fromArray([2018, 1, 1])
+            DateTimeImmutable::fromArray([2018, 1, 1])
                 ->daysInYear(),
         );
     }
 
-    public function testDateTimeDaysInYearLeapYear(): void
+    public function testDaysInYearLeapYear(): void
     {
         $this->assertEquals(
             366,
-            DateTime::fromArray([2020, 1, 1])
+            DateTimeImmutable::fromArray([2020, 1, 1])
                 ->daysInYear(),
         );
     }
@@ -176,56 +180,56 @@ trait DateTimeUtilityTest
      * #era
      */
 
-    public function testDateTimeEra(): void
+    public function testEra(): void
     {
         $this->assertEquals(
             'Anno Domini',
-            DateTime::fromArray([2018])
+            DateTimeImmutable::fromArray([2018])
                 ->era(),
         );
     }
 
-    public function testDateTimeEraBc(): void
+    public function testEraBc(): void
     {
         $this->assertEquals(
             'Before Christ',
-            DateTime::fromArray([-5])
+            DateTimeImmutable::fromArray([-5])
                 ->era(),
         );
     }
 
-    public function testDateTimeEraShort(): void
+    public function testEraShort(): void
     {
         $this->assertEquals(
             'AD',
-            DateTime::fromArray([2018])
+            DateTimeImmutable::fromArray([2018])
                 ->era('short'),
         );
     }
 
-    public function testDateTimeEraShortBc(): void
+    public function testEraShortBc(): void
     {
         $this->assertEquals(
             'BC',
-            DateTime::fromArray([-5])
+            DateTimeImmutable::fromArray([-5])
                 ->era('short'),
         );
     }
 
-    public function testDateTimeEraNarrow(): void
+    public function testEraNarrow(): void
     {
         $this->assertEquals(
             'A',
-            DateTime::fromArray([2018])
+            DateTimeImmutable::fromArray([2018])
                 ->era('narrow'),
         );
     }
 
-    public function testDateTimeEraNarrowBc(): void
+    public function testEraNarrowBc(): void
     {
         $this->assertEquals(
             'B',
-            DateTime::fromArray([-5])
+            DateTimeImmutable::fromArray([-5])
                 ->era('narrow'),
         );
     }
@@ -234,18 +238,18 @@ trait DateTimeUtilityTest
      * #isDST
      */
 
-    public function testDateTimeIsDst(): void
+    public function testIsDst(): void
     {
         $this->assertFalse(
-            DateTime::fromArray([2018, 1, 1])
+            DateTimeImmutable::fromArray([2018, 1, 1])
                 ->isDST(),
         );
     }
 
-    public function testDateTimeIsDstDst(): void
+    public function testIsDstDst(): void
     {
         $this->assertTrue(
-            DateTime::fromArray([2018, 6, 1], 'America/New_York')
+            DateTimeImmutable::fromArray([2018, 6, 1], 'America/New_York')
                 ->isDST(),
         );
     }
@@ -254,18 +258,18 @@ trait DateTimeUtilityTest
      * #isLeapYear
      */
 
-    public function testDateTimeIsLeapYear(): void
+    public function testIsLeapYear(): void
     {
         $this->assertFalse(
-            DateTime::fromArray([2019])
+            DateTimeImmutable::fromArray([2019])
                 ->isLeapYear(),
         );
     }
 
-    public function testDateTimeIsLeapYearLeapYear(): void
+    public function testIsLeapYearLeapYear(): void
     {
         $this->assertTrue(
-            DateTime::fromArray([2020])
+            DateTimeImmutable::fromArray([2020])
                 ->isLeapYear(),
         );
     }
@@ -274,37 +278,37 @@ trait DateTimeUtilityTest
      * #monthName
      */
 
-    public function testDateTimeMonthName(): void
+    public function testMonthName(): void
     {
         $monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         foreach ($monthNames AS $i => $monthName) {
             $this->assertEquals(
                 $monthName,
-                DateTime::fromArray([2019, $i + 1, 1])
+                DateTimeImmutable::fromArray([2019, $i + 1, 1])
                     ->monthName(),
             );
         }
     }
 
-    public function testDateTimeMonthNameShort(): void
+    public function testMonthNameShort(): void
     {
         $monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         foreach ($monthNames AS $i => $monthName) {
             $this->assertEquals(
                 $monthName,
-                DateTime::fromArray([2019, $i + 1, 1])
+                DateTimeImmutable::fromArray([2019, $i + 1, 1])
                     ->monthName('short'),
             );
         }
     }
 
-    public function testDateTimeMonthNameNarrow(): void
+    public function testMonthNameNarrow(): void
     {
         $monthNames = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
         foreach ($monthNames AS $i => $monthName) {
             $this->assertEquals(
                 $monthName,
-                DateTime::fromArray([2019, $i + 1, 1])
+                DateTimeImmutable::fromArray([2019, $i + 1, 1])
                     ->monthName('narrow'),
             );
         }
@@ -314,38 +318,38 @@ trait DateTimeUtilityTest
      * #timeZoneName
      */
 
-    public function testDateTimeTimeZoneName(): void
+    public function testTimeZoneName(): void
     {
         $this->assertEquals(
             'Australian Eastern Standard Time',
-            DateTime::fromArray([2018], 'Australia/Brisbane')
+            DateTimeImmutable::fromArray([2018], 'Australia/Brisbane')
                 ->timeZoneName(),
         );
     }
 
-    public function testDateTimeTimeZoneNameOffset(): void
+    public function testTimeZoneNameOffset(): void
     {
         $this->assertEquals(
             'GMT+10:00',
-            DateTime::fromArray([2018], '+10:00')
+            DateTimeImmutable::fromArray([2018], '+10:00')
                 ->timeZoneName(),
         );
     }
 
-    public function testDateTimeTimeZoneNameShort(): void
+    public function testTimeZoneNameShort(): void
     {
         $this->assertEquals(
             'GMT+10',
-            DateTime::fromArray([2018], 'Australia/Brisbane')
+            DateTimeImmutable::fromArray([2018], 'Australia/Brisbane')
                 ->timeZoneName('short'),
         );
     }
 
-    public function testDateTimeTimeZoneNameShortOffset(): void
+    public function testTimeZoneNameShortOffset(): void
     {
         $this->assertEquals(
             'GMT+10',
-            DateTime::fromArray([2018], '+10:00')
+            DateTimeImmutable::fromArray([2018], '+10:00')
                 ->timeZoneName('short'),
         );
     }
@@ -354,20 +358,20 @@ trait DateTimeUtilityTest
      * #weeksInYear
      */
 
-    public function testDateTimeWeeksInYear(): void
+    public function testWeeksInYear(): void
     {
         $this->assertEquals(
             52,
-            DateTime::fromArray([2018, 1, 1])
+            DateTimeImmutable::fromArray([2018, 1, 1])
                 ->weeksInYear(),
         );
     }
 
-    public function testDateTimeWeeksInYearLocal(): void
+    public function testWeeksInYearLocal(): void
     {
         $this->assertEquals(
             53,
-            DateTime::fromArray([2016, 1, 1])
+            DateTimeImmutable::fromArray([2016, 1, 1])
                 ->weeksInYear(),
         );
     }

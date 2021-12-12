@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTime;
 
 use
     Fyre\DateTime\DateTime;
 
-trait DateTimeFormatLocaleTest
+trait FormatLocaleTest
 {
 
     /**
      * Era
      */
 
-    public function testDateTimeFormatLocaleEraShort(): void
+    public function testFormatLocaleEraShort(): void
     {
         $this->assertEquals(
             'н. э.',
@@ -21,7 +21,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleEraShortBc(): void
+    public function testFormatLocaleEraShortBc(): void
     {
         $this->assertEquals(
             'до н. э.',
@@ -29,7 +29,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleEraLong(): void
+    public function testFormatLocaleEraLong(): void
     {
         $this->assertEquals(
             'от Рождества Христова',
@@ -37,7 +37,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleEraLongBc(): void
+    public function testFormatLocaleEraLongBc(): void
     {
         $this->assertEquals(
             'до Рождества Христова',
@@ -45,7 +45,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleEraNarrow(): void
+    public function testFormatLocaleEraNarrow(): void
     {
         $this->assertEquals(
             'н.э.',
@@ -53,7 +53,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleEraNarrowBc(): void
+    public function testFormatLocaleEraNarrowBc(): void
     {
         $this->assertEquals(
             'до н.э.',
@@ -65,7 +65,7 @@ trait DateTimeFormatLocaleTest
      * Year
      */
 
-    public function testDateTimeFormatLocaleYear1Digit(): void
+    public function testFormatLocaleYear1Digit(): void
     {
         $this->assertEquals(
             '٢٠١٨',
@@ -73,7 +73,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleYear1DigitPadding(): void
+    public function testFormatLocaleYear1DigitPadding(): void
     {
         $this->assertEquals(
             '٥',
@@ -81,7 +81,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleYear2Digits(): void
+    public function testFormatLocaleYear2Digits(): void
     {
         $this->assertEquals(
             '١٨',
@@ -89,7 +89,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleYear2DigitsPadding(): void
+    public function testFormatLocaleYear2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٥',
@@ -97,7 +97,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleYear3Digits(): void
+    public function testFormatLocaleYear3Digits(): void
     {
         $this->assertEquals(
             '٢٠١٨',
@@ -105,7 +105,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleYear3DigitsPadding(): void
+    public function testFormatLocaleYear3DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٠٥',
@@ -113,7 +113,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleYear4Digits(): void
+    public function testFormatLocaleYear4Digits(): void
     {
         $this->assertEquals(
             '٢٠١٨',
@@ -121,7 +121,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleYear4DigitsPadding(): void
+    public function testFormatLocaleYear4DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٠٠٥',
@@ -133,7 +133,7 @@ trait DateTimeFormatLocaleTest
      * Week Year
      */
 
-    public function testDateTimeFormatLocaleWeekYear1Digit(): void
+    public function testFormatLocaleWeekYear1Digit(): void
     {
         $this->assertEquals(
             '٢٠١٨',
@@ -141,7 +141,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear1DigitCurrentWeek(): void
+    public function testFormatLocaleWeekYear1DigitCurrentWeek(): void
     {
         $this->assertEquals(
             '٢٠٢٠',
@@ -149,7 +149,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear1DigitPadding(): void
+    public function testFormatLocaleWeekYear1DigitPadding(): void
     {
         $this->assertEquals(
             '٥',
@@ -157,7 +157,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear2Digits(): void
+    public function testFormatLocaleWeekYear2Digits(): void
     {
         $this->assertEquals(
             '١٨',
@@ -165,7 +165,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear2DigitsCurrentWeek(): void
+    public function testFormatLocaleWeekYear2DigitsCurrentWeek(): void
     {
         $this->assertEquals(
             '٢٠',
@@ -173,7 +173,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear2DigitsPadding(): void
+    public function testFormatLocaleWeekYear2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٥',
@@ -181,7 +181,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear3Digits(): void
+    public function testFormatLocaleWeekYear3Digits(): void
     {
         $this->assertEquals(
             '٢٠١٨',
@@ -189,7 +189,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear3DigitsCurrentWeek(): void
+    public function testFormatLocaleWeekYear3DigitsCurrentWeek(): void
     {
         $this->assertEquals(
             '٢٠٢٠',
@@ -197,7 +197,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear3DigitsPadding(): void
+    public function testFormatLocaleWeekYear3DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٠٥',
@@ -205,7 +205,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear4Digits(): void
+    public function testFormatLocaleWeekYear4Digits(): void
     {
         $this->assertEquals(
             '٢٠١٨',
@@ -213,7 +213,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear4DigitsCurrentWeek(): void
+    public function testFormatLocaleWeekYear4DigitsCurrentWeek(): void
     {
         $this->assertEquals(
             '٢٠٢٠',
@@ -221,7 +221,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekYear4DigitsPadding(): void
+    public function testFormatLocaleWeekYear4DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٠٠٥',
@@ -233,7 +233,7 @@ trait DateTimeFormatLocaleTest
      * Quarter
      */
 
-    public function testDateTimeFormatLocaleQuarter1Digit(): void
+    public function testFormatLocaleQuarter1Digit(): void
     {
         $this->assertEquals(
             '٣',
@@ -241,7 +241,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleQuarter2Digits(): void
+    public function testFormatLocaleQuarter2Digits(): void
     {
         $this->assertEquals(
             '٠٣',
@@ -249,7 +249,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneQuarter1Digit(): void
+    public function testFormatLocaleStandaloneQuarter1Digit(): void
     {
         $this->assertEquals(
             '٣',
@@ -257,7 +257,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneQuarter2Digits(): void
+    public function testFormatLocaleStandaloneQuarter2Digits(): void
     {
         $this->assertEquals(
             '٠٣',
@@ -269,7 +269,7 @@ trait DateTimeFormatLocaleTest
      * Month
      */
 
-    public function testDateTimeFormatLocaleMonth1Digit(): void
+    public function testFormatLocaleMonth1Digit(): void
     {
         $this->assertEquals(
             '١٠',
@@ -277,7 +277,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMonth1DigitPadding(): void
+    public function testFormatLocaleMonth1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -285,7 +285,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMonth2Digits(): void
+    public function testFormatLocaleMonth2Digits(): void
     {
         $this->assertEquals(
             '١٠',
@@ -293,7 +293,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMonth2DigitsPadding(): void
+    public function testFormatLocaleMonth2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -301,7 +301,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMonthShort(): void
+    public function testFormatLocaleMonthShort(): void
     {
         $this->assertEquals(
             'окт.',
@@ -309,7 +309,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMonthLong(): void
+    public function testFormatLocaleMonthLong(): void
     {
         $this->assertEquals(
             'октября',
@@ -317,7 +317,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMonthNarrow(): void
+    public function testFormatLocaleMonthNarrow(): void
     {
         $this->assertEquals(
             'О',
@@ -325,7 +325,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneMonth1Digit(): void
+    public function testFormatLocaleStandaloneMonth1Digit(): void
     {
         $this->assertEquals(
             '١٠',
@@ -333,7 +333,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneMonth1DigitPadding(): void
+    public function testFormatLocaleStandaloneMonth1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -341,7 +341,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneMonth2Digits(): void
+    public function testFormatLocaleStandaloneMonth2Digits(): void
     {
         $this->assertEquals(
             '١٠',
@@ -349,7 +349,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneMonth2DigitsPadding(): void
+    public function testFormatLocaleStandaloneMonth2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -357,7 +357,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneMonthShort(): void
+    public function testFormatLocaleStandaloneMonthShort(): void
     {
         $this->assertEquals(
             'окт.',
@@ -365,7 +365,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneMonthLong(): void
+    public function testFormatLocaleStandaloneMonthLong(): void
     {
         $this->assertEquals(
             'октябрь',
@@ -373,7 +373,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneMonthNarrow(): void
+    public function testFormatLocaleStandaloneMonthNarrow(): void
     {
         $this->assertEquals(
             'О',
@@ -385,7 +385,7 @@ trait DateTimeFormatLocaleTest
      * Week
      */
 
-    public function testDateTimeFormatLocaleWeekOfYear1Digit(): void
+    public function testFormatLocaleWeekOfYear1Digit(): void
     {
         $this->assertEquals(
             '٢٢',
@@ -393,7 +393,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekOfYear1DigitPadding(): void
+    public function testFormatLocaleWeekOfYear1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -401,7 +401,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekOfYear2Digits(): void
+    public function testFormatLocaleWeekOfYear2Digits(): void
     {
         $this->assertEquals(
             '٢٢',
@@ -409,7 +409,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekOfYear2DigitsPadding(): void
+    public function testFormatLocaleWeekOfYear2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -417,7 +417,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekOfMonth(): void
+    public function testFormatLocaleWeekOfMonth(): void
     {
         $this->assertEquals(
             '١',
@@ -425,7 +425,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekOfMonthCurrentWeek(): void
+    public function testFormatLocaleWeekOfMonthCurrentWeek(): void
     {
         $this->assertEquals(
             '٢',
@@ -437,7 +437,7 @@ trait DateTimeFormatLocaleTest
      * Day
      */
 
-    public function testDateTimeFormatLocaleDayOfMonth1Digit(): void
+    public function testFormatLocaleDayOfMonth1Digit(): void
     {
         $this->assertEquals(
             '٢١',
@@ -445,7 +445,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfMonth1DigitPadding(): void
+    public function testFormatLocaleDayOfMonth1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -453,7 +453,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfMonth2Digits(): void
+    public function testFormatLocaleDayOfMonth2Digits(): void
     {
         $this->assertEquals(
             '٢١',
@@ -461,7 +461,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfMonth2DigitsPadding(): void
+    public function testFormatLocaleDayOfMonth2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -469,7 +469,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfYear1Digit(): void
+    public function testFormatLocaleDayOfYear1Digit(): void
     {
         $this->assertEquals(
             '١٥٢',
@@ -477,7 +477,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfYear1DigitPadding(): void
+    public function testFormatLocaleDayOfYear1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -485,7 +485,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfYear2Digits(): void
+    public function testFormatLocaleDayOfYear2Digits(): void
     {
         $this->assertEquals(
             '١٥٢',
@@ -493,7 +493,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfYear2DigitsPadding(): void
+    public function testFormatLocaleDayOfYear2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -501,7 +501,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfYear3Digits(): void
+    public function testFormatLocaleDayOfYear3Digits(): void
     {
         $this->assertEquals(
             '١٥٢',
@@ -509,7 +509,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfYear3DigitsPadding(): void
+    public function testFormatLocaleDayOfYear3DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٠١',
@@ -517,7 +517,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfWeekInMonth(): void
+    public function testFormatLocaleDayOfWeekInMonth(): void
     {
         $this->assertEquals(
             '١',
@@ -525,7 +525,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayOfWeekInMonthCurrentWeek(): void
+    public function testFormatLocaleDayOfWeekInMonthCurrentWeek(): void
     {
         $this->assertEquals(
             '١',
@@ -537,7 +537,7 @@ trait DateTimeFormatLocaleTest
      * Week Day
      */
 
-    public function testDateTimeFormatLocaleAltWeekDayShort(): void
+    public function testFormatLocaleAltWeekDayShort(): void
     {
         $this->assertEquals(
             'пт',
@@ -545,7 +545,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleAltWeekDayLong(): void
+    public function testFormatLocaleAltWeekDayLong(): void
     {
         $this->assertEquals(
             'пятница',
@@ -553,7 +553,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    // public function testDateTimeFormatLocaleAltWeekDayNarrow(): void
+    // public function testFormatLocaleAltWeekDayNarrow(): void
     // {
     //     $this->assertEquals(
     //         'П',
@@ -561,7 +561,7 @@ trait DateTimeFormatLocaleTest
     //     );
     // }
 
-    public function testDateTimeFormatLocaleWeekDay1Digit(): void
+    public function testFormatLocaleWeekDay1Digit(): void
     {
         $this->assertEquals(
             '٧',
@@ -569,7 +569,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekDay2Digits(): void
+    public function testFormatLocaleWeekDay2Digits(): void
     {
         $this->assertEquals(
             '٠٧',
@@ -577,7 +577,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekDayShort(): void
+    public function testFormatLocaleWeekDayShort(): void
     {
         $this->assertEquals(
             'пт',
@@ -585,7 +585,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleWeekDayLong(): void
+    public function testFormatLocaleWeekDayLong(): void
     {
         $this->assertEquals(
             'пятница',
@@ -593,7 +593,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    // public function testDateTimeFormatLocaleWeekDayNarrow(): void
+    // public function testFormatLocaleWeekDayNarrow(): void
     // {
     //     $this->assertEquals(
     //         'П',
@@ -601,7 +601,7 @@ trait DateTimeFormatLocaleTest
     //     );
     // }
 
-    public function testDateTimeFormatLocaleStandaloneWeekDay1Digit(): void
+    public function testFormatLocaleStandaloneWeekDay1Digit(): void
     {
         $this->assertEquals(
             '٧',
@@ -609,7 +609,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneWeekDay2Digits(): void
+    public function testFormatLocaleStandaloneWeekDay2Digits(): void
     {
         $this->assertEquals(
             '٧',
@@ -617,7 +617,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneWeekDayShort(): void
+    public function testFormatLocaleStandaloneWeekDayShort(): void
     {
         $this->assertEquals(
             'пт',
@@ -625,7 +625,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneWeekDayLong(): void
+    public function testFormatLocaleStandaloneWeekDayLong(): void
     {
         $this->assertEquals(
             'пятница',
@@ -633,7 +633,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleStandaloneWeekDayNarrow(): void
+    public function testFormatLocaleStandaloneWeekDayNarrow(): void
     {
         $this->assertEquals(
             'П',
@@ -645,7 +645,7 @@ trait DateTimeFormatLocaleTest
      * Day Period
      */
 
-    public function testDateTimeFormatLocaleDayPeriodShortAm(): void
+    public function testFormatLocaleDayPeriodShortAm(): void
     {
         $this->assertEquals(
             '上午',
@@ -653,7 +653,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayPeriodShortPm(): void
+    public function testFormatLocaleDayPeriodShortPm(): void
     {
         $this->assertEquals(
             '下午',
@@ -661,7 +661,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayPeriodLongAm(): void
+    public function testFormatLocaleDayPeriodLongAm(): void
     {
         $this->assertEquals(
             '上午',
@@ -669,7 +669,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleDayPeriodLongPm(): void
+    public function testFormatLocaleDayPeriodLongPm(): void
     {
         $this->assertEquals(
             '下午',
@@ -681,7 +681,7 @@ trait DateTimeFormatLocaleTest
      * Hour
      */
 
-    public function testDateTimeFormatLocale12Hour1Digit(): void
+    public function testFormatLocale12Hour1Digit(): void
     {
         $this->assertEquals(
             '١٢',
@@ -689,7 +689,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale12Hour1DigitPadding(): void
+    public function testFormatLocale12Hour1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -697,7 +697,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale12Hour2Digits(): void
+    public function testFormatLocale12Hour2Digits(): void
     {
         $this->assertEquals(
             '١١',
@@ -705,7 +705,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale12Hour2DigitsPadding(): void
+    public function testFormatLocale12Hour2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -713,7 +713,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale23Hour1Digit(): void
+    public function testFormatLocale23Hour1Digit(): void
     {
         $this->assertEquals(
             '٢٣',
@@ -721,7 +721,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale23Hour1DigitPadding(): void
+    public function testFormatLocale23Hour1DigitPadding(): void
     {
         $this->assertEquals(
             '٠',
@@ -729,7 +729,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale23Hour2Digits(): void
+    public function testFormatLocale23Hour2Digits(): void
     {
         $this->assertEquals(
             '٢٣',
@@ -737,7 +737,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale23Hour2DigitsPadding(): void
+    public function testFormatLocale23Hour2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٠',
@@ -745,7 +745,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale11Hour1Digit(): void
+    public function testFormatLocale11Hour1Digit(): void
     {
         $this->assertEquals(
             '١١',
@@ -753,7 +753,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale11Hour1DigitPadding(): void
+    public function testFormatLocale11Hour1DigitPadding(): void
     {
         $this->assertEquals(
             '٠',
@@ -761,7 +761,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale11Hour2Digits(): void
+    public function testFormatLocale11Hour2Digits(): void
     {
         $this->assertEquals(
             '١١',
@@ -769,7 +769,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale11Hour2DigitsPadding(): void
+    public function testFormatLocale11Hour2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠٠',
@@ -777,7 +777,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale24Hour1Digit(): void
+    public function testFormatLocale24Hour1Digit(): void
     {
         $this->assertEquals(
             '٢٤',
@@ -785,7 +785,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale24Hour1DigitPadding(): void
+    public function testFormatLocale24Hour1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -793,7 +793,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale24Hour2Digits(): void
+    public function testFormatLocale24Hour2Digits(): void
     {
         $this->assertEquals(
             '٢٤',
@@ -801,7 +801,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocale24Hour2DigitsPadding(): void
+    public function testFormatLocale24Hour2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -813,7 +813,7 @@ trait DateTimeFormatLocaleTest
      * Minute
      */
 
-    public function testDateTimeFormatLocaleMinute1Digit(): void
+    public function testFormatLocaleMinute1Digit(): void
     {
         $this->assertEquals(
             '٢٥',
@@ -821,7 +821,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMinute1DigitPadding(): void
+    public function testFormatLocaleMinute1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -829,7 +829,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMinute2Digits(): void
+    public function testFormatLocaleMinute2Digits(): void
     {
         $this->assertEquals(
             '٢٥',
@@ -837,7 +837,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleMinute2DigitsPadding(): void
+    public function testFormatLocaleMinute2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -849,7 +849,7 @@ trait DateTimeFormatLocaleTest
      * Second
      */
 
-    public function testDateTimeFormatLocaleSecond1Digit(): void
+    public function testFormatLocaleSecond1Digit(): void
     {
         $this->assertEquals(
             '٢٥',
@@ -857,7 +857,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleSecond1DigitPadding(): void
+    public function testFormatLocaleSecond1DigitPadding(): void
     {
         $this->assertEquals(
             '١',
@@ -865,7 +865,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleSecond2Digits(): void
+    public function testFormatLocaleSecond2Digits(): void
     {
         $this->assertEquals(
             '٢٥',
@@ -873,7 +873,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleSecond2DigitsPadding(): void
+    public function testFormatLocaleSecond2DigitsPadding(): void
     {
         $this->assertEquals(
             '٠١',
@@ -881,7 +881,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleFractional(): void
+    public function testFormatLocaleFractional(): void
     {
         $this->assertEquals(
             '١٢٣',
@@ -889,7 +889,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleFractionalTruncate(): void
+    public function testFormatLocaleFractionalTruncate(): void
     {
         $this->assertEquals(
             '١',
@@ -897,7 +897,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleFractionalPadding(): void
+    public function testFormatLocaleFractionalPadding(): void
     {
         $this->assertEquals(
             '١٢٣٠٠٠',
@@ -909,7 +909,7 @@ trait DateTimeFormatLocaleTest
      * Time Zone
      */
 
-    public function testDateTimeFormatLocaleTimeZoneShortNonLocation(): void
+    public function testFormatLocaleTimeZoneShortNonLocation(): void
     {
         $this->assertEquals(
             'UTC',
@@ -917,7 +917,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneShortNonLocationTimeZone(): void
+    public function testFormatLocaleTimeZoneShortNonLocationTimeZone(): void
     {
         $this->assertEquals(
             'GMT+10',
@@ -925,7 +925,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneLongNonLocation(): void
+    public function testFormatLocaleTimeZoneLongNonLocation(): void
     {
         $this->assertEquals(
             'Всемирное координированное время',
@@ -933,7 +933,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    // public function testDateTimeFormatLocaleTimeZoneLongNonLocationTimeZone(): void
+    // public function testFormatLocaleTimeZoneLongNonLocationTimeZone(): void
     // {
     //     $this->assertEquals(
     //         'Восточная Австралия, стандартное время',
@@ -941,7 +941,7 @@ trait DateTimeFormatLocaleTest
     //     );
     // }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicAlt(): void
+    public function testFormatLocaleTimeZoneIso8601BasicAlt(): void
     {
         $this->assertEquals(
             '+0000',
@@ -949,7 +949,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicAltTimeZone(): void
+    public function testFormatLocaleTimeZoneIso8601BasicAltTimeZone(): void
     {
         $this->assertEquals(
             '+1000',
@@ -957,7 +957,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneLongBasic(): void
+    public function testFormatLocaleTimeZoneLongBasic(): void
     {
         $this->assertEquals(
             'GMT',
@@ -965,7 +965,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneLongBasicTimeZone(): void
+    public function testFormatLocaleTimeZoneLongBasicTimeZone(): void
     {
         $this->assertEquals(
             'GMT+10:00',
@@ -973,7 +973,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601ExtendedAlt(): void
+    public function testFormatLocaleTimeZoneIso8601ExtendedAlt(): void
     {
         $this->assertEquals(
             'Z',
@@ -981,7 +981,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601ExtendedAltTimeZone(): void
+    public function testFormatLocaleTimeZoneIso8601ExtendedAltTimeZone(): void
     {
         $this->assertEquals(
             '+10:00',
@@ -989,7 +989,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneShortLocalized(): void
+    public function testFormatLocaleTimeZoneShortLocalized(): void
     {
         $this->assertEquals(
             'GMT',
@@ -997,7 +997,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneShortLocalizedTimeZone(): void
+    public function testFormatLocaleTimeZoneShortLocalizedTimeZone(): void
     {
         $this->assertEquals(
             'GMT+10',
@@ -1005,7 +1005,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneLongLocalized(): void
+    public function testFormatLocaleTimeZoneLongLocalized(): void
     {
         $this->assertEquals(
             'GMT',
@@ -1013,7 +1013,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneLongLocalizedTimeZone(): void
+    public function testFormatLocaleTimeZoneLongLocalizedTimeZone(): void
     {
         $this->assertEquals(
             'GMT+10:00',
@@ -1021,7 +1021,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneLongTimeZoneId(): void
+    public function testFormatLocaleTimeZoneLongTimeZoneId(): void
     {
         $this->assertEquals(
             'UTC',
@@ -1029,7 +1029,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneLongTimeZoneIdTimeZone(): void
+    public function testFormatLocaleTimeZoneLongTimeZoneIdTimeZone(): void
     {
         $this->assertEquals(
             'Australia/Brisbane',
@@ -1037,7 +1037,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicShortZ(): void
+    public function testFormatLocaleTimeZoneIso8601BasicShortZ(): void
     {
         $this->assertEquals(
             'Z',
@@ -1045,7 +1045,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicShortZTimeZone(): void
+    public function testFormatLocaleTimeZoneIso8601BasicShortZTimeZone(): void
     {
         $this->assertEquals(
             '+10',
@@ -1053,7 +1053,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicZ(): void
+    public function testFormatLocaleTimeZoneIso8601BasicZ(): void
     {
         $this->assertEquals(
             'Z',
@@ -1061,7 +1061,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicZTimeZone(): void
+    public function testFormatLocaleTimeZoneIso8601BasicZTimeZone(): void
     {
         $this->assertEquals(
             '+1000',
@@ -1069,7 +1069,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601ExtendedZ(): void
+    public function testFormatLocaleTimeZoneIso8601ExtendedZ(): void
     {
         $this->assertEquals(
             'Z',
@@ -1077,7 +1077,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601ExtendedZTimeZone(): void
+    public function testFormatLocaleTimeZoneIso8601ExtendedZTimeZone(): void
     {
         $this->assertEquals(
             '+10:00',
@@ -1085,7 +1085,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicShort(): void
+    public function testFormatLocaleTimeZoneIso8601BasicShort(): void
     {
         $this->assertEquals(
             '+00',
@@ -1093,7 +1093,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicShortTimeZone(): void
+    public function testFormatLocaleTimeZoneIso8601BasicShortTimeZone(): void
     {
         $this->assertEquals(
             '+10',
@@ -1101,7 +1101,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601Basic(): void
+    public function testFormatLocaleTimeZoneIso8601Basic(): void
     {
         $this->assertEquals(
             '+0000',
@@ -1109,7 +1109,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601BasicTimeZone(): void
+    public function testFormatLocaleTimeZoneIso8601BasicTimeZone(): void
     {
         $this->assertEquals(
             '+1000',
@@ -1117,7 +1117,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601Extended(): void
+    public function testFormatLocaleTimeZoneIso8601Extended(): void
     {
         $this->assertEquals(
             '+00:00',
@@ -1125,7 +1125,7 @@ trait DateTimeFormatLocaleTest
         );
     }
 
-    public function testDateTimeFormatLocaleTimeZoneIso8601ExtendedTimeZone(): void
+    public function testFormatLocaleTimeZoneIso8601ExtendedTimeZone(): void
     {
         $this->assertEquals(
             '+10:00',

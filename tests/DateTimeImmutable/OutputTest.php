@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTimeImmutable;
 
 use
     Fyre\DateTime\DateTimeImmutable;
 
-trait DateTimeImmutableOutputTest
+trait OutputTest
 {
 
-    public function testDateTimeImmutableToDateString(): void
+    public function testToDateString(): void
     {
         $this->assertEquals(
             'Mon Jan 01 2018',
@@ -17,7 +17,7 @@ trait DateTimeImmutableOutputTest
         );
     }
 
-    public function testDateTimeImmutableToTimeString(): void
+    public function testToTimeString(): void
     {
         $this->assertEquals(
             '00:00:00 +0000 (UTC)',
@@ -25,7 +25,7 @@ trait DateTimeImmutableOutputTest
         );
     }
 
-    public function testDateTimeImmutableToIsoString(): void
+    public function testToIsoString(): void
     {
         $this->assertEquals(
             '2017-12-31T14:00:00.000+00:00',
@@ -33,7 +33,7 @@ trait DateTimeImmutableOutputTest
         );
     }
 
-    public function testDateTimeImmutableToString(): void
+    public function testToString(): void
     {
         $this->assertEquals(
             'Mon Jan 01 2018 00:00:00 +1000 (Australia/Brisbane)',
@@ -41,7 +41,7 @@ trait DateTimeImmutableOutputTest
         );
     }
 
-    public function testDateTimeImmutableToUtcString(): void
+    public function testToUtcString(): void
     {
         $this->assertEquals(
             'Sun Dec 31 2017 14:00:00 +0000 (UTC)',
@@ -49,7 +49,7 @@ trait DateTimeImmutableOutputTest
         );
     }
 
-    public function testDateTimeImmutableAsString(): void
+    public function testAsString(): void
     {
         $this->assertEquals(
             'Mon Jan 01 2018 00:00:00 +1000 (Australia/Brisbane)',

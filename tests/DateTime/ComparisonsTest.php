@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTime;
 
 use
     Fyre\DateTime\DateTime;
 
-trait DateTimeComparisonsTest
+trait ComparisonsTest
 {
 
     /**
      * #isAfter
      */
 
-    public function testDateTimeIsAfterAfter(): void
+    public function testIsAfterAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
@@ -22,7 +22,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterBefore(): void
+    public function testIsAfterBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -31,7 +31,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterYearAfter(): void
+    public function testIsAfterYearAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1]);
         $date2 = DateTime::fromArray([2019, 2]);
@@ -40,7 +40,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterYearBefore(): void
+    public function testIsAfterYearBefore(): void
     {
         $date1 = DateTime::fromArray([2019, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
@@ -49,7 +49,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterMonthAfter(): void
+    public function testIsAfterMonthAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = DateTime::fromArray([2018, 2, 2]);
@@ -58,7 +58,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterMonthBefore(): void
+    public function testIsAfterMonthBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
@@ -67,7 +67,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterDayAfter(): void
+    public function testIsAfterDayAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 2, 2]);
@@ -76,7 +76,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterDayBefore(): void
+    public function testIsAfterDayBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
@@ -85,7 +85,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterHourAfter(): void
+    public function testIsAfterHourAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 2]);
@@ -94,7 +94,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterHourBefore(): void
+    public function testIsAfterHourBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
@@ -103,7 +103,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterMinuteAfter(): void
+    public function testIsAfterMinuteAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
@@ -112,7 +112,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterMinuteBefore(): void
+    public function testIsAfterMinuteBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -121,7 +121,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterSecondAfter(): void
+    public function testIsAfterSecondAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2, 2]);
@@ -130,7 +130,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsAfterSecondBefore(): void
+    public function testIsAfterSecondBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
@@ -143,7 +143,7 @@ trait DateTimeComparisonsTest
      * #isBefore
      */
 
-    public function testDateTimeIsBeforeAfter(): void
+    public function testIsBeforeAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
@@ -152,7 +152,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeBefore(): void
+    public function testIsBeforeBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -161,7 +161,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeYearAfter(): void
+    public function testIsBeforeYearAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1]);
         $date2 = DateTime::fromArray([2019, 2]);
@@ -170,7 +170,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeYearBefore(): void
+    public function testIsBeforeYearBefore(): void
     {
         $date1 = DateTime::fromArray([2019, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
@@ -179,7 +179,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeMonthAfter(): void
+    public function testIsBeforeMonthAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = DateTime::fromArray([2018, 2, 2]);
@@ -188,7 +188,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeMonthBefore(): void
+    public function testIsBeforeMonthBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
@@ -197,7 +197,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeDayAfter(): void
+    public function testIsBeforeDayAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 2, 2]);
@@ -206,7 +206,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeDayBefore(): void
+    public function testIsBeforeDayBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
@@ -215,7 +215,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeHourAfter(): void
+    public function testIsBeforeHourAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 2]);
@@ -224,7 +224,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeHourBefore(): void
+    public function testIsBeforeHourBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
@@ -233,7 +233,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeMinuteAfter(): void
+    public function testIsBeforeMinuteAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
@@ -242,7 +242,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeMinuteBefore(): void
+    public function testIsBeforeMinuteBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -251,7 +251,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeSecondAfter(): void
+    public function testIsBeforeSecondAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2, 2]);
@@ -260,7 +260,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBeforeSecondBefore(): void
+    public function testIsBeforeSecondBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
@@ -273,7 +273,7 @@ trait DateTimeComparisonsTest
      * #isBetween
      */
 
-    public function testDateTimeIsBetweenBetween(): void
+    public function testIsBetweenBetween(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 2]);
@@ -283,7 +283,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenAfter(): void
+    public function testIsBetweenAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 2]);
@@ -293,7 +293,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenBefore(): void
+    public function testIsBetweenBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 2]);
@@ -303,7 +303,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenYearBetween(): void
+    public function testIsBetweenYearBetween(): void
     {
         $date1 = DateTime::fromArray([2019]);
         $date2 = DateTime::fromArray([2018]);
@@ -313,7 +313,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenYearAfter(): void
+    public function testIsBetweenYearAfter(): void
     {
         $date1 = DateTime::fromArray([2017]);
         $date2 = DateTime::fromArray([2018]);
@@ -323,7 +323,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenYearBefore(): void
+    public function testIsBetweenYearBefore(): void
     {
         $date1 = DateTime::fromArray([2021]);
         $date2 = DateTime::fromArray([2018]);
@@ -333,7 +333,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenMonthBetween(): void
+    public function testIsBetweenMonthBetween(): void
     {
         $date1 = DateTime::fromArray([2018, 3]);
         $date2 = DateTime::fromArray([2018, 2]);
@@ -343,7 +343,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenMonthAfter(): void
+    public function testIsBetweenMonthAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1]);
         $date2 = DateTime::fromArray([2018, 2]);
@@ -353,7 +353,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenMonthBefore(): void
+    public function testIsBetweenMonthBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 5]);
         $date2 = DateTime::fromArray([2018, 2]);
@@ -363,7 +363,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenDayBetween(): void
+    public function testIsBetweenDayBetween(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 2]);
@@ -373,7 +373,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenDayAfter(): void
+    public function testIsBetweenDayAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 2]);
@@ -383,7 +383,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenDayBefore(): void
+    public function testIsBetweenDayBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 2]);
@@ -393,7 +393,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenHourBetween(): void
+    public function testIsBetweenHourBetween(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2]);
@@ -403,7 +403,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenHourAfter(): void
+    public function testIsBetweenHourAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2]);
@@ -413,7 +413,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenHourBefore(): void
+    public function testIsBetweenHourBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2]);
@@ -423,7 +423,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenMinuteBetween(): void
+    public function testIsBetweenMinuteBetween(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2]);
@@ -433,7 +433,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenMinuteAfter(): void
+    public function testIsBetweenMinuteAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2]);
@@ -443,7 +443,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenMinuteBefore(): void
+    public function testIsBetweenMinuteBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2]);
@@ -453,7 +453,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenSecondBetween(): void
+    public function testIsBetweenSecondBetween(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -463,7 +463,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenSecondAfter(): void
+    public function testIsBetweenSecondAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -473,7 +473,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsBetweenSecondBefore(): void
+    public function testIsBetweenSecondBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -487,7 +487,7 @@ trait DateTimeComparisonsTest
      * #isSame
      */
 
-    public function testDateTimeIsSameSame(): void
+    public function testIsSameSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -496,7 +496,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameAfter(): void
+    public function testIsSameAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -505,7 +505,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameBefore(): void
+    public function testIsSameBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -514,7 +514,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameYearSame(): void
+    public function testIsSameYearSame(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
@@ -523,7 +523,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameYearAfter(): void
+    public function testIsSameYearAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2019, 1]);
@@ -532,7 +532,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameYearBefore(): void
+    public function testIsSameYearBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2017, 1]);
@@ -541,7 +541,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameMonthSame(): void
+    public function testIsSameMonthSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
@@ -550,7 +550,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameMonthAfter(): void
+    public function testIsSameMonthAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 2, 1]);
@@ -559,7 +559,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameMonthBefore(): void
+    public function testIsSameMonthBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
@@ -568,7 +568,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameDaySame(): void
+    public function testIsSameDaySame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
@@ -577,7 +577,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameDayAfter(): void
+    public function testIsSameDayAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 2, 1]);
@@ -586,7 +586,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameDayBefore(): void
+    public function testIsSameDayBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
@@ -595,7 +595,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameHourSame(): void
+    public function testIsSameHourSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
@@ -604,7 +604,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameHourAfter(): void
+    public function testIsSameHourAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 1]);
@@ -613,7 +613,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameHourBefore(): void
+    public function testIsSameHourBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
@@ -622,7 +622,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameMinuteSame(): void
+    public function testIsSameMinuteSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -631,7 +631,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameMinuteAfter(): void
+    public function testIsSameMinuteAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 1]);
@@ -640,7 +640,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameMinuteBefore(): void
+    public function testIsSameMinuteBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -649,7 +649,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameSecondSame(): void
+    public function testIsSameSecondSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -658,7 +658,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameSecondAfter(): void
+    public function testIsSameSecondAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -667,7 +667,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameSecondBefore(): void
+    public function testIsSameSecondBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -680,7 +680,7 @@ trait DateTimeComparisonsTest
      * #isSameOrAfter
      */
 
-    public function testDateTimeIsSameOrAfterSame(): void
+    public function testIsSameOrAfterSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -689,7 +689,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterAfter(): void
+    public function testIsSameOrAfterAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -698,7 +698,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterBefore(): void
+    public function testIsSameOrAfterBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -707,7 +707,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterYearSame(): void
+    public function testIsSameOrAfterYearSame(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
@@ -716,7 +716,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterYearAfter(): void
+    public function testIsSameOrAfterYearAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2019, 1]);
@@ -725,7 +725,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterYearBefore(): void
+    public function testIsSameOrAfterYearBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2017, 1]);
@@ -734,7 +734,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterMonthSame(): void
+    public function testIsSameOrAfterMonthSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
@@ -743,7 +743,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterMonthAfter(): void
+    public function testIsSameOrAfterMonthAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 2, 1]);
@@ -752,7 +752,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterMonthBefore(): void
+    public function testIsSameOrAfterMonthBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
@@ -761,7 +761,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterDaySame(): void
+    public function testIsSameOrAfterDaySame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
@@ -770,7 +770,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterDayAfter(): void
+    public function testIsSameOrAfterDayAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 2, 1]);
@@ -779,7 +779,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterDayBefore(): void
+    public function testIsSameOrAfterDayBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
@@ -788,7 +788,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterHourSame(): void
+    public function testIsSameOrAfterHourSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
@@ -797,7 +797,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterHourAfter(): void
+    public function testIsSameOrAfterHourAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 1]);
@@ -806,7 +806,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterHourBefore(): void
+    public function testIsSameOrAfterHourBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
@@ -815,7 +815,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterMinuteSame(): void
+    public function testIsSameOrAfterMinuteSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -824,7 +824,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterMinuteAfter(): void
+    public function testIsSameOrAfterMinuteAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 1]);
@@ -833,7 +833,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterMinuteBefore(): void
+    public function testIsSameOrAfterMinuteBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -842,7 +842,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterSecondSame(): void
+    public function testIsSameOrAfterSecondSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -851,7 +851,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterSecondAfter(): void
+    public function testIsSameOrAfterSecondAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -860,7 +860,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrAfterSecondBefore(): void
+    public function testIsSameOrAfterSecondBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -873,7 +873,7 @@ trait DateTimeComparisonsTest
      * #isSameOrBefore
      */
 
-    public function testDateTimeIsSameOrBeforeSame(): void
+    public function testIsSameOrBeforeSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -882,7 +882,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeAfter(): void
+    public function testIsSameOrBeforeAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -891,7 +891,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeBefore(): void
+    public function testIsSameOrBeforeBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -900,7 +900,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeYearSame(): void
+    public function testIsSameOrBeforeYearSame(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
@@ -909,7 +909,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeYearAfter(): void
+    public function testIsSameOrBeforeYearAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2019, 1]);
@@ -918,7 +918,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeYearBefore(): void
+    public function testIsSameOrBeforeYearBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2017, 1]);
@@ -927,7 +927,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeMonthSame(): void
+    public function testIsSameOrBeforeMonthSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
@@ -936,7 +936,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeMonthAfter(): void
+    public function testIsSameOrBeforeMonthAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 2, 1]);
@@ -945,7 +945,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeMonthBefore(): void
+    public function testIsSameOrBeforeMonthBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
@@ -954,7 +954,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeDaySame(): void
+    public function testIsSameOrBeforeDaySame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
@@ -963,7 +963,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeDayAfter(): void
+    public function testIsSameOrBeforeDayAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 2, 1]);
@@ -972,7 +972,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeDayBefore(): void
+    public function testIsSameOrBeforeDayBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
@@ -981,7 +981,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeHourSame(): void
+    public function testIsSameOrBeforeHourSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
@@ -990,7 +990,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeHourAfter(): void
+    public function testIsSameOrBeforeHourAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 1]);
@@ -999,7 +999,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeHourBefore(): void
+    public function testIsSameOrBeforeHourBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
@@ -1008,7 +1008,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeMinuteSame(): void
+    public function testIsSameOrBeforeMinuteSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -1017,7 +1017,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeMinuteAfter(): void
+    public function testIsSameOrBeforeMinuteAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 1]);
@@ -1026,7 +1026,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeMinuteBefore(): void
+    public function testIsSameOrBeforeMinuteBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -1035,7 +1035,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeSecondSame(): void
+    public function testIsSameOrBeforeSecondSame(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
@@ -1044,7 +1044,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeSecondAfter(): void
+    public function testIsSameOrBeforeSecondAfter(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
@@ -1053,7 +1053,7 @@ trait DateTimeComparisonsTest
         );
     }
 
-    public function testDateTimeIsSameOrBeforeSecondBefore(): void
+    public function testIsSameOrBeforeSecondBefore(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);

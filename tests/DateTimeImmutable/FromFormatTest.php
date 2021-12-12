@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTimeImmutable;
 
 use
     Fyre\DateTime\DateTimeImmutable;
 
-trait DateTimeImmutableFromFormatTest
+trait FromFormatTest
 {
 
     /**
      * Era
      */
 
-    public function testDateTimeImmutableFromFormatEraShort(): void
+    public function testFromFormatEraShort(): void
     {
         $this->assertEquals(
             1970,
@@ -21,7 +21,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatEraShortBc(): void
+    public function testFromFormatEraShortBc(): void
     {
         $this->assertEquals(
             -1970,
@@ -29,7 +29,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatEraLong(): void
+    public function testFromFormatEraLong(): void
     {
         $this->assertEquals(
             1970,
@@ -37,7 +37,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatEraLongBc(): void
+    public function testFromFormatEraLongBc(): void
     {
         $this->assertEquals(
             -1970,
@@ -45,7 +45,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatEraNarrow(): void
+    public function testFromFormatEraNarrow(): void
     {
         $this->assertEquals(
             1970,
@@ -53,7 +53,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatEraNarrowBc(): void
+    public function testFromFormatEraNarrowBc(): void
     {
         $this->assertEquals(
             -1970,
@@ -65,7 +65,7 @@ trait DateTimeImmutableFromFormatTest
      * Year
      */
 
-    public function testDateTimeImmutableFromFormatYear1DigitFull(): void
+    public function testFromFormatYear1DigitFull(): void
     {
         $this->assertEquals(
             2018,
@@ -73,7 +73,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatYear1Digit(): void
+    public function testFromFormatYear1Digit(): void
     {
         $this->assertEquals(
             5,
@@ -81,7 +81,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatYear2DigitsFull(): void
+    public function testFromFormatYear2DigitsFull(): void
     {
         $this->assertEquals(
             2018,
@@ -89,7 +89,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatYear2Digits(): void
+    public function testFromFormatYear2Digits(): void
     {
         $this->assertEquals(
             1988,
@@ -97,7 +97,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatYear3DigitsFull(): void
+    public function testFromFormatYear3DigitsFull(): void
     {
         $this->assertEquals(
             2018,
@@ -105,7 +105,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatYear3Digits(): void
+    public function testFromFormatYear3Digits(): void
     {
         $this->assertEquals(
             88,
@@ -113,7 +113,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatYear4DigitsFull(): void
+    public function testFromFormatYear4DigitsFull(): void
     {
         $this->assertEquals(
             2018,
@@ -121,7 +121,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatYear4Digits(): void
+    public function testFromFormatYear4Digits(): void
     {
         $this->assertEquals(
             88,
@@ -133,7 +133,7 @@ trait DateTimeImmutableFromFormatTest
      * Week Year
      */
 
-    public function testDateTimeImmutableFromFormatWeekYear1DigitFull(): void
+    public function testFromFormatWeekYear1DigitFull(): void
     {
         $this->assertEquals(
             2018,
@@ -141,7 +141,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekYear1Digit(): void
+    public function testFromFormatWeekYear1Digit(): void
     {
         $this->assertEquals(
             5,
@@ -149,7 +149,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekYear2DigitsFull(): void
+    public function testFromFormatWeekYear2DigitsFull(): void
     {
         $this->assertEquals(
             2018,
@@ -157,7 +157,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekYear2Digits(): void
+    public function testFromFormatWeekYear2Digits(): void
     {
         $this->assertEquals(
             1988,
@@ -165,7 +165,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekYear3DigitsFull(): void
+    public function testFromFormatWeekYear3DigitsFull(): void
     {
         $this->assertEquals(
             2018,
@@ -173,7 +173,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekYear3Digits(): void
+    public function testFromFormatWeekYear3Digits(): void
     {
         $this->assertEquals(
             88,
@@ -181,7 +181,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekYear4DigitsFull(): void
+    public function testFromFormatWeekYear4DigitsFull(): void
     {
         $this->assertEquals(
             2018,
@@ -189,7 +189,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekYear4Digits(): void
+    public function testFromFormatWeekYear4Digits(): void
     {
         $this->assertEquals(
             88,
@@ -201,7 +201,7 @@ trait DateTimeImmutableFromFormatTest
      * Quarter
      */
 
-    public function testDateTimeImmutableFromFormatQuarter1Digit(): void
+    public function testFromFormatQuarter1Digit(): void
     {
         $this->assertEquals(
             3,
@@ -209,7 +209,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatQuarter2Digits(): void
+    public function testFromFormatQuarter2Digits(): void
     {
         $this->assertEquals(
             3,
@@ -217,7 +217,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneQuarter1Digit(): void
+    public function testFromFormatStandaloneQuarter1Digit(): void
     {
         $this->assertEquals(
             3,
@@ -225,7 +225,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneQuarter2Digits(): void
+    public function testFromFormatStandaloneQuarter2Digits(): void
     {
         $this->assertEquals(
             3,
@@ -237,7 +237,7 @@ trait DateTimeImmutableFromFormatTest
      * Month
      */
 
-    public function testDateTimeImmutableFromFormatMonth1DigitFull(): void
+    public function testFromFormatMonth1DigitFull(): void
     {
         $this->assertEquals(
             10,
@@ -245,7 +245,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatMonth1Digit(): void
+    public function testFromFormatMonth1Digit(): void
     {
         $this->assertEquals(
             1,
@@ -253,7 +253,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatMonth2DigitsFull(): void
+    public function testFromFormatMonth2DigitsFull(): void
     {
         $this->assertEquals(
             10,
@@ -261,7 +261,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatMonth2Digits(): void
+    public function testFromFormatMonth2Digits(): void
     {
         $this->assertEquals(
             1,
@@ -269,7 +269,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatMonthShort(): void
+    public function testFromFormatMonthShort(): void
     {
         $this->assertEquals(
             10,
@@ -277,7 +277,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatMonthLong(): void
+    public function testFromFormatMonthLong(): void
     {
         $this->assertEquals(
             10,
@@ -285,7 +285,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    // public function testDateTimeImmutableFromFormatMonthNarrow(): void
+    // public function testFromFormatMonthNarrow(): void
     // {
     //     $this->assertEquals(
     //         10,
@@ -293,7 +293,7 @@ trait DateTimeImmutableFromFormatTest
     //     );
     // }
 
-    public function testDateTimeImmutableFromFormatStandaloneMonth1DigitFull(): void
+    public function testFromFormatStandaloneMonth1DigitFull(): void
     {
         $this->assertEquals(
             10,
@@ -301,7 +301,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneMonth1Digit(): void
+    public function testFromFormatStandaloneMonth1Digit(): void
     {
         $this->assertEquals(
             1,
@@ -309,7 +309,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneMonth2DigitsFull(): void
+    public function testFromFormatStandaloneMonth2DigitsFull(): void
     {
         $this->assertEquals(
             10,
@@ -317,7 +317,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneMonth2Digits(): void
+    public function testFromFormatStandaloneMonth2Digits(): void
     {
         $this->assertEquals(
             1,
@@ -325,7 +325,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneMonthShort(): void
+    public function testFromFormatStandaloneMonthShort(): void
     {
         $this->assertEquals(
             10,
@@ -333,7 +333,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneMonthLong(): void
+    public function testFromFormatStandaloneMonthLong(): void
     {
         $this->assertEquals(
             10,
@@ -341,7 +341,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    // public function testDateTimeImmutableFromFormatStandaloneMonthNarrow(): void
+    // public function testFromFormatStandaloneMonthNarrow(): void
     // {
     //     $this->assertEquals(
     //         10,
@@ -353,7 +353,7 @@ trait DateTimeImmutableFromFormatTest
      * Week
      */
 
-    public function testDateTimeImmutableFromFormatWeek1DigitFull(): void
+    public function testFromFormatWeek1DigitFull(): void
     {
         $this->assertEquals(
             22,
@@ -361,7 +361,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeek1Digit(): void
+    public function testFromFormatWeek1Digit(): void
     {
         $this->assertEquals(
             1,
@@ -369,7 +369,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeek2DigitsFull(): void
+    public function testFromFormatWeek2DigitsFull(): void
     {
         $this->assertEquals(
             22,
@@ -377,7 +377,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeek2Digits(): void
+    public function testFromFormatWeek2Digits(): void
     {
         $this->assertEquals(
             1,
@@ -385,7 +385,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekOfMonth(): void
+    public function testFromFormatWeekOfMonth(): void
     {
         $this->assertEquals(
             3,
@@ -397,7 +397,7 @@ trait DateTimeImmutableFromFormatTest
      * Day
      */
 
-    public function testDateTimeImmutableFromFormatDayOfMonth1DigitFull(): void
+    public function testFromFormatDayOfMonth1DigitFull(): void
     {
         $this->assertEquals(
             21,
@@ -405,7 +405,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfMonth1Digit(): void
+    public function testFromFormatDayOfMonth1Digit(): void
     {
         $this->assertEquals(
             1,
@@ -413,7 +413,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfMonth2DigitsFull(): void
+    public function testFromFormatDayOfMonth2DigitsFull(): void
     {
         $this->assertEquals(
             21,
@@ -421,7 +421,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfMonth2Digits(): void
+    public function testFromFormatDayOfMonth2Digits(): void
     {
         $this->assertEquals(
             1,
@@ -429,7 +429,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfYear1DigitFull(): void
+    public function testFromFormatDayOfYear1DigitFull(): void
     {
         $this->assertEquals(
             152,
@@ -437,7 +437,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfYear1Digit(): void
+    public function testFromFormatDayOfYear1Digit(): void
     {
         $this->assertEquals(
             1,
@@ -445,7 +445,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfYear2DigitsFull(): void
+    public function testFromFormatDayOfYear2DigitsFull(): void
     {
         $this->assertEquals(
             152,
@@ -453,7 +453,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfYear2Digits(): void
+    public function testFromFormatDayOfYear2Digits(): void
     {
         $this->assertEquals(
             1,
@@ -461,7 +461,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfYear3DigitsFull(): void
+    public function testFromFormatDayOfYear3DigitsFull(): void
     {
         $this->assertEquals(
             152,
@@ -469,7 +469,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfYear3Digits(): void
+    public function testFromFormatDayOfYear3Digits(): void
     {
         $this->assertEquals(
             1,
@@ -477,7 +477,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayOfWeekInMonthMonth(): void
+    public function testFromFormatDayOfWeekInMonthMonth(): void
     {
         $this->assertEquals(
             3,
@@ -489,7 +489,7 @@ trait DateTimeImmutableFromFormatTest
      * Week Day
      */
 
-    public function testDateTimeImmutableFromFormatAltWeekDayShort(): void
+    public function testFromFormatAltWeekDayShort(): void
     {
         $this->assertEquals(
             6,
@@ -497,7 +497,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatAltWeekDayLong(): void
+    public function testFromFormatAltWeekDayLong(): void
     {
         $this->assertEquals(
             6,
@@ -505,7 +505,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    // public function testDateTimeImmutableFromFormatAltWeekDayNarrow(): void
+    // public function testFromFormatAltWeekDayNarrow(): void
     // {
     //     $this->assertEquals(
     //         6,
@@ -513,7 +513,7 @@ trait DateTimeImmutableFromFormatTest
     //     );
     // }
 
-    public function testDateTimeImmutableFromFormatWeekDay1Digit(): void
+    public function testFromFormatWeekDay1Digit(): void
     {
         $this->assertEquals(
             6,
@@ -521,7 +521,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekDay2Digits(): void
+    public function testFromFormatWeekDay2Digits(): void
     {
         $this->assertEquals(
             6,
@@ -529,7 +529,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekDayShort(): void
+    public function testFromFormatWeekDayShort(): void
     {
         $this->assertEquals(
             6,
@@ -537,7 +537,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatWeekDayLong(): void
+    public function testFromFormatWeekDayLong(): void
     {
         $this->assertEquals(
             6,
@@ -545,7 +545,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    // public function testDateTimeImmutableFromFormatWeekDayNarrow(): void
+    // public function testFromFormatWeekDayNarrow(): void
     // {
     //     $this->assertEquals(
     //         6,
@@ -553,7 +553,7 @@ trait DateTimeImmutableFromFormatTest
     //     );
     // }
 
-    public function testDateTimeImmutableFromFormatStandaloneWeekDay1Digit(): void
+    public function testFromFormatStandaloneWeekDay1Digit(): void
     {
         $this->assertEquals(
             6,
@@ -561,7 +561,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneWeekDay2Digits(): void
+    public function testFromFormatStandaloneWeekDay2Digits(): void
     {
         $this->assertEquals(
             6,
@@ -569,7 +569,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneWeekDayShort(): void
+    public function testFromFormatStandaloneWeekDayShort(): void
     {
         $this->assertEquals(
             6,
@@ -577,7 +577,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatStandaloneWeekDayLong(): void
+    public function testFromFormatStandaloneWeekDayLong(): void
     {
         $this->assertEquals(
             6,
@@ -585,7 +585,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    // public function testDateTimeImmutableFromFormatStandaloneWeekDayNarrow(): void
+    // public function testFromFormatStandaloneWeekDayNarrow(): void
     // {
     //     $this->assertEquals(
     //         6,
@@ -597,7 +597,7 @@ trait DateTimeImmutableFromFormatTest
      * Day Period
      */
 
-    public function testDateTimeImmutableFromFormatDayPeriodShort(): void
+    public function testFromFormatDayPeriodShort(): void
     {
         $this->assertEquals(
             0,
@@ -605,7 +605,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayPeriodShortPm(): void
+    public function testFromFormatDayPeriodShortPm(): void
     {
         $this->assertEquals(
             12,
@@ -613,7 +613,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayPeriodLong(): void
+    public function testFromFormatDayPeriodLong(): void
     {
         $this->assertEquals(
             0,
@@ -621,7 +621,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatDayPeriodLongPm(): void
+    public function testFromFormatDayPeriodLongPm(): void
     {
         $this->assertEquals(
             12,
@@ -633,7 +633,7 @@ trait DateTimeImmutableFromFormatTest
      * Hour
      */
 
-    public function testDateTimeImmutableFromFormat12Hour1Digit(): void
+    public function testFromFormat12Hour1Digit(): void
     {
         $this->assertEquals(
             0,
@@ -641,7 +641,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat12Hour1DigitPadding(): void
+    public function testFromFormat12Hour1DigitPadding(): void
     {
         $this->assertEquals(
             1,
@@ -649,7 +649,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat12Hour2Digits(): void
+    public function testFromFormat12Hour2Digits(): void
     {
         $this->assertEquals(
             0,
@@ -657,7 +657,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat12Hour2DigitsPadding(): void
+    public function testFromFormat12Hour2DigitsPadding(): void
     {
         $this->assertEquals(
             1,
@@ -665,7 +665,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat23Hour1Digit(): void
+    public function testFromFormat23Hour1Digit(): void
     {
         $this->assertEquals(
             23,
@@ -673,7 +673,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat23Hour1DigitPadding(): void
+    public function testFromFormat23Hour1DigitPadding(): void
     {
         $this->assertEquals(
             0,
@@ -681,7 +681,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat23Hour2Digits(): void
+    public function testFromFormat23Hour2Digits(): void
     {
         $this->assertEquals(
             23,
@@ -689,7 +689,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat23Hour2DigitsPadding(): void
+    public function testFromFormat23Hour2DigitsPadding(): void
     {
         $this->assertEquals(
             0,
@@ -698,7 +698,7 @@ trait DateTimeImmutableFromFormatTest
     }
 
 
-    public function testDateTimeImmutableFromFormat11Hour1Digit(): void
+    public function testFromFormat11Hour1Digit(): void
     {
         $this->assertEquals(
             11,
@@ -706,7 +706,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat11Hour1DigitPadding(): void
+    public function testFromFormat11Hour1DigitPadding(): void
     {
         $this->assertEquals(
             0,
@@ -714,7 +714,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat11Hour2Digits(): void
+    public function testFromFormat11Hour2Digits(): void
     {
         $this->assertEquals(
             11,
@@ -722,7 +722,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat11Hour2DigitsPadding(): void
+    public function testFromFormat11Hour2DigitsPadding(): void
     {
         $this->assertEquals(
             00,
@@ -730,7 +730,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat24Hour1Digit(): void
+    public function testFromFormat24Hour1Digit(): void
     {
         $this->assertEquals(
             0,
@@ -738,7 +738,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat24Hour1DigitPadding(): void
+    public function testFromFormat24Hour1DigitPadding(): void
     {
         $this->assertEquals(
             1,
@@ -746,7 +746,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat24Hour2Digits(): void
+    public function testFromFormat24Hour2Digits(): void
     {
         $this->assertEquals(
             0,
@@ -754,7 +754,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormat24Hour2DigitsPadding(): void
+    public function testFromFormat24Hour2DigitsPadding(): void
     {
         $this->assertEquals(
             1,
@@ -766,7 +766,7 @@ trait DateTimeImmutableFromFormatTest
      * Minute
      */
 
-    public function testDateTimeImmutableFromFormatMinute1Digit(): void
+    public function testFromFormatMinute1Digit(): void
     {
         $this->assertEquals(
             25,
@@ -774,7 +774,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatMinute1DigitPadding(): void
+    public function testFromFormatMinute1DigitPadding(): void
     {
         $this->assertEquals(
             1,
@@ -782,7 +782,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatMinute2Digits(): void
+    public function testFromFormatMinute2Digits(): void
     {
         $this->assertEquals(
             25,
@@ -790,7 +790,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatMinute2DigitsPadding(): void
+    public function testFromFormatMinute2DigitsPadding(): void
     {
         $this->assertEquals(
             1,
@@ -802,7 +802,7 @@ trait DateTimeImmutableFromFormatTest
      * Second
      */
 
-    public function testDateTimeImmutableFromFormatSecond1Digit(): void
+    public function testFromFormatSecond1Digit(): void
     {
         $this->assertEquals(
             25,
@@ -810,7 +810,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatSecond1DigitPadding(): void
+    public function testFromFormatSecond1DigitPadding(): void
     {
         $this->assertEquals(
             1,
@@ -818,7 +818,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatSecond2Digits(): void
+    public function testFromFormatSecond2Digits(): void
     {
         $this->assertEquals(
             25,
@@ -826,7 +826,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatSecond2DigitsPadding(): void
+    public function testFromFormatSecond2DigitsPadding(): void
     {
         $this->assertEquals(
             1,
@@ -834,7 +834,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatFractional(): void
+    public function testFromFormatFractional(): void
     {
         $this->assertEquals(
             0,
@@ -846,7 +846,7 @@ trait DateTimeImmutableFromFormatTest
      * Time Zone
      */
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicAlt(): void
+    public function testFromFormatTimeZoneIso8601BasicAlt(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -854,7 +854,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicAltTimeZone(): void
+    public function testFromFormatTimeZoneIso8601BasicAltTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -862,7 +862,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneLongBasic(): void
+    public function testFromFormatTimeZoneLongBasic(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -870,7 +870,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneLongBasicTimeZone(): void
+    public function testFromFormatTimeZoneLongBasicTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -878,7 +878,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601ExtendedAlt(): void
+    public function testFromFormatTimeZoneIso8601ExtendedAlt(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -886,7 +886,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601ExtendedAltTimeZone(): void
+    public function testFromFormatTimeZoneIso8601ExtendedAltTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -894,7 +894,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneShortLocalized(): void
+    public function testFromFormatTimeZoneShortLocalized(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -902,7 +902,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneShortLocalizedTimeZone(): void
+    public function testFromFormatTimeZoneShortLocalizedTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -910,7 +910,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneLongLocalized(): void
+    public function testFromFormatTimeZoneLongLocalized(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -918,7 +918,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneLongLocalizedTimeZone(): void
+    public function testFromFormatTimeZoneLongLocalizedTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -926,7 +926,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneLongTimeZoneId(): void
+    public function testFromFormatTimeZoneLongTimeZoneId(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -934,7 +934,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneLongTimeZoneIdTimeZone(): void
+    public function testFromFormatTimeZoneLongTimeZoneIdTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -942,7 +942,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicShortZ(): void
+    public function testFromFormatTimeZoneIso8601BasicShortZ(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -950,7 +950,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicShortZTimeZone(): void
+    public function testFromFormatTimeZoneIso8601BasicShortZTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -958,7 +958,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicZ(): void
+    public function testFromFormatTimeZoneIso8601BasicZ(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -966,7 +966,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicZTimeZone(): void
+    public function testFromFormatTimeZoneIso8601BasicZTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -974,7 +974,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601ExtendedZ(): void
+    public function testFromFormatTimeZoneIso8601ExtendedZ(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -982,7 +982,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601ExtendedZTimeZone(): void
+    public function testFromFormatTimeZoneIso8601ExtendedZTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -990,7 +990,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicShort(): void
+    public function testFromFormatTimeZoneIso8601BasicShort(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -998,7 +998,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicShortTimeZone(): void
+    public function testFromFormatTimeZoneIso8601BasicShortTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -1006,7 +1006,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601Basic(): void
+    public function testFromFormatTimeZoneIso8601Basic(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -1014,7 +1014,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601BasicTimeZone(): void
+    public function testFromFormatTimeZoneIso8601BasicTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -1022,7 +1022,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601Extended(): void
+    public function testFromFormatTimeZoneIso8601Extended(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -1030,7 +1030,7 @@ trait DateTimeImmutableFromFormatTest
         );
     }
 
-    public function testDateTimeImmutableFromFormatTimeZoneIso8601ExtendedTimeZone(): void
+    public function testFromFormatTimeZoneIso8601ExtendedTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',

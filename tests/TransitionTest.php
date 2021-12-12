@@ -5,9 +5,10 @@ namespace Tests;
 
 use
     Fyre\DateTime\DateTime,
-    Fyre\DateTime\DateTimeImmutable;
+    Fyre\DateTime\DateTimeImmutable,
+    PHPUnit\Framework\TestCase;
 
-trait TransitionTest
+final class TransitionTest extends TestCase
 {
 
     public function testNonDstPostTransition(): void
@@ -90,22 +91,11 @@ trait TransitionTest
         );
     }
 
-    public function testDateTimeDstTransition(): void
+    public function testDstTransition(): void
     {
         $date = DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '07/04/2019 02:01:00 +11:00');
         $date->setTimeZone('Australia/Sydney');
         $date->add(1, 'hour');
-        $this->assertEquals(
-            'Sun Apr 07 2019 02:01:00 +1000 (Australia/Sydney)',
-            $date->toString()
-        );
-    }
-
-    public function testDateTimeImmutableDstTransition(): void
-    {
-        $date = DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '07/04/2019 02:01:00 +11:00');
-        $date = $date->setTimeZone('Australia/Sydney');
-        $date = $date->add(1, 'hour');
         $this->assertEquals(
             'Sun Apr 07 2019 02:01:00 +1000 (Australia/Sydney)',
             $date->toString()

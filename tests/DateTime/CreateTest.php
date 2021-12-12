@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTime;
 
 use
     Fyre\DateTime\DateTime;
@@ -9,14 +9,14 @@ use
 use function
     time;
 
-trait DateTimeCreateTest
+trait CreateTest
 {
 
     /**
      * #__construct
      */
 
-    public function testDateTimeConstructor(): void
+    public function testConstructor(): void
     {
         $start = time();
         $now = (new DateTime())->getTimestamp();
@@ -26,7 +26,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeConstructorDateTime(): void
+    public function testConstructorDateTime(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -34,7 +34,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeConstructorIso(): void
+    public function testConstructorIso(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -42,7 +42,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeConstructorDate(): void
+    public function testConstructorDate(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -50,7 +50,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeConstructorWithTimeZone(): void
+    public function testConstructorWithTimeZone(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -58,7 +58,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeConstructorWithTimeZoneFromOffset(): void
+    public function testConstructorWithTimeZoneFromOffset(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -66,7 +66,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeConstructorWithTimeZoneFromOffsetWithoutColon(): void
+    public function testConstructorWithTimeZoneFromOffsetWithoutColon(): void
     {
         $this->assertEquals(
             '2018-12-31T14:00:00.000+00:00',
@@ -74,7 +74,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeConstructorWithLocale(): void
+    public function testConstructorWithLocale(): void
     {
         $this->assertEquals(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
@@ -86,7 +86,7 @@ trait DateTimeCreateTest
      * #fromArray
      */
 
-    public function testDateTimeFromArray(): void
+    public function testFromArray(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -94,7 +94,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArrayMonth(): void
+    public function testFromArrayMonth(): void
     {
         $this->assertEquals(
             '2019-02-01T00:00:00.000+00:00',
@@ -102,7 +102,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArrayDate(): void
+    public function testFromArrayDate(): void
     {
         $this->assertEquals(
             '2019-01-02T00:00:00.000+00:00',
@@ -110,7 +110,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArrayHour(): void
+    public function testFromArrayHour(): void
     {
         $this->assertEquals(
             '2019-01-01T01:00:00.000+00:00',
@@ -118,7 +118,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArrayMinute(): void
+    public function testFromArrayMinute(): void
     {
         $this->assertEquals(
             '2019-01-01T00:01:00.000+00:00',
@@ -126,7 +126,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArraySecond(): void
+    public function testFromArraySecond(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:01.000+00:00',
@@ -134,7 +134,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArrayMillisecond(): void
+    public function testFromArrayMillisecond(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.001+00:00',
@@ -142,7 +142,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArrayWithTimeZone(): void
+    public function testFromArrayWithTimeZone(): void
     {
         $this->assertEquals(
             'Tue Jan 01 2019 00:00:00 +1000 (Australia/Brisbane)',
@@ -150,7 +150,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArrayWithLocale(): void
+    public function testFromArrayWithLocale(): void
     {
         $this->assertEquals(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
@@ -158,7 +158,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromArrayInstanceOf(): void
+    public function testFromArrayInstanceOf(): void
     {
         $this->assertInstanceOf(
             DateTime::class,
@@ -170,7 +170,7 @@ trait DateTimeCreateTest
      * #fromDateTime
      */
 
-    public function testDateTimeFromDateTime(): void
+    public function testFromDateTime(): void
     {
         $date = new \DateTime('@1546300800');
         $this->assertEquals(
@@ -179,7 +179,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromDateTimeWithTimeZone(): void
+    public function testFromDateTimeWithTimeZone(): void
     {
         $date = new \DateTime('@1546300800');
         $this->assertEquals(
@@ -188,7 +188,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromDateTimeWithLocale(): void
+    public function testFromDateTimeWithLocale(): void
     {
         $date = new \DateTime('@1546300800');
         $this->assertEquals(
@@ -197,7 +197,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromDateTimeInstanceOf(): void
+    public function testFromDateTimeInstanceOf(): void
     {
         $date = new \DateTime('@1546300800');
         $this->assertInstanceOf(
@@ -210,7 +210,7 @@ trait DateTimeCreateTest
      * #fromISOString
      */
 
-    public function testDateTimeFromIsoString(): void
+    public function testFromIsoString(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -218,7 +218,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromIsoStringWithTimeZone(): void
+    public function testFromIsoStringWithTimeZone(): void
     {
         $this->assertEquals(
             'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
@@ -226,7 +226,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromIsoStringWithLocale(): void
+    public function testFromIsoStringWithLocale(): void
     {
         $this->assertEquals(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
@@ -234,7 +234,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromIsoStringInstanceOf(): void
+    public function testFromIsoStringInstanceOf(): void
     {
         $this->assertInstanceOf(
             DateTime::class,
@@ -246,7 +246,7 @@ trait DateTimeCreateTest
      * #fromTimestamp
      */
 
-    public function testDateTimeFromTimestamp(): void
+    public function testFromTimestamp(): void
     {
         $this->assertEquals(
             '2019-01-01T00:00:00.000+00:00',
@@ -254,7 +254,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromTimestampWithTimeZone(): void
+    public function testFromTimestampWithTimeZone(): void
     {
         $this->assertEquals(
             'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
@@ -262,7 +262,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromTimestampWithLocale(): void
+    public function testFromTimestampWithLocale(): void
     {
         $this->assertEquals(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
@@ -270,7 +270,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeFromTimestampInstanceOf(): void
+    public function testFromTimestampInstanceOf(): void
     {
         $this->assertInstanceOf(
             DateTime::class,
@@ -282,7 +282,7 @@ trait DateTimeCreateTest
      * #now
      */
 
-    public function testDateTimeNow(): void
+    public function testNow(): void
     {
         $start = time();
         $now = DateTime::now()->getTimestamp();
@@ -292,7 +292,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeNowWithTimeZone(): void
+    public function testNowWithTimeZone(): void
     {
         $this->assertEquals(
             'Australia/Brisbane',
@@ -300,7 +300,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeNowWithLocale(): void
+    public function testNowWithLocale(): void
     {
         $this->assertEquals(
             'ar-eg',
@@ -308,7 +308,7 @@ trait DateTimeCreateTest
         );
     }
 
-    public function testDateTimeNowInstanceOf(): void
+    public function testNowInstanceOf(): void
     {
         $this->assertInstanceOf(
             DateTime::class,

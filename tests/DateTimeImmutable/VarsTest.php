@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTimeImmutable;
 
 use
     Fyre\DateTime\DateTimeImmutable;
 
-trait DateTimeImmutableVarsTest
+trait VarsTest
 {
 
-    public function testDateTimeImmutableFormatsAtom(): void
+    public function testFormatsAtom(): void
     {
         $this->assertEquals(
             '2020-01-01T00:00:00+00:00',
@@ -17,7 +17,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsCookie(): void
+    public function testFormatsCookie(): void
     {
         $this->assertEquals(
             'Wednesday, 01-Jan-2020 00:00:00 GMT',
@@ -25,7 +25,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsDate(): void
+    public function testFormatsDate(): void
     {
         $this->assertEquals(
             'Wed Jan 01 2020',
@@ -33,7 +33,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsIso8601(): void
+    public function testFormatsIso8601(): void
     {
         $this->assertEquals(
             '2020-01-01T00:00:00+0000',
@@ -41,7 +41,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsRfc822(): void
+    public function testFormatsRfc822(): void
     {
         $this->assertEquals(
             'Wed, 01 Jan 20 00:00:00 +0000',
@@ -49,7 +49,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsRfc850(): void
+    public function testFormatsRfc850(): void
     {
         $this->assertEquals(
             'Wednesday 01-Jan-20 00:00:00 GMT',
@@ -57,7 +57,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsRfc1036(): void
+    public function testFormatsRfc1036(): void
     {
         $this->assertEquals(
             'Wed, 01 Jan 20 00:00:00 +0000',
@@ -65,7 +65,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsRfc1123(): void
+    public function testFormatsRfc1123(): void
     {
         $this->assertEquals(
             'Wed, 01 Jan 2020 00:00:00 +0000',
@@ -73,7 +73,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsRfc2822(): void
+    public function testFormatsRfc2822(): void
     {
         $this->assertEquals(
             'Wed, 01 Jan 2020 00:00:00 +0000',
@@ -81,7 +81,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsRfc3339(): void
+    public function testFormatsRfc3339(): void
     {
         $this->assertEquals(
             '2020-01-01T00:00:00+00:00',
@@ -89,7 +89,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsRfc3339Extended(): void
+    public function testFormatsRfc3339Extended(): void
     {
         $this->assertEquals(
             '2020-01-01T00:00:00.000+00:00',
@@ -97,7 +97,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsRss(): void
+    public function testFormatsRss(): void
     {
         $this->assertEquals(
             'Wed, 01 Jan 2020 00:00:00 +0000',
@@ -105,7 +105,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsString(): void
+    public function testFormatsString(): void
     {
         $this->assertEquals(
             'Wed Jan 01 2020 00:00:00 +0000 (UTC)',
@@ -113,7 +113,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsTime(): void
+    public function testFormatsTime(): void
     {
         $this->assertEquals(
             '00:00:00 +0000 (UTC)',
@@ -121,7 +121,7 @@ trait DateTimeImmutableVarsTest
         );
     }
 
-    public function testDateTimeImmutableFormatsW3c(): void
+    public function testFormatsW3c(): void
     {
         $this->assertEquals(
             '2020-01-01T00:00:00+00:00',

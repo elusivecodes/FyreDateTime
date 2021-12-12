@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTimeImmutable;
 
 use
     Fyre\DateTime\DateTimeImmutable;
 
-trait DateTimeImmutableAttributesGetTest
+trait AttributesGetTest
 {
 
     /**
      * #getDate
      */
 
-    public function testDateTimeImmutableGetDate(): void
+    public function testGetDate(): void
     {
         $this->assertEquals(
             31,
@@ -25,7 +25,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getDay
      */
 
-    public function testDateTimeImmutableGetDay(): void
+    public function testGetDay(): void
     {
         $this->assertEquals(
             2,
@@ -33,7 +33,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetDayMonday(): void
+    public function testGetDayMonday(): void
     {
         $this->assertEquals(
             1,
@@ -41,7 +41,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetDaySunday(): void
+    public function testGetDaySunday(): void
     {
         $this->assertEquals(
             0,
@@ -53,7 +53,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getDayOfYear
      */
 
-    public function testDateTimeImmutableGetDayOfYear(): void
+    public function testGetDayOfYear(): void
     {
         $this->assertEquals(
             152,
@@ -65,7 +65,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getHours
      */
 
-    public function testDateTimeImmutableGetHours(): void
+    public function testGetHours(): void
     {
         $this->assertEquals(
             6,
@@ -73,7 +73,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetHours24hr(): void
+    public function testGetHours24hr(): void
     {
         $this->assertEquals(
             23,
@@ -85,7 +85,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getLocale
      */
 
-    public function testDateTimeImmutableGetLocale(): void
+    public function testGetLocale(): void
     {
         $this->assertEquals(
             'en',
@@ -97,7 +97,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getMilliseconds
      */
 
-    public function testDateTimeImmutableGetMilliseconds(): void
+    public function testGetMilliseconds(): void
     {
         $this->assertEquals(
             550,
@@ -109,7 +109,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getMinutes
      */
 
-    public function testDateTimeImmutableGetMinutes(): void
+    public function testGetMinutes(): void
     {
         $this->assertEquals(
             32,
@@ -121,7 +121,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getMonth
      */
 
-    public function testDateTimeImmutableGetMonth(): void
+    public function testGetMonth(): void
     {
         $this->assertEquals(
             6,
@@ -133,7 +133,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getQuarter
      */
 
-    public function testDateTimeImmutableGetQuarter(): void
+    public function testGetQuarter(): void
     {
         $this->assertEquals(
             3,
@@ -145,7 +145,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getSeconds
      */
 
-    public function testDateTimeImmutableGetSeconds(): void
+    public function testGetSeconds(): void
     {
         $this->assertEquals(
             25,
@@ -157,7 +157,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getTime
      */
 
-    public function testDateTimeImmutableGetTime(): void
+    public function testGetTime(): void
     {
         $this->assertEquals(
             1546300800000,
@@ -169,7 +169,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getTimestamp
      */
 
-    public function testDateTimeImmutableGetTimestamp(): void
+    public function testGetTimestamp(): void
     {
         $this->assertEquals(
             1546300800,
@@ -181,7 +181,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getTimeZone
      */
 
-    public function testDateTimeImmutableGetTimeZone(): void
+    public function testGetTimeZone(): void
     {
         $this->assertEquals(
             'Australia/Brisbane',
@@ -189,7 +189,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetTimeZoneFromOffset(): void
+    public function testGetTimeZoneFromOffset(): void
     {
         $this->assertEquals(
             '+10:00',
@@ -197,7 +197,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetTimeZoneFromOffsetWithoutColon(): void
+    public function testGetTimeZoneFromOffsetWithoutColon(): void
     {
         $this->assertEquals(
             '+10:00',
@@ -209,7 +209,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getTimeZoneOffset
      */
 
-    public function testDateTimeImmutableGetTimeZoneOffset(): void
+    public function testGetTimeZoneOffset(): void
     {
         $this->assertEquals(
             -600,
@@ -221,7 +221,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getWeek
      */
 
-    public function testDateTimeImmutableGetWeek(): void
+    public function testGetWeek(): void
     {
         $this->assertEquals(
             22,
@@ -229,7 +229,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetWeekUsesWeekYear(): void
+    public function testGetWeekUsesWeekYear(): void
     {
         $this->assertEquals(
             1,
@@ -241,7 +241,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getWeekDay
      */
 
-    public function testDateTimeImmutableGetWeekDay(): void
+    public function testGetWeekDay(): void
     {
         $this->assertEquals(
             3,
@@ -249,7 +249,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetWeekDayMonday(): void
+    public function testGetWeekDayMonday(): void
     {
         $this->assertEquals(
             2,
@@ -257,7 +257,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetWeekDaySunday(): void
+    public function testGetWeekDaySunday(): void
     {
         $this->assertEquals(
             1,
@@ -269,7 +269,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getWeekDayInMonth
      */
 
-    public function testDateTimeImmutableGetWeekDayInMonth(): void
+    public function testGetWeekDayInMonth(): void
     {
         $this->assertEquals(
             1,
@@ -277,7 +277,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetWeekDayInMonthLocal(): void
+    public function testGetWeekDayInMonthLocal(): void
     {
         $this->assertEquals(
             1,
@@ -289,7 +289,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getWeekOfMonth
      */
 
-    public function testDateTimeImmutableGetWeekOfMonth(): void
+    public function testGetWeekOfMonth(): void
     {
         $this->assertEquals(
             1,
@@ -297,7 +297,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetWeekOfMonthLocal(): void
+    public function testGetWeekOfMonthLocal(): void
     {
         $this->assertEquals(
             2,
@@ -309,7 +309,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getWeekYear
      */
 
-    public function testDateTimeImmutableGetWeekYear(): void
+    public function testGetWeekYear(): void
     {
         $this->assertEquals(
             2019,
@@ -317,7 +317,7 @@ trait DateTimeImmutableAttributesGetTest
         );
     }
 
-    public function testDateTimeImmutableGetWeekYearThursday(): void
+    public function testGetWeekYearThursday(): void
     {
         $this->assertEquals(
             2020,
@@ -329,7 +329,7 @@ trait DateTimeImmutableAttributesGetTest
      * #getYear
      */
 
-    public function testDateTimeImmutableGetYear(): void
+    public function testGetYear(): void
     {
         $this->assertEquals(
             2018,

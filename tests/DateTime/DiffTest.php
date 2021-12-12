@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTime;
 
 use
     Fyre\DateTime\DateTime;
 
-trait DateTimeDiffTest
+trait DiffTest
 {
 
-    public function testDateTimeDiff(): void
+    public function testDiff(): void
     {
         $this->assertEquals(
             54391815150,
@@ -20,7 +20,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffYear(): void
+    public function testDiffYear(): void
     {
         $this->assertEquals(
             1,
@@ -32,7 +32,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffYears(): void
+    public function testDiffYears(): void
     {
         $this->assertEquals(
             2,
@@ -44,7 +44,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffYearsNegative(): void
+    public function testDiffYearsNegative(): void
     {
         $this->assertEquals(
             -2,
@@ -56,7 +56,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffYearsRelative(): void
+    public function testDiffYearsRelative(): void
     {
         $this->assertEquals(
             1,
@@ -68,7 +68,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffYearsExact(): void
+    public function testDiffYearsExact(): void
     {
         $this->assertEquals(
             0,
@@ -81,7 +81,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMonth(): void
+    public function testDiffMonth(): void
     {
         $this->assertEquals(
             1,
@@ -93,7 +93,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMonths(): void
+    public function testDiffMonths(): void
     {
         $this->assertEquals(
             3,
@@ -105,7 +105,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMonthsNegative(): void
+    public function testDiffMonthsNegative(): void
     {
         $this->assertEquals(
             -3,
@@ -117,7 +117,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMonthsRelative(): void
+    public function testDiffMonthsRelative(): void
     {
         $this->assertEquals(
             1,
@@ -129,7 +129,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMonthsExact(): void
+    public function testDiffMonthsExact(): void
     {
         $this->assertEquals(
             0,
@@ -142,7 +142,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMonthsYears(): void
+    public function testDiffMonthsYears(): void
     {
         $this->assertEquals(
             27,
@@ -154,7 +154,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffDay(): void
+    public function testDiffDay(): void
     {
         $this->assertEquals(
             1,
@@ -166,7 +166,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffDays(): void
+    public function testDiffDays(): void
     {
         $this->assertEquals(
             8,
@@ -178,7 +178,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffDaysNegative(): void
+    public function testDiffDaysNegative(): void
     {
         $this->assertEquals(
             -8,
@@ -190,7 +190,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffDaysRelative(): void
+    public function testDiffDaysRelative(): void
     {
         $this->assertEquals(
             1,
@@ -202,7 +202,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffDaysExact(): void
+    public function testDiffDaysExact(): void
     {
         $this->assertEquals(
             0,
@@ -215,7 +215,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffDaysMonths(): void
+    public function testDiffDaysMonths(): void
     {
         $this->assertEquals(
             69,
@@ -227,7 +227,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffHour(): void
+    public function testDiffHour(): void
     {
         $this->assertEquals(
             1,
@@ -239,7 +239,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffHours(): void
+    public function testDiffHours(): void
     {
         $this->assertEquals(
             11,
@@ -251,7 +251,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffHoursNegative(): void
+    public function testDiffHoursNegative(): void
     {
         $this->assertEquals(
             -11,
@@ -263,7 +263,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffHoursRelative(): void
+    public function testDiffHoursRelative(): void
     {
         $this->assertEquals(
             1,
@@ -275,7 +275,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffHoursExact(): void
+    public function testDiffHoursExact(): void
     {
         $this->assertEquals(
             0,
@@ -288,7 +288,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffHoursDays(): void
+    public function testDiffHoursDays(): void
     {
         $this->assertEquals(
             83,
@@ -300,7 +300,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMinute(): void
+    public function testDiffMinute(): void
     {
         $this->assertEquals(
             1,
@@ -312,7 +312,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMinutes(): void
+    public function testDiffMinutes(): void
     {
         $this->assertEquals(
             15,
@@ -324,7 +324,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMinutesNegative(): void
+    public function testDiffMinutesNegative(): void
     {
         $this->assertEquals(
             -15,
@@ -336,7 +336,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMinutesRelative(): void
+    public function testDiffMinutesRelative(): void
     {
         $this->assertEquals(
             1,
@@ -348,7 +348,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMinutesExact(): void
+    public function testDiffMinutesExact(): void
     {
         $this->assertEquals(
             0,
@@ -361,7 +361,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffMinutesHours(): void
+    public function testDiffMinutesHours(): void
     {
         $this->assertEquals(
             255,
@@ -373,7 +373,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffSecond(): void
+    public function testDiffSecond(): void
     {
         $this->assertEquals(
             1,
@@ -385,7 +385,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffSeconds(): void
+    public function testDiffSeconds(): void
     {
         $this->assertEquals(
             15,
@@ -397,7 +397,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffSecondsNegative(): void
+    public function testDiffSecondsNegative(): void
     {
         $this->assertEquals(
             -15,
@@ -409,7 +409,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffSecondsRelative(): void
+    public function testDiffSecondsRelative(): void
     {
         $this->assertEquals(
             1,
@@ -421,7 +421,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffSecondsExact(): void
+    public function testDiffSecondsExact(): void
     {
         $this->assertEquals(
             0,
@@ -434,7 +434,7 @@ trait DateTimeDiffTest
         );
     }
 
-    public function testDateTimeDiffSecondsMinutes(): void
+    public function testDiffSecondsMinutes(): void
     {
         $this->assertEquals(
             1215,

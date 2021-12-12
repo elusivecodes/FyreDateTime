@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTimeImmutable;
 
 use
     Fyre\DateTime\DateTimeImmutable;
 
-trait DateTimeImmutableManipulateTest
+trait ManipulateTest
 {
 
     /**
      * #add
      */
 
-    public function testDateTimeImmutableAddYear(): void
+    public function testAddYear(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(1, 'year');
@@ -27,7 +27,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddYears(): void
+    public function testAddYears(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(2, 'years');
@@ -41,7 +41,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddMonth(): void
+    public function testAddMonth(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(1, 'month');
@@ -55,7 +55,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddMonths(): void
+    public function testAddMonths(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(2, 'months');
@@ -69,7 +69,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddWeek(): void
+    public function testAddWeek(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(1, 'week');
@@ -83,7 +83,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddWeeks(): void
+    public function testAddWeeks(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(2, 'weeks');
@@ -97,7 +97,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddDay(): void
+    public function testAddDay(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(1, 'day');
@@ -111,7 +111,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddDays(): void
+    public function testAddDays(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(2, 'days');
@@ -125,7 +125,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddHour(): void
+    public function testAddHour(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(1, 'hour');
@@ -139,7 +139,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddHours(): void
+    public function testAddHours(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(2, 'hours');
@@ -153,7 +153,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddMinute(): void
+    public function testAddMinute(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(1, 'minute');
@@ -167,7 +167,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddMinutes(): void
+    public function testAddMinutes(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(2, 'minutes');
@@ -181,7 +181,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddSecond(): void
+    public function testAddSecond(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(1, 'second');
@@ -195,7 +195,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableAddSeconds(): void
+    public function testAddSeconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->add(2, 'seconds');
@@ -213,7 +213,7 @@ trait DateTimeImmutableManipulateTest
      * #sub
      */
 
-    public function testDateTimeImmutableSubYear(): void
+    public function testSubYear(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(1, 'year');
@@ -227,7 +227,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubYears(): void
+    public function testSubYears(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(2, 'years');
@@ -241,7 +241,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubMonth(): void
+    public function testSubMonth(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(1, 'month');
@@ -255,7 +255,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubMonths(): void
+    public function testSubMonths(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(2, 'months');
@@ -269,7 +269,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubWeek(): void
+    public function testSubWeek(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(1, 'week');
@@ -283,7 +283,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubWeeks(): void
+    public function testSubWeeks(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(2, 'weeks');
@@ -297,7 +297,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubDay(): void
+    public function testSubDay(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(1, 'day');
@@ -311,7 +311,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubDays(): void
+    public function testSubDays(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(2, 'days');
@@ -325,7 +325,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubHour(): void
+    public function testSubHour(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(1, 'hour');
@@ -339,7 +339,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubHours(): void
+    public function testSubHours(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(2, 'hours');
@@ -353,7 +353,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubMinute(): void
+    public function testSubMinute(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(1, 'minute');
@@ -367,7 +367,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubMinutes(): void
+    public function testSubMinutes(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(2, 'minutes');
@@ -381,7 +381,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubSecond(): void
+    public function testSubSecond(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(1, 'second');
@@ -395,7 +395,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableSubSeconds(): void
+    public function testSubSeconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018]);
         $date2 = $date1->sub(2, 'seconds');
@@ -413,7 +413,7 @@ trait DateTimeImmutableManipulateTest
      * #startOf
      */
 
-    public function testDateTimeImmutableStartOfYear(): void
+    public function testStartOfYear(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->startOf('year');
@@ -427,7 +427,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableStartOfQuarter(): void
+    public function testStartOfQuarter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 8, 15, 11, 30, 30, 500]);
         $date2 = $date1->startOf('quarter');
@@ -441,7 +441,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableStartOfMonth(): void
+    public function testStartOfMonth(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->startOf('month');
@@ -455,7 +455,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableStartOfWeek(): void
+    public function testStartOfWeek(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->startOf('week');
@@ -469,7 +469,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableStartOfDay(): void
+    public function testStartOfDay(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->startOf('day');
@@ -483,7 +483,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableStartOfHour(): void
+    public function testStartOfHour(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->startOf('hour');
@@ -497,7 +497,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableStartOfMinute(): void
+    public function testStartOfMinute(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->startOf('minute');
@@ -511,7 +511,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableStartOfSecond(): void
+    public function testStartOfSecond(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->startOf('second');
@@ -529,7 +529,7 @@ trait DateTimeImmutableManipulateTest
      * #endOf
      */
 
-    public function testDateTimeImmutableEndOfYear(): void
+    public function testEndOfYear(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->EndOf('year');
@@ -543,7 +543,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableEndOfQuarter(): void
+    public function testEndOfQuarter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 8, 15, 11, 30, 30, 500]);
         $date2 = $date1->EndOf('quarter');
@@ -557,7 +557,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableEndOfMonth(): void
+    public function testEndOfMonth(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->EndOf('month');
@@ -571,7 +571,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableEndOfWeek(): void
+    public function testEndOfWeek(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->EndOf('week');
@@ -585,7 +585,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableEndOfDay(): void
+    public function testEndOfDay(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->EndOf('day');
@@ -599,7 +599,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableEndOfHour(): void
+    public function testEndOfHour(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->EndOf('hour');
@@ -613,7 +613,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableEndOfMinute(): void
+    public function testEndOfMinute(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->EndOf('minute');
@@ -627,7 +627,7 @@ trait DateTimeImmutableManipulateTest
         );
     }
 
-    public function testDateTimeImmutableEndOfSecond(): void
+    public function testEndOfSecond(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 6, 15, 11, 30, 30, 500]);
         $date2 = $date1->EndOf('second');

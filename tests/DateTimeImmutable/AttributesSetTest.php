@@ -1,20 +1,20 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests;
+namespace Tests\DateTimeImmutable;
 
 use
     Fyre\DateTime\DateTime,
     Fyre\DateTime\DateTimeImmutable;
 
-trait DateTimeImmutableAttributesSetTest
+trait AttributesSetTest
 {
 
     /**
      * #setDate
      */
 
-    public function testDateTimeImmutableSetDate(): void
+    public function testSetDate(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setDate(15);
@@ -28,7 +28,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetDateWrap(): void
+    public function testSetDateWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 6, 1]);
         $date2 = $date1->setDate(31);
@@ -46,7 +46,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setDay
      */
 
-    public function testDateTimeImmutableSetDay(): void
+    public function testSetDay(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setDay(5);
@@ -60,7 +60,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetDayMonday(): void
+    public function testSetDayMonday(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setDay(1);
@@ -74,7 +74,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetDaySunday(): void
+    public function testSetDaySunday(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setDay(0);
@@ -88,7 +88,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetDayWrap(): void
+    public function testSetDayWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setDay(12);
@@ -106,7 +106,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setDayOfYear
      */
 
-    public function testDateTimeImmutableSetDayOfYear(): void
+    public function testSetDayOfYear(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setDayOfYear(235);
@@ -120,7 +120,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetDayOfYearWrap(): void
+    public function testSetDayOfYearWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setDayOfYear(500);
@@ -138,7 +138,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setHours
      */
 
-    public function testDateTimeImmutableSetHours(): void
+    public function testSetHours(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(9);
@@ -152,7 +152,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetHours24hr(): void
+    public function testSetHours24hr(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(13);
@@ -166,7 +166,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetHoursWithMinutes(): void
+    public function testSetHoursWithMinutes(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(0, 33);
@@ -180,7 +180,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetHoursWithSeconds(): void
+    public function testSetHoursWithSeconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(0, 0, 23);
@@ -194,7 +194,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetHoursWithMilliseconds(): void
+    public function testSetHoursWithMilliseconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(0, 0, 0, 303);
@@ -208,7 +208,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetHoursWrap(): void
+    public function testSetHoursWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(33);
@@ -226,7 +226,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setMilliseconds
      */
 
-    public function testDateTimeImmutableSetMilliseconds(): void
+    public function testSetMilliseconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMilliseconds(220);
@@ -240,7 +240,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetMillisecondsWrap(): void
+    public function testSetMillisecondsWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMilliseconds(1220);
@@ -258,7 +258,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setMinutes
      */
 
-    public function testDateTimeImmutableSetMinutes(): void
+    public function testSetMinutes(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMinutes(15);
@@ -272,7 +272,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetMinutesWithSeconds(): void
+    public function testSetMinutesWithSeconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMinutes(0, 32);
@@ -286,7 +286,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetMinutesWithMilliseconds(): void
+    public function testSetMinutesWithMilliseconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMinutes(0, 0, 320);
@@ -300,7 +300,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetMinutesWrap(): void
+    public function testSetMinutesWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMinutes(75);
@@ -318,7 +318,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setMonth
      */
 
-    public function testDateTimeImmutableSetMonth(): void
+    public function testSetMonth(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMonth(9);
@@ -332,7 +332,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetMonthClamp(): void
+    public function testSetMonthClamp(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 31]);
         $date2 = $date1->setMonth(2);
@@ -346,7 +346,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetMonthWithDate(): void
+    public function testSetMonthWithDate(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMonth(1, 23);
@@ -360,7 +360,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetMonthWrap(): void
+    public function testSetMonthWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setMonth(15);
@@ -374,7 +374,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetMonthNoClamp(): void
+    public function testSetMonthNoClamp(): void
     {
         DateTime::setDateClamping(false);
         $date1 = DateTimeImmutable::fromArray([2019, 1, 31]);
@@ -394,7 +394,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setQuarter
      */
 
-    public function testDateTimeImmutableSetQuarter(): void
+    public function testSetQuarter(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setQuarter(2);
@@ -408,7 +408,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetQuarterWrap(): void
+    public function testSetQuarterWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setQuarter(6);
@@ -426,7 +426,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setSeconds
      */
 
-    public function testDateTimeImmutableSetSeconds(): void
+    public function testSetSeconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setSeconds(42);
@@ -440,7 +440,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetSecondsWithMilliseconds(): void
+    public function testSetSecondsWithMilliseconds(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setSeconds(0, 550);
@@ -454,7 +454,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetSecondsWrap(): void
+    public function testSetSecondsWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setSeconds(105);
@@ -472,7 +472,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setTime
      */
 
-    public function testDateTimeImmutableSetTime(): void
+    public function testSetTime(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = $date1->setTime(1546300800000);
@@ -486,7 +486,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetTimestamp(): void
+    public function testSetTimestamp(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimestamp(1546300800);
@@ -504,7 +504,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setTimeZone
      */
 
-    public function testDateTimeImmutableSetTimeZone(): void
+    public function testSetTimeZone(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimeZone('Australia/Brisbane');
@@ -518,7 +518,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetTimeZoneFromOffset(): void
+    public function testSetTimeZoneFromOffset(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimeZone('+10:00');
@@ -532,7 +532,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetTimeZoneFromOffsetWithoutColon(): void
+    public function testSetTimeZoneFromOffsetWithoutColon(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimeZone('+1000');
@@ -550,7 +550,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setTimeZoneOffset
      */
 
-    public function testDateTimeImmutableSetTimeZoneOffset(): void
+    public function testSetTimeZoneOffset(): void
     {
         $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimeZoneOffset(600);
@@ -568,7 +568,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setWeek
      */
 
-    public function testDateTimeImmutableSetWeek(): void
+    public function testSetWeek(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeek(23);
@@ -582,7 +582,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekUsesWeekYear(): void
+    public function testSetWeekUsesWeekYear(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 12, 30]);
         $date2 = $date1->setWeek(23);
@@ -596,7 +596,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekWithDays(): void
+    public function testSetWeekWithDays(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeek(1, 6);
@@ -610,7 +610,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekWrap(): void
+    public function testSetWeekWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeek(77);
@@ -628,7 +628,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setWeekDay
      */
 
-    public function testDateTimeImmutableSetWeekDay(): void
+    public function testSetWeekDay(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekDay(6);
@@ -642,7 +642,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekDayMonday(): void
+    public function testSetWeekDayMonday(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekDay(2);
@@ -656,7 +656,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekDaySunday(): void
+    public function testSetWeekDaySunday(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekDay(1);
@@ -670,7 +670,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekDayWrap(): void
+    public function testSetWeekDayWrap(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekDay(14);
@@ -688,7 +688,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setWeekDayInMonth
      */
 
-    public function testDateTimeImmutableSetWeekDayInMonth(): void
+    public function testSetWeekDayInMonth(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 6, 1]);
         $date2 = $date1->setWeekDayInMonth(4);
@@ -702,7 +702,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekDayInMonthLocal(): void
+    public function testSetWeekDayInMonthLocal(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 6, 28]);
         $date2 = $date1->setWeekDayInMonth(1);
@@ -720,7 +720,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setWeekOfMonth
      */
 
-    public function testDateTimeImmutableSetWeekOfMonth(): void
+    public function testSetWeekOfMonth(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 6, 1]);
         $date2 = $date1->setWeekOfMonth(4);
@@ -734,7 +734,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekOfMonthLocal(): void
+    public function testSetWeekOfMonthLocal(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 6, 28]);
         $date2 = $date1->setWeekOfMonth(1);
@@ -752,7 +752,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setWeekYear
      */
 
-    public function testDateTimeImmutableSetWeekYear(): void
+    public function testSetWeekYear(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekYear(2018);
@@ -766,7 +766,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekYearKeepsWeek(): void
+    public function testSetWeekYearKeepsWeek(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 6, 1]);
         $date2 = $date1->setWeekYear(2018);
@@ -780,7 +780,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekYearWithWeek(): void
+    public function testSetWeekYearWithWeek(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekYear(2018, 14);
@@ -794,7 +794,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetWeekYearWithDays(): void
+    public function testSetWeekYearWithDays(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekYear(2018, 1, 6);
@@ -812,7 +812,7 @@ trait DateTimeImmutableAttributesSetTest
      * #setYear
      */
 
-    public function testDateTimeImmutableSetYear(): void
+    public function testSetYear(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setYear(2018);
@@ -826,7 +826,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetYearWithMonths(): void
+    public function testSetYearWithMonths(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setYear(2018, 6);
@@ -840,7 +840,7 @@ trait DateTimeImmutableAttributesSetTest
         );
     }
 
-    public function testDateTimeImmutableSetYearWithDays(): void
+    public function testSetYearWithDays(): void
     {
         $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
         $date2 = $date1->setYear(2018, 1, 16);
