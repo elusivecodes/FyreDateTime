@@ -10,12 +10,6 @@ use
 final class DateTimeImmutableTest extends TestCase
 {
 
-    public static function setUpBeforeClass(): void
-    {
-        DateTimeImmutable::setDefaultLocale('en');
-        DateTimeImmutable::setDefaultTimeZone('UTC');
-    }
-
     use
         AttributesGetTest,
         AttributesSetTest,
@@ -28,4 +22,10 @@ final class DateTimeImmutableTest extends TestCase
         UtilityTest,
         VarsTest;
 
+    public static function setUpBeforeClass(): void
+    {
+        DateTimeImmutable::setDefaultLocale('en');
+        DateTimeImmutable::setDefaultTimeZone('UTC');
+    }
+    
 }

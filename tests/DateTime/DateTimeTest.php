@@ -10,12 +10,6 @@ use
 final class DateTimeTest extends TestCase
 {
 
-    public static function setUpBeforeClass(): void
-    {
-        DateTime::setDefaultLocale('en');
-        DateTime::setDefaultTimeZone('UTC');
-    }
-
     use
         AttributesGetTest,
         AttributesSetTest,
@@ -31,4 +25,10 @@ final class DateTimeTest extends TestCase
         UtilityTest,
         VarsTest;
 
+    public static function setUpBeforeClass(): void
+    {
+        DateTime::setDefaultLocale('en');
+        DateTime::setDefaultTimeZone('UTC');
+    }
+    
 }
