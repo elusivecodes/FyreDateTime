@@ -112,9 +112,9 @@ trait UtilityTrait
 
             foreach (['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond'] AS $timeUnit) {
                 $tempField = static::getAdjustmentField($timeUnit);
-                $value = $this->calendar->get($tempField);
 
                 if ($adjust) {
+                    $value = $this->calendar->get($tempField);
                     $other->calendar->set($tempField, $value);
                 }
 
@@ -274,6 +274,15 @@ trait UtilityTrait
     }
 
     /**
+     * Convert the object to a native DateTime.
+     * @return \DateTime A native DateTime object.
+     */
+    public function toDateTime(): \DateTime
+    {
+        return $this->calendar->toDateTime();
+    }
+
+    /**
      * Get the number of weeks in the current year.
      * @return int The number of weeks in the current year.
      */
@@ -323,15 +332,6 @@ trait UtilityTrait
         }
 
         return $this;
-    }
-
-    /**
-     * Convert the object to a native DateTime.
-     * @return \DateTime A native DateTime object.
-     */
-    protected function toDateTime(): \DateTime
-    {
-        return $this->calendar->toDateTime();
     }
 
 }
