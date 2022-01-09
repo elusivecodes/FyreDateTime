@@ -15,7 +15,7 @@ trait AttributesGetTest
 
     public function testGetDate(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             31,
             DateTime::fromArray([2019, 1, 31])->getDate()
         );
@@ -27,7 +27,7 @@ trait AttributesGetTest
 
     public function testGetDay(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2,
             DateTime::fromArray([2019, 1, 1])->getDay()
         );
@@ -35,7 +35,7 @@ trait AttributesGetTest
 
     public function testGetDayMonday(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 12, 31])->getDay()
         );
@@ -43,7 +43,7 @@ trait AttributesGetTest
 
     public function testGetDaySunday(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromArray([2018, 12, 30])->getDay()
         );
@@ -55,7 +55,7 @@ trait AttributesGetTest
 
     public function testGetDayOfYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             152,
             DateTime::fromArray([2019, 6, 1])->getDayOfYear()
         );
@@ -67,7 +67,7 @@ trait AttributesGetTest
 
     public function testGetHours(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromArray([2019, 1, 1, 6])->getHours()
         );
@@ -75,7 +75,7 @@ trait AttributesGetTest
 
     public function testGetHours24hr(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             23,
             DateTime::fromArray([2019, 1, 1, 23])->getHours()
         );
@@ -87,7 +87,7 @@ trait AttributesGetTest
 
     public function testGetLocale(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'en',
             DateTime::fromArray([2019])->getLocale()
         );
@@ -99,7 +99,7 @@ trait AttributesGetTest
 
     public function testGetMilliseconds(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             550,
             DateTime::fromArray([2019, 1, 1, 0, 0, 0, 550])->getMilliseconds()
         );
@@ -111,7 +111,7 @@ trait AttributesGetTest
 
     public function testGetMinutes(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             32,
             DateTime::fromArray([2019, 1, 1, 0, 32])->getMinutes()
         );
@@ -123,7 +123,7 @@ trait AttributesGetTest
 
     public function testGetMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromArray([2019, 6, 1])->getMonth()
         );
@@ -135,7 +135,7 @@ trait AttributesGetTest
 
     public function testGetQuarter(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromArray([2019, 8, 1])->getQuarter()
         );
@@ -147,7 +147,7 @@ trait AttributesGetTest
 
     public function testGetSeconds(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             25,
             DateTime::fromArray([2019, 1, 1, 0, 0, 25])->getSeconds()
         );
@@ -159,7 +159,7 @@ trait AttributesGetTest
 
     public function testGetTime(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1546300800000,
             DateTime::fromTimestamp(1546300800)->getTime()
         );
@@ -171,7 +171,7 @@ trait AttributesGetTest
 
     public function testGetTimestamp(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1546300800,
             DateTime::fromTimestamp(1546300800)->getTimestamp()
         );
@@ -183,7 +183,7 @@ trait AttributesGetTest
 
     public function testGetTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Australia/Brisbane',
             DateTime::now('Australia/Brisbane')->getTimeZone()
         );
@@ -191,7 +191,7 @@ trait AttributesGetTest
 
     public function testGetTimeZoneFromOffset(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10:00',
             DateTime::now('+10:00')->getTimeZone()
         );
@@ -199,7 +199,7 @@ trait AttributesGetTest
 
     public function testGetTimeZoneFromOffsetWithoutColon(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10:00',
             DateTime::now('+1000')->getTimeZone()
         );
@@ -211,7 +211,7 @@ trait AttributesGetTest
 
     public function testGetTimeZoneOffset(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -600,
             DateTime::now('Australia/Brisbane')->getTimeZoneOffset()
         );
@@ -223,7 +223,7 @@ trait AttributesGetTest
 
     public function testGetWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             22,
             DateTime::fromArray([2019, 6, 1])->getWeek()
         );
@@ -231,7 +231,7 @@ trait AttributesGetTest
 
     public function testGetWeekUsesWeekYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2019, 12, 30])->getWeek()
         );
@@ -243,7 +243,7 @@ trait AttributesGetTest
 
     public function testGetWeekDay(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromArray([2019, 1, 1])->getWeekDay()
         );
@@ -251,7 +251,7 @@ trait AttributesGetTest
 
     public function testGetWeekDayMonday(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2,
             DateTime::fromArray([2018, 12, 31])->getWeekDay()
         );
@@ -259,7 +259,7 @@ trait AttributesGetTest
 
     public function testGetWeekDaySunday(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 12, 30])->getWeekDay()
         );
@@ -271,7 +271,7 @@ trait AttributesGetTest
 
     public function testGetWeekDayInMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2019, 6, 1])->getWeekDayInMonth()
         );
@@ -279,7 +279,7 @@ trait AttributesGetTest
 
     public function testGetWeekDayInMonthLocal(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2019, 6, 7])->getWeekDayInMonth()
         );
@@ -291,7 +291,7 @@ trait AttributesGetTest
 
     public function testGetWeekOfMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2019, 6, 1])->getWeekOfMonth()
         );
@@ -299,7 +299,7 @@ trait AttributesGetTest
 
     public function testGetWeekOfMonthLocal(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2,
             DateTime::fromArray([2019, 6, 3])->getWeekOfMonth()
         );
@@ -311,7 +311,7 @@ trait AttributesGetTest
 
     public function testGetWeekYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2019,
             DateTime::fromArray([2019, 1, 1])->getWeekYear()
         );
@@ -319,7 +319,7 @@ trait AttributesGetTest
 
     public function testGetWeekYearThursday(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2020,
             DateTime::fromArray([2019, 12, 30])->getWeekYear()
         );
@@ -331,7 +331,7 @@ trait AttributesGetTest
 
     public function testGetYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromArray([2018])->getYear()
         );

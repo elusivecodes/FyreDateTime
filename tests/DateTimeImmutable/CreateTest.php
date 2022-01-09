@@ -21,14 +21,21 @@ trait CreateTest
         $start = time();
         $now = (new DateTimeImmutable())->getTimestamp();
         $end = time();
-        $this->assertTrue(
-            $start <= $now && $end >= $now
+
+        $this->assertGreaterThanOrEqual(
+            $start,
+            $now
+        );
+
+        $this->assertLessThanOrEqual(
+            $end,
+            $now
         );
     }
 
     public function testConstructorDateTimeImmutable(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             (new DateTimeImmutable('January 1, 2019 00:00:00'))->toISOString()
         );
@@ -36,7 +43,7 @@ trait CreateTest
 
     public function testConstructorIso(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             (new DateTimeImmutable('2019-01-01T00:00:00'))->toISOString()
         );
@@ -44,7 +51,7 @@ trait CreateTest
 
     public function testConstructorDate(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             (new DateTimeImmutable('January 1, 2019'))->toISOString()
         );
@@ -52,7 +59,7 @@ trait CreateTest
 
     public function testConstructorWithTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             (new DateTimeImmutable('January 1, 2019 00:00:00', 'Australia/Brisbane'))->toISOString()
         );
@@ -60,7 +67,7 @@ trait CreateTest
 
     public function testConstructorWithTimeZoneFromOffset(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             (new DateTimeImmutable('January 1, 2019 00:00:00', '+10:00'))->toISOString()
         );
@@ -68,7 +75,7 @@ trait CreateTest
 
     public function testConstructorWithTimeZoneFromOffsetWithoutColon(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             (new DateTimeImmutable('January 1, 2019 00:00:00', '+1000'))->toISOString()
         );
@@ -76,7 +83,7 @@ trait CreateTest
 
     public function testConstructorWithLocale(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
             (new DateTimeImmutable('January 1, 2019 00:00:00', null, 'ar-eg'))->toString()
         );
@@ -88,7 +95,7 @@ trait CreateTest
 
     public function testFromArray(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTimeImmutable::fromArray([2019])->toISOString()
         );
@@ -96,7 +103,7 @@ trait CreateTest
 
     public function testFromArrayMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-02-01T00:00:00.000+00:00',
             DateTimeImmutable::fromArray([2019, 2])->toISOString()
         );
@@ -104,7 +111,7 @@ trait CreateTest
 
     public function testFromArrayDate(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-02T00:00:00.000+00:00',
             DateTimeImmutable::fromArray([2019, 1, 2])->toISOString()
         );
@@ -112,7 +119,7 @@ trait CreateTest
 
     public function testFromArrayHour(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T01:00:00.000+00:00',
             DateTimeImmutable::fromArray([2019, 1, 1, 1])->toISOString()
         );
@@ -120,7 +127,7 @@ trait CreateTest
 
     public function testFromArrayMinute(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:01:00.000+00:00',
             DateTimeImmutable::fromArray([2019, 1, 1, 0, 1])->toISOString()
         );
@@ -128,7 +135,7 @@ trait CreateTest
 
     public function testFromArraySecond(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:01.000+00:00',
             DateTimeImmutable::fromArray([2019, 1, 1, 0, 0, 1])->toISOString()
         );
@@ -136,7 +143,7 @@ trait CreateTest
 
     public function testFromArrayMillisecond(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.001+00:00',
             DateTimeImmutable::fromArray([2019, 1, 1, 0, 0, 0, 1])->toISOString()
         );
@@ -144,7 +151,7 @@ trait CreateTest
 
     public function testFromArrayWithTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Tue Jan 01 2019 00:00:00 +1000 (Australia/Brisbane)',
             DateTimeImmutable::fromArray([2019, 1, 1, 0, 0, 0], 'Australia/Brisbane')->toString()
         );
@@ -152,7 +159,7 @@ trait CreateTest
 
     public function testFromArrayWithLocale(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
             DateTimeImmutable::fromArray([2019, 1, 1, 0, 0, 0], null, 'ar-eg')->toString()
         );
@@ -173,7 +180,7 @@ trait CreateTest
     public function testFromDateTime(): void
     {
         $date = new \DateTimeImmutable('@1546300800');
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTimeImmutable::fromDateTime($date)->toISOString()
         );
@@ -182,7 +189,7 @@ trait CreateTest
     public function testFromDateTimeWithTimeZone(): void
     {
         $date = new \DateTimeImmutable('@1546300800');
-        $this->assertEquals(
+        $this->assertSame(
             'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
             DateTimeImmutable::fromDateTime($date, 'Australia/Brisbane')->toString()
         );
@@ -191,7 +198,7 @@ trait CreateTest
     public function testFromDateTimeWithLocale(): void
     {
         $date = new \DateTimeImmutable('@1546300800');
-        $this->assertEquals(
+        $this->assertSame(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (GMT)',
             DateTimeImmutable::fromDateTime($date, null, 'ar-eg')->toString()
         );
@@ -212,7 +219,7 @@ trait CreateTest
 
     public function testFromIsoString(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTimeImmutable::fromISOString('2019-01-01T00:00:00.000+00:00')->toISOString()
         );
@@ -220,7 +227,7 @@ trait CreateTest
 
     public function testFromIsoStringWithTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
             DateTimeImmutable::fromISOString('2019-01-01T00:00:00.000+00:00', 'Australia/Brisbane')->toString()
         );
@@ -228,7 +235,7 @@ trait CreateTest
 
     public function testFromIsoStringWithLocale(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
             DateTimeImmutable::fromISOString('2019-01-01T00:00:00.000+00:00', null, 'ar-eg')->toString()
         );
@@ -248,7 +255,7 @@ trait CreateTest
 
     public function testFromTimestamp(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTimeImmutable::fromTimestamp(1546300800)->toISOString()
         );
@@ -256,7 +263,7 @@ trait CreateTest
 
     public function testFromTimestampWithTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
             DateTimeImmutable::fromTimestamp(1546300800, 'Australia/Brisbane')->toString()
         );
@@ -264,7 +271,7 @@ trait CreateTest
 
     public function testFromTimestampWithLocale(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
             DateTimeImmutable::fromTimestamp(1546300800, null, 'ar-eg')->toString()
         );
@@ -287,14 +294,21 @@ trait CreateTest
         $start = time();
         $now = DateTimeImmutable::now()->getTimestamp();
         $end = time();
-        $this->assertTrue(
-            $start <= $now && $end >= $now
+
+        $this->assertGreaterThanOrEqual(
+            $start,
+            $now
+        );
+
+        $this->assertLessThanOrEqual(
+            $end,
+            $now
         );
     }
 
     public function testNowWithTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Australia/Brisbane',
             DateTimeImmutable::now('Australia/Brisbane')->getTimeZone()
         );
@@ -302,7 +316,7 @@ trait CreateTest
 
     public function testNowWithLocale(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'ar-eg',
             DateTimeImmutable::now(null, 'ar-eg')->getLocale()
         );

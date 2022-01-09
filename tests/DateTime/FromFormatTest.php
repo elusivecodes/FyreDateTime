@@ -15,7 +15,7 @@ trait FromFormatTest
 
     public function testFromFormatEraShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1970,
             DateTime::fromFormat('yyyy GGG', '1970 AD')->getYear()
         );
@@ -23,7 +23,7 @@ trait FromFormatTest
 
     public function testFromFormatEraShortBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -1970,
             DateTime::fromFormat('yyyy GGG', '1970 BC')->getYear()
         );
@@ -31,7 +31,7 @@ trait FromFormatTest
 
     public function testFromFormatEraLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1970,
             DateTime::fromFormat('yyyy GGGG', '1970 Anno Domini')->getYear()
         );
@@ -39,7 +39,7 @@ trait FromFormatTest
 
     public function testFromFormatEraLongBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -1970,
             DateTime::fromFormat('yyyy GGGG', '1970 Before Christ')->getYear()
         );
@@ -47,7 +47,7 @@ trait FromFormatTest
 
     public function testFromFormatEraNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1970,
             DateTime::fromFormat('yyyy GGGGG', '1970 A')->getYear()
         );
@@ -55,7 +55,7 @@ trait FromFormatTest
 
     public function testFromFormatEraNarrowBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -1970,
             DateTime::fromFormat('yyyy GGGGG', '1970 B')->getYear()
         );
@@ -67,7 +67,7 @@ trait FromFormatTest
 
     public function testFromFormatYear1DigitFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromFormat('y', '2018')->getYear()
         );
@@ -75,7 +75,7 @@ trait FromFormatTest
 
     public function testFromFormatYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             5,
             DateTime::fromFormat('y', '5')->getYear()
         );
@@ -83,7 +83,7 @@ trait FromFormatTest
 
     public function testFromFormatYear2DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromFormat('yy', '2018')->getYear()
         );
@@ -91,7 +91,7 @@ trait FromFormatTest
 
     public function testFromFormatYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1988,
             DateTime::fromFormat('yy', '88')->getYear()
         );
@@ -99,7 +99,7 @@ trait FromFormatTest
 
     public function testFromFormatYear3DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromFormat('yyy', '2018')->getYear()
         );
@@ -107,7 +107,7 @@ trait FromFormatTest
 
     public function testFromFormatYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             88,
             DateTime::fromFormat('yyy', '088')->getYear()
         );
@@ -115,7 +115,7 @@ trait FromFormatTest
 
     public function testFromFormatYear4DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromFormat('yyyy', '2018')->getYear()
         );
@@ -123,7 +123,7 @@ trait FromFormatTest
 
     public function testFromFormatYear4Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             88,
             DateTime::fromFormat('yyyy', '0088')->getYear()
         );
@@ -135,7 +135,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekYear1DigitFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromFormat('Y w e', '2018 1 1')->getWeekYear()
         );
@@ -143,7 +143,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             5,
             DateTime::fromFormat('Y w e', '5 1 1')->getWeekYear()
         );
@@ -151,7 +151,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekYear2DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromFormat('YY w e', '2018 1 1')->getWeekYear()
         );
@@ -159,7 +159,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1988,
             DateTime::fromFormat('YY w e', '88 1 1')->getWeekYear()
         );
@@ -167,7 +167,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekYear3DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromFormat('YYY w e', '2018 1 1')->getWeekYear()
         );
@@ -175,7 +175,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             88,
             DateTime::fromFormat('YYY w e', '088 1 1')->getWeekYear()
         );
@@ -183,7 +183,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekYear4DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2018,
             DateTime::fromFormat('YYYY w e', '2018 1 1')->getWeekYear()
         );
@@ -191,7 +191,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekYear4Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             88,
             DateTime::fromFormat('YYYY w e', '0088 1 1')->getWeekYear()
         );
@@ -203,7 +203,7 @@ trait FromFormatTest
 
     public function testFromFormatQuarter1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromFormat('q', '3')->getQuarter()
         );
@@ -211,7 +211,7 @@ trait FromFormatTest
 
     public function testFromFormatQuarter2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromFormat('qq', '03')->getQuarter()
         );
@@ -219,7 +219,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneQuarter1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromFormat('Q', '3')->getQuarter()
         );
@@ -227,7 +227,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneQuarter2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromFormat('QQ', '03')->getQuarter()
         );
@@ -239,7 +239,7 @@ trait FromFormatTest
 
     public function testFromFormatMonth1DigitFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             10,
             DateTime::fromFormat('M', '10')->getMonth()
         );
@@ -247,7 +247,7 @@ trait FromFormatTest
 
     public function testFromFormatMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('M', '1')->getMonth()
         );
@@ -255,7 +255,7 @@ trait FromFormatTest
 
     public function testFromFormatMonth2DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             10,
             DateTime::fromFormat('MM', '10')->getMonth()
         );
@@ -263,7 +263,7 @@ trait FromFormatTest
 
     public function testFromFormatMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('MM', '01')->getMonth()
         );
@@ -271,7 +271,7 @@ trait FromFormatTest
 
     public function testFromFormatMonthShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             10,
             DateTime::fromFormat('MMM', 'Oct')->getMonth()
         );
@@ -279,7 +279,7 @@ trait FromFormatTest
 
     public function testFromFormatMonthLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             10,
             DateTime::fromFormat('MMMM', 'October')->getMonth()
         );
@@ -287,7 +287,7 @@ trait FromFormatTest
 
     // public function testFromFormatMonthNarrow(): void
     // {
-    //     $this->assertEquals(
+    //     $this->assertSame(
     //         10,
     //         DateTime::fromFormat('MMMMM', 'O')->getMonth()
     //     );
@@ -295,7 +295,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneMonth1DigitFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             10,
             DateTime::fromFormat('L', '10')->getMonth()
         );
@@ -303,7 +303,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('L', '1')->getMonth()
         );
@@ -311,7 +311,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneMonth2DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             10,
             DateTime::fromFormat('LL', '10')->getMonth()
         );
@@ -319,7 +319,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('LL', '01')->getMonth()
         );
@@ -327,7 +327,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneMonthShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             10,
             DateTime::fromFormat('LLL', 'Oct')->getMonth()
         );
@@ -335,7 +335,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneMonthLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             10,
             DateTime::fromFormat('LLLL', 'October')->getMonth()
         );
@@ -343,7 +343,7 @@ trait FromFormatTest
 
     // public function testFromFormatStandaloneMonthNarrow(): void
     // {
-    //     $this->assertEquals(
+    //     $this->assertSame(
     //         10,
     //         DateTime::fromFormat('LLLLL', 'O')->getMonth()
     //     );
@@ -355,7 +355,7 @@ trait FromFormatTest
 
     public function testFromFormatWeek1DigitFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             22,
             DateTime::fromFormat('w', '22')->getWeek()
         );
@@ -363,7 +363,7 @@ trait FromFormatTest
 
     public function testFromFormatWeek1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('w', '1')->getWeek()
         );
@@ -371,7 +371,7 @@ trait FromFormatTest
 
     public function testFromFormatWeek2DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             22,
             DateTime::fromFormat('ww', '22')->getWeek()
         );
@@ -379,7 +379,7 @@ trait FromFormatTest
 
     public function testFromFormatWeek2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('ww', '01')->getWeek()
         );
@@ -387,7 +387,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekOfMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromFormat('W', '3')->getWeekOfMonth()
         );
@@ -399,7 +399,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfMonth1DigitFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             21,
             DateTime::fromFormat('d', '21')->getDate()
         );
@@ -407,7 +407,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('d', '1')->getDate()
         );
@@ -415,7 +415,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfMonth2DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             21,
             DateTime::fromFormat('dd', '21')->getDate()
         );
@@ -423,7 +423,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('dd', '01')->getDate()
         );
@@ -431,7 +431,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfYear1DigitFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             152,
             DateTime::fromFormat('D', '152')->getDayOfYear()
         );
@@ -439,7 +439,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('D', '1')->getDayOfYear()
         );
@@ -447,7 +447,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfYear2DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             152,
             DateTime::fromFormat('DD', '152')->getDayOfYear()
         );
@@ -455,7 +455,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('DD', '01')->getDayOfYear()
         );
@@ -463,7 +463,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfYear3DigitsFull(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             152,
             DateTime::fromFormat('DDD', '152')->getDayOfYear()
         );
@@ -471,7 +471,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('DDD', '001')->getDayOfYear()
         );
@@ -479,7 +479,7 @@ trait FromFormatTest
 
     public function testFromFormatDayOfWeekInMonthMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromFormat('F', '3')->getWeekDayInMonth()
         );
@@ -491,7 +491,7 @@ trait FromFormatTest
 
     public function testFromFormatAltWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('EEE', 'Fri')->getWeekDay()
         );
@@ -499,7 +499,7 @@ trait FromFormatTest
 
     public function testFromFormatAltWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('EEEE', 'Friday')->getWeekDay()
         );
@@ -507,7 +507,7 @@ trait FromFormatTest
 
     // public function testFromFormatAltWeekDayNarrow(): void
     // {
-    //     $this->assertEquals(
+    //     $this->assertSame(
     //         6,
     //         DateTime::fromFormat('EEEEE', 'F')->getWeekDay()
     //     );
@@ -515,7 +515,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekDay1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('e', '6')->getWeekDay()
         );
@@ -523,7 +523,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekDay2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('ee', '06')->getWeekDay()
         );
@@ -531,7 +531,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('eee', 'Fri')->getWeekDay()
         );
@@ -539,7 +539,7 @@ trait FromFormatTest
 
     public function testFromFormatWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('eeee', 'Friday')->getWeekDay()
         );
@@ -547,7 +547,7 @@ trait FromFormatTest
 
     // public function testFromFormatWeekDayNarrow(): void
     // {
-    //     $this->assertEquals(
+    //     $this->assertSame(
     //         6,
     //         DateTime::fromFormat('eeeee', 'F')->getWeekDay()
     //     );
@@ -555,7 +555,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneWeekDay1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('c', '6')->getWeekDay()
         );
@@ -563,7 +563,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneWeekDay2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('cc', '06')->getWeekDay()
         );
@@ -571,7 +571,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('ccc', 'Fri')->getWeekDay()
         );
@@ -579,7 +579,7 @@ trait FromFormatTest
 
     public function testFromFormatStandaloneWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             6,
             DateTime::fromFormat('cccc', 'Friday')->getWeekDay()
         );
@@ -587,7 +587,7 @@ trait FromFormatTest
 
     // public function testFromFormatStandaloneWeekDayNarrow(): void
     // {
-    //     $this->assertEquals(
+    //     $this->assertSame(
     //         6,
     //         DateTime::fromFormat('ccccc', 'F')->getWeekDay()
     //     );
@@ -599,7 +599,7 @@ trait FromFormatTest
 
     public function testFromFormatDayPeriodShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('aaa', 'AM')->getHours()
         );
@@ -607,7 +607,7 @@ trait FromFormatTest
 
     public function testFromFormatDayPeriodShortPm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             12,
             DateTime::fromFormat('aaa', 'PM')->getHours()
         );
@@ -615,7 +615,7 @@ trait FromFormatTest
 
     public function testFromFormatDayPeriodLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('aaaa', 'AM')->getHours()
         );
@@ -623,7 +623,7 @@ trait FromFormatTest
 
     public function testFromFormatDayPeriodLongPm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             12,
             DateTime::fromFormat('aaaa', 'PM')->getHours()
         );
@@ -635,7 +635,7 @@ trait FromFormatTest
 
     public function testFromFormat12Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('h', '12')->getHours()
         );
@@ -643,7 +643,7 @@ trait FromFormatTest
 
     public function testFromFormat12Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('h', '1')->getHours()
         );
@@ -651,7 +651,7 @@ trait FromFormatTest
 
     public function testFromFormat12Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('hh', '12')->getHours()
         );
@@ -659,7 +659,7 @@ trait FromFormatTest
 
     public function testFromFormat12Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('hh', '01')->getHours()
         );
@@ -667,7 +667,7 @@ trait FromFormatTest
 
     public function testFromFormat23Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             23,
             DateTime::fromFormat('H', '23')->getHours()
         );
@@ -675,7 +675,7 @@ trait FromFormatTest
 
     public function testFromFormat23Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('H', '0')->getHours()
         );
@@ -683,7 +683,7 @@ trait FromFormatTest
 
     public function testFromFormat23Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             23,
             DateTime::fromFormat('HH', '23')->getHours()
         );
@@ -691,7 +691,7 @@ trait FromFormatTest
 
     public function testFromFormat23Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('HH', '00')->getHours()
         );
@@ -700,7 +700,7 @@ trait FromFormatTest
 
     public function testFromFormat11Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             11,
             DateTime::fromFormat('K', '11')->getHours()
         );
@@ -708,7 +708,7 @@ trait FromFormatTest
 
     public function testFromFormat11Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('K', '0')->getHours()
         );
@@ -716,7 +716,7 @@ trait FromFormatTest
 
     public function testFromFormat11Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             11,
             DateTime::fromFormat('KK', '11')->getHours()
         );
@@ -724,7 +724,7 @@ trait FromFormatTest
 
     public function testFromFormat11Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             00,
             DateTime::fromFormat('KK', '00')->getHours()
         );
@@ -732,7 +732,7 @@ trait FromFormatTest
 
     public function testFromFormat24Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('k', '24')->getHours()
         );
@@ -740,7 +740,7 @@ trait FromFormatTest
 
     public function testFromFormat24Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('k', '1')->getHours()
         );
@@ -748,7 +748,7 @@ trait FromFormatTest
 
     public function testFromFormat24Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('kk', '24')->getHours()
         );
@@ -756,7 +756,7 @@ trait FromFormatTest
 
     public function testFromFormat24Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('kk', '01')->getHours()
         );
@@ -768,7 +768,7 @@ trait FromFormatTest
 
     public function testFromFormatMinute1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             25,
             DateTime::fromFormat('m', '25')->getMinutes()
         );
@@ -776,7 +776,7 @@ trait FromFormatTest
 
     public function testFromFormatMinute1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('m', '1')->getMinutes()
         );
@@ -784,7 +784,7 @@ trait FromFormatTest
 
     public function testFromFormatMinute2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             25,
             DateTime::fromFormat('mm', '25')->getMinutes()
         );
@@ -792,7 +792,7 @@ trait FromFormatTest
 
     public function testFromFormatMinute2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('mm', '01')->getMinutes()
         );
@@ -804,7 +804,7 @@ trait FromFormatTest
 
     public function testFromFormatSecond1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             25,
             DateTime::fromFormat('s', '25')->getSeconds()
         );
@@ -812,7 +812,7 @@ trait FromFormatTest
 
     public function testFromFormatSecond1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('s', '1')->getSeconds()
         );
@@ -820,7 +820,7 @@ trait FromFormatTest
 
     public function testFromFormatSecond2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             25,
             DateTime::fromFormat('ss', '25')->getSeconds()
         );
@@ -828,7 +828,7 @@ trait FromFormatTest
 
     public function testFromFormatSecond2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromFormat('ss', '01')->getSeconds()
         );
@@ -836,7 +836,7 @@ trait FromFormatTest
 
     public function testFromFormatFractional(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromFormat('SSS', '123')->getMilliseconds()
         );
@@ -848,7 +848,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicAlt(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +0000')->toISOString()
         );
@@ -856,7 +856,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicAltTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +1000')->toISOString()
         );
@@ -864,7 +864,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneLongBasic(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+00:00')->toISOString()
         );
@@ -872,7 +872,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneLongBasicTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+10:00')->toISOString()
         );
@@ -880,7 +880,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601ExtendedAlt(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +00:00')->toISOString()
         );
@@ -888,7 +888,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601ExtendedAltTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +10:00')->toISOString()
         );
@@ -896,7 +896,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneShortLocalized(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+00')->toISOString()
         );
@@ -904,7 +904,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneShortLocalizedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+10')->toISOString()
         );
@@ -912,7 +912,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneLongLocalized(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+00:00')->toISOString()
         );
@@ -920,7 +920,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneLongLocalizedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+10:00')->toISOString()
         );
@@ -928,7 +928,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneLongTimeZoneId(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 UTC')->toISOString()
         );
@@ -936,7 +936,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneLongTimeZoneIdTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 Australia/Brisbane')->toISOString()
         );
@@ -944,7 +944,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicShortZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 Z')->toISOString()
         );
@@ -952,7 +952,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicShortZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 +10')->toISOString()
         );
@@ -960,7 +960,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 Z')->toISOString()
         );
@@ -968,7 +968,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 +1000')->toISOString()
         );
@@ -976,7 +976,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601ExtendedZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 Z')->toISOString()
         );
@@ -984,7 +984,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601ExtendedZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 +10:00')->toISOString()
         );
@@ -992,7 +992,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +00')->toISOString()
         );
@@ -1000,7 +1000,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicShortTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +10')->toISOString()
         );
@@ -1008,7 +1008,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601Basic(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +0000')->toISOString()
         );
@@ -1016,7 +1016,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601BasicTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +1000')->toISOString()
         );
@@ -1024,7 +1024,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601Extended(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +00:00')->toISOString()
         );
@@ -1032,7 +1032,7 @@ trait FromFormatTest
 
     public function testFromFormatTimeZoneIso8601ExtendedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
             DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +10:00')->toISOString()
         );

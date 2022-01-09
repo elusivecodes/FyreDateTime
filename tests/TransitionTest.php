@@ -15,7 +15,7 @@ final class TransitionTest extends TestCase
     {
         $date = DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '07/04/2019 03:01:00 +10:00');
         $date->setTimeZone('Australia/Sydney');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 03:01:00 +1000 (Australia/Sydney)',
             $date->toString()
         );
@@ -25,7 +25,7 @@ final class TransitionTest extends TestCase
     {
         $date = DateTime::fromArray([2019, 4, 7, 3, 1, 0, 0], '+10:00');
         $date->setTimeZone('Australia/Sydney');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 03:01:00 +1000 (Australia/Sydney)',
             $date->toString()
         );
@@ -35,7 +35,7 @@ final class TransitionTest extends TestCase
     {
         $date = DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '07/04/2019 02:01:00 +10:00');
         $date->setTimeZone('Australia/Sydney');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 02:01:00 +1000 (Australia/Sydney)',
             $date->toString()
         );
@@ -45,7 +45,7 @@ final class TransitionTest extends TestCase
     {
         $date = DateTime::fromArray([2019, 4, 7, 2, 1, 0, 0], '+10:00');
         $date->setTimeZone('Australia/Sydney');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 02:01:00 +1000 (Australia/Sydney)',
             $date->toString()
         );
@@ -55,7 +55,7 @@ final class TransitionTest extends TestCase
     {
         $date = DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '07/04/2019 02:01:00 +11:00');
         $date->setTimeZone('Australia/Sydney');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 02:01:00 +1100 (Australia/Sydney)',
             $date->toString()
         );
@@ -65,7 +65,7 @@ final class TransitionTest extends TestCase
     {
         $date = DateTime::fromArray([2019, 4, 7, 2, 1, 0, 0], '+11:00');
         $date->setTimeZone('Australia/Sydney');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 02:01:00 +1100 (Australia/Sydney)',
             $date->toString()
         );
@@ -75,7 +75,7 @@ final class TransitionTest extends TestCase
     {
         $date = DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '07/04/2019 03:01:00 +11:00');
         $date->setTimeZone('Australia/Sydney');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 02:01:00 +1000 (Australia/Sydney)',
             $date->toString()
         );
@@ -85,7 +85,7 @@ final class TransitionTest extends TestCase
     {
         $date = DateTime::fromArray([2019, 4, 7, 3, 1, 0, 0], '+11:00');
         $date->setTimeZone('Australia/Sydney');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 02:01:00 +1000 (Australia/Sydney)',
             $date->toString()
         );
@@ -96,7 +96,7 @@ final class TransitionTest extends TestCase
         $date = DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '07/04/2019 02:01:00 +11:00');
         $date->setTimeZone('Australia/Sydney');
         $date->add(1, 'hour');
-        $this->assertEquals(
+        $this->assertSame(
             'Sun Apr 07 2019 02:01:00 +1000 (Australia/Sydney)',
             $date->toString()
         );

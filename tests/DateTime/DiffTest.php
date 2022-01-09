@@ -11,7 +11,7 @@ trait DiffTest
 
     public function testDiff(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             54391815150,
             DateTime::fromArray([2018, 6, 15, 12, 30, 30, 500])
                 ->diff(
@@ -22,7 +22,7 @@ trait DiffTest
 
     public function testDiffYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018])
                 ->diff(
@@ -34,7 +34,7 @@ trait DiffTest
 
     public function testDiffYears(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             2,
             DateTime::fromArray([2018])
                 ->diff(
@@ -46,7 +46,7 @@ trait DiffTest
 
     public function testDiffYearsNegative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -2,
             DateTime::fromArray([2016])
                 ->diff(
@@ -58,7 +58,7 @@ trait DiffTest
 
     public function testDiffYearsRelative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 1])
                 ->diff(
@@ -70,7 +70,7 @@ trait DiffTest
 
     public function testDiffYearsExact(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromArray([2018, 1])
                 ->diff(
@@ -83,7 +83,7 @@ trait DiffTest
 
     public function testDiffMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 9])
                 ->diff(
@@ -95,7 +95,7 @@ trait DiffTest
 
     public function testDiffMonths(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             3,
             DateTime::fromArray([2018, 9])
                 ->diff(
@@ -107,7 +107,7 @@ trait DiffTest
 
     public function testDiffMonthsNegative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -3,
             DateTime::fromArray([2018, 6])
                 ->diff(
@@ -119,7 +119,7 @@ trait DiffTest
 
     public function testDiffMonthsRelative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 2, 1])
                 ->diff(
@@ -131,7 +131,7 @@ trait DiffTest
 
     public function testDiffMonthsExact(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromArray([2018, 2, 1])
                 ->diff(
@@ -144,7 +144,7 @@ trait DiffTest
 
     public function testDiffMonthsYears(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             27,
             DateTime::fromArray([2018, 9])
                 ->diff(
@@ -156,7 +156,7 @@ trait DiffTest
 
     public function testDiffDay(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 23])
                 ->diff(
@@ -168,7 +168,7 @@ trait DiffTest
 
     public function testDiffDays(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             8,
             DateTime::fromArray([2018, 6, 23])
                 ->diff(
@@ -180,7 +180,7 @@ trait DiffTest
 
     public function testDiffDaysNegative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -8,
             DateTime::fromArray([2018, 6, 15])
                 ->diff(
@@ -192,7 +192,7 @@ trait DiffTest
 
     public function testDiffDaysRelative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 2, 0])
                 ->diff(
@@ -204,7 +204,7 @@ trait DiffTest
 
     public function testDiffDaysExact(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 2, 0])
                 ->diff(
@@ -217,7 +217,7 @@ trait DiffTest
 
     public function testDiffDaysMonths(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             69,
             DateTime::fromArray([2018, 8, 23])
                 ->diff(
@@ -229,7 +229,7 @@ trait DiffTest
 
     public function testDiffHour(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 15, 23])
                 ->diff(
@@ -241,7 +241,7 @@ trait DiffTest
 
     public function testDiffHours(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             11,
             DateTime::fromArray([2018, 6, 15, 23])
                 ->diff(
@@ -253,7 +253,7 @@ trait DiffTest
 
     public function testDiffHoursNegative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -11,
             DateTime::fromArray([2018, 6, 15, 12])
                 ->diff(
@@ -265,7 +265,7 @@ trait DiffTest
 
     public function testDiffHoursRelative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 1, 1, 0])
                 ->diff(
@@ -277,7 +277,7 @@ trait DiffTest
 
     public function testDiffHoursExact(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 1, 1, 0])
                 ->diff(
@@ -290,7 +290,7 @@ trait DiffTest
 
     public function testDiffHoursDays(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             83,
             DateTime::fromArray([2018, 6, 18, 23])
                 ->diff(
@@ -302,7 +302,7 @@ trait DiffTest
 
     public function testDiffMinute(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 15, 12, 30])
                 ->diff(
@@ -314,7 +314,7 @@ trait DiffTest
 
     public function testDiffMinutes(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             15,
             DateTime::fromArray([2018, 6, 15, 12, 30])
                 ->diff(
@@ -326,7 +326,7 @@ trait DiffTest
 
     public function testDiffMinutesNegative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -15,
             DateTime::fromArray([2018, 6, 15, 12, 15])
                 ->diff(
@@ -338,7 +338,7 @@ trait DiffTest
 
     public function testDiffMinutesRelative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 1, 0, 1, 0])
                 ->diff(
@@ -350,7 +350,7 @@ trait DiffTest
 
     public function testDiffMinutesExact(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 1, 0, 1, 0])
                 ->diff(
@@ -363,7 +363,7 @@ trait DiffTest
 
     public function testDiffMinutesHours(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             255,
             DateTime::fromArray([2018, 6, 15, 16, 30])
                 ->diff(
@@ -375,7 +375,7 @@ trait DiffTest
 
     public function testDiffSecond(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 15, 12, 30, 30])
                 ->diff(
@@ -387,7 +387,7 @@ trait DiffTest
 
     public function testDiffSeconds(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             15,
             DateTime::fromArray([2018, 6, 15, 12, 30, 30])
                 ->diff(
@@ -399,7 +399,7 @@ trait DiffTest
 
     public function testDiffSecondsNegative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             -15,
             DateTime::fromArray([2018, 6, 15, 12, 30, 15])
                 ->diff(
@@ -411,7 +411,7 @@ trait DiffTest
 
     public function testDiffSecondsRelative(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 1, 0, 0, 1, 0])
                 ->diff(
@@ -423,7 +423,7 @@ trait DiffTest
 
     public function testDiffSecondsExact(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 1, 0, 0, 1, 0])
                 ->diff(
@@ -436,7 +436,7 @@ trait DiffTest
 
     public function testDiffSecondsMinutes(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             1215,
             DateTime::fromArray([2018, 6, 15, 12, 50, 30])
                 ->diff(

@@ -15,7 +15,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleEraShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'н. э.',
             DateTime::fromArray([2018], null, 'ru')->format('GGG')
         );
@@ -23,7 +23,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleEraShortBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'до н. э.',
             DateTime::fromArray([-5], null, 'ru')->format('GGG')
         );
@@ -31,7 +31,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleEraLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'от Рождества Христова',
             DateTime::fromArray([2018], null, 'ru')->format('GGGG')
         );
@@ -39,7 +39,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleEraLongBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'до Рождества Христова',
             DateTime::fromArray([-5], null, 'ru')->format('GGGG')
         );
@@ -47,7 +47,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleEraNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'н.э.',
             DateTime::fromArray([2018], null, 'ru')->format('GGGGG')
         );
@@ -55,7 +55,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleEraNarrowBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'до н.э.',
             DateTime::fromArray([-5], null, 'ru')->format('GGGGG')
         );
@@ -67,7 +67,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠١٨',
             DateTime::fromArray([2018], null, 'ar-eg')->format('y')
         );
@@ -75,7 +75,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleYear1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٥',
             DateTime::fromArray([5], null, 'ar-eg')->format('y')
         );
@@ -83,7 +83,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٨',
             DateTime::fromArray([2018], null, 'ar-eg')->format('yy')
         );
@@ -91,7 +91,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleYear2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٥',
             DateTime::fromArray([5], null, 'ar-eg')->format('yy')
         );
@@ -99,7 +99,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠١٨',
             DateTime::fromArray([2018], null, 'ar-eg')->format('yyy')
         );
@@ -107,7 +107,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleYear3DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٠٥',
             DateTime::fromArray([5], null, 'ar-eg')->format('yyy')
         );
@@ -115,7 +115,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleYear4Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠١٨',
             DateTime::fromArray([2018], null, 'ar-eg')->format('yyyy')
         );
@@ -123,7 +123,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleYear4DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٠٠٥',
             DateTime::fromArray([5], null, 'ar-eg')->format('yyyy')
         );
@@ -135,7 +135,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠١٨',
             DateTime::fromArray([2018], null, 'ar-eg')->format('Y')
         );
@@ -143,7 +143,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear1DigitCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠٢٠',
             DateTime::fromArray([2019, 12, 30], null, 'ar-eg')->format('Y')
         );
@@ -151,7 +151,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٥',
             DateTime::fromArray([5, 2], null, 'ar-eg')->format('Y')
         );
@@ -159,7 +159,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٨',
             DateTime::fromArray([2018], null, 'ar-eg')->format('YY')
         );
@@ -167,7 +167,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear2DigitsCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠',
             DateTime::fromArray([2019, 12, 30], null, 'ar-eg')->format('YY')
         );
@@ -175,7 +175,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٥',
             DateTime::fromArray([5, 2], null, 'ar-eg')->format('YY')
         );
@@ -183,7 +183,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠١٨',
             DateTime::fromArray([2018], null, 'ar-eg')->format('YYY')
         );
@@ -191,7 +191,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear3DigitsCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠٢٠',
             DateTime::fromArray([2019, 12, 30], null, 'ar-eg')->format('YYY')
         );
@@ -199,7 +199,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear3DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٠٥',
             DateTime::fromArray([5], null, 'ar-eg')->format('YYY')
         );
@@ -207,7 +207,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear4Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠١٨',
             DateTime::fromArray([2018], null, 'ar-eg')->format('YYYY')
         );
@@ -215,7 +215,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear4DigitsCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٠٢٠',
             DateTime::fromArray([2019, 12, 30], null, 'ar-eg')->format('YYYY')
         );
@@ -223,7 +223,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekYear4DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٠٠٥',
             DateTime::fromArray([5], null, 'ar-eg')->format('YYYY')
         );
@@ -235,7 +235,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleQuarter1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٣',
             DateTime::fromArray([2018, 8], null, 'ar-eg')->format('q')
         );
@@ -243,7 +243,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleQuarter2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٣',
             DateTime::fromArray([2018, 8], null, 'ar-eg')->format('qq')
         );
@@ -251,7 +251,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneQuarter1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٣',
             DateTime::fromArray([2018, 8], null, 'ar-eg')->format('Q')
         );
@@ -259,7 +259,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneQuarter2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٣',
             DateTime::fromArray([2018, 8], null, 'ar-eg')->format('QQ')
         );
@@ -271,7 +271,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٠',
             DateTime::fromArray([2018, 10], null, 'ar-eg')->format('M')
         );
@@ -279,7 +279,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMonth1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2018, 1], null, 'ar-eg')->format('M')
         );
@@ -287,7 +287,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٠',
             DateTime::fromArray([2018, 10], null, 'ar-eg')->format('MM')
         );
@@ -295,7 +295,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMonth2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2018, 1], null, 'ar-eg')->format('MM')
         );
@@ -303,7 +303,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMonthShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'окт.',
             DateTime::fromArray([2018, 10], null, 'ru')->format('MMM')
         );
@@ -311,7 +311,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMonthLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'октября',
             DateTime::fromArray([2018, 10], null, 'ru')->format('MMMM')
         );
@@ -319,7 +319,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMonthNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'О',
             DateTime::fromArray([2018, 10], null, 'ru')->format('MMMMM')
         );
@@ -327,7 +327,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٠',
             DateTime::fromArray([2018, 10], null, 'ar-eg')->format('L')
         );
@@ -335,7 +335,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneMonth1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2018, 1], null, 'ar-eg')->format('L')
         );
@@ -343,7 +343,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٠',
             DateTime::fromArray([2018, 10], null, 'ar-eg')->format('LL')
         );
@@ -351,7 +351,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneMonth2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2018, 1], null, 'ar-eg')->format('LL')
         );
@@ -359,7 +359,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneMonthShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'окт.',
             DateTime::fromArray([2018, 10], null, 'ru')->format('LLL')
         );
@@ -367,7 +367,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneMonthLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'октябрь',
             DateTime::fromArray([2018, 10], null, 'ru')->format('LLLL')
         );
@@ -375,7 +375,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneMonthNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'О',
             DateTime::fromArray([2018, 10], null, 'ru')->format('LLLLL')
         );
@@ -387,7 +387,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekOfYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٢',
             DateTime::fromArray([2018, 6], null, 'ar-eg')->format('w')
         );
@@ -395,7 +395,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekOfYear1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2018, 1], null, 'ar-eg')->format('w')
         );
@@ -403,7 +403,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekOfYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٢',
             DateTime::fromArray([2018, 6], null, 'ar-eg')->format('ww')
         );
@@ -411,7 +411,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekOfYear2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2018, 1], null, 'ar-eg')->format('ww')
         );
@@ -419,7 +419,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekOfMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2019, 6, 1], null, 'ar-eg')->format('W')
         );
@@ -427,7 +427,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekOfMonthCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢',
             DateTime::fromArray([2019, 6, 8], null, 'ar-eg')->format('W')
         );
@@ -439,7 +439,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢١',
             DateTime::fromArray([2019, 1, 21], null, 'ar-eg')->format('d')
         );
@@ -447,7 +447,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfMonth1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('d')
         );
@@ -455,7 +455,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢١',
             DateTime::fromArray([2019, 1, 21], null, 'ar-eg')->format('dd')
         );
@@ -463,7 +463,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfMonth2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('dd')
         );
@@ -471,7 +471,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٥٢',
             DateTime::fromArray([2019, 6, 1], null, 'ar-eg')->format('D')
         );
@@ -479,7 +479,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfYear1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('D')
         );
@@ -487,7 +487,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٥٢',
             DateTime::fromArray([2019, 6, 1], null, 'ar-eg')->format('DD')
         );
@@ -495,7 +495,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfYear2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('DD')
         );
@@ -503,7 +503,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٥٢',
             DateTime::fromArray([2019, 6, 1], null, 'ar-eg')->format('DDD')
         );
@@ -511,7 +511,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfYear3DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٠١',
             DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('DDD')
         );
@@ -519,7 +519,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfWeekInMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('F')
         );
@@ -527,7 +527,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayOfWeekInMonthCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2019, 6, 7], null, 'ar-eg')->format('F')
         );
@@ -539,7 +539,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleAltWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'пт',
             DateTime::fromArray([2018, 6, 1], null, 'ru')->format('EEE')
         );
@@ -547,7 +547,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleAltWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'пятница',
             DateTime::fromArray([2018, 6, 1], null, 'ru')->format('EEEE')
         );
@@ -555,7 +555,7 @@ trait FormatLocaleTest
 
     // public function testFormatLocaleAltWeekDayNarrow(): void
     // {
-    //     $this->assertEquals(
+    //     $this->assertSame(
     //         'П',
     //         DateTime::fromArray([2018, 6, 1], null, 'ru')->format('EEEEE')
     //     );
@@ -563,7 +563,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekDay1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٧',
             DateTime::fromArray([2018, 6, 1], null, 'ar-eg')->format('e')
         );
@@ -571,7 +571,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekDay2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٧',
             DateTime::fromArray([2018, 6, 1], null, 'ar-eg')->format('ee')
         );
@@ -579,7 +579,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'пт',
             DateTime::fromArray([2018, 6, 1], null, 'ru')->format('eee')
         );
@@ -587,7 +587,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'пятница',
             DateTime::fromArray([2018, 6, 1], null, 'ru')->format('eeee')
         );
@@ -595,7 +595,7 @@ trait FormatLocaleTest
 
     // public function testFormatLocaleWeekDayNarrow(): void
     // {
-    //     $this->assertEquals(
+    //     $this->assertSame(
     //         'П',
     //         DateTime::fromArray([2018, 6, 1], null, 'ru')->format('eeeee')
     //     );
@@ -603,7 +603,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneWeekDay1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٧',
             DateTime::fromArray([2018, 6, 1], null, 'ar-eg')->format('c')
         );
@@ -611,7 +611,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneWeekDay2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٧',
             DateTime::fromArray([2018, 6, 1], null, 'ar-eg')->format('cc')
         );
@@ -619,7 +619,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'пт',
             DateTime::fromArray([2018, 6, 1], null, 'ru')->format('ccc')
         );
@@ -627,7 +627,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'пятница',
             DateTime::fromArray([2018, 6, 1], null, 'ru')->format('cccc')
         );
@@ -635,7 +635,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleStandaloneWeekDayNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'П',
             DateTime::fromArray([2018, 6, 1], null, 'ru')->format('ccccc')
         );
@@ -647,7 +647,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayPeriodShortAm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '上午',
             DateTime::fromArray([2018, 1, 1, 0], null, 'zh')->format('aaa')
         );
@@ -655,7 +655,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayPeriodShortPm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '下午',
             DateTime::fromArray([2018, 1, 1, 12], null, 'zh')->format('aaa')
         );
@@ -663,7 +663,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayPeriodLongAm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '上午',
             DateTime::fromArray([2018, 1, 1, 0], null, 'zh')->format('aaaa')
         );
@@ -671,7 +671,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleDayPeriodLongPm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '下午',
             DateTime::fromArray([2018, 1, 1, 12], null, 'zh')->format('aaaa')
         );
@@ -683,7 +683,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale12Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٢',
             DateTime::fromArray([2018, 1, 1, 12], null, 'ar-eg')->format('h')
         );
@@ -691,7 +691,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale12Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2018, 1, 1, 1], null, 'ar-eg')->format('h')
         );
@@ -699,7 +699,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale12Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١١',
             DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('hh')
         );
@@ -707,7 +707,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale12Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2018, 1, 1, 1], null, 'ar-eg')->format('hh')
         );
@@ -715,7 +715,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale23Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٣',
             DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('H')
         );
@@ -723,7 +723,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale23Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠',
             DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('H')
         );
@@ -731,7 +731,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale23Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٣',
             DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('HH')
         );
@@ -739,7 +739,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale23Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٠',
             DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('HH')
         );
@@ -747,7 +747,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale11Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١١',
             DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('K')
         );
@@ -755,7 +755,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale11Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠',
             DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('K')
         );
@@ -763,7 +763,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale11Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١١',
             DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('KK')
         );
@@ -771,7 +771,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale11Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠٠',
             DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('KK')
         );
@@ -779,7 +779,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale24Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٤',
             DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('k')
         );
@@ -787,7 +787,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale24Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2018, 1, 1, 1], null, 'ar-eg')->format('k')
         );
@@ -795,7 +795,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale24Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٤',
             DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('kk')
         );
@@ -803,7 +803,7 @@ trait FormatLocaleTest
 
     public function testFormatLocale24Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2018, 1, 1, 1], null, 'ar-eg')->format('kk')
         );
@@ -815,7 +815,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMinute1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٥',
             DateTime::fromArray([2018, 1, 1, 0, 25], null, 'ar-eg')->format('m')
         );
@@ -823,7 +823,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMinute1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2018, 1, 1, 0, 1], null, 'ar-eg')->format('m')
         );
@@ -831,7 +831,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMinute2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٥',
             DateTime::fromArray([2018, 1, 1, 0, 25], null, 'ar-eg')->format('mm')
         );
@@ -839,7 +839,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleMinute2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2018, 1, 1, 0, 1], null, 'ar-eg')->format('mm')
         );
@@ -851,7 +851,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleSecond1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٥',
             DateTime::fromArray([2018, 1, 1, 0, 0, 25], null, 'ar-eg')->format('s')
         );
@@ -859,7 +859,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleSecond1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2018, 1, 1, 0, 0, 1], null, 'ar-eg')->format('s')
         );
@@ -867,7 +867,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleSecond2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٢٥',
             DateTime::fromArray([2018, 1, 1, 0, 0, 25], null, 'ar-eg')->format('ss')
         );
@@ -875,7 +875,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleSecond2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '٠١',
             DateTime::fromArray([2018, 1, 1, 0, 0, 1], null, 'ar-eg')->format('ss')
         );
@@ -883,7 +883,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleFractional(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٢٣',
             DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('SSS')
         );
@@ -891,7 +891,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleFractionalTruncate(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١',
             DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('S')
         );
@@ -899,7 +899,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleFractionalPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '١٢٣٠٠٠',
             DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('SSSSSS')
         );
@@ -911,7 +911,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneShortNonLocation(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'UTC',
             DateTime::now(null, 'ru')->format('zzz')
         );
@@ -919,7 +919,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneShortNonLocationTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('zzz')
         );
@@ -927,7 +927,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneLongNonLocation(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Всемирное координированное время',
             DateTime::now(null, 'ru')->format('zzzz')
         );
@@ -935,7 +935,7 @@ trait FormatLocaleTest
 
     // public function testFormatLocaleTimeZoneLongNonLocationTimeZone(): void
     // {
-    //     $this->assertEquals(
+    //     $this->assertSame(
     //         'Восточная Австралия, стандартное время',
     //         DateTime::now('Australia/Brisbane', null, 'ru')->format('zzzz')
     //     );
@@ -943,7 +943,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicAlt(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+0000',
             DateTime::now(null, 'ru')->format('ZZZ')
         );
@@ -951,7 +951,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicAltTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+1000',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('ZZZ')
         );
@@ -959,7 +959,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneLongBasic(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT',
             DateTime::now(null, 'ru')->format('ZZZZ')
         );
@@ -967,7 +967,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneLongBasicTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10:00',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('ZZZZ')
         );
@@ -975,7 +975,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601ExtendedAlt(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Z',
             DateTime::now(null, 'ru')->format('ZZZZZ')
         );
@@ -983,7 +983,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601ExtendedAltTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10:00',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('ZZZZZ')
         );
@@ -991,7 +991,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneShortLocalized(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT',
             DateTime::now(null, 'ru')->format('O')
         );
@@ -999,7 +999,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneShortLocalizedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('O')
         );
@@ -1007,7 +1007,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneLongLocalized(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT',
             DateTime::now(null, 'ru')->format('OOOO')
         );
@@ -1015,7 +1015,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneLongLocalizedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10:00',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('OOOO')
         );
@@ -1023,7 +1023,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneLongTimeZoneId(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'UTC',
             DateTime::now(null, 'ru')->format('VV')
         );
@@ -1031,7 +1031,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneLongTimeZoneIdTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Australia/Brisbane',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('VV')
         );
@@ -1039,7 +1039,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicShortZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Z',
             DateTime::now(null, 'ru')->format('X')
         );
@@ -1047,7 +1047,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicShortZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('X')
         );
@@ -1055,7 +1055,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Z',
             DateTime::now(null, 'ru')->format('XX')
         );
@@ -1063,7 +1063,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+1000',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('XX')
         );
@@ -1071,7 +1071,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601ExtendedZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Z',
             DateTime::now(null, 'ru')->format('XXX')
         );
@@ -1079,7 +1079,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601ExtendedZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10:00',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('XXX')
         );
@@ -1087,7 +1087,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+00',
             DateTime::now(null, 'ru')->format('x')
         );
@@ -1095,7 +1095,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicShortTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('x')
         );
@@ -1103,7 +1103,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601Basic(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+0000',
             DateTime::now(null, 'ru')->format('xx')
         );
@@ -1111,7 +1111,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601BasicTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+1000',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('xx')
         );
@@ -1119,7 +1119,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601Extended(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+00:00',
             DateTime::now(null, 'ru')->format('xxx')
         );
@@ -1127,7 +1127,7 @@ trait FormatLocaleTest
 
     public function testFormatLocaleTimeZoneIso8601ExtendedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10:00',
             DateTime::now('Australia/Brisbane', null, 'ru')->format('xxx')
         );

@@ -17,27 +17,14 @@ trait UtilityTest
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->clone();
-        $this->assertEquals(
-            '2019-01-01T00:00:00.000+00:00',
-            $date1->toISOString()
-        );
-        $this->assertEquals(
-            '2019-01-01T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
 
-    public function testCloneNotReference(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->clone();
-        $date2->setYear(2018);
-        $this->assertEquals(
-            '2019-01-01T00:00:00.000+00:00',
-            $date1->toISOString()
+        $this->assertNotSame(
+            $date1,
+            $date2
         );
-        $this->assertEquals(
-            '2018-01-01T00:00:00.000+00:00',
+
+        $this->assertSame(
+            '2019-01-01T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
@@ -50,7 +37,7 @@ trait UtilityTest
     {
         $dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         foreach ($dayNames AS $i => $dayName) {
-            $this->assertEquals(
+            $this->assertSame(
                 $dayName,
                 DateTime::fromArray([2019, 1, 1])
                     ->setDay($i)
@@ -63,7 +50,7 @@ trait UtilityTest
     {
         $dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
         foreach ($dayNames AS $i => $dayName) {
-            $this->assertEquals(
+            $this->assertSame(
                 $dayName,
                 DateTime::fromArray([2019, 1, 1])
                     ->setDay($i)
@@ -76,7 +63,7 @@ trait UtilityTest
     {
         $dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
         foreach ($dayNames AS $i => $dayName) {
-            $this->assertEquals(
+            $this->assertSame(
                 $dayName,
                 DateTime::fromArray([2019, 1, 1])
                     ->setDay($i)
@@ -91,7 +78,7 @@ trait UtilityTest
 
     public function testDayPeriod(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'AM',
             DateTime::fromArray([2019, 1, 1, 0])
                 ->dayPeriod(),
@@ -100,7 +87,7 @@ trait UtilityTest
 
     public function testDayPeriodPm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'PM',
             DateTime::fromArray([2019, 1, 1, 12])
                 ->dayPeriod(),
@@ -109,7 +96,7 @@ trait UtilityTest
 
     public function testDayPeriodShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'AM',
             DateTime::fromArray([2019, 1, 1, 0])
                 ->dayPeriod('short'),
@@ -118,7 +105,7 @@ trait UtilityTest
 
     public function testDayPeriodShortPm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'PM',
             DateTime::fromArray([2019, 1, 1, 12])
                 ->dayPeriod('short'),
@@ -133,7 +120,7 @@ trait UtilityTest
     {
         $monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         foreach ($monthDays AS $i => $daysInMonth) {
-            $this->assertEquals(
+            $this->assertSame(
                 $daysInMonth,
                 DateTime::fromArray([2018, $i + 1, 1])
                     ->daysInMonth(),
@@ -143,7 +130,7 @@ trait UtilityTest
 
     public function testDaysInMonthLeapYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             29,
             DateTime::fromArray([2020, 2, 1])
                 ->daysInMonth(),
@@ -156,7 +143,7 @@ trait UtilityTest
 
     public function testDaysInYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             365,
             DateTime::fromArray([2018, 1, 1])
                 ->daysInYear(),
@@ -165,7 +152,7 @@ trait UtilityTest
 
     public function testDaysInYearLeapYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             366,
             DateTime::fromArray([2020, 1, 1])
                 ->daysInYear(),
@@ -178,7 +165,7 @@ trait UtilityTest
 
     public function testEra(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Anno Domini',
             DateTime::fromArray([2018])
                 ->era(),
@@ -187,7 +174,7 @@ trait UtilityTest
 
     public function testEraBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Before Christ',
             DateTime::fromArray([-5])
                 ->era(),
@@ -196,7 +183,7 @@ trait UtilityTest
 
     public function testEraShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'AD',
             DateTime::fromArray([2018])
                 ->era('short'),
@@ -205,7 +192,7 @@ trait UtilityTest
 
     public function testEraShortBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'BC',
             DateTime::fromArray([-5])
                 ->era('short'),
@@ -214,7 +201,7 @@ trait UtilityTest
 
     public function testEraNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'A',
             DateTime::fromArray([2018])
                 ->era('narrow'),
@@ -223,7 +210,7 @@ trait UtilityTest
 
     public function testEraNarrowBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'B',
             DateTime::fromArray([-5])
                 ->era('narrow'),
@@ -278,7 +265,7 @@ trait UtilityTest
     {
         $monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         foreach ($monthNames AS $i => $monthName) {
-            $this->assertEquals(
+            $this->assertSame(
                 $monthName,
                 DateTime::fromArray([2019, $i + 1, 1])
                     ->monthName(),
@@ -290,7 +277,7 @@ trait UtilityTest
     {
         $monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
         foreach ($monthNames AS $i => $monthName) {
-            $this->assertEquals(
+            $this->assertSame(
                 $monthName,
                 DateTime::fromArray([2019, $i + 1, 1])
                     ->monthName('short'),
@@ -302,7 +289,7 @@ trait UtilityTest
     {
         $monthNames = ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'];
         foreach ($monthNames AS $i => $monthName) {
-            $this->assertEquals(
+            $this->assertSame(
                 $monthName,
                 DateTime::fromArray([2019, $i + 1, 1])
                     ->monthName('narrow'),
@@ -316,7 +303,7 @@ trait UtilityTest
 
     public function testTimeZoneName(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Australian Eastern Standard Time',
             DateTime::fromArray([2018], 'Australia/Brisbane')
                 ->timeZoneName(),
@@ -325,7 +312,7 @@ trait UtilityTest
 
     public function testTimeZoneNameOffset(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10:00',
             DateTime::fromArray([2018], '+10:00')
                 ->timeZoneName(),
@@ -334,7 +321,7 @@ trait UtilityTest
 
     public function testTimeZoneNameShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10',
             DateTime::fromArray([2018], 'Australia/Brisbane')
                 ->timeZoneName('short'),
@@ -343,7 +330,7 @@ trait UtilityTest
 
     public function testTimeZoneNameShortOffset(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10',
             DateTime::fromArray([2018], '+10:00')
                 ->timeZoneName('short'),
@@ -356,7 +343,7 @@ trait UtilityTest
 
     public function testWeeksInYear(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             52,
             DateTime::fromArray([2018, 1, 1])
                 ->weeksInYear(),
@@ -365,7 +352,7 @@ trait UtilityTest
 
     public function testWeeksInYearLocal(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             53,
             DateTime::fromArray([2016, 1, 1])
                 ->weeksInYear(),

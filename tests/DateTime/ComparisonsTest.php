@@ -17,6 +17,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
+
         $this->assertFalse(
             $date1->isAfter($date2)
         );
@@ -26,6 +27,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isAfter($date2)
         );
@@ -35,6 +37,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1]);
         $date2 = DateTime::fromArray([2019, 2]);
+
         $this->assertFalse(
             $date1->isAfter($date2, 'year')
         );
@@ -44,6 +47,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2019, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
+
         $this->assertTrue(
             $date1->isAfter($date2, 'year')
         );
@@ -53,6 +57,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = DateTime::fromArray([2018, 2, 2]);
+
         $this->assertFalse(
             $date1->isAfter($date2, 'month')
         );
@@ -62,6 +67,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
+
         $this->assertTrue(
             $date1->isAfter($date2, 'month')
         );
@@ -71,6 +77,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 2, 2]);
+
         $this->assertFalse(
             $date1->isAfter($date2, 'day')
         );
@@ -80,6 +87,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isAfter($date2, 'day')
         );
@@ -89,6 +97,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 2]);
+
         $this->assertFalse(
             $date1->isAfter($date2, 'hour')
         );
@@ -98,6 +107,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isAfter($date2, 'hour')
         );
@@ -107,6 +117,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
+
         $this->assertFalse(
             $date1->isAfter($date2, 'minute')
         );
@@ -116,6 +127,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isAfter($date2, 'minute')
         );
@@ -125,6 +137,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2, 2]);
+
         $this->assertFalse(
             $date1->isAfter($date2, 'second')
         );
@@ -134,6 +147,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isAfter($date2, 'second')
         );
@@ -147,6 +161,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
+
         $this->assertTrue(
             $date1->isBefore($date2)
         );
@@ -156,6 +171,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isBefore($date2)
         );
@@ -165,6 +181,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1]);
         $date2 = DateTime::fromArray([2019, 2]);
+
         $this->assertTrue(
             $date1->isBefore($date2, 'year')
         );
@@ -174,6 +191,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2019, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
+
         $this->assertFalse(
             $date1->isBefore($date2, 'year')
         );
@@ -183,6 +201,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = DateTime::fromArray([2018, 2, 2]);
+
         $this->assertTrue(
             $date1->isBefore($date2, 'month')
         );
@@ -192,6 +211,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
+
         $this->assertFalse(
             $date1->isBefore($date2, 'month')
         );
@@ -201,6 +221,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 2, 2]);
+
         $this->assertTrue(
             $date1->isBefore($date2, 'day')
         );
@@ -210,6 +231,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isBefore($date2, 'day')
         );
@@ -219,6 +241,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 2]);
+
         $this->assertTrue(
             $date1->isBefore($date2, 'hour')
         );
@@ -228,6 +251,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isBefore($date2, 'hour')
         );
@@ -237,6 +261,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
+
         $this->assertTrue(
             $date1->isBefore($date2, 'minute')
         );
@@ -246,6 +271,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isBefore($date2, 'minute')
         );
@@ -255,6 +281,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2, 2]);
+
         $this->assertTrue(
             $date1->isBefore($date2, 'second')
         );
@@ -264,6 +291,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isBefore($date2, 'second')
         );
@@ -278,6 +306,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 4]);
+
         $this->assertTrue(
             $date1->isBetween($date2, $date3)
         );
@@ -288,6 +317,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3)
         );
@@ -298,6 +328,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 1, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3)
         );
@@ -308,6 +339,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2019]);
         $date2 = DateTime::fromArray([2018]);
         $date3 = DateTime::fromArray([2020]);
+
         $this->assertTrue(
             $date1->isBetween($date2, $date3, 'year')
         );
@@ -318,6 +350,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2017]);
         $date2 = DateTime::fromArray([2018]);
         $date3 = DateTime::fromArray([2020]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'year')
         );
@@ -328,6 +361,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2021]);
         $date2 = DateTime::fromArray([2018]);
         $date3 = DateTime::fromArray([2020]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'year')
         );
@@ -338,6 +372,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 3]);
         $date2 = DateTime::fromArray([2018, 2]);
         $date3 = DateTime::fromArray([2018, 4]);
+
         $this->assertTrue(
             $date1->isBetween($date2, $date3, 'month')
         );
@@ -348,6 +383,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1]);
         $date2 = DateTime::fromArray([2018, 2]);
         $date3 = DateTime::fromArray([2018, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'month')
         );
@@ -358,6 +394,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 5]);
         $date2 = DateTime::fromArray([2018, 2]);
         $date3 = DateTime::fromArray([2018, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'month')
         );
@@ -368,6 +405,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 4]);
+
         $this->assertTrue(
             $date1->isBetween($date2, $date3, 'day')
         );
@@ -378,6 +416,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'day')
         );
@@ -388,6 +427,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'day')
         );
@@ -398,6 +438,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 4]);
+
         $this->assertTrue(
             $date1->isBetween($date2, $date3, 'hour')
         );
@@ -408,6 +449,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'hour')
         );
@@ -418,6 +460,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'hour')
         );
@@ -428,6 +471,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 4]);
+
         $this->assertTrue(
             $date1->isBetween($date2, $date3, 'minute')
         );
@@ -438,6 +482,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'minute')
         );
@@ -448,6 +493,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'minute')
         );
@@ -458,6 +504,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 3]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 1, 4]);
+
         $this->assertTrue(
             $date1->isBetween($date2, $date3, 'second')
         );
@@ -468,6 +515,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'second')
         );
@@ -478,6 +526,7 @@ trait ComparisonsTest
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 5]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date3 = DateTime::fromArray([2018, 1, 1, 1, 1, 4]);
+
         $this->assertFalse(
             $date1->isBetween($date2, $date3, 'second')
         );
@@ -491,6 +540,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSame($date2)
         );
@@ -500,6 +550,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
+
         $this->assertFalse(
             $date1->isSame($date2)
         );
@@ -509,6 +560,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2)
         );
@@ -518,6 +570,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
+
         $this->assertTrue(
             $date1->isSame($date2, 'year')
         );
@@ -527,6 +580,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2019, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'year')
         );
@@ -536,6 +590,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2017, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'year')
         );
@@ -545,6 +600,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
+
         $this->assertTrue(
             $date1->isSame($date2, 'month')
         );
@@ -554,6 +610,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 2, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'month')
         );
@@ -563,6 +620,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'month')
         );
@@ -572,6 +630,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSame($date2, 'day')
         );
@@ -581,6 +640,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 2, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'day')
         );
@@ -590,6 +650,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'day')
         );
@@ -599,6 +660,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSame($date2, 'hour')
         );
@@ -608,6 +670,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'hour')
         );
@@ -617,6 +680,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'hour')
         );
@@ -626,6 +690,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSame($date2, 'minute')
         );
@@ -635,6 +700,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'minute')
         );
@@ -644,6 +710,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'minute')
         );
@@ -653,6 +720,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSame($date2, 'second')
         );
@@ -662,6 +730,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'second')
         );
@@ -671,6 +740,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSame($date2, 'second')
         );
@@ -684,6 +754,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2)
         );
@@ -693,6 +764,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
+
         $this->assertFalse(
             $date1->isSameOrAfter($date2)
         );
@@ -702,6 +774,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2)
         );
@@ -711,6 +784,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'year')
         );
@@ -720,6 +794,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2019, 1]);
+
         $this->assertFalse(
             $date1->isSameOrAfter($date2, 'year')
         );
@@ -729,6 +804,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2017, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'year')
         );
@@ -738,6 +814,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'month')
         );
@@ -747,6 +824,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 2, 1]);
+
         $this->assertFalse(
             $date1->isSameOrAfter($date2, 'month')
         );
@@ -756,6 +834,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'month')
         );
@@ -765,6 +844,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'day')
         );
@@ -774,6 +854,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 2, 1]);
+
         $this->assertFalse(
             $date1->isSameOrAfter($date2, 'day')
         );
@@ -783,6 +864,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'day')
         );
@@ -792,6 +874,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'hour')
         );
@@ -801,6 +884,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 1]);
+
         $this->assertFalse(
             $date1->isSameOrAfter($date2, 'hour')
         );
@@ -810,6 +894,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'hour')
         );
@@ -819,6 +904,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'minute')
         );
@@ -828,6 +914,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 1]);
+
         $this->assertFalse(
             $date1->isSameOrAfter($date2, 'minute')
         );
@@ -837,6 +924,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'minute')
         );
@@ -846,6 +934,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'second')
         );
@@ -855,6 +944,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
+
         $this->assertFalse(
             $date1->isSameOrAfter($date2, 'second')
         );
@@ -864,6 +954,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrAfter($date2, 'second')
         );
@@ -877,6 +968,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2)
         );
@@ -886,6 +978,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2)
         );
@@ -895,6 +988,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSameOrBefore($date2)
         );
@@ -904,6 +998,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2018, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'year')
         );
@@ -913,6 +1008,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2019, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'year')
         );
@@ -922,6 +1018,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2]);
         $date2 = DateTime::fromArray([2017, 1]);
+
         $this->assertFalse(
             $date1->isSameOrBefore($date2, 'year')
         );
@@ -931,6 +1028,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'month')
         );
@@ -940,6 +1038,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2]);
         $date2 = DateTime::fromArray([2018, 2, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'month')
         );
@@ -949,6 +1048,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1]);
+
         $this->assertFalse(
             $date1->isSameOrBefore($date2, 'month')
         );
@@ -958,6 +1058,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'day')
         );
@@ -967,6 +1068,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 2, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'day')
         );
@@ -976,6 +1078,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSameOrBefore($date2, 'day')
         );
@@ -985,6 +1088,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'hour')
         );
@@ -994,6 +1098,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 2, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'hour')
         );
@@ -1003,6 +1108,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSameOrBefore($date2, 'hour')
         );
@@ -1012,6 +1118,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'minute')
         );
@@ -1021,6 +1128,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 2, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'minute')
         );
@@ -1030,6 +1138,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 2, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSameOrBefore($date2, 'minute')
         );
@@ -1039,6 +1148,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'second')
         );
@@ -1048,6 +1158,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
+
         $this->assertTrue(
             $date1->isSameOrBefore($date2, 'second')
         );
@@ -1057,6 +1168,7 @@ trait ComparisonsTest
     {
         $date1 = DateTime::fromArray([2018, 1, 1, 1, 1, 2]);
         $date2 = DateTime::fromArray([2018, 1, 1, 1, 1, 1]);
+
         $this->assertFalse(
             $date1->isSameOrBefore($date2, 'second')
         );

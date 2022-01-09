@@ -15,7 +15,7 @@ trait FormatTest
 
     public function testFormatEraShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'AD',
             DateTimeImmutable::fromArray([2018])->format('GGG')
         );
@@ -23,7 +23,7 @@ trait FormatTest
 
     public function testFormatEraShortBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'BC',
             DateTimeImmutable::fromArray([-5])->format('GGG')
         );
@@ -31,7 +31,7 @@ trait FormatTest
 
     public function testFormatEraLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Anno Domini',
             DateTimeImmutable::fromArray([2018])->format('GGGG')
         );
@@ -39,7 +39,7 @@ trait FormatTest
 
     public function testFormatEraLongBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Before Christ',
             DateTimeImmutable::fromArray([-5])->format('GGGG')
         );
@@ -47,7 +47,7 @@ trait FormatTest
 
     public function testFormatEraNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'A',
             DateTimeImmutable::fromArray([2018])->format('GGGGG')
         );
@@ -55,7 +55,7 @@ trait FormatTest
 
     public function testFormatEraNarrowBc(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'B',
             DateTimeImmutable::fromArray([-5])->format('GGGGG')
         );
@@ -67,7 +67,7 @@ trait FormatTest
 
     public function testFormatYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018',
             DateTimeImmutable::fromArray([2018])->format('y')
         );
@@ -75,7 +75,7 @@ trait FormatTest
 
     public function testFormatYear1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '5',
             DateTimeImmutable::fromArray([5])->format('y')
         );
@@ -83,7 +83,7 @@ trait FormatTest
 
     public function testFormatYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '18',
             DateTimeImmutable::fromArray([2018])->format('yy')
         );
@@ -91,7 +91,7 @@ trait FormatTest
 
     public function testFormatYear2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '05',
             DateTimeImmutable::fromArray([5])->format('yy')
         );
@@ -99,7 +99,7 @@ trait FormatTest
 
     public function testFormatYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018',
             DateTimeImmutable::fromArray([2018])->format('yyy')
         );
@@ -107,7 +107,7 @@ trait FormatTest
 
     public function testFormatYear3DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '005',
             DateTimeImmutable::fromArray([5])->format('yyy')
         );
@@ -115,7 +115,7 @@ trait FormatTest
 
     public function testFormatYear4Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018',
             DateTimeImmutable::fromArray([2018])->format('yyyy')
         );
@@ -123,7 +123,7 @@ trait FormatTest
 
     public function testFormatYear4DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '0005',
             DateTimeImmutable::fromArray([5])->format('yyyy')
         );
@@ -135,7 +135,7 @@ trait FormatTest
 
     public function testFormatWeekYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018',
             DateTimeImmutable::fromArray([2018])->format('Y')
         );
@@ -143,7 +143,7 @@ trait FormatTest
 
     public function testFormatWeekYear1DigitCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2020',
             DateTimeImmutable::fromArray([2019, 12, 30])->format('Y')
         );
@@ -151,7 +151,7 @@ trait FormatTest
 
     public function testFormatWeekYear1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '5',
             DateTimeImmutable::fromArray([5])->format('Y')
         );
@@ -159,7 +159,7 @@ trait FormatTest
 
     public function testFormatWeekYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '18',
             DateTimeImmutable::fromArray([2018])->format('YY')
         );
@@ -167,7 +167,7 @@ trait FormatTest
 
     public function testFormatWeekYear2DigitsCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '20',
             DateTimeImmutable::fromArray([2019, 12, 30])->format('YY')
         );
@@ -175,7 +175,7 @@ trait FormatTest
 
     public function testFormatWeekYear2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '05',
             DateTimeImmutable::fromArray([5])->format('YY')
         );
@@ -183,7 +183,7 @@ trait FormatTest
 
     public function testFormatWeekYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018',
             DateTimeImmutable::fromArray([2018])->format('YYY')
         );
@@ -191,7 +191,7 @@ trait FormatTest
 
     public function testFormatWeekYear3DigitsCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2020',
             DateTimeImmutable::fromArray([2019, 12, 30])->format('YYY')
         );
@@ -199,7 +199,7 @@ trait FormatTest
 
     public function testFormatWeekYear3DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '005',
             DateTimeImmutable::fromArray([5])->format('YYY')
         );
@@ -207,7 +207,7 @@ trait FormatTest
 
     public function testFormatWeekYear4Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2018',
             DateTimeImmutable::fromArray([2018])->format('YYYY')
         );
@@ -215,7 +215,7 @@ trait FormatTest
 
     public function testFormatWeekYear4DigitsCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2020',
             DateTimeImmutable::fromArray([2019, 12, 30])->format('YYYY')
         );
@@ -223,7 +223,7 @@ trait FormatTest
 
     public function testFormatWeekYear4DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '0005',
             DateTimeImmutable::fromArray([5])->format('YYYY')
         );
@@ -235,7 +235,7 @@ trait FormatTest
 
     public function testFormatQuarter1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '3',
             DateTimeImmutable::fromArray([2018, 8])->format('q')
         );
@@ -243,7 +243,7 @@ trait FormatTest
 
     public function testFormatQuarter2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '03',
             DateTimeImmutable::fromArray([2018, 8])->format('qq')
         );
@@ -251,7 +251,7 @@ trait FormatTest
 
     public function testFormatStandaloneQuarter1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '3',
             DateTimeImmutable::fromArray([2018, 8])->format('Q')
         );
@@ -259,7 +259,7 @@ trait FormatTest
 
     public function testFormatStandaloneQuarter2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '03',
             DateTimeImmutable::fromArray([2018, 8])->format('QQ')
         );
@@ -271,7 +271,7 @@ trait FormatTest
 
     public function testFormatMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '10',
             DateTimeImmutable::fromArray([2018, 10])->format('M')
         );
@@ -279,7 +279,7 @@ trait FormatTest
 
     public function testFormatMonth1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1])->format('M')
         );
@@ -287,7 +287,7 @@ trait FormatTest
 
     public function testFormatMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '10',
             DateTimeImmutable::fromArray([2018, 10])->format('MM')
         );
@@ -295,7 +295,7 @@ trait FormatTest
 
     public function testFormatMonth2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1])->format('MM')
         );
@@ -303,7 +303,7 @@ trait FormatTest
 
     public function testFormatMonthShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Oct',
             DateTimeImmutable::fromArray([2018, 10])->format('MMM')
         );
@@ -311,7 +311,7 @@ trait FormatTest
 
     public function testFormatMonthLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'October',
             DateTimeImmutable::fromArray([2018, 10])->format('MMMM')
         );
@@ -319,7 +319,7 @@ trait FormatTest
 
     public function testFormatMonthNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'O',
             DateTimeImmutable::fromArray([2018, 10])->format('MMMMM')
         );
@@ -327,7 +327,7 @@ trait FormatTest
 
     public function testFormatStandaloneMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '10',
             DateTimeImmutable::fromArray([2018, 10])->format('L')
         );
@@ -335,7 +335,7 @@ trait FormatTest
 
     public function testFormatStandaloneMonth1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1])->format('L')
         );
@@ -343,7 +343,7 @@ trait FormatTest
 
     public function testFormatStandaloneMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '10',
             DateTimeImmutable::fromArray([2018, 10])->format('LL')
         );
@@ -351,7 +351,7 @@ trait FormatTest
 
     public function testFormatStandaloneMonth2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1])->format('LL')
         );
@@ -359,7 +359,7 @@ trait FormatTest
 
     public function testFormatStandaloneMonthShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Oct',
             DateTimeImmutable::fromArray([2018, 10])->format('LLL')
         );
@@ -367,7 +367,7 @@ trait FormatTest
 
     public function testFormatStandaloneMonthLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'October',
             DateTimeImmutable::fromArray([2018, 10])->format('LLLL')
         );
@@ -375,7 +375,7 @@ trait FormatTest
 
     public function testFormatStandaloneMonthNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'O',
             DateTimeImmutable::fromArray([2018, 10])->format('LLLLL')
         );
@@ -387,7 +387,7 @@ trait FormatTest
 
     public function testFormatWeekOfYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '22',
             DateTimeImmutable::fromArray([2018, 6])->format('w')
         );
@@ -395,7 +395,7 @@ trait FormatTest
 
     public function testFormatWeekOfYear1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1])->format('w')
         );
@@ -403,7 +403,7 @@ trait FormatTest
 
     public function testFormatWeekOfYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '22',
             DateTimeImmutable::fromArray([2018, 6])->format('ww')
         );
@@ -411,7 +411,7 @@ trait FormatTest
 
     public function testFormatWeekOfYear2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1])->format('ww')
         );
@@ -419,7 +419,7 @@ trait FormatTest
 
     public function testFormatWeekOfMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('W')
         );
@@ -427,7 +427,7 @@ trait FormatTest
 
     public function testFormatWeekOfMonthCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '2',
             DateTimeImmutable::fromArray([2018, 6, 3])->format('W')
         );
@@ -439,7 +439,7 @@ trait FormatTest
 
     public function testFormatDayOfMonth1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '21',
             DateTimeImmutable::fromArray([2018, 1, 21])->format('d')
         );
@@ -447,7 +447,7 @@ trait FormatTest
 
     public function testFormatDayOfMonth1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1, 1])->format('d')
         );
@@ -455,7 +455,7 @@ trait FormatTest
 
     public function testFormatDayOfMonth2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '21',
             DateTimeImmutable::fromArray([2018, 1, 21])->format('dd')
         );
@@ -463,7 +463,7 @@ trait FormatTest
 
     public function testFormatDayOfMonth2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1, 1])->format('dd')
         );
@@ -471,7 +471,7 @@ trait FormatTest
 
     public function testFormatDayOfYear1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '152',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('D')
         );
@@ -479,7 +479,7 @@ trait FormatTest
 
     public function testFormatDayOfYear1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1, 1])->format('D')
         );
@@ -487,7 +487,7 @@ trait FormatTest
 
     public function testFormatDayOfYear2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '152',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('DD')
         );
@@ -495,7 +495,7 @@ trait FormatTest
 
     public function testFormatDayOfYear2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1, 1])->format('DD')
         );
@@ -503,7 +503,7 @@ trait FormatTest
 
     public function testFormatDayOfYear3Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '152',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('DDD')
         );
@@ -511,7 +511,7 @@ trait FormatTest
 
     public function testFormatDayOfYear3DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '001',
             DateTimeImmutable::fromArray([2018, 1, 1])->format('DDD')
         );
@@ -519,7 +519,7 @@ trait FormatTest
 
     public function testFormatDayOfWeekInMonth(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('F')
         );
@@ -527,7 +527,7 @@ trait FormatTest
 
     public function testFormatDayOfWeekInMonthCurrentWeek(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 6, 7])->format('F')
         );
@@ -539,7 +539,7 @@ trait FormatTest
 
     public function testFormatAltWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Fri',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('EEE')
         );
@@ -547,7 +547,7 @@ trait FormatTest
 
     public function testFormatAltWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Friday',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('EEEE')
         );
@@ -555,7 +555,7 @@ trait FormatTest
 
     public function testFormatAltWeekDayNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'F',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('EEEEE')
         );
@@ -563,7 +563,7 @@ trait FormatTest
 
     public function testFormatWeekDay1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '6',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('e')
         );
@@ -571,7 +571,7 @@ trait FormatTest
 
     public function testFormatWeekDay2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '06',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('ee')
         );
@@ -579,7 +579,7 @@ trait FormatTest
 
     public function testFormatWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Fri',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('eee')
         );
@@ -587,7 +587,7 @@ trait FormatTest
 
     public function testFormatWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Friday',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('eeee')
         );
@@ -595,7 +595,7 @@ trait FormatTest
 
     public function testFormatWeekDayNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'F',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('eeeee')
         );
@@ -603,7 +603,7 @@ trait FormatTest
 
     public function testFormatStandaloneWeekDay1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '6',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('c')
         );
@@ -611,7 +611,7 @@ trait FormatTest
 
     public function testFormatStandaloneWeekDay2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '6',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('cc')
         );
@@ -619,7 +619,7 @@ trait FormatTest
 
     public function testFormatStandaloneWeekDayShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Fri',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('ccc')
         );
@@ -627,7 +627,7 @@ trait FormatTest
 
     public function testFormatStandaloneWeekDayLong(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Friday',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('cccc')
         );
@@ -635,7 +635,7 @@ trait FormatTest
 
     public function testFormatStandaloneWeekDayNarrow(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'F',
             DateTimeImmutable::fromArray([2018, 6, 1])->format('ccccc')
         );
@@ -647,7 +647,7 @@ trait FormatTest
 
     public function testFormatDayPeriodShortAm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'AM',
             DateTimeImmutable::fromArray([2018, 1, 1, 0])->format('aaa')
         );
@@ -655,7 +655,7 @@ trait FormatTest
 
     public function testFormatDayPeriodShortPm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'PM',
             DateTimeImmutable::fromArray([2018, 1, 1, 12])->format('aaa')
         );
@@ -663,7 +663,7 @@ trait FormatTest
 
     public function testFormatDayPeriodLongAm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'AM',
             DateTimeImmutable::fromArray([2018, 1, 1, 0])->format('aaaa')
         );
@@ -671,7 +671,7 @@ trait FormatTest
 
     public function testFormatDayPeriodLongPm(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'PM',
             DateTimeImmutable::fromArray([2018, 1, 1, 12])->format('aaaa')
         );
@@ -683,7 +683,7 @@ trait FormatTest
 
     public function testFormat12Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '12',
             DateTimeImmutable::fromArray([2018, 1, 1, 12])->format('h')
         );
@@ -691,7 +691,7 @@ trait FormatTest
 
     public function testFormat12Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1, 1, 1])->format('h')
         );
@@ -699,7 +699,7 @@ trait FormatTest
 
     public function testFormat12Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '11',
             DateTimeImmutable::fromArray([2018, 1, 1, 23])->format('hh')
         );
@@ -707,7 +707,7 @@ trait FormatTest
 
     public function testFormat12Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1, 1, 1])->format('hh')
         );
@@ -715,7 +715,7 @@ trait FormatTest
 
     public function testFormat23Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '23',
             DateTimeImmutable::fromArray([2018, 1, 1, 23])->format('H')
         );
@@ -723,7 +723,7 @@ trait FormatTest
 
     public function testFormat23Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '0',
             DateTimeImmutable::fromArray([2018, 1, 1, 0])->format('H')
         );
@@ -731,7 +731,7 @@ trait FormatTest
 
     public function testFormat23Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '23',
             DateTimeImmutable::fromArray([2018, 1, 1, 23])->format('HH')
         );
@@ -739,7 +739,7 @@ trait FormatTest
 
     public function testFormat23Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '00',
             DateTimeImmutable::fromArray([2018, 1, 1, 0])->format('HH')
         );
@@ -747,7 +747,7 @@ trait FormatTest
 
     public function testFormat11Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '11',
             DateTimeImmutable::fromArray([2018, 1, 1, 23])->format('K')
         );
@@ -755,7 +755,7 @@ trait FormatTest
 
     public function testFormat11Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '0',
             DateTimeImmutable::fromArray([2018, 1, 1, 0])->format('K')
         );
@@ -763,7 +763,7 @@ trait FormatTest
 
     public function testFormat11Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '11',
             DateTimeImmutable::fromArray([2018, 1, 1, 23])->format('KK')
         );
@@ -771,7 +771,7 @@ trait FormatTest
 
     public function testFormat11Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '00',
             DateTimeImmutable::fromArray([2018, 1, 1, 0])->format('KK')
         );
@@ -779,7 +779,7 @@ trait FormatTest
 
     public function testFormat24Hour1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '24',
             DateTimeImmutable::fromArray([2018, 1, 1, 0])->format('k')
         );
@@ -787,7 +787,7 @@ trait FormatTest
 
     public function testFormat24Hour1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1, 1, 1])->format('k')
         );
@@ -795,7 +795,7 @@ trait FormatTest
 
     public function testFormat24Hour2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '24',
             DateTimeImmutable::fromArray([2018, 1, 1, 0])->format('kk')
         );
@@ -803,7 +803,7 @@ trait FormatTest
 
     public function testFormat24Hour2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1, 1, 1])->format('kk')
         );
@@ -815,7 +815,7 @@ trait FormatTest
 
     public function testFormatMinute1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '25',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 25])->format('m')
         );
@@ -823,7 +823,7 @@ trait FormatTest
 
     public function testFormatMinute1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 1])->format('m')
         );
@@ -831,7 +831,7 @@ trait FormatTest
 
     public function testFormatMinute2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '25',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 25])->format('mm')
         );
@@ -839,7 +839,7 @@ trait FormatTest
 
     public function testFormatMinute2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 1])->format('mm')
         );
@@ -851,7 +851,7 @@ trait FormatTest
 
     public function testFormatSecond1Digit(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '25',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 0, 25])->format('s')
         );
@@ -859,7 +859,7 @@ trait FormatTest
 
     public function testFormatSecond1DigitPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 0, 1])->format('s')
         );
@@ -867,7 +867,7 @@ trait FormatTest
 
     public function testFormatSecond2Digits(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '25',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 0, 25])->format('ss')
         );
@@ -875,7 +875,7 @@ trait FormatTest
 
     public function testFormatSecond2DigitsPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '01',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 0, 1])->format('ss')
         );
@@ -883,7 +883,7 @@ trait FormatTest
 
     public function testFormatFractional(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '123',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 0, 0, 123])->format('SSS')
         );
@@ -891,7 +891,7 @@ trait FormatTest
 
     public function testFormatFractionalTruncate(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '1',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 0, 0, 123])->format('S')
         );
@@ -899,7 +899,7 @@ trait FormatTest
 
     public function testFormatFractionalPadding(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '123000',
             DateTimeImmutable::fromArray([2018, 1, 1, 0, 0, 0, 123])->format('SSSSSS')
         );
@@ -911,7 +911,7 @@ trait FormatTest
 
     public function testFormatTimeZoneShortNonLocation(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'UTC',
             DateTimeImmutable::now()->format('zzz')
         );
@@ -919,7 +919,7 @@ trait FormatTest
 
     public function testFormatTimeZoneShortNonLocationTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10',
             DateTimeImmutable::now('Australia/Brisbane')->format('zzz')
         );
@@ -927,7 +927,7 @@ trait FormatTest
 
     public function testFormatTimeZoneLongNonLocation(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Coordinated Universal Time',
             DateTimeImmutable::now()->format('zzzz')
         );
@@ -935,7 +935,7 @@ trait FormatTest
 
     public function testFormatTimeZoneLongNonLocationTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Australian Eastern Standard Time',
             DateTimeImmutable::now('Australia/Brisbane')->format('zzzz')
         );
@@ -943,7 +943,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicAlt(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+0000',
             DateTimeImmutable::now()->format('ZZZ')
         );
@@ -951,7 +951,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicAltTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+1000',
             DateTimeImmutable::now('Australia/Brisbane')->format('ZZZ')
         );
@@ -959,7 +959,7 @@ trait FormatTest
 
     public function testFormatTimeZoneLongBasic(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT',
             DateTimeImmutable::now()->format('ZZZZ')
         );
@@ -967,7 +967,7 @@ trait FormatTest
 
     public function testFormatTimeZoneLongBasicTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10:00',
             DateTimeImmutable::now('Australia/Brisbane')->format('ZZZZ')
         );
@@ -975,7 +975,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601ExtendedAlt(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Z',
             DateTimeImmutable::now()->format('ZZZZZ')
         );
@@ -983,7 +983,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601ExtendedAltTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10:00',
             DateTimeImmutable::now('Australia/Brisbane')->format('ZZZZZ')
         );
@@ -991,7 +991,7 @@ trait FormatTest
 
     public function testFormatTimeZoneShortLocalized(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT',
             DateTimeImmutable::now()->format('O')
         );
@@ -999,7 +999,7 @@ trait FormatTest
 
     public function testFormatTimeZoneShortLocalizedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10',
             DateTimeImmutable::now('Australia/Brisbane')->format('O')
         );
@@ -1007,7 +1007,7 @@ trait FormatTest
 
     public function testFormatTimeZoneLongLocalized(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT',
             DateTimeImmutable::now()->format('OOOO')
         );
@@ -1015,7 +1015,7 @@ trait FormatTest
 
     public function testFormatTimeZoneLongLocalizedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'GMT+10:00',
             DateTimeImmutable::now('Australia/Brisbane')->format('OOOO')
         );
@@ -1023,7 +1023,7 @@ trait FormatTest
 
     public function testFormatTimeZoneLongTimeZoneId(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'UTC',
             DateTimeImmutable::now()->format('VV')
         );
@@ -1031,7 +1031,7 @@ trait FormatTest
 
     public function testFormatTimeZoneLongTimeZoneIdTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Australia/Brisbane',
             DateTimeImmutable::now('Australia/Brisbane')->format('VV')
         );
@@ -1039,7 +1039,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicShortZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Z',
             DateTimeImmutable::now()->format('X')
         );
@@ -1047,7 +1047,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicShortZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10',
             DateTimeImmutable::now('Australia/Brisbane')->format('X')
         );
@@ -1055,7 +1055,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Z',
             DateTimeImmutable::now()->format('XX')
         );
@@ -1063,7 +1063,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+1000',
             DateTimeImmutable::now('Australia/Brisbane')->format('XX')
         );
@@ -1071,7 +1071,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601ExtendedZ(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             'Z',
             DateTimeImmutable::now()->format('XXX')
         );
@@ -1079,7 +1079,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601ExtendedZTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10:00',
             DateTimeImmutable::now('Australia/Brisbane')->format('XXX')
         );
@@ -1087,7 +1087,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicShort(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+00',
             DateTimeImmutable::now()->format('x')
         );
@@ -1095,7 +1095,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicShortTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10',
             DateTimeImmutable::now('Australia/Brisbane')->format('x')
         );
@@ -1103,7 +1103,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601Basic(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+0000',
             DateTimeImmutable::now()->format('xx')
         );
@@ -1111,7 +1111,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601BasicTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+1000',
             DateTimeImmutable::now('Australia/Brisbane')->format('xx')
         );
@@ -1119,7 +1119,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601Extended(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+00:00',
             DateTimeImmutable::now()->format('xxx')
         );
@@ -1127,7 +1127,7 @@ trait FormatTest
 
     public function testFormatTimeZoneIso8601ExtendedTimeZone(): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             '+10:00',
             DateTimeImmutable::now('Australia/Brisbane')->format('xxx')
         );
