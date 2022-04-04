@@ -5,8 +5,8 @@ namespace Fyre\DateTime\Traits;
 
 use
     DateTimeZone,
-    Fyre\Error\Exceptions\Exception,
-    IntlCalendar;
+    IntlCalendar,
+    InvalidArgumentException;
 
 use function
     date_default_timezone_get,
@@ -65,7 +65,7 @@ trait StaticTrait
      * Get the IntlCalendar constant for an adjustment field.
      * @param string $timeUnit The unit of time.
      * @return int The IntlCalendar constant.
-     * @throws Exception if the time unit is invalid.
+     * @throws InvalidArgumentException if the time unit is invalid.
      */
     protected static function getAdjustmentField(string $timeUnit): int
     {
@@ -95,7 +95,7 @@ trait StaticTrait
             case 'years':
                 return IntlCalendar::FIELD_YEAR;
             default:
-                throw new Exception('Invalid time unit supplied');
+                throw new InvalidArgumentException('Invalid time unit supplied');
         }
     }
 
@@ -103,7 +103,7 @@ trait StaticTrait
      * Get the IntlCalendar constant for a  field.
      * @param string $timeUnit The unit of time.
      * @return int The IntlCalendar constant.
-     * @throws Exception if the time unit is invalid.
+     * @throws InvalidArgumentException if the time unit is invalid.
      */
     protected static function getField(string $timeUnit): int
     {
@@ -139,7 +139,7 @@ trait StaticTrait
             case 'year':
                 return IntlCalendar::FIELD_YEAR;
             default:
-                throw new Exception('Invalid time unit supplied');
+                throw new InvalidArgumentException('Invalid time unit supplied');
         }
     }
 
