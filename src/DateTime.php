@@ -46,6 +46,15 @@ class DateTime implements DateTimeInterface
 
     protected IntlCalendar $calendar;
 
+    use
+        AttributesGetTrait,
+        AttributesSetTrait,
+        CreateTrait,
+        ManipulateTrait,
+        OutputTrait,
+        StaticTrait,
+        UtilityTrait;
+
     /**
      * New DateTime constructor.
      * @param string|null $dateString The date to parse.
@@ -63,14 +72,5 @@ class DateTime implements DateTimeInterface
 
         $this->calendar = static::createCalendar($timestamp * 1000, $timeZone, $this->locale);
     }
-
-    use
-        AttributesGetTrait,
-        AttributesSetTrait,
-        CreateTrait,
-        ManipulateTrait,
-        OutputTrait,
-        StaticTrait,
-        UtilityTrait;
 
 }
