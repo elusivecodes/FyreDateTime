@@ -85,7 +85,7 @@ $date = DateTime::fromDateTime($dateTime, $timeZone, $locale);
 - `$timeZone` is a string representing the time zone of the date, and will default to the system time zone.
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
-The `$formatString` supports tokens described in the [ICU specification](http://userguide.icu-project.org/formatparse/datetime).
+The `$formatString` supports tokens described in the [ICU specification](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#datetime-format-syntax).
 
 ```php
 $date = DateTime::fromFormat($formatString, $dateString, $timeZone, $locale);
@@ -129,7 +129,7 @@ Once you have created a *DateTime* object, you can get a string representation u
 
 - `$formatString` is a string containing the format you wish to output using.
 
-The `$formatString` supports tokens described in the [ICU specification](http://userguide.icu-project.org/formatparse/datetime).
+The `$formatString` supports tokens described in the [ICU specification](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#datetime-format-syntax).
 
 ```php
 $dateString = $date->format($formatString);
