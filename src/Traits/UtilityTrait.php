@@ -5,7 +5,8 @@ namespace Fyre\DateTime\Traits;
 
 use
     DateInterval,
-    Fyre\DateTime\DateTimeInterface;
+    Fyre\DateTime\DateTimeInterface,
+    IntlCalendar;
 
 use function
     strtolower;
@@ -110,8 +111,12 @@ trait UtilityTrait
             $other = $other->clone()->setTimeZone($this->getTimeZone());
             $adjust = false;
 
-            foreach (['year', 'month', 'day', 'hour', 'minute', 'second', 'millisecond'] AS $timeUnit) {
+            foreach (['year', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'] AS $timeUnit) {
                 $tempField = static::getAdjustmentField($timeUnit);
+
+                if ($field === IntlCalendar::FIELD_WEEK_OF_YEAR && $tempField === IntlCalendar::FIELD_DATE) {
+                    $tempField = IntlCalendar::FIELD_DAY_OF_WEEK;
+                }
 
                 if ($adjust) {
                     $value = $this->calendar->get($tempField);

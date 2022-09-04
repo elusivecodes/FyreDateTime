@@ -690,7 +690,7 @@ $daysInYear = $date->daysInYear();
 Get the difference between two Dates.
 
 - `$other` is the *DateTime* object to compare to.
-- `$timeUnit` is a string representing the unit of time to return, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*", or their pluralized versions.
+- `$timeUnit` is a string representing the unit of time to return, and can be one of either "*year*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*", or their pluralized versions.
 - `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
 
 If the `$timeUnit` is omitted, this method will return the difference in milliseconds.

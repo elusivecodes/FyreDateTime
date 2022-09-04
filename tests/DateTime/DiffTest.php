@@ -154,6 +154,79 @@ trait DiffTest
         );
     }
 
+    public function testDiffWeek(): void
+    {
+        $this->assertSame(
+            1,
+            DateTime::fromArray([2018, 6, 23])
+                ->diff(
+                    DateTime::fromArray([2018, 6, 16]),
+                    'week'
+                )
+        );
+    }
+
+    public function testDiffWeeks(): void
+    {
+        $this->assertSame(
+            5,
+            DateTime::fromArray([2018, 6, 23])
+                ->diff(
+                    DateTime::fromArray([2018, 5, 15]),
+                    'weeks'
+                )
+        );
+    }
+
+    public function testDiffWeeksNegative(): void
+    {
+        $this->assertSame(
+            -5,
+            DateTime::fromArray([2018, 5, 15])
+                ->diff(
+                    DateTime::fromArray([2018, 6, 23]),
+                    'weeks'
+                )
+        );
+    }
+
+    public function testDiffWeeksRelative(): void
+    {
+        $this->assertSame(
+            1,
+            DateTime::fromArray([2018, 1, 8])
+                ->diff(
+                    DateTime::fromArray([2018, 1, 1]),
+                    'weeks'
+                )
+        );
+    }
+
+    public function testDiffWeeksExact(): void
+    {
+        $this->assertSame(
+            0,
+            DateTime::fromArray([2018, 1, 8])
+                ->diff(
+                    DateTime::fromArray([2018, 1, 2]),
+                    'weeks',
+                    false
+                )
+        );
+    }
+
+    public function testDiffWeeksMonths(): void
+    {
+        $this->assertSame(
+            10,
+            DateTime::fromArray([2018, 8, 23])
+                ->diff(
+                    DateTime::fromArray([2018, 6, 15]),
+                    'weeks'
+                )
+        );
+    }
+
     public function testDiffDay(): void
     {
         $this->assertSame(
