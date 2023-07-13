@@ -1,13 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\DateTimeImmutable;
+namespace Tests;
 
-use
-    Fyre\DateTime\DateTime,
-    Fyre\DateTime\DateTimeImmutable;
+use Fyre\DateTime\DateTime;
 
-trait AttributesSetTest
+trait AttributesSetTestTrait
 {
 
     /**
@@ -16,7 +14,7 @@ trait AttributesSetTest
 
     public function testSetDate(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setDate(15);
 
         $this->assertNotSame(
@@ -32,7 +30,7 @@ trait AttributesSetTest
 
     public function testSetDateWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 6, 1]);
+        $date1 = DateTime::fromArray([2019, 6, 1]);
         $date2 = $date1->setDate(31);
 
         $this->assertNotSame(
@@ -52,7 +50,7 @@ trait AttributesSetTest
 
     public function testSetDay(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setDay(5);
 
         $this->assertNotSame(
@@ -68,7 +66,7 @@ trait AttributesSetTest
 
     public function testSetDayMonday(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setDay(1);
 
         $this->assertNotSame(
@@ -84,7 +82,7 @@ trait AttributesSetTest
 
     public function testSetDaySunday(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setDay(0);
 
         $this->assertNotSame(
@@ -100,7 +98,7 @@ trait AttributesSetTest
 
     public function testSetDayWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setDay(12);
 
         $this->assertNotSame(
@@ -120,7 +118,7 @@ trait AttributesSetTest
 
     public function testSetDayOfYear(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setDayOfYear(235);
 
         $this->assertNotSame(
@@ -136,7 +134,7 @@ trait AttributesSetTest
 
     public function testSetDayOfYearWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setDayOfYear(500);
 
         $this->assertNotSame(
@@ -156,7 +154,7 @@ trait AttributesSetTest
 
     public function testSetHours(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(9);
 
         $this->assertNotSame(
@@ -172,7 +170,7 @@ trait AttributesSetTest
 
     public function testSetHours24hr(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(13);
 
         $this->assertNotSame(
@@ -188,7 +186,7 @@ trait AttributesSetTest
 
     public function testSetHoursWithMinutes(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(0, 33);
 
         $this->assertNotSame(
@@ -204,7 +202,7 @@ trait AttributesSetTest
 
     public function testSetHoursWithSeconds(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(0, 0, 23);
 
         $this->assertNotSame(
@@ -220,7 +218,7 @@ trait AttributesSetTest
 
     public function testSetHoursWithMilliseconds(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(0, 0, 0, 303);
 
         $this->assertNotSame(
@@ -236,7 +234,7 @@ trait AttributesSetTest
 
     public function testSetHoursWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setHours(33);
 
         $this->assertNotSame(
@@ -256,7 +254,7 @@ trait AttributesSetTest
 
     public function testSetMilliseconds(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMilliseconds(220);
 
         $this->assertNotSame(
@@ -272,7 +270,7 @@ trait AttributesSetTest
 
     public function testSetMillisecondsWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMilliseconds(1220);
 
         $this->assertNotSame(
@@ -292,7 +290,7 @@ trait AttributesSetTest
 
     public function testSetMinutes(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMinutes(15);
 
         $this->assertNotSame(
@@ -308,7 +306,7 @@ trait AttributesSetTest
 
     public function testSetMinutesWithSeconds(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMinutes(0, 32);
 
         $this->assertNotSame(
@@ -324,7 +322,7 @@ trait AttributesSetTest
 
     public function testSetMinutesWithMilliseconds(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMinutes(0, 0, 320);
 
         $this->assertNotSame(
@@ -340,7 +338,7 @@ trait AttributesSetTest
 
     public function testSetMinutesWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMinutes(75);
 
         $this->assertNotSame(
@@ -360,7 +358,7 @@ trait AttributesSetTest
 
     public function testSetMonth(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMonth(9);
 
         $this->assertNotSame(
@@ -376,7 +374,7 @@ trait AttributesSetTest
 
     public function testSetMonthClamp(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 31]);
+        $date1 = DateTime::fromArray([2019, 1, 31]);
         $date2 = $date1->setMonth(2);
 
         $this->assertNotSame(
@@ -392,7 +390,7 @@ trait AttributesSetTest
 
     public function testSetMonthWithDate(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMonth(1, 23);
 
         $this->assertNotSame(
@@ -408,7 +406,7 @@ trait AttributesSetTest
 
     public function testSetMonthWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setMonth(15);
 
         $this->assertNotSame(
@@ -425,7 +423,7 @@ trait AttributesSetTest
     public function testSetMonthNoClamp(): void
     {
         DateTime::setDateClamping(false);
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 31]);
+        $date1 = DateTime::fromArray([2019, 1, 31]);
         $date2 = $date1->setMonth(2);
 
         $this->assertNotSame(
@@ -446,7 +444,7 @@ trait AttributesSetTest
 
     public function testSetQuarter(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setQuarter(2);
 
         $this->assertNotSame(
@@ -462,7 +460,7 @@ trait AttributesSetTest
 
     public function testSetQuarterWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setQuarter(6);
 
         $this->assertNotSame(
@@ -482,7 +480,7 @@ trait AttributesSetTest
 
     public function testSetSeconds(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setSeconds(42);
 
         $this->assertNotSame(
@@ -498,7 +496,7 @@ trait AttributesSetTest
 
     public function testSetSecondsWithMilliseconds(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setSeconds(0, 550);
 
         $this->assertNotSame(
@@ -514,7 +512,7 @@ trait AttributesSetTest
 
     public function testSetSecondsWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setSeconds(105);
 
         $this->assertNotSame(
@@ -534,7 +532,7 @@ trait AttributesSetTest
 
     public function testSetTime(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
+        $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = $date1->setTime(1546300800000);
 
         $this->assertNotSame(
@@ -550,7 +548,7 @@ trait AttributesSetTest
 
     public function testSetTimestamp(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
+        $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimestamp(1546300800);
 
         $this->assertNotSame(
@@ -570,7 +568,7 @@ trait AttributesSetTest
 
     public function testSetTimeZone(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
+        $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimeZone('Australia/Brisbane');
 
         $this->assertNotSame(
@@ -586,7 +584,7 @@ trait AttributesSetTest
 
     public function testSetTimeZoneFromOffset(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
+        $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimeZone('+10:00');
 
         $this->assertNotSame(
@@ -602,7 +600,7 @@ trait AttributesSetTest
 
     public function testSetTimeZoneFromOffsetWithoutColon(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
+        $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimeZone('+1000');
 
         $this->assertNotSame(
@@ -622,7 +620,7 @@ trait AttributesSetTest
 
     public function testSetTimeZoneOffset(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2018, 1, 1]);
+        $date1 = DateTime::fromArray([2018, 1, 1]);
         $date2 = $date1->setTimeZoneOffset(600);
 
         $this->assertNotSame(
@@ -642,7 +640,7 @@ trait AttributesSetTest
 
     public function testSetWeek(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeek(23);
 
         $this->assertNotSame(
@@ -658,7 +656,7 @@ trait AttributesSetTest
 
     public function testSetWeekUsesWeekYear(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 12, 30]);
+        $date1 = DateTime::fromArray([2019, 12, 30]);
         $date2 = $date1->setWeek(23);
 
         $this->assertNotSame(
@@ -674,7 +672,7 @@ trait AttributesSetTest
 
     public function testSetWeekWithDays(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeek(1, 6);
 
         $this->assertNotSame(
@@ -690,7 +688,7 @@ trait AttributesSetTest
 
     public function testSetWeekWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeek(77);
 
         $this->assertNotSame(
@@ -710,7 +708,7 @@ trait AttributesSetTest
 
     public function testSetWeekDay(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekDay(6);
 
         $this->assertNotSame(
@@ -726,7 +724,7 @@ trait AttributesSetTest
 
     public function testSetWeekDayMonday(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekDay(2);
 
         $this->assertNotSame(
@@ -742,7 +740,7 @@ trait AttributesSetTest
 
     public function testSetWeekDaySunday(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekDay(1);
 
         $this->assertNotSame(
@@ -758,7 +756,7 @@ trait AttributesSetTest
 
     public function testSetWeekDayWrap(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekDay(14);
 
         $this->assertNotSame(
@@ -778,7 +776,7 @@ trait AttributesSetTest
 
     public function testSetWeekDayInMonth(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 6, 1]);
+        $date1 = DateTime::fromArray([2019, 6, 1]);
         $date2 = $date1->setWeekDayInMonth(4);
 
         $this->assertNotSame(
@@ -794,7 +792,7 @@ trait AttributesSetTest
 
     public function testSetWeekDayInMonthLocal(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 6, 28]);
+        $date1 = DateTime::fromArray([2019, 6, 28]);
         $date2 = $date1->setWeekDayInMonth(1);
 
         $this->assertNotSame(
@@ -814,7 +812,7 @@ trait AttributesSetTest
 
     public function testSetWeekOfMonth(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 6, 1]);
+        $date1 = DateTime::fromArray([2019, 6, 1]);
         $date2 = $date1->setWeekOfMonth(4);
 
         $this->assertNotSame(
@@ -830,7 +828,7 @@ trait AttributesSetTest
 
     public function testSetWeekOfMonthLocal(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 6, 28]);
+        $date1 = DateTime::fromArray([2019, 6, 28]);
         $date2 = $date1->setWeekOfMonth(1);
 
         $this->assertNotSame(
@@ -850,7 +848,7 @@ trait AttributesSetTest
 
     public function testSetWeekYear(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekYear(2018);
 
         $this->assertNotSame(
@@ -866,7 +864,7 @@ trait AttributesSetTest
 
     public function testSetWeekYearKeepsWeek(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 6, 1]);
+        $date1 = DateTime::fromArray([2019, 6, 1]);
         $date2 = $date1->setWeekYear(2018);
 
         $this->assertNotSame(
@@ -882,7 +880,7 @@ trait AttributesSetTest
 
     public function testSetWeekYearWithWeek(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekYear(2018, 14);
 
         $this->assertNotSame(
@@ -898,7 +896,7 @@ trait AttributesSetTest
 
     public function testSetWeekYearWithDays(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setWeekYear(2018, 1, 6);
 
         $this->assertNotSame(
@@ -918,7 +916,7 @@ trait AttributesSetTest
 
     public function testSetYear(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setYear(2018);
 
         $this->assertNotSame(
@@ -934,7 +932,7 @@ trait AttributesSetTest
 
     public function testSetYearWithMonths(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setYear(2018, 6);
 
         $this->assertNotSame(
@@ -950,7 +948,7 @@ trait AttributesSetTest
 
     public function testSetYearWithDays(): void
     {
-        $date1 = DateTimeImmutable::fromArray([2019, 1, 1]);
+        $date1 = DateTime::fromArray([2019, 1, 1]);
         $date2 = $date1->setYear(2018, 1, 16);
 
         $this->assertNotSame(

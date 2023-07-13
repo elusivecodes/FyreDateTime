@@ -1,33 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\DateTime;
+namespace Tests;
 
-use
-    Fyre\DateTime\DateTime;
+use Fyre\DateTime\DateTime;
 
-trait UtilityTest
+trait UtilityTestTrait
 {
-
-    /**
-     * #clone
-     */
-
-    public function testClone(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->clone();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-01-01T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
 
     /**
      * #dayName

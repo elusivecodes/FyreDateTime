@@ -3,11 +3,9 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use
-    DateInterval;
+use DateInterval;
 
-use function
-    strtolower;
+use function strtolower;
 
 /**
  * ManipulateTrait

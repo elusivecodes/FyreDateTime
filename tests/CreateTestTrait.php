@@ -1,15 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\DateTime;
+namespace Tests;
 
-use
-    Fyre\DateTime\DateTime;
+use Fyre\DateTime\DateTime;
 
-use function
-    time;
+use function time;
 
-trait CreateTest
+trait CreateTestTrait
 {
 
     /**

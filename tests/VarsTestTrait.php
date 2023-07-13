@@ -1,19 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\DateTimeImmutable;
+namespace Tests;
 
-use
-    Fyre\DateTime\DateTimeImmutable;
+use Fyre\DateTime\DateTime;
 
-trait VarsTest
+trait VarsTestTrait
 {
 
     public function testFormatsAtom(): void
     {
         $this->assertSame(
             '2020-01-01T00:00:00+00:00',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['atom'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['atom'])
         );
     }
 
@@ -21,7 +20,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wednesday, 01-Jan-2020 00:00:00 GMT',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['cookie'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['cookie'])
         );
     }
 
@@ -29,7 +28,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wed Jan 01 2020',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['date'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['date'])
         );
     }
 
@@ -37,7 +36,7 @@ trait VarsTest
     {
         $this->assertSame(
             '2020-01-01T00:00:00+0000',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['iso8601'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['iso8601'])
         );
     }
 
@@ -45,7 +44,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wed, 01 Jan 20 00:00:00 +0000',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['rfc822'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc822'])
         );
     }
 
@@ -53,7 +52,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wednesday 01-Jan-20 00:00:00 GMT',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['rfc850'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc850'])
         );
     }
 
@@ -61,7 +60,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wed, 01 Jan 20 00:00:00 +0000',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['rfc1036'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc1036'])
         );
     }
 
@@ -69,7 +68,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wed, 01 Jan 2020 00:00:00 +0000',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['rfc1123'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc1123'])
         );
     }
 
@@ -77,7 +76,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wed, 01 Jan 2020 00:00:00 +0000',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['rfc2822'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc2822'])
         );
     }
 
@@ -85,7 +84,7 @@ trait VarsTest
     {
         $this->assertSame(
             '2020-01-01T00:00:00+00:00',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['rfc3339'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc3339'])
         );
     }
 
@@ -93,7 +92,7 @@ trait VarsTest
     {
         $this->assertSame(
             '2020-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['rfc3339_extended'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc3339_extended'])
         );
     }
 
@@ -101,7 +100,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wed, 01 Jan 2020 00:00:00 +0000',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['rss'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rss'])
         );
     }
 
@@ -109,7 +108,7 @@ trait VarsTest
     {
         $this->assertSame(
             'Wed Jan 01 2020 00:00:00 +0000 (UTC)',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['string'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['string'])
         );
     }
 
@@ -117,7 +116,7 @@ trait VarsTest
     {
         $this->assertSame(
             '00:00:00 +0000 (UTC)',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['time'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['time'])
         );
     }
 
@@ -125,7 +124,7 @@ trait VarsTest
     {
         $this->assertSame(
             '2020-01-01T00:00:00+00:00',
-            DateTimeImmutable::fromArray([2020])->format(DateTimeImmutable::FORMATS['w3c'])
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['w3c'])
         );
     }
 

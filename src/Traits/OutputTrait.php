@@ -3,8 +3,7 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use
-    IntlDateFormatter;
+use IntlDateFormatter;
 
 /**
  * OutputTrait
@@ -46,7 +45,7 @@ trait OutputTrait
      */
     public function toISOString(): string
     {
-        return $this->clone()
+        return $this
             ->setLocale('en')
             ->setTimeZone('UTC')
             ->format(static::FORMATS['rfc3339_extended']);
@@ -76,7 +75,7 @@ trait OutputTrait
      */
     public function toUTCString(): string
     {
-        return $this->clone()
+        return $this
             ->setTimeZone('UTC')
             ->toString();
     }

@@ -3,13 +3,11 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use
-    DateTimeInterface,
-    IntlDateFormatter;
+use DateTimeInterface;
+use IntlDateFormatter;
 
-use function
-    array_combine,
-    array_pad;
+use function array_combine;
+use function array_pad;
 
 /**
  * CreateTrait

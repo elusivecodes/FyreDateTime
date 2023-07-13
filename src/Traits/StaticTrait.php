@@ -3,14 +3,12 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use
-    DateTimeZone,
-    IntlCalendar,
-    InvalidArgumentException;
+use DateTimeZone;
+use IntlCalendar;
+use InvalidArgumentException;
 
-use function
-    date_default_timezone_get,
-    locale_get_default;
+use function date_default_timezone_get;
+use function locale_get_default;
 
 /**
  * StaticTrait

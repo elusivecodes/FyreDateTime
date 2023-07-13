@@ -1,12 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\DateTimeImmutable;
+namespace Tests;
 
-use
-    Fyre\DateTime\DateTimeImmutable;
+use Fyre\DateTime\DateTime;
 
-trait FromFormatTest
+trait FromFormatTestTrait
 {
 
     /**
@@ -17,7 +16,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1970,
-            DateTimeImmutable::fromFormat('yyyy GGG', '1970 AD')->getYear()
+            DateTime::fromFormat('yyyy GGG', '1970 AD')->getYear()
         );
     }
 
@@ -25,7 +24,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             -1970,
-            DateTimeImmutable::fromFormat('yyyy GGG', '1970 BC')->getYear()
+            DateTime::fromFormat('yyyy GGG', '1970 BC')->getYear()
         );
     }
 
@@ -33,7 +32,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1970,
-            DateTimeImmutable::fromFormat('yyyy GGGG', '1970 Anno Domini')->getYear()
+            DateTime::fromFormat('yyyy GGGG', '1970 Anno Domini')->getYear()
         );
     }
 
@@ -41,7 +40,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             -1970,
-            DateTimeImmutable::fromFormat('yyyy GGGG', '1970 Before Christ')->getYear()
+            DateTime::fromFormat('yyyy GGGG', '1970 Before Christ')->getYear()
         );
     }
 
@@ -49,7 +48,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1970,
-            DateTimeImmutable::fromFormat('yyyy GGGGG', '1970 A')->getYear()
+            DateTime::fromFormat('yyyy GGGGG', '1970 A')->getYear()
         );
     }
 
@@ -57,7 +56,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             -1970,
-            DateTimeImmutable::fromFormat('yyyy GGGGG', '1970 B')->getYear()
+            DateTime::fromFormat('yyyy GGGGG', '1970 B')->getYear()
         );
     }
 
@@ -69,7 +68,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             2018,
-            DateTimeImmutable::fromFormat('y', '2018')->getYear()
+            DateTime::fromFormat('y', '2018')->getYear()
         );
     }
 
@@ -77,7 +76,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             5,
-            DateTimeImmutable::fromFormat('y', '5')->getYear()
+            DateTime::fromFormat('y', '5')->getYear()
         );
     }
 
@@ -85,7 +84,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             2018,
-            DateTimeImmutable::fromFormat('yy', '2018')->getYear()
+            DateTime::fromFormat('yy', '2018')->getYear()
         );
     }
 
@@ -93,7 +92,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1988,
-            DateTimeImmutable::fromFormat('yy', '88')->getYear()
+            DateTime::fromFormat('yy', '88')->getYear()
         );
     }
 
@@ -101,7 +100,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             2018,
-            DateTimeImmutable::fromFormat('yyy', '2018')->getYear()
+            DateTime::fromFormat('yyy', '2018')->getYear()
         );
     }
 
@@ -109,7 +108,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             88,
-            DateTimeImmutable::fromFormat('yyy', '088')->getYear()
+            DateTime::fromFormat('yyy', '088')->getYear()
         );
     }
 
@@ -117,7 +116,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             2018,
-            DateTimeImmutable::fromFormat('yyyy', '2018')->getYear()
+            DateTime::fromFormat('yyyy', '2018')->getYear()
         );
     }
 
@@ -125,7 +124,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             88,
-            DateTimeImmutable::fromFormat('yyyy', '0088')->getYear()
+            DateTime::fromFormat('yyyy', '0088')->getYear()
         );
     }
 
@@ -137,7 +136,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             2018,
-            DateTimeImmutable::fromFormat('Y w e', '2018 1 1')->getWeekYear()
+            DateTime::fromFormat('Y w e', '2018 1 1')->getWeekYear()
         );
     }
 
@@ -145,7 +144,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             5,
-            DateTimeImmutable::fromFormat('Y w e', '5 1 1')->getWeekYear()
+            DateTime::fromFormat('Y w e', '5 1 1')->getWeekYear()
         );
     }
 
@@ -153,7 +152,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             2018,
-            DateTimeImmutable::fromFormat('YY w e', '2018 1 1')->getWeekYear()
+            DateTime::fromFormat('YY w e', '2018 1 1')->getWeekYear()
         );
     }
 
@@ -161,7 +160,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1988,
-            DateTimeImmutable::fromFormat('YY w e', '88 1 1')->getWeekYear()
+            DateTime::fromFormat('YY w e', '88 1 1')->getWeekYear()
         );
     }
 
@@ -169,7 +168,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             2018,
-            DateTimeImmutable::fromFormat('YYY w e', '2018 1 1')->getWeekYear()
+            DateTime::fromFormat('YYY w e', '2018 1 1')->getWeekYear()
         );
     }
 
@@ -177,7 +176,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             88,
-            DateTimeImmutable::fromFormat('YYY w e', '088 1 1')->getWeekYear()
+            DateTime::fromFormat('YYY w e', '088 1 1')->getWeekYear()
         );
     }
 
@@ -185,7 +184,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             2018,
-            DateTimeImmutable::fromFormat('YYYY w e', '2018 1 1')->getWeekYear()
+            DateTime::fromFormat('YYYY w e', '2018 1 1')->getWeekYear()
         );
     }
 
@@ -193,7 +192,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             88,
-            DateTimeImmutable::fromFormat('YYYY w e', '0088 1 1')->getWeekYear()
+            DateTime::fromFormat('YYYY w e', '0088 1 1')->getWeekYear()
         );
     }
 
@@ -205,7 +204,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             3,
-            DateTimeImmutable::fromFormat('q', '3')->getQuarter()
+            DateTime::fromFormat('q', '3')->getQuarter()
         );
     }
 
@@ -213,7 +212,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             3,
-            DateTimeImmutable::fromFormat('qq', '03')->getQuarter()
+            DateTime::fromFormat('qq', '03')->getQuarter()
         );
     }
 
@@ -221,7 +220,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             3,
-            DateTimeImmutable::fromFormat('Q', '3')->getQuarter()
+            DateTime::fromFormat('Q', '3')->getQuarter()
         );
     }
 
@@ -229,7 +228,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             3,
-            DateTimeImmutable::fromFormat('QQ', '03')->getQuarter()
+            DateTime::fromFormat('QQ', '03')->getQuarter()
         );
     }
 
@@ -241,7 +240,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             10,
-            DateTimeImmutable::fromFormat('M', '10')->getMonth()
+            DateTime::fromFormat('M', '10')->getMonth()
         );
     }
 
@@ -249,7 +248,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('M', '1')->getMonth()
+            DateTime::fromFormat('M', '1')->getMonth()
         );
     }
 
@@ -257,7 +256,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             10,
-            DateTimeImmutable::fromFormat('MM', '10')->getMonth()
+            DateTime::fromFormat('MM', '10')->getMonth()
         );
     }
 
@@ -265,7 +264,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('MM', '01')->getMonth()
+            DateTime::fromFormat('MM', '01')->getMonth()
         );
     }
 
@@ -273,7 +272,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             10,
-            DateTimeImmutable::fromFormat('MMM', 'Oct')->getMonth()
+            DateTime::fromFormat('MMM', 'Oct')->getMonth()
         );
     }
 
@@ -281,7 +280,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             10,
-            DateTimeImmutable::fromFormat('MMMM', 'October')->getMonth()
+            DateTime::fromFormat('MMMM', 'October')->getMonth()
         );
     }
 
@@ -289,7 +288,7 @@ trait FromFormatTest
     // {
     //     $this->assertSame(
     //         10,
-    //         DateTimeImmutable::fromFormat('MMMMM', 'O')->getMonth()
+    //         DateTime::fromFormat('MMMMM', 'O')->getMonth()
     //     );
     // }
 
@@ -297,7 +296,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             10,
-            DateTimeImmutable::fromFormat('L', '10')->getMonth()
+            DateTime::fromFormat('L', '10')->getMonth()
         );
     }
 
@@ -305,7 +304,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('L', '1')->getMonth()
+            DateTime::fromFormat('L', '1')->getMonth()
         );
     }
 
@@ -313,7 +312,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             10,
-            DateTimeImmutable::fromFormat('LL', '10')->getMonth()
+            DateTime::fromFormat('LL', '10')->getMonth()
         );
     }
 
@@ -321,7 +320,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('LL', '01')->getMonth()
+            DateTime::fromFormat('LL', '01')->getMonth()
         );
     }
 
@@ -329,7 +328,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             10,
-            DateTimeImmutable::fromFormat('LLL', 'Oct')->getMonth()
+            DateTime::fromFormat('LLL', 'Oct')->getMonth()
         );
     }
 
@@ -337,7 +336,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             10,
-            DateTimeImmutable::fromFormat('LLLL', 'October')->getMonth()
+            DateTime::fromFormat('LLLL', 'October')->getMonth()
         );
     }
 
@@ -345,7 +344,7 @@ trait FromFormatTest
     // {
     //     $this->assertSame(
     //         10,
-    //         DateTimeImmutable::fromFormat('LLLLL', 'O')->getMonth()
+    //         DateTime::fromFormat('LLLLL', 'O')->getMonth()
     //     );
     // }
 
@@ -357,7 +356,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             22,
-            DateTimeImmutable::fromFormat('w', '22')->getWeek()
+            DateTime::fromFormat('w', '22')->getWeek()
         );
     }
 
@@ -365,7 +364,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('w', '1')->getWeek()
+            DateTime::fromFormat('w', '1')->getWeek()
         );
     }
 
@@ -373,7 +372,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             22,
-            DateTimeImmutable::fromFormat('ww', '22')->getWeek()
+            DateTime::fromFormat('ww', '22')->getWeek()
         );
     }
 
@@ -381,7 +380,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('ww', '01')->getWeek()
+            DateTime::fromFormat('ww', '01')->getWeek()
         );
     }
 
@@ -389,7 +388,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             3,
-            DateTimeImmutable::fromFormat('W', '3')->getWeekOfMonth()
+            DateTime::fromFormat('W', '3')->getWeekOfMonth()
         );
     }
 
@@ -401,7 +400,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             21,
-            DateTimeImmutable::fromFormat('d', '21')->getDate()
+            DateTime::fromFormat('d', '21')->getDate()
         );
     }
 
@@ -409,7 +408,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('d', '1')->getDate()
+            DateTime::fromFormat('d', '1')->getDate()
         );
     }
 
@@ -417,7 +416,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             21,
-            DateTimeImmutable::fromFormat('dd', '21')->getDate()
+            DateTime::fromFormat('dd', '21')->getDate()
         );
     }
 
@@ -425,7 +424,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('dd', '01')->getDate()
+            DateTime::fromFormat('dd', '01')->getDate()
         );
     }
 
@@ -433,7 +432,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             152,
-            DateTimeImmutable::fromFormat('D', '152')->getDayOfYear()
+            DateTime::fromFormat('D', '152')->getDayOfYear()
         );
     }
 
@@ -441,7 +440,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('D', '1')->getDayOfYear()
+            DateTime::fromFormat('D', '1')->getDayOfYear()
         );
     }
 
@@ -449,7 +448,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             152,
-            DateTimeImmutable::fromFormat('DD', '152')->getDayOfYear()
+            DateTime::fromFormat('DD', '152')->getDayOfYear()
         );
     }
 
@@ -457,7 +456,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('DD', '01')->getDayOfYear()
+            DateTime::fromFormat('DD', '01')->getDayOfYear()
         );
     }
 
@@ -465,7 +464,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             152,
-            DateTimeImmutable::fromFormat('DDD', '152')->getDayOfYear()
+            DateTime::fromFormat('DDD', '152')->getDayOfYear()
         );
     }
 
@@ -473,7 +472,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('DDD', '001')->getDayOfYear()
+            DateTime::fromFormat('DDD', '001')->getDayOfYear()
         );
     }
 
@@ -481,7 +480,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             3,
-            DateTimeImmutable::fromFormat('F', '3')->getWeekDayInMonth()
+            DateTime::fromFormat('F', '3')->getWeekDayInMonth()
         );
     }
 
@@ -493,7 +492,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('EEE', 'Fri')->getWeekDay()
+            DateTime::fromFormat('EEE', 'Fri')->getWeekDay()
         );
     }
 
@@ -501,7 +500,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('EEEE', 'Friday')->getWeekDay()
+            DateTime::fromFormat('EEEE', 'Friday')->getWeekDay()
         );
     }
 
@@ -509,7 +508,7 @@ trait FromFormatTest
     // {
     //     $this->assertSame(
     //         6,
-    //         DateTimeImmutable::fromFormat('EEEEE', 'F')->getWeekDay()
+    //         DateTime::fromFormat('EEEEE', 'F')->getWeekDay()
     //     );
     // }
 
@@ -517,7 +516,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('e', '6')->getWeekDay()
+            DateTime::fromFormat('e', '6')->getWeekDay()
         );
     }
 
@@ -525,7 +524,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('ee', '06')->getWeekDay()
+            DateTime::fromFormat('ee', '06')->getWeekDay()
         );
     }
 
@@ -533,7 +532,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('eee', 'Fri')->getWeekDay()
+            DateTime::fromFormat('eee', 'Fri')->getWeekDay()
         );
     }
 
@@ -541,7 +540,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('eeee', 'Friday')->getWeekDay()
+            DateTime::fromFormat('eeee', 'Friday')->getWeekDay()
         );
     }
 
@@ -549,7 +548,7 @@ trait FromFormatTest
     // {
     //     $this->assertSame(
     //         6,
-    //         DateTimeImmutable::fromFormat('eeeee', 'F')->getWeekDay()
+    //         DateTime::fromFormat('eeeee', 'F')->getWeekDay()
     //     );
     // }
 
@@ -557,7 +556,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('c', '6')->getWeekDay()
+            DateTime::fromFormat('c', '6')->getWeekDay()
         );
     }
 
@@ -565,7 +564,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('cc', '06')->getWeekDay()
+            DateTime::fromFormat('cc', '06')->getWeekDay()
         );
     }
 
@@ -573,7 +572,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('ccc', 'Fri')->getWeekDay()
+            DateTime::fromFormat('ccc', 'Fri')->getWeekDay()
         );
     }
 
@@ -581,7 +580,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             6,
-            DateTimeImmutable::fromFormat('cccc', 'Friday')->getWeekDay()
+            DateTime::fromFormat('cccc', 'Friday')->getWeekDay()
         );
     }
 
@@ -589,7 +588,7 @@ trait FromFormatTest
     // {
     //     $this->assertSame(
     //         6,
-    //         DateTimeImmutable::fromFormat('ccccc', 'F')->getWeekDay()
+    //         DateTime::fromFormat('ccccc', 'F')->getWeekDay()
     //     );
     // }
 
@@ -601,7 +600,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('aaa', 'AM')->getHours()
+            DateTime::fromFormat('aaa', 'AM')->getHours()
         );
     }
 
@@ -609,7 +608,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             12,
-            DateTimeImmutable::fromFormat('aaa', 'PM')->getHours()
+            DateTime::fromFormat('aaa', 'PM')->getHours()
         );
     }
 
@@ -617,7 +616,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('aaaa', 'AM')->getHours()
+            DateTime::fromFormat('aaaa', 'AM')->getHours()
         );
     }
 
@@ -625,7 +624,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             12,
-            DateTimeImmutable::fromFormat('aaaa', 'PM')->getHours()
+            DateTime::fromFormat('aaaa', 'PM')->getHours()
         );
     }
 
@@ -637,7 +636,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('h', '12')->getHours()
+            DateTime::fromFormat('h', '12')->getHours()
         );
     }
 
@@ -645,7 +644,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('h', '1')->getHours()
+            DateTime::fromFormat('h', '1')->getHours()
         );
     }
 
@@ -653,7 +652,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('hh', '12')->getHours()
+            DateTime::fromFormat('hh', '12')->getHours()
         );
     }
 
@@ -661,7 +660,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('hh', '01')->getHours()
+            DateTime::fromFormat('hh', '01')->getHours()
         );
     }
 
@@ -669,7 +668,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             23,
-            DateTimeImmutable::fromFormat('H', '23')->getHours()
+            DateTime::fromFormat('H', '23')->getHours()
         );
     }
 
@@ -677,7 +676,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('H', '0')->getHours()
+            DateTime::fromFormat('H', '0')->getHours()
         );
     }
 
@@ -685,7 +684,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             23,
-            DateTimeImmutable::fromFormat('HH', '23')->getHours()
+            DateTime::fromFormat('HH', '23')->getHours()
         );
     }
 
@@ -693,7 +692,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('HH', '00')->getHours()
+            DateTime::fromFormat('HH', '00')->getHours()
         );
     }
 
@@ -702,7 +701,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             11,
-            DateTimeImmutable::fromFormat('K', '11')->getHours()
+            DateTime::fromFormat('K', '11')->getHours()
         );
     }
 
@@ -710,7 +709,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('K', '0')->getHours()
+            DateTime::fromFormat('K', '0')->getHours()
         );
     }
 
@@ -718,7 +717,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             11,
-            DateTimeImmutable::fromFormat('KK', '11')->getHours()
+            DateTime::fromFormat('KK', '11')->getHours()
         );
     }
 
@@ -726,7 +725,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             00,
-            DateTimeImmutable::fromFormat('KK', '00')->getHours()
+            DateTime::fromFormat('KK', '00')->getHours()
         );
     }
 
@@ -734,7 +733,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('k', '24')->getHours()
+            DateTime::fromFormat('k', '24')->getHours()
         );
     }
 
@@ -742,7 +741,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('k', '1')->getHours()
+            DateTime::fromFormat('k', '1')->getHours()
         );
     }
 
@@ -750,7 +749,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('kk', '24')->getHours()
+            DateTime::fromFormat('kk', '24')->getHours()
         );
     }
 
@@ -758,7 +757,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('kk', '01')->getHours()
+            DateTime::fromFormat('kk', '01')->getHours()
         );
     }
 
@@ -770,7 +769,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             25,
-            DateTimeImmutable::fromFormat('m', '25')->getMinutes()
+            DateTime::fromFormat('m', '25')->getMinutes()
         );
     }
 
@@ -778,7 +777,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('m', '1')->getMinutes()
+            DateTime::fromFormat('m', '1')->getMinutes()
         );
     }
 
@@ -786,7 +785,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             25,
-            DateTimeImmutable::fromFormat('mm', '25')->getMinutes()
+            DateTime::fromFormat('mm', '25')->getMinutes()
         );
     }
 
@@ -794,7 +793,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('mm', '01')->getMinutes()
+            DateTime::fromFormat('mm', '01')->getMinutes()
         );
     }
 
@@ -806,7 +805,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             25,
-            DateTimeImmutable::fromFormat('s', '25')->getSeconds()
+            DateTime::fromFormat('s', '25')->getSeconds()
         );
     }
 
@@ -814,7 +813,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('s', '1')->getSeconds()
+            DateTime::fromFormat('s', '1')->getSeconds()
         );
     }
 
@@ -822,7 +821,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             25,
-            DateTimeImmutable::fromFormat('ss', '25')->getSeconds()
+            DateTime::fromFormat('ss', '25')->getSeconds()
         );
     }
 
@@ -830,7 +829,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             1,
-            DateTimeImmutable::fromFormat('ss', '01')->getSeconds()
+            DateTime::fromFormat('ss', '01')->getSeconds()
         );
     }
 
@@ -838,7 +837,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             0,
-            DateTimeImmutable::fromFormat('SSS', '123')->getMilliseconds()
+            DateTime::fromFormat('SSS', '123')->getMilliseconds()
         );
     }
 
@@ -850,7 +849,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +0000')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +0000')->toISOString()
         );
     }
 
@@ -858,7 +857,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +1000')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +1000')->toISOString()
         );
     }
 
@@ -866,7 +865,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+00:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+00:00')->toISOString()
         );
     }
 
@@ -874,7 +873,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+10:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+10:00')->toISOString()
         );
     }
 
@@ -882,7 +881,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +00:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +00:00')->toISOString()
         );
     }
 
@@ -890,7 +889,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +10:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +10:00')->toISOString()
         );
     }
 
@@ -898,7 +897,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+00')->toISOString()
         );
     }
 
@@ -906,7 +905,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+10')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+10')->toISOString()
         );
     }
 
@@ -914,7 +913,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+00:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+00:00')->toISOString()
         );
     }
 
@@ -922,7 +921,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+10:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+10:00')->toISOString()
         );
     }
 
@@ -930,7 +929,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 UTC')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 UTC')->toISOString()
         );
     }
 
@@ -938,7 +937,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 Australia/Brisbane')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 Australia/Brisbane')->toISOString()
         );
     }
 
@@ -946,7 +945,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 Z')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 Z')->toISOString()
         );
     }
 
@@ -954,7 +953,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 +10')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 +10')->toISOString()
         );
     }
 
@@ -962,7 +961,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 Z')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 Z')->toISOString()
         );
     }
 
@@ -970,7 +969,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 +1000')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 +1000')->toISOString()
         );
     }
 
@@ -978,7 +977,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 Z')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 Z')->toISOString()
         );
     }
 
@@ -986,7 +985,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 +10:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 +10:00')->toISOString()
         );
     }
 
@@ -994,7 +993,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +00')->toISOString()
         );
     }
 
@@ -1002,7 +1001,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +10')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +10')->toISOString()
         );
     }
 
@@ -1010,7 +1009,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +0000')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +0000')->toISOString()
         );
     }
 
@@ -1018,7 +1017,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +1000')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +1000')->toISOString()
         );
     }
 
@@ -1026,7 +1025,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +00:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +00:00')->toISOString()
         );
     }
 
@@ -1034,7 +1033,7 @@ trait FromFormatTest
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTimeImmutable::fromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +10:00')->toISOString()
+            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +10:00')->toISOString()
         );
     }
 

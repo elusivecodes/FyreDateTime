@@ -3,21 +3,20 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime;
 
-use
-    DateTimeImmutable,
-    Fyre\DateTime\Traits\AttributesGetTrait,
-    Fyre\DateTime\Traits\AttributesSetTrait,
-    Fyre\DateTime\Traits\CreateTrait,
-    Fyre\DateTime\Traits\ManipulateTrait,
-    Fyre\DateTime\Traits\OutputTrait,
-    Fyre\DateTime\Traits\StaticTrait,
-    Fyre\DateTime\Traits\UtilityTrait,
-    IntlCalendar;
+use DateTimeImmutable;
+use Fyre\DateTime\Traits\AttributesGetTrait;
+use Fyre\DateTime\Traits\AttributesSetTrait;
+use Fyre\DateTime\Traits\CreateTrait;
+use Fyre\DateTime\Traits\ManipulateTrait;
+use Fyre\DateTime\Traits\OutputTrait;
+use Fyre\DateTime\Traits\StaticTrait;
+use Fyre\DateTime\Traits\UtilityTrait;
+use IntlCalendar;
 
 /**
  * DateTime
  */
-class DateTime implements DateTimeInterface
+class DateTime
 {
 
     const FORMATS = [
@@ -46,14 +45,13 @@ class DateTime implements DateTimeInterface
 
     protected IntlCalendar $calendar;
 
-    use
-        AttributesGetTrait,
-        AttributesSetTrait,
-        CreateTrait,
-        ManipulateTrait,
-        OutputTrait,
-        StaticTrait,
-        UtilityTrait;
+    use AttributesGetTrait;
+    use AttributesSetTrait;
+    use CreateTrait;
+    use ManipulateTrait;
+    use OutputTrait;
+    use StaticTrait;
+    use UtilityTrait;
 
     /**
      * New DateTime constructor.

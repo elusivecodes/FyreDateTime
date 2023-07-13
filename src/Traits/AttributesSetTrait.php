@@ -3,17 +3,14 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use
-    DateTimeZone;
+use DateTimeZone;
 
-use const
-    STR_PAD_LEFT;
+use const STR_PAD_LEFT;
 
-use function
-    abs,
-    floor,
-    min,
-    str_pad;
+use function abs;
+use function floor;
+use function min;
+use function str_pad;
 
 /**
  * AttributesSetTrait
@@ -82,14 +79,12 @@ trait AttributesSetTrait
      */
     public function setLocale(string $locale): static
     {
-        $this->locale = $locale;
+        $temp = new static(null, $this->getTimeZone(), $locale);
 
-        $timeZone = $this->toDateTime()->getTimeZone();
         $time = $this->getTime();
+        $temp->calendar->setTime($time);
 
-        $this->calendar = static::createCalendar($time, $timeZone, $this->locale);
-
-        return $this;
+        return $temp;
     }
 
     /**
@@ -173,9 +168,11 @@ trait AttributesSetTrait
      */
     public function setTime(int $time): static
     {
-        $this->calendar->setTime($time);
+        $temp = new static(null, $this->getTimeZone(), $this->locale);
 
-        return $this;
+        $temp->calendar->setTime($time);
+
+        return $temp;
     }
 
     /**
@@ -195,11 +192,12 @@ trait AttributesSetTrait
      */
     public function setTimeZone(string $timeZone): static
     {
-        $timeZone = new DateTimeZone($timeZone);
+        $temp = new static(null, $timeZone, $this->locale);
 
-        $this->calendar = static::createCalendar($this->getTime(), $timeZone, $this->locale);
+        $time = $this->getTime();
+        $temp->calendar->setTime($time);
 
-        return $this;
+        return $temp;
     }
 
     /**

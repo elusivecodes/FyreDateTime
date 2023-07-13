@@ -1,6 +1,6 @@
 # FyreDateTime
 
-**FyreDateTime** is a free, open-source date manipulation library for *PHP*.
+**FyreDateTime** is a free, open-source immutable date manipulation library for *PHP*.
 
 It is a modern library, and features support for ICU formats, time zones and locales.
 
@@ -32,7 +32,6 @@ In PHP:
 
 ```php
 use Fyre\DateTime\DateTime;
-use Fyre\DateTime\DateTimeImmutable;
 ```
 
 
@@ -43,17 +42,7 @@ use Fyre\DateTime\DateTimeImmutable;
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$date = new DateTime($dateString, $timeZone, $locale);
-```
-
-**Immutable DateTime**
-
-By default, *DateTime* objects are mutable, but if you wish to create an immutable reference you can use the following syntax.
-
-Immutable *DateTime* objects return a new *DateTimeImmutable* whenever they are modified.
-
-```php
-$date = new DateTimeImmutable($dateString, $timeZone, $locale);
+$dateTime = new DateTime($dateString, $timeZone, $locale);
 ```
 
 **From Array**
@@ -63,7 +52,7 @@ $date = new DateTimeImmutable($dateString, $timeZone, $locale);
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$date = DateTime::fromArray($dateArray, $timeZone, $locale);
+$dateTime = DateTime::fromArray($dateArray, $timeZone, $locale);
 ```
 
 The month and date in the `$dateArray` will default to 1 if not set. The hours, minutes, seconds and milliseconds will default to 0.
@@ -75,7 +64,7 @@ The month and date in the `$dateArray` will default to 1 if not set. The hours, 
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$date = DateTime::fromDateTime($dateTime, $timeZone, $locale);
+$newDateTime = DateTime::fromDateTime($dateTime, $timeZone, $locale);
 ```
 
 **From Format**
@@ -88,7 +77,7 @@ $date = DateTime::fromDateTime($dateTime, $timeZone, $locale);
 The `$formatString` supports tokens described in the [ICU specification](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#datetime-format-syntax).
 
 ```php
-$date = DateTime::fromFormat($formatString, $dateString, $timeZone, $locale);
+$dateTime = DateTime::fromFormat($formatString, $dateString, $timeZone, $locale);
 ```
 
 **From ISO String**
@@ -98,7 +87,7 @@ $date = DateTime::fromFormat($formatString, $dateString, $timeZone, $locale);
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$date = DateTime::fromISOString($dateString, $timeZone, $locale);
+$dateTime = DateTime::fromISOString($dateString, $timeZone, $locale);
 ```
 
 **From Timestamp**
@@ -108,7 +97,7 @@ $date = DateTime::fromISOString($dateString, $timeZone, $locale);
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$date = DateTime::fromTimestamp($timestamp, $timeZone, $locale);
+$dateTime = DateTime::fromTimestamp($timestamp, $timeZone, $locale);
 ```
 
 **Now**
@@ -117,7 +106,7 @@ $date = DateTime::fromTimestamp($timestamp, $timeZone, $locale);
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$date = DateTime::now($timeZone, $locale);
+$dateTime = DateTime::now($timeZone, $locale);
 ```
 
 
@@ -132,7 +121,7 @@ Once you have created a *DateTime* object, you can get a string representation u
 The `$formatString` supports tokens described in the [ICU specification](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#datetime-format-syntax).
 
 ```php
-$dateString = $date->format($formatString);
+$dateString = $dateTime->format($formatString);
 ```
 
 **To String**
@@ -140,7 +129,7 @@ $dateString = $date->format($formatString);
 Format the current date using "*eee MMM dd yyyy HH:mm:ss xx (VV)*".
 
 ```php
-$string = $date->toString();
+$string = $dateTime->toString();
 ```
 
 **To Date String**
@@ -148,7 +137,7 @@ $string = $date->toString();
 Format the current date using "*eee MMM dd yyyy*".
 
 ```php
-$dateString = $date->toDateString();
+$dateString = $dateTime->toDateString();
 ```
 
 **To ISO String**
@@ -156,7 +145,7 @@ $dateString = $date->toDateString();
 Format the current date using "*yyyy-MM-dd'T'HH:mm:ss.SSSxxx*" (in English and UTC time zone).
 
 ```php
-$isoString = $date->toISOString();
+$isoString = $dateTime->toISOString();
 ```
 
 **To Time String**
@@ -164,7 +153,7 @@ $isoString = $date->toISOString();
 Format the current date using "*HH:mm:ss xx (VV)*".
 
 ```php
-$timeString = $date->toTimeString();
+$timeString = $dateTime->toTimeString();
 ```
 
 **To UTC String**
@@ -172,7 +161,7 @@ $timeString = $date->toTimeString();
 Format the current date using "*eee MMM dd yyyy HH:mm:ss xx (VV)*" (in UTC time zone).
 
 ```php
-$utcString = $date->toUTCString();
+$utcString = $dateTime->toUTCString();
 ```
 
 
@@ -183,7 +172,7 @@ $utcString = $date->toUTCString();
 Get the date in current time zone.
 
 ```php
-$date = $date->getDate();
+$date = $dateTime->getDate();
 ```
 
 **Get Day**
@@ -193,7 +182,7 @@ Get the day of the week in current time zone.
 The `$day` returned will be between *0* (Sunday) and *6* (Saturday).
 
 ```php
-$day = $date->getDay();
+$day = $dateTime->getDay();
 ```
 
 **Get Day Of Year**
@@ -203,7 +192,7 @@ Get the day of the year in current time zone.
 The `$dayOfYear` returned will be between *0* and *365*.
 
 ```php
-$dayOfYear = $date->getDayOfYear();
+$dayOfYear = $dateTime->getDayOfYear();
 ```
 
 **Get Month**
@@ -213,7 +202,7 @@ Get the month in current time zone.
 The `$month` returned will be between *1* (January) and *12* (December).
 
 ```php
-$month = $date->getMonth();
+$month = $dateTime->getMonth();
 ```
 
 **Get Quarter**
@@ -223,7 +212,7 @@ Get the quarter of the year in current time zone.
 The `$quarter` returned will be between *1* and *4*.
 
 ```php
-$quarter = $date->getQuarter();
+$quarter = $dateTime->getQuarter();
 ```
 
 **Get Year**
@@ -231,7 +220,7 @@ $quarter = $date->getQuarter();
 Get the year in current time zone.
 
 ```php
-$year = $date->getYear();
+$year = $dateTime->getYear();
 ```
 
 **Set Date**
@@ -241,7 +230,7 @@ Set the date in current time zone.
 - `$date` is a number representing the date.
 
 ```php
-$date->setDate($date);
+$newDate = $dateTime->setDate($date);
 ```
 
 **Set Day**
@@ -251,7 +240,7 @@ Set the day of the week in current time zone.
 - `$day` is a number representing the day of the week (between *0* and *6*).
 
 ```php
-$date->setDay($day);
+$newDateTime = $dateTime->setDay($day);
 ```
 
 **Set Day Of Year**
@@ -261,7 +250,7 @@ Set the day of the year in current time zone.
 - `$dayOfYear` is a number representing the day of the year (between *0* and *365*).
 
 ```php
-$date->setDayOfYear($dayOfYear);
+$newDateTime = $dateTime->setDayOfYear($dayOfYear);
 ```
 
 **Set Month**
@@ -276,7 +265,7 @@ If the `$date` argument is omitted, and the new month contains less days than th
 To disable date clamping, use the method `DateTime::setDateClamping()` using *false* as the argument.
 
 ```php
-$date->setMonth($month, $date);
+$newDateTime = $dateTime->setMonth($month, $date);
 ```
 
 **Set Quarter**
@@ -286,7 +275,7 @@ Set the quarter of the year in current time zone.
 - `$quarter` is a number representing the quarter between *1* and *4*.
 
 ```php
-$date->setQuarter($quarter);
+$newDateTime = $dateTime->setQuarter($quarter);
 ```
 
 **Set Year**
@@ -302,7 +291,7 @@ If the `$date` argument is omitted, and the new month contains less days than th
 To disable date clamping, use the method `DateTime::setDateClamping()` using *false* as the argument.
 
 ```php
-$date->setYear($year, $month, $date);
+$newDateTime = $dateTime->setYear($year, $month, $date);
 ```
 
 
@@ -315,7 +304,7 @@ Get the week of the year in current time zone.
 The `$week` returned will be between *1*  and *53* (week starting on Monday).
 
 ```php
-$week = $date->getWeek();
+$week = $dateTime->getWeek();
 ```
 
 **Get Week Day**
@@ -325,7 +314,7 @@ Get the local day of the week in current time zone.
 The `$weekDay` returned will be between *1* and *7*.
 
 ```php
-$weekDay = $date->getWeekDay();
+$weekDay = $dateTime->getWeekDay();
 ```
 
 **Get Week Day In Month**
@@ -335,7 +324,7 @@ Get the day of the week in the month, in current time zone.
 The `$weekDayInMonth` returned will be between *1* and *5*.
 
 ```php
-$weekDayInMonth = $date->getWeekDayInMonth();
+$weekDayInMonth = $dateTime->getWeekDayInMonth();
 ```
 
 **Get Week Of Month**
@@ -345,7 +334,7 @@ Get the week of the month in current time zone.
 The `$weekOfMonth` returned will be between *1*  and *5*.
 
 ```php
-$weekOfMonth = $date->getWeekOfMonth();
+$weekOfMonth = $dateTime->getWeekOfMonth();
 ```
 
 **Get Week Year**
@@ -355,7 +344,7 @@ Get the week year in current time zone.
 This method is identical to `getYear()` except in cases where the week belongs to the previous or next year, then that value will be used instead.
 
 ```php
-$weekYear = $date->getWeekYear();
+$weekYear = $dateTime->getWeekYear();
 ```
 
 **Set Week**
@@ -366,7 +355,7 @@ Set the week in current time zone.
 - `$weekDay` is a number representing the day (between *1* and *7*), and will default to the current value.
 
 ```php
-$date->setWeek($week, $weekDay);
+$newDateTime = $dateTime->setWeek($week, $weekDay);
 ```
 
 **Set Week Day**
@@ -376,7 +365,7 @@ Set the local day of the week in current time zone.
 - `$weekDay` is a number representing the week day (between *1* and *7*).
 
 ```php
-$date->setWeekDay($weekDay);
+$newDateTime = $dateTime->setWeekDay($weekDay);
 ```
 
 **Set Week Day In Month**
@@ -386,7 +375,7 @@ Set the day of the week in the month, in current time zone.
 - `$weekDayInMonth` is a number representing the day of the week in month (between *1* and *5*).
 
 ```php
-$date->setWeekDayInMonth($weekDayInMonth);
+$newDateTime = $dateTime->setWeekDayInMonth($weekDayInMonth);
 ```
 
 **Set Week Of Month**
@@ -396,7 +385,7 @@ Set the week of the month in current time zone.
 - `$weekOfMonth` is a number representing the week of the month (between *1*  and *5*).
 
 ```php
-$date->setWeekOfMonth($weekOfMonth);
+$newDateTime = $dateTime->setWeekOfMonth($weekOfMonth);
 ```
 
 **Set Week Year**
@@ -408,7 +397,7 @@ Set the week year in current time zone.
 - `$weekDay` is a number representing the day (between *1* and *7*), and will default to the current value.
 
 ```php
-$date->setWeekYear($weekYear, $week, $weekDay);
+$newDateTime = $dateTime->setWeekYear($weekYear, $week, $weekDay);
 ```
 
 
@@ -421,7 +410,7 @@ Get the hours of the day in current time zone.
 The `$hours` returned will be between *0* and *23*.
 
 ```php
-$hours = $date->getHours();
+$hours = $dateTime->getHours();
 ```
 
 **Get Milliseconds**
@@ -431,7 +420,7 @@ Get the milliseconds of the second in current time zone.
 The `$milliseconds` returned will be between *0* and *999*.
 
 ```php
-$milliseconds = $date->getMilliseconds();
+$milliseconds = $dateTime->getMilliseconds();
 ```
 
 **Get Minutes**
@@ -441,7 +430,7 @@ Get the minutes of the hour in current time zone.
 The `$minutes` returned will be between *0* and *59*.
 
 ```php
-$minutes = $date->getMinutes();
+$minutes = $dateTime->getMinutes();
 ```
 
 **Get Seconds**
@@ -451,7 +440,7 @@ Get the seconds of the minute in current time zone.
 The `$seconds` returned will be between *0* and *59*.
 
 ```php
-$seconds = $date->getSeconds();
+$seconds = $dateTime->getSeconds();
 ```
 
 **Set Hours**
@@ -464,7 +453,7 @@ Set the hours of the day in current time zone.
 - `$milliseconds` is a number representing the milliseconds of the second (between *0* and *999*), and will default to the current value.
 
 ```php
-$date->setHours($hours, $minutes, $seconds, $milliseconds);
+$newDateTime = $dateTime->setHours($hours, $minutes, $seconds, $milliseconds);
 ```
 
 **Set Milliseconds**
@@ -474,7 +463,7 @@ Set the milliseconds of the second in current time zone.
 - `$milliseconds` is a number representing the milliseconds of the second (between *0* and *999*).
 
 ```php
-$date->setMilliseconds($milliseconds);
+$newDateTime = $dateTime->setMilliseconds($milliseconds);
 ```
 
 **Set Minutes**
@@ -486,7 +475,7 @@ Set the minutes of the hour in current time zone.
 - `$milliseconds` is a number representing the milliseconds of the second (between *0* and *999*), and will default to the current value.
 
 ```php
-$date->setMinutes($minutes, $seconds, $milliseconds);
+$newDateTime = $dateTime->setMinutes($minutes, $seconds, $milliseconds);
 ```
 
 **Set Seconds**
@@ -497,7 +486,7 @@ Set the seconds of the minute in current time zone.
 - `$milliseconds` is a number representing the milliseconds of the second (between *0* and *999*), and will default to the current value.
 
 ```php
-$date->setSeconds($seconds, $milliseconds);
+$newDateTime = $dateTime->setSeconds($seconds, $milliseconds);
 ```
 
 
@@ -508,7 +497,7 @@ $date->setSeconds($seconds, $milliseconds);
 Get the number of milliseconds since the UNIX epoch.
 
 ```php
-$time = $date->getTime();
+$time = $dateTime->getTime();
 ```
 
 **Get Seconds**
@@ -516,7 +505,7 @@ $time = $date->getTime();
 Get the number of seconds since the UNIX epoch.
 
 ```php
-$timestamp = $date->getTimestamp();
+$timestamp = $dateTime->getTimestamp();
 ```
 
 **Set Milliseconds**
@@ -524,7 +513,7 @@ $timestamp = $date->getTimestamp();
 Set the number of milliseconds since the UNIX epoch.
 
 ```php
-$date->setTime($time);
+$newDateTime = $dateTime->setTime($time);
 ```
 
 **Set Seconds**
@@ -532,7 +521,7 @@ $date->setTime($time);
 Set the number of seconds since the UNIX epoch.
 
 ```php
-$date->setTimestamp($timestamp);
+$newDateTime = $dateTime->setTimestamp($timestamp);
 ```
 
 
@@ -543,7 +532,7 @@ $date->setTimestamp($timestamp);
 Get the name of the current time zone.
 
 ```php
-$timeZone = $date->getTimeZone();
+$timeZone = $dateTime->getTimeZone();
 ```
 
 **Get Time Zone Offset**
@@ -551,7 +540,7 @@ $timeZone = $date->getTimeZone();
 Get the UTC offset (in minutes) of the current time zone.
 
 ```php
-$offset = $date->getTimeZoneOffset();
+$offset = $dateTime->getTimeZoneOffset();
 ```
 
 **Set Time Zone**
@@ -561,7 +550,7 @@ Set the current time zone.
 - `$timeZone` is the name of the new time zone, which can be either "*UTC*", a supported value from the [IANA timeZone database](https://www.iana.org/time-zones) or an offset string.
 
 ```php
-$date->setTimeZone($timeZone);
+$newDateTime = $dateTime->setTimeZone($timeZone);
 ```
 
 **Set Time Zone Offset**
@@ -571,7 +560,7 @@ Set the UTC offset (in minutes).
 - `$offset` is the UTC offset (in minutes).
 
 ```php
-$date->setTimeZoneOffset($offset);
+$newDateTime = $dateTime->setTimeZoneOffset($offset);
 ```
 
 
@@ -582,7 +571,7 @@ $date->setTimeZoneOffset($offset);
 Get the name of the current locale.
 
 ```php
-$locale = $date->getLocale();
+$locale = $dateTime->getLocale();
 ```
 
 **Set Locale**
@@ -592,7 +581,7 @@ Set the current locale.
 - `$locale` is the name of the new locale.
 
 ```php
-$date->setLocale($locale);
+$newDateTime = $dateTime->setLocale($locale);
 ```
 
 
@@ -606,7 +595,7 @@ Add a duration to the date.
 - `$timeUnit` is a string representing the unit of time to add, and can be one of either "*year*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*", or their pluralized versions.
 
 ```php
-$date->add($amount, $timeUnit);
+$newDateTime = $dateTime->add($amount, $timeUnit);
 ```
 
 **End Of**
@@ -616,7 +605,7 @@ Set the date to the end of a unit of time in current time zone.
 - `$timeUnit` is a string representing the unit of time to use, and can be one of either "*year*", "*quarter*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
-$date->endOf($timeUnit);
+$newDateTime = $dateTime->endOf($timeUnit);
 ```
 
 **Start Of**
@@ -626,7 +615,7 @@ Set the date to the start of a unit of time in current time zone.
 - `$timeUnit` is a string representing the unit of time to use, and can be one of either "*year*", "*quarter*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
-$date->startOf($timeUnit);
+$newDateTime = $dateTime->startOf($timeUnit);
 ```
 
 **Subtract**
@@ -635,19 +624,11 @@ $date->startOf($timeUnit);
 - `$timeUnit` is a string representing the unit of time to subtract, and can be one of either "*year*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*", or their pluralized versions.
 
 ```php
-$date->sub($amount, $timeUnit);
+$newDateTime = $dateTime->sub($amount, $timeUnit);
 ```
 
 
 ## Utility Methods
-
-**Clone**
-
-Create a new *DateTime* using the current date and time zone.
-
-```php
-$clone = $date->clone();
-```
 
 **Day Name**
 
@@ -656,7 +637,7 @@ Get the name of the day of the week in current time zone and locale.
 - `$type` can be either "*long*", "*short*" or "*narrow*", and will default to "*long*" if it is not set.
 
 ```php
-$dayName = $date->dayName($type);
+$dayName = $dateTime->dayName($type);
 ```
 
 **Day Period**
@@ -666,7 +647,7 @@ Get the day period in current time zone and locale.
 - `$type` can be either "*long*" or "*short*", and will default to "*long*" if it is not set.
 
 ```php
-$dayPeriod = $date->dayPeriod($type);
+$dayPeriod = $dateTime->dayPeriod($type);
 ```
 
 **Days In Month**
@@ -674,7 +655,7 @@ $dayPeriod = $date->dayPeriod($type);
 Get the number of days in the current month.
 
 ```php
-$daysInMonth = $date->daysInMonth();
+$daysInMonth = $dateTime->daysInMonth();
 ```
 
 **Days In Year**
@@ -682,7 +663,7 @@ $daysInMonth = $date->daysInMonth();
 Get the number of days in the current year.
 
 ```php
-$daysInYear = $date->daysInYear();
+$daysInYear = $dateTime->daysInYear();
 ```
 
 **Difference**
@@ -696,7 +677,7 @@ Get the difference between two Dates.
 If the `$timeUnit` is omitted, this method will return the difference in milliseconds.
 
 ```php
-$diff = $date->diff($other, $timeUnit, $relative);
+$diff = $dateTime->diff($other, $timeUnit, $relative);
 ```
 
 If `$relative` is *true* (default) the value returned will be the difference in the specified `$timeUnit`, ignoring less significant values.
@@ -715,7 +696,7 @@ Get the era in current time zone and locale.
 - `$type` can be either "*long*", "*short*" or "*narrow*", and will default to "*long*" if it is not set.
 
 ```php
-$era = $date->era($type);
+$era = $dateTime->era($type);
 ```
 
 **Is After?**
@@ -726,7 +707,7 @@ Return *true* if the *DateTime* is after another date.
 - `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
-$isAfter = $date->isAfter($other, $granularity);
+$isAfter = $dateTime->isAfter($other, $granularity);
 ```
 
 If a `$granularity` is not specified, this method will compare the dates in milliseconds.
@@ -739,7 +720,7 @@ Return *true* if the *DateTime* is before another date.
 - `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
-$isBefore = $date->isBefore($other, $granularity);
+$isBefore = $dateTime->isBefore($other, $granularity);
 ```
 
 If a `$granularity` is not specified, this method will compare the dates in milliseconds.
@@ -753,7 +734,7 @@ Return *true* if the *DateTime* is between two other dates.
 - `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
-$isBetween = $date->isBetween($start, $end, $granularity);
+$isBetween = $dateTime->isBetween($start, $end, $granularity);
 ```
 
 If a `$granularity` is not specified, this method will compare the dates in milliseconds.
@@ -763,7 +744,7 @@ If a `$granularity` is not specified, this method will compare the dates in mill
 Return *true* if the *DateTime* is in daylight savings.
 
 ```php
-$isDST = $date->isDST();
+$isDST = $dateTime->isDST();
 ```
 
 **Is Leap Year?**
@@ -771,7 +752,7 @@ $isDST = $date->isDST();
 Return *true* if the year is a leap year.
 
 ```php
-$isLeapYear = $date->isLeapYear();
+$isLeapYear = $dateTime->isLeapYear();
 ```
 
 **Is Same?**
@@ -782,7 +763,7 @@ Return *true* if the *DateTime* is the same as another date.
 - `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
-$isSame = $date->isSame($other, $granularity);
+$isSame = $dateTime->isSame($other, $granularity);
 ```
 
 If a `$granularity` is not specified, this method will compare the dates in milliseconds.
@@ -795,7 +776,7 @@ Return *true* if the *DateTime* is the same or after another date.
 - `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
-$isSameOrAfter = $date->isSameOrAfter($other, $granularity);
+$isSameOrAfter = $dateTime->isSameOrAfter($other, $granularity);
 ```
 
 If a `$granularity` is not specified, this method will compare the dates in milliseconds.
@@ -808,7 +789,7 @@ Return *true* if the *DateTime* is the same or before another date.
 - `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
 
 ```php
-$isSameOrBefore = $date->isSameOrBefore($other, $granularity);
+$isSameOrBefore = $dateTime->isSameOrBefore($other, $granularity);
 ```
 
 If a `$granularity` is not specified, this method will compare the dates in milliseconds.
@@ -820,7 +801,7 @@ Get the name of the month in current time zone and locale.
 - `$type` can be either "*long*", "*short*" or "*narrow*", and will default to "*long*" if it is not set.
 
 ```php
-$monthName = $date->monthName($type);
+$monthName = $dateTime->monthName($type);
 ```
 
 **Time Zone Name**
@@ -830,7 +811,7 @@ Get the name of the current time zone and locale.
 - `$type` can be either "*long*" or "*short*", and will default to "*long*" if it is not set.
 
 ```php
-$timeZoneName = $date->timeZoneName($type);
+$timeZoneName = $dateTime->timeZoneName($type);
 ```
 
 **Weeks In Year**
@@ -838,7 +819,7 @@ $timeZoneName = $date->timeZoneName($type);
 Get the number of weeks in the current year.
 
 ```php
-$weeksInYear = $date->weeksInYear();
+$weeksInYear = $dateTime->weeksInYear();
 ```
 
 

@@ -3,9 +3,8 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use function
-    ceil,
-    floor;
+use function ceil;
+use function floor;
 
 /**
  * AttributesGetTrait

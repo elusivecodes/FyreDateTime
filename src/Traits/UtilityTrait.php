@@ -3,33 +3,17 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use
-    DateInterval,
-    Fyre\DateTime\DateTimeInterface,
-    IntlCalendar;
+use DateInterval;
+use Fyre\DateTime\DateTime;
+use IntlCalendar;
 
-use function
-    strtolower;
+use function strtolower;
 
 /**
  * UtilityTrait
  */
 trait UtilityTrait
 {
-
-    /**
-     * Create a new DateTime using the current date and timeZone.
-     * @return DateTime A new DateTime object.
-     */
-    public function clone(): static
-    {
-        $dateTime = new static(null, $this->getTimeZone(), $this->locale);
-
-        $time = $this->getTime();
-        $dateTime->calendar->setTime($time);
-
-        return $dateTime;
-    }
 
     /**
      * Get the name of the day of the week in current timeZone.
@@ -91,12 +75,12 @@ trait UtilityTrait
 
     /**
      * Get the difference between this and another Date.
-     * @param DateTimeInterface $other The date to compare to.
+     * @param DateTime $other The date to compare to.
      * @param string|null $timeUnit The unit of time.
      * @param bool $relative Whether to use the relative difference.
      * @return int The difference.
      */
-    public function diff(DateTimeInterface $other, string|null $timeUnit = null, bool $relative = true): int
+    public function diff(DateTime $other, string|null $timeUnit = null, bool $relative = true): int
     {
         if ($timeUnit === null) {
             return $this->getTime() - $other->getTime();
@@ -108,7 +92,7 @@ trait UtilityTrait
         $calendar = clone $this->calendar;
 
         if ($relative) {
-            $other = $other->clone()->setTimeZone($this->getTimeZone());
+            $other = $other->setTimeZone($this->getTimeZone());
             $adjust = false;
 
             foreach (['year', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'] AS $timeUnit) {
@@ -155,34 +139,34 @@ trait UtilityTrait
 
     /**
      * Determine whether this DateTime is after another date (optionally to a granularity).
-     * @param DateTimeInterface $other The date to compare to.
+     * @param DateTime $other The date to compare to.
      * @param string|null $granularity The level of granularity to use for comparison.
      * @return bool TRUE if this DateTime is after the other date, otherwise FALSE.
      */
-    public function isAfter(DateTimeInterface $other, string|null $granularity = null): bool
+    public function isAfter(DateTime $other, string|null $granularity = null): bool
     {
         return $this->diff($other, $granularity) > 0;
     }
 
     /**
      * Determine whether this DateTime is before another date (optionally to a granularity).
-     * @param DateTimeInterface $other The date to compare to.
+     * @param DateTime $other The date to compare to.
      * @param string|null $granularity The level of granularity to use for comparison.
      * @return bool TRUE if this DateTime is before the other date, otherwise FALSE.
      */
-    public function isBefore(DateTimeInterface $other, string|null $granularity = null): bool
+    public function isBefore(DateTime $other, string|null $granularity = null): bool
     {
         return $this->diff($other, $granularity) < 0;
     }
 
     /**
      * Determine whether this DateTime is between two other dates (optionally to a granularity).
-     * @param DateTimeInterface $start The first date to compare to.
-     * @param DateTimeInterface $end The second date to compare to.
+     * @param DateTime $start The first date to compare to.
+     * @param DateTime $end The second date to compare to.
      * @param string|null $granularity The level of granularity to use for comparison.
      * @return bool TRUE if this DateTime is between the other dates, otherwise FALSE.
      */
-    public function isBetween(DateTimeInterface $start, DateTimeInterface $end, string|null $granularity = null): bool
+    public function isBetween(DateTime $start, DateTime $end, string|null $granularity = null): bool
     {
         return $this->diff($start, $granularity) > 0 && $this->diff($end, $granularity) < 0;
     }
@@ -207,33 +191,33 @@ trait UtilityTrait
 
     /**
      * Determine whether this DateTime is the same as another date (optionally to a granularity).
-     * @param DateTimeInterface $other The date to compare to.
+     * @param DateTime $other The date to compare to.
      * @param string|null $granularity The level of granularity to use for comparison.
      * @return bool TRUE if this DateTime is the same as the other date, otherwise FALSE.
      */
-    public function isSame(DateTimeInterface $other, string|null $granularity = null): bool
+    public function isSame(DateTime $other, string|null $granularity = null): bool
     {
         return $this->diff($other, $granularity) === 0;
     }
 
     /**
      * Determine whether this DateTime is the same or after another date (optionally to a granularity).
-     * @param DateTimeInterface $other The date to compare to.
+     * @param DateTime $other The date to compare to.
      * @param string|null $granularity The level of granularity to use for comparison.
      * @return bool TRUE if this DateTime is the same or after the other date, otherwise FALSE.
      */
-    public function isSameOrAfter(DateTimeInterface $other, string|null $granularity = null): bool
+    public function isSameOrAfter(DateTime $other, string|null $granularity = null): bool
     {
         return $this->diff($other, $granularity) >= 0;
     }
 
     /**
      * Determine whether this DateTime is the same or before another date.
-     * @param DateTimeInterface $other The date to compare to.
+     * @param DateTime $other The date to compare to.
      * @param string|null $granularity The level of granularity to use for comparison.
      * @return bool TRUE if this DateTime is the same or before the other date, otherwise FALSE.
      */
-    public function isSameOrBefore(DateTimeInterface $other, string|null $granularity = null): bool
+    public function isSameOrBefore(DateTime $other, string|null $granularity = null): bool
     {
         return $this->diff($other, $granularity) <= 0;
     }
@@ -317,7 +301,10 @@ trait UtilityTrait
      */
     protected function setCalendarFields(array $values): static
     {
-        $oldOffset = $this->getTimeZoneOffset();
+        $temp = new static(null, $this->getTimeZone(), $this->locale);
+
+        $oldTime = $this->getTime();
+        $temp->calendar->setTime($oldTime);
 
         foreach ($values AS $field => $value) {
             if ($value === null) {
@@ -325,18 +312,20 @@ trait UtilityTrait
             }
 
             $key = static::getField($field);
-            $this->calendar->set($key, $value);
+            $temp->calendar->set($key, $value);
         }
 
-        $newOffset = $this->getTimeZoneOffset();
+        $oldOffset = $this->getTimeZoneOffset();
+        $newOffset = $temp->getTimeZoneOffset();
 
         if ($oldOffset !== $newOffset) {
-            $this->calendar->setTime(
-                $this->calendar->getTime() + (($oldOffset - $newOffset) * 60000)
-            );
+            $newTime = $temp->calendar->getTime();
+            $diff = ($oldOffset - $newOffset) * 60000;
+
+            $temp->calendar->setTime($newTime + $diff);
         }
 
-        return $this;
+        return $temp;
     }
 
 }
