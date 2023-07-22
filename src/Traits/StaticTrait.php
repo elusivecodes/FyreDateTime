@@ -17,6 +17,24 @@ trait StaticTrait
 {
 
     /**
+     * Get the default locale.
+     * @return string The default locale.
+     */
+    public static function getDefaultLocale(): string
+    {
+        return static::$defaultLocale ?? locale_get_default();
+    }
+
+    /**
+     * Get the default timeZone.
+     * @return string The default timeZone.
+     */
+    public static function getDefaultTimeZone(): string
+    {
+        return static::$defaultTimeZone ?? date_default_timezone_get();
+    }
+
+    /**
      * Set whether dates will be clamped when changing months.
      * @param bool $clampDates Whether to clamp dates.
      */
@@ -148,7 +166,7 @@ trait StaticTrait
      */
     protected static function parseLocale(string|null $locale = null): string
     {
-        return $locale ?? static::$defaultLocale ?? locale_get_default();
+        return $locale ?? static::getDefaultLocale();
     }
 
     /**
@@ -158,7 +176,7 @@ trait StaticTrait
      */
     protected static function parseTimeZone(string|null $timeZone = null): DateTimeZone
     {
-        return new DateTimeZone($timeZone ?? static::$defaultTimeZone ?? date_default_timezone_get());
+        return new DateTimeZone($timeZone ?? static::getDefaultTimeZone());
     }
 
 }

@@ -825,6 +825,22 @@ $weeksInYear = $dateTime->weeksInYear();
 
 ## Static Methods
 
+**Get Default Locale**
+
+Get the default locale.
+
+```php
+$locale = DateTime::getDefaultLocale();
+```
+
+**Get Default Time Zone**
+
+Get the default time zone.
+
+```php
+$timeZone = DateTime::getDefaultTimeZone();
+```
+
 **Set Date Clamping**
 
 Set whether dates will be clamped when changing months.
