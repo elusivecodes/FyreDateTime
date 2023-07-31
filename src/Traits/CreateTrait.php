@@ -20,7 +20,7 @@ trait CreateTrait
      * @param array $dateArray The date to parse.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
-     * @return DateTime A new DateTime object.
+     * @return DateTime A new DateTime.
      */
     public static function fromArray(array $dateArray, string|null $timeZone = null, string|null $locale = null): static
     {
@@ -42,7 +42,7 @@ trait CreateTrait
      * @param DateTimeInterface $dateTime The native DateTime.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
-     * @return DateTime A new DateTime object.
+     * @return DateTime A new DateTime.
      */
     public static function fromDateTime(DateTimeInterface $dateTime, string|null $timeZone = null, string|null $locale = null): static
     {
@@ -55,7 +55,7 @@ trait CreateTrait
      * @param string $dateString The date string.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
-     * @return DateTime A new DateTime object.
+     * @return DateTime A new DateTime.
      */
     public static function fromFormat(string $formatString, string $dateString, string|null $timeZone = null, string|null $locale = null): static
     {
@@ -76,7 +76,7 @@ trait CreateTrait
      * @param string $dateString The date string.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
-     * @return DateTime A new DateTime object.
+     * @return DateTime A new DateTime.
      */
     public static function fromISOString(string $dateString, string|null $timeZone = null, string|null $locale = null): static
     {
@@ -97,7 +97,7 @@ trait CreateTrait
      * @param int $timestamp The timestamp.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
-     * @return DateTime A new DateTime object.
+     * @return DateTime A new DateTime.
      */
     public static function fromTimestamp(int $timestamp, string|null $timeZone = null, string|null $locale = null): static
     {
@@ -108,7 +108,7 @@ trait CreateTrait
      * Create a new DateTime for the current time.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
-     * @return DateTime A new DateTime object.
+     * @return DateTime A new DateTime.
      */
     public static function now(string|null $timeZone = null, string|null $locale = null): static
     {

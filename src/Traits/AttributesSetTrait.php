@@ -19,7 +19,7 @@ trait AttributesSetTrait
     /**
      * Set the date of the month in current timeZone.
      * @param int $date The date of the month.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setDate(int $date): static
     {
@@ -31,7 +31,7 @@ trait AttributesSetTrait
     /**
      * Set the day of the week in current timeZone.
      * @param int $day The day of the week. (0 - Sunday, 6 - Saturday)
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setDay(int $day): static
     {
@@ -43,7 +43,7 @@ trait AttributesSetTrait
     /**
      * Set the day of the year in current timeZone.
      * @param int $day The day of the year. (1, 366)
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setDayOfYear(int $day): static
     {
@@ -58,7 +58,7 @@ trait AttributesSetTrait
      * @param int|null $minutes The minutes. (0, 59)
      * @param int|null $seconds The seconds. (0, 59)
      * @param int|null $milliseconds The milliseconds.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setHours(int $hours, int|null $minutes = null, int|null $seconds = null, int|null $milliseconds = null): static
     {
@@ -73,7 +73,7 @@ trait AttributesSetTrait
     /**
      * Set the current locale.
      * @param string $locale The name of the timeZone.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setLocale(string $locale): static
     {
@@ -88,7 +88,7 @@ trait AttributesSetTrait
     /**
      * Set the milliseconds in current timeZone.
      * @param int $milliseconds The milliseconds.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setMilliseconds(int $milliseconds): static
     {
@@ -102,7 +102,7 @@ trait AttributesSetTrait
      * @param int $minutes The minutes. (0, 59)
      * @param int|null $seconds The seconds. (0, 59)
      * @param int|null $milliseconds The milliseconds.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setMinutes(int $minutes, int|null $seconds = null, int|null $milliseconds = null): static
     {
@@ -117,7 +117,7 @@ trait AttributesSetTrait
      * Set the month in current timeZone (and optionally, date).
      * @param int $month The month. (1, 12)
      * @param int|null $date The date of the month.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setMonth(int $month, int|null $date = null): static
     {
@@ -136,7 +136,7 @@ trait AttributesSetTrait
     /**
      * Set the quarter of the year in current timeZone.
      * @param int $quarter The quarter of the year. (1, 4)
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setQuarter(int $quarter): static
     {   return $this->setYear(
@@ -149,7 +149,7 @@ trait AttributesSetTrait
      * Set the seconds in current timeZone (and optionally, milliseconds).
      * @param int $seconds The seconds. (0, 59)
      * @param int|null $milliseconds The milliseconds.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setSeconds(int $seconds, int|null $milliseconds = null): static
     {
@@ -162,7 +162,7 @@ trait AttributesSetTrait
     /**
      * Set the number of milliseconds since the UNIX epoch.
      * @param int $time The number of milliseconds since the UNIX epoch.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setTime(int $time): static
     {
@@ -176,7 +176,7 @@ trait AttributesSetTrait
     /**
      * Set the number of seconds since the UNIX epoch.
      * @param int $timestamp The number of seconds since the UNIX epoch.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setTimestamp(int $timestamp): static
     {
@@ -186,7 +186,7 @@ trait AttributesSetTrait
     /**
      * Set the current timeZone.
      * @param string $timeZone The name of the timeZone.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setTimeZone(string $timeZone): static
     {
@@ -201,7 +201,7 @@ trait AttributesSetTrait
     /**
      * Set the current UTC offset.
      * @param int $offset The UTC offset (in minutes).
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setTimeZoneOffset(int $offset): static
     {
@@ -221,7 +221,7 @@ trait AttributesSetTrait
      * Set the local day of the week in current timeZone (and optionally, day of the week).
      * @param int $week The local week.
      * @param int|null $day The local day of the week. (1 - 7)
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setWeek(int $week, int|null $day = null): static
     {
@@ -235,7 +235,7 @@ trait AttributesSetTrait
     /**
      * Set the local day of the week in current timeZone.
      * @param int $day The local day of the week. (1 - 7)
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setWeekDay(int $day): static
     {
@@ -247,7 +247,7 @@ trait AttributesSetTrait
     /**
      * Set the week day in month in current timeZone.
      * @param int $week The week day in month.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setWeekDayInMonth(int $week): static
     {
@@ -260,7 +260,7 @@ trait AttributesSetTrait
     /**
      * Set the week of month in current timeZone.
      * @param int $week The week of month.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setWeekOfMonth(int $week): static
     {
@@ -275,7 +275,7 @@ trait AttributesSetTrait
      * @param int $year The local year.
      * @param int|null $week The local week.
      * @param int|null $day The local day of the week. (1 - 7)
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setWeekYear(int $year, int|null $week = null, int|null $day = null): static
     {
@@ -299,7 +299,7 @@ trait AttributesSetTrait
      * @param int $year The year.
      * @param int|null $month The month. (1, 12)
      * @param int|null $date The date of the month.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function setYear(int $year, int|null $month = null, int|null $date = null): static
     {

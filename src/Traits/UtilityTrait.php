@@ -263,7 +263,7 @@ trait UtilityTrait
 
     /**
      * Convert the object to a native DateTime.
-     * @return \DateTime A native DateTime object.
+     * @return \DateTime A native DateTime.
      */
     public function toDateTime(): \DateTime
     {
@@ -296,7 +296,7 @@ trait UtilityTrait
     /**
      * Set calendar field values.
      * @param array $array The values to set.
-     * @return DateTime The DateTime object.
+     * @return DateTime a new DateTime.
      */
     protected function setCalendarFields(array $values): static
     {

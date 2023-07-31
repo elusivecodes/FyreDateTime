@@ -15,7 +15,7 @@ trait ManipulateTrait
      * Add a duration to the date.
      * @param int $amount The amount to modify the date by.
      * @param string $timeUnit The unit of time.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function add(int $amount, string $timeUnit): static
     {
@@ -25,7 +25,7 @@ trait ManipulateTrait
     /**
      * Modify the DateTime by setting it to the end of a unit of time.
      * @param string $timeUnit The unit of time.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function endOf(string $timeUnit): static
     {
@@ -63,7 +63,7 @@ trait ManipulateTrait
     /**
      * Modify the DateTime by setting it to the start of a unit of time.
      * @param string $timeUnit The unit of time.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function startOf(string $timeUnit): static
     {
@@ -100,7 +100,7 @@ trait ManipulateTrait
      * Subtract a duration from the date.
      * @param int $amount The amount to modify the date by.
      * @param string $timeUnit The unit of time.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     public function sub(int $amount, string $timeUnit): static
     {
@@ -111,7 +111,7 @@ trait ManipulateTrait
      * Modify the date by a duration.
      * @param int $amount The amount to modify the date by.
      * @param string $timeUnit The unit of time.
-     * @return DateTime The DateTime object.
+     * @return DateTime A new DateTime.
      */
     protected function modify(int $amount, string $timeUnit): static
     {

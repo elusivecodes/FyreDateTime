@@ -58,7 +58,6 @@ class DateTime
      * @param string|null $dateString The date to parse.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
-     * @return DateTime A new DateTime object.
      */
     public function __construct(string|null $time = null, string|null $timeZone = null, string|null $locale = null)
     {
