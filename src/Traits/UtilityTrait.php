@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use DateInterval;
 use Fyre\DateTime\DateTime;
 use IntlCalendar;
 

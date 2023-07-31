@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use DateInterval;
-
 use function strtolower;
 
 /**

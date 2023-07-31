@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use DateTimeZone;
-
 use const STR_PAD_LEFT;
 
 use function abs;
