@@ -81,7 +81,7 @@ trait StaticTrait
      * Get the IntlCalendar constant for an adjustment field.
      * @param string $timeUnit The unit of time.
      * @return int The IntlCalendar constant.
-     * @throws InvalidArgumentException if the time unit is invalid.
+     * @throws InvalidArgumentException if the time unit is not valid.
      */
     protected static function getAdjustmentField(string $timeUnit): int
     {
@@ -119,7 +119,7 @@ trait StaticTrait
      * Get the IntlCalendar constant for a  field.
      * @param string $timeUnit The unit of time.
      * @return int The IntlCalendar constant.
-     * @throws InvalidArgumentException if the time unit is invalid.
+     * @throws InvalidArgumentException if the time unit is not valid.
      */
     protected static function getField(string $timeUnit): int
     {
