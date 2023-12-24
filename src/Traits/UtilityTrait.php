@@ -296,13 +296,14 @@ trait UtilityTrait
     /**
      * Set calendar field values.
      * @param array $array The values to set.
+     * @param bool $adjust Whether to adjust the current time fields.
      * @return DateTime a new DateTime.
      */
-    protected function setCalendarFields(array $values): static
+    protected function setCalendarFields(array $values, bool $adjust = false): static
     {
-        $temp = new static(null, $this->getTimeZone(), $this->locale);
-
         $oldTime = $this->getTime();
+
+        $temp = new static(null, $this->getTimeZone(), $this->locale);
         $temp->calendar->setTime($oldTime);
 
         foreach ($values AS $field => $value) {
@@ -311,17 +312,12 @@ trait UtilityTrait
             }
 
             $key = static::getField($field);
-            $temp->calendar->set($key, $value);
-        }
 
-        $oldOffset = $this->getTimeZoneOffset();
-        $newOffset = $temp->getTimeZoneOffset();
-
-        if ($oldOffset !== $newOffset) {
-            $newTime = $temp->calendar->getTime();
-            $diff = ($oldOffset - $newOffset) * 60000;
-
-            $temp->calendar->setTime($newTime + $diff);
+            if ($adjust) {
+                $temp->calendar->add($key, $value);
+            } else {
+                $temp->calendar->set($key, $value);
+            }
         }
 
         return $temp;

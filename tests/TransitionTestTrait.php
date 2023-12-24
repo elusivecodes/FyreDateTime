@@ -96,14 +96,322 @@ trait TransitionTestTrait
         );
     }
 
-    public function testDstTransition(): void
+    public function testDstTransitionForward(): void
     {
-        $date1 = DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '07/04/2019 02:01:00 +11:00');
-        $date2 = $date1->setTimeZone('Australia/Sydney');
+        $date = DateTime::fromArray([2023, 10, 1, 2, 0, 0, 0], 'Australia/Sydney');
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date->toString()
+        );
+    }
+
+    public function testDstTransitionBackward(): void
+    {
+        $date = DateTime::fromArray([2023, 4, 2, 2, 0, 0, 0], 'Australia/Sydney');
+
+        $this->assertSame(
+            'Sun Apr 02 2023 02:00:00 +1000 (Australia/Sydney)',
+            $date->toString()
+        );
+    }
+
+    public function testDstTransitionToYear(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->setYear(2024);
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Tue Oct 01 2024 03:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionToMonth(): void
+    {
+        $date1 = DateTime::fromArray([2023, 9, 30, 23, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->setMonth(10);
+
+        $this->assertSame(
+            'Sat Sep 30 2023 23:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Mon Oct 30 2023 23:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionToDate(): void
+    {
+        $date1 = DateTime::fromArray([2023, 9, 30, 23, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->setMonth(10, 1);
+
+        $this->assertSame(
+            'Sat Sep 30 2023 23:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 23:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionToHour(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 1, 1, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->setHours(3);
+
+        $this->assertSame(
+            'Sun Oct 01 2023 01:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionAddYear(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->add(1, 'year');
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Tue Oct 01 2024 03:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionAddMonth(): void
+    {
+        $date1 = DateTime::fromArray([2023, 9, 30, 23, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->add(1, 'month');
+
+        $this->assertSame(
+            'Sat Sep 30 2023 23:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Mon Oct 30 2023 23:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionAddDay(): void
+    {
+        $date1 = DateTime::fromArray([2023, 9, 30, 23, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->add(1, 'day');
+
+        $this->assertSame(
+            'Sat Sep 30 2023 23:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 23:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionAddHour(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 1, 1, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->add(1, 'hour');
+
+        $this->assertSame(
+            'Sun Oct 01 2023 01:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionAddHourReverse(): void
+    {
+        $date1 = DateTime::fromArray([2023, 4, 2, 1, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->add(1, 'hour');
         $date3 = $date2->add(1, 'hour');
 
         $this->assertSame(
-            'Sun Apr 07 2019 02:01:00 +1000 (Australia/Sydney)',
+            'Sun Apr 02 2023 01:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Apr 02 2023 02:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+
+        $this->assertSame(
+            'Sun Apr 02 2023 02:00:00 +1000 (Australia/Sydney)',
+            $date3->toString()
+        );
+    }
+
+    public function testDstTransitionFromYear(): void
+    {
+        $date1 = DateTime::fromArray([2024, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->setYear(2023);
+
+        $this->assertSame(
+            'Tue Oct 01 2024 03:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionFromMonth(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 2, 0, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->setMonth(9);
+
+        $this->assertSame(
+            'Mon Oct 02 2023 00:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sat Sep 02 2023 00:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionFromDate(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 2, 0, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->setMonth(9, 30);
+
+        $this->assertSame(
+            'Mon Oct 02 2023 00:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sat Sep 30 2023 00:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionFromHour(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->setHours(1);
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 01:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionSubtractYear(): void
+    {
+        $date1 = DateTime::fromArray([2024, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->sub(1, 'year');
+
+        $this->assertSame(
+            'Tue Oct 01 2024 03:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionSubtractMonth(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 2, 0, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->sub(1, 'month');
+
+        $this->assertSame(
+            'Mon Oct 02 2023 00:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sat Sep 02 2023 00:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionSubtractDay(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 2, 0, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->sub(1, 'day');
+
+        $this->assertSame(
+            'Mon Oct 02 2023 00:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 00:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionSubtractHour(): void
+    {
+        $date1 = DateTime::fromArray([2023, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->sub(1, 'hour');
+
+        $this->assertSame(
+            'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Oct 01 2023 01:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+    }
+
+    public function testDstTransitionSubtractHourReverse(): void
+    {
+        $date1 = DateTime::fromArray([2023, 4, 2, 3, 0, 0, 0], 'Australia/Sydney');
+        $date2 = $date1->sub(1, 'hour');
+        $date3 = $date2->sub(1, 'hour');
+
+        $this->assertSame(
+            'Sun Apr 02 2023 03:00:00 +1000 (Australia/Sydney)',
+            $date1->toString()
+        );
+
+        $this->assertSame(
+            'Sun Apr 02 2023 02:00:00 +1000 (Australia/Sydney)',
+            $date2->toString()
+        );
+
+        $this->assertSame(
+            'Sun Apr 02 2023 02:00:00 +1100 (Australia/Sydney)',
             $date3->toString()
         );
     }

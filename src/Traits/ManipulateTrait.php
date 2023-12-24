@@ -120,39 +120,39 @@ trait ManipulateTrait
         switch ($timeUnit) {
             case 'second':
             case 'seconds':
-                return $this->setSeconds(
-                    $this->getSeconds() + $amount
-                );
+                return $this->setCalendarFields([
+                    'second' => $amount
+                ], true);
             case 'minute':
             case 'minutes':
-                return $this->setMinutes(
-                    $this->getMinutes() + $amount
-                );
+                return $this->setCalendarFields([
+                    'minute' => $amount
+                ], true);
             case 'hour':
             case 'hours':
-                return $this->setHours(
-                    $this->getHours() + $amount
-                );
+                return $this->setCalendarFields([
+                    'hour' => $amount
+                ], true);
             case 'day':
             case 'days':
-                return $this->setDate(
-                    $this->getDate() + $amount
-                );
+                return $this->setCalendarFields([
+                    'day' => $amount
+                ], true);
             case 'week':
             case 'weeks':
-                return $this->setWeek(
-                    $this->getWeek() + $amount
-                );
+                return $this->setCalendarFields([
+                    'week' => $amount
+                ], true);
             case 'month':
             case 'months':
-                return $this->setMonth(
-                    $this->getMonth() + $amount
-                );
+                return $this->setCalendarFields([
+                    'month' => $amount
+                ], true);
             case 'year':
             case 'years':
-                return $this->setYear(
-                    $this->getYear() + $amount
-                );
+                return $this->setCalendarFields([
+                    'year' => $amount
+                ], true);
             default:
                 return $this;
         }
