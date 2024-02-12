@@ -45,6 +45,8 @@ class DateTime
 
     protected IntlCalendar $calendar;
 
+    protected string $locale;
+
     use AttributesGetTrait;
     use AttributesSetTrait;
     use CreateTrait;
