@@ -183,7 +183,7 @@ trait TransitionTestTrait
     public function testDstTransitionAddYear(): void
     {
         $date1 = DateTime::fromArray([2023, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->add(1, 'year');
+        $date2 = $date1->addYear();
 
         $this->assertSame(
             'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
@@ -199,7 +199,7 @@ trait TransitionTestTrait
     public function testDstTransitionAddMonth(): void
     {
         $date1 = DateTime::fromArray([2023, 9, 30, 23, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->add(1, 'month');
+        $date2 = $date1->addMonth();
 
         $this->assertSame(
             'Sat Sep 30 2023 23:00:00 +1000 (Australia/Sydney)',
@@ -215,7 +215,7 @@ trait TransitionTestTrait
     public function testDstTransitionAddDay(): void
     {
         $date1 = DateTime::fromArray([2023, 9, 30, 23, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->add(1, 'day');
+        $date2 = $date1->addDay();
 
         $this->assertSame(
             'Sat Sep 30 2023 23:00:00 +1000 (Australia/Sydney)',
@@ -231,7 +231,7 @@ trait TransitionTestTrait
     public function testDstTransitionAddHour(): void
     {
         $date1 = DateTime::fromArray([2023, 10, 1, 1, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->add(1, 'hour');
+        $date2 = $date1->addHour();
 
         $this->assertSame(
             'Sun Oct 01 2023 01:00:00 +1000 (Australia/Sydney)',
@@ -247,8 +247,8 @@ trait TransitionTestTrait
     public function testDstTransitionAddHourReverse(): void
     {
         $date1 = DateTime::fromArray([2023, 4, 2, 1, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->add(1, 'hour');
-        $date3 = $date2->add(1, 'hour');
+        $date2 = $date1->addHour();
+        $date3 = $date2->addHour();
 
         $this->assertSame(
             'Sun Apr 02 2023 01:00:00 +1100 (Australia/Sydney)',
@@ -333,7 +333,7 @@ trait TransitionTestTrait
     public function testDstTransitionSubtractYear(): void
     {
         $date1 = DateTime::fromArray([2024, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->sub(1, 'year');
+        $date2 = $date1->subYear();
 
         $this->assertSame(
             'Tue Oct 01 2024 03:00:00 +1000 (Australia/Sydney)',
@@ -349,7 +349,7 @@ trait TransitionTestTrait
     public function testDstTransitionSubtractMonth(): void
     {
         $date1 = DateTime::fromArray([2023, 10, 2, 0, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->sub(1, 'month');
+        $date2 = $date1->subMonth();
 
         $this->assertSame(
             'Mon Oct 02 2023 00:00:00 +1100 (Australia/Sydney)',
@@ -365,7 +365,7 @@ trait TransitionTestTrait
     public function testDstTransitionSubtractDay(): void
     {
         $date1 = DateTime::fromArray([2023, 10, 2, 0, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->sub(1, 'day');
+        $date2 = $date1->subDay();
 
         $this->assertSame(
             'Mon Oct 02 2023 00:00:00 +1100 (Australia/Sydney)',
@@ -381,7 +381,7 @@ trait TransitionTestTrait
     public function testDstTransitionSubtractHour(): void
     {
         $date1 = DateTime::fromArray([2023, 10, 1, 3, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->sub(1, 'hour');
+        $date2 = $date1->subHour();
 
         $this->assertSame(
             'Sun Oct 01 2023 03:00:00 +1100 (Australia/Sydney)',
@@ -397,8 +397,8 @@ trait TransitionTestTrait
     public function testDstTransitionSubtractHourReverse(): void
     {
         $date1 = DateTime::fromArray([2023, 4, 2, 3, 0, 0, 0], 'Australia/Sydney');
-        $date2 = $date1->sub(1, 'hour');
-        $date3 = $date2->sub(1, 'hour');
+        $date2 = $date1->subHour();
+        $date3 = $date2->subHour();
 
         $this->assertSame(
             'Sun Apr 02 2023 03:00:00 +1000 (Australia/Sydney)',

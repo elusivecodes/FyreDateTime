@@ -6,6 +6,7 @@ namespace Fyre\DateTime;
 use DateTimeImmutable;
 use Fyre\DateTime\Traits\AttributesGetTrait;
 use Fyre\DateTime\Traits\AttributesSetTrait;
+use Fyre\DateTime\Traits\ComparisonsTrait;
 use Fyre\DateTime\Traits\CreateTrait;
 use Fyre\DateTime\Traits\ManipulateTrait;
 use Fyre\DateTime\Traits\OutputTrait;
@@ -49,6 +50,7 @@ class DateTime
 
     use AttributesGetTrait;
     use AttributesSetTrait;
+    use ComparisonsTrait;
     use CreateTrait;
     use ManipulateTrait;
     use OutputTrait;

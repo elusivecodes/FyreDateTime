@@ -87,28 +87,20 @@ trait StaticTrait
     {
         switch ($timeUnit) {
             case 'millisecond':
-            case 'milliseconds':
                 return IntlCalendar::FIELD_MILLISECOND;
             case 'second':
-            case 'seconds':
                 return IntlCalendar::FIELD_SECOND;
             case 'minute':
-            case 'minutes':
                 return IntlCalendar::FIELD_MINUTE;
             case 'hour':
-            case 'hours':
                 return IntlCalendar::FIELD_HOUR_OF_DAY;
             case 'week':
-            case 'weeks':
                 return IntlCalendar::FIELD_WEEK_OF_YEAR;
             case 'day':
-            case 'days':
                 return IntlCalendar::FIELD_DATE;
             case 'month':
-            case 'months':
                 return IntlCalendar::FIELD_MONTH;
             case 'year':
-            case 'years':
                 return IntlCalendar::FIELD_YEAR;
             default:
                 throw new InvalidArgumentException('Invalid time unit supplied');

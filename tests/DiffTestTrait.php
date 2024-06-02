@@ -24,9 +24,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018])
-                ->diff(
-                    DateTime::fromArray([2017]),
-                    'year'
+                ->diffInYears(
+                    DateTime::fromArray([2017])
                 )
         );
     }
@@ -36,9 +35,8 @@ trait DiffTestTrait
         $this->assertSame(
             2,
             DateTime::fromArray([2018])
-                ->diff(
-                    DateTime::fromArray([2016]),
-                    'years'
+                ->diffInYears(
+                    DateTime::fromArray([2016])
                 )
         );
     }
@@ -48,9 +46,8 @@ trait DiffTestTrait
         $this->assertSame(
             -2,
             DateTime::fromArray([2016])
-                ->diff(
-                    DateTime::fromArray([2018]),
-                    'years'
+                ->diffInYears(
+                    DateTime::fromArray([2018])
                 )
         );
     }
@@ -60,9 +57,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 1])
-                ->diff(
-                    DateTime::fromArray([2017, 2]),
-                    'years'
+                ->diffInYears(
+                    DateTime::fromArray([2017, 2])
                 )
         );
     }
@@ -72,9 +68,8 @@ trait DiffTestTrait
         $this->assertSame(
             0,
             DateTime::fromArray([2018, 1])
-                ->diff(
+                ->diffInYears(
                     DateTime::fromArray([2017, 2]),
-                    'years',
                     false
                 )
         );
@@ -85,9 +80,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 9])
-                ->diff(
-                    DateTime::fromArray([2018, 8]),
-                    'month'
+                ->diffInMonths(
+                    DateTime::fromArray([2018, 8])
                 )
         );
     }
@@ -97,9 +91,8 @@ trait DiffTestTrait
         $this->assertSame(
             3,
             DateTime::fromArray([2018, 9])
-                ->diff(
-                    DateTime::fromArray([2018, 6]),
-                    'months'
+                ->diffInMonths(
+                    DateTime::fromArray([2018, 6])
                 )
         );
     }
@@ -109,9 +102,8 @@ trait DiffTestTrait
         $this->assertSame(
             -3,
             DateTime::fromArray([2018, 6])
-                ->diff(
-                    DateTime::fromArray([2018, 9]),
-                    'months'
+                ->diffInMonths(
+                    DateTime::fromArray([2018, 9])
                 )
         );
     }
@@ -121,9 +113,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 2, 1])
-                ->diff(
-                    DateTime::fromArray([2018, 1, 2]),
-                    'months'
+                ->diffInMonths(
+                    DateTime::fromArray([2018, 1, 2])
                 )
         );
     }
@@ -133,9 +124,8 @@ trait DiffTestTrait
         $this->assertSame(
             0,
             DateTime::fromArray([2018, 2, 1])
-                ->diff(
+                ->diffInMonths(
                     DateTime::fromArray([2018, 1, 2]),
-                    'months',
                     false
                 )
         );
@@ -146,9 +136,8 @@ trait DiffTestTrait
         $this->assertSame(
             27,
             DateTime::fromArray([2018, 9])
-                ->diff(
-                    DateTime::fromArray([2016, 6]),
-                    'months'
+                ->diffInMonths(
+                    DateTime::fromArray([2016, 6])
                 )
         );
     }
@@ -158,9 +147,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 16]),
-                    'week'
+                ->diffInWeeks(
+                    DateTime::fromArray([2018, 6, 16])
                 )
         );
     }
@@ -170,9 +158,8 @@ trait DiffTestTrait
         $this->assertSame(
             5,
             DateTime::fromArray([2018, 6, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 5, 15]),
-                    'weeks'
+                ->diffInWeeks(
+                    DateTime::fromArray([2018, 5, 15])
                 )
         );
     }
@@ -182,9 +169,8 @@ trait DiffTestTrait
         $this->assertSame(
             -5,
             DateTime::fromArray([2018, 5, 15])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 23]),
-                    'weeks'
+                ->diffInWeeks(
+                    DateTime::fromArray([2018, 6, 23])
                 )
         );
     }
@@ -194,9 +180,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 8])
-                ->diff(
-                    DateTime::fromArray([2018, 1, 1]),
-                    'weeks'
+                ->diffInWeeks(
+                    DateTime::fromArray([2018, 1, 1])
                 )
         );
     }
@@ -206,9 +191,8 @@ trait DiffTestTrait
         $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 8])
-                ->diff(
+                ->diffInWeeks(
                     DateTime::fromArray([2018, 1, 2]),
-                    'weeks',
                     false
                 )
         );
@@ -219,9 +203,8 @@ trait DiffTestTrait
         $this->assertSame(
             10,
             DateTime::fromArray([2018, 8, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15]),
-                    'weeks'
+                ->diffInWeeks(
+                    DateTime::fromArray([2018, 6, 15])
                 )
         );
     }
@@ -231,9 +214,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 22]),
-                    'day'
+                ->diffInDays(
+                    DateTime::fromArray([2018, 6, 22])
                 )
         );
     }
@@ -243,9 +225,8 @@ trait DiffTestTrait
         $this->assertSame(
             8,
             DateTime::fromArray([2018, 6, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15]),
-                    'days'
+                ->diffInDays(
+                    DateTime::fromArray([2018, 6, 15])
                 )
         );
     }
@@ -255,9 +236,8 @@ trait DiffTestTrait
         $this->assertSame(
             -8,
             DateTime::fromArray([2018, 6, 15])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 23]),
-                    'days'
+                ->diffInDays(
+                    DateTime::fromArray([2018, 6, 23])
                 )
         );
     }
@@ -267,9 +247,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 2, 0])
-                ->diff(
-                    DateTime::fromArray([2018, 1, 1, 1]),
-                    'days'
+                ->diffInDays(
+                    DateTime::fromArray([2018, 1, 1, 1])
                 )
         );
     }
@@ -279,9 +258,8 @@ trait DiffTestTrait
         $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 2, 0])
-                ->diff(
+                ->diffInDays(
                     DateTime::fromArray([2018, 1, 1, 1]),
-                    'days',
                     false
                 )
         );
@@ -292,9 +270,8 @@ trait DiffTestTrait
         $this->assertSame(
             69,
             DateTime::fromArray([2018, 8, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15]),
-                    'days'
+                ->diffInDays(
+                    DateTime::fromArray([2018, 6, 15])
                 )
         );
     }
@@ -304,9 +281,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 15, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 22]),
-                    'hour'
+                ->diffInHours(
+                    DateTime::fromArray([2018, 6, 15, 22])
                 )
         );
     }
@@ -316,9 +292,8 @@ trait DiffTestTrait
         $this->assertSame(
             11,
             DateTime::fromArray([2018, 6, 15, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12]),
-                    'hours'
+                ->diffInHours(
+                    DateTime::fromArray([2018, 6, 15, 12])
                 )
         );
     }
@@ -328,9 +303,8 @@ trait DiffTestTrait
         $this->assertSame(
             -11,
             DateTime::fromArray([2018, 6, 15, 12])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 23]),
-                    'hours'
+                ->diffInHours(
+                    DateTime::fromArray([2018, 6, 15, 23])
                 )
         );
     }
@@ -340,9 +314,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 1, 1, 0])
-                ->diff(
-                    DateTime::fromArray([2018, 1, 1, 0, 1]),
-                    'hours'
+                ->diffInHours(
+                    DateTime::fromArray([2018, 1, 1, 0, 1])
                 )
         );
     }
@@ -352,9 +325,8 @@ trait DiffTestTrait
         $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 1, 1, 0])
-                ->diff(
+                ->diffInHours(
                     DateTime::fromArray([2018, 1, 1, 0, 1]),
-                    'hours',
                     false
                 )
         );
@@ -365,9 +337,8 @@ trait DiffTestTrait
         $this->assertSame(
             83,
             DateTime::fromArray([2018, 6, 18, 23])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12]),
-                    'hours'
+                ->diffInHours(
+                    DateTime::fromArray([2018, 6, 15, 12])
                 )
         );
     }
@@ -377,9 +348,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 15, 12, 30])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12, 29]),
-                    'minute'
+                ->diffInMinutes(
+                    DateTime::fromArray([2018, 6, 15, 12, 29])
                 )
         );
     }
@@ -389,9 +359,8 @@ trait DiffTestTrait
         $this->assertSame(
             15,
             DateTime::fromArray([2018, 6, 15, 12, 30])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12, 15]),
-                    'minutes'
+                ->diffInMinutes(
+                    DateTime::fromArray([2018, 6, 15, 12, 15])
                 )
         );
     }
@@ -401,9 +370,8 @@ trait DiffTestTrait
         $this->assertSame(
             -15,
             DateTime::fromArray([2018, 6, 15, 12, 15])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12, 30]),
-                    'minutes'
+                ->diffInMinutes(
+                    DateTime::fromArray([2018, 6, 15, 12, 30])
                 )
         );
     }
@@ -413,9 +381,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 1, 0, 1, 0])
-                ->diff(
-                    DateTime::fromArray([2018, 1, 1, 0, 0, 1]),
-                    'minutes'
+                ->diffInMinutes(
+                    DateTime::fromArray([2018, 1, 1, 0, 0, 1])
                 )
         );
     }
@@ -425,9 +392,8 @@ trait DiffTestTrait
         $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 1, 0, 1, 0])
-                ->diff(
+                ->diffInMinutes(
                     DateTime::fromArray([2018, 1, 1, 0, 0, 1]),
-                    'minutes',
                     false
                 )
         );
@@ -438,9 +404,8 @@ trait DiffTestTrait
         $this->assertSame(
             255,
             DateTime::fromArray([2018, 6, 15, 16, 30])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12, 15]),
-                    'minutes'
+                ->diffInMinutes(
+                    DateTime::fromArray([2018, 6, 15, 12, 15])
                 )
         );
     }
@@ -450,9 +415,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 6, 15, 12, 30, 30])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12, 30, 29]),
-                    'second'
+                ->diffInSeconds(
+                    DateTime::fromArray([2018, 6, 15, 12, 30, 29])
                 )
         );
     }
@@ -462,9 +426,8 @@ trait DiffTestTrait
         $this->assertSame(
             15,
             DateTime::fromArray([2018, 6, 15, 12, 30, 30])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12, 30, 15]),
-                    'seconds'
+                ->diffInSeconds(
+                    DateTime::fromArray([2018, 6, 15, 12, 30, 15])
                 )
         );
     }
@@ -474,9 +437,8 @@ trait DiffTestTrait
         $this->assertSame(
             -15,
             DateTime::fromArray([2018, 6, 15, 12, 30, 15])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12, 30, 30]),
-                    'seconds'
+                ->diffInSeconds(
+                    DateTime::fromArray([2018, 6, 15, 12, 30, 30])
                 )
         );
     }
@@ -486,9 +448,8 @@ trait DiffTestTrait
         $this->assertSame(
             1,
             DateTime::fromArray([2018, 1, 1, 0, 0, 1, 0])
-                ->diff(
-                    DateTime::fromArray([2018, 1, 1, 0, 0, 0, 1]),
-                    'seconds'
+                ->diffInSeconds(
+                    DateTime::fromArray([2018, 1, 1, 0, 0, 0, 1])
                 )
         );
     }
@@ -498,9 +459,8 @@ trait DiffTestTrait
         $this->assertSame(
             0,
             DateTime::fromArray([2018, 1, 1, 0, 0, 1, 0])
-                ->diff(
+                ->diffInSeconds(
                     DateTime::fromArray([2018, 1, 1, 0, 0, 0, 1]),
-                    'seconds',
                     false
                 )
         );
@@ -511,9 +471,8 @@ trait DiffTestTrait
         $this->assertSame(
             1215,
             DateTime::fromArray([2018, 6, 15, 12, 50, 30])
-                ->diff(
-                    DateTime::fromArray([2018, 6, 15, 12, 30, 15]),
-                    'seconds'
+                ->diffInSeconds(
+                    DateTime::fromArray([2018, 6, 15, 12, 30, 15])
                 )
         );
     }

@@ -15,6 +15,8 @@ It is a modern library, and features support for ICU formats, time zones and loc
 - [Timestamps](#timestamps)
 - [Time Zones](#time-zones)
 - [Locales](#locales)
+- [Manipulation](#manipulation)
+- [Comparisons](#comparisons)
 - [Utility Methods](#utility-methods)
 - [Static Methods](#static-methods)
 
@@ -587,44 +589,976 @@ $newDateTime = $dateTime->setLocale($locale);
 
 ## Manipulation
 
-**Add**
+**Add Day**
 
-Add a duration to the date.
-
-- `$amount` is a number representing the amount of the `timeUnit` to add.
-- `$timeUnit` is a string representing the unit of time to add, and can be one of either "*year*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*", or their pluralized versions.
+Add a day to the current date.
 
 ```php
-$newDateTime = $dateTime->add($amount, $timeUnit);
+$newDateTime = $dateTime->addDay();
 ```
 
-**End Of**
+**Add Days**
 
-Set the date to the end of a unit of time in current time zone.
+Add days to the current date.
 
-- `$timeUnit` is a string representing the unit of time to use, and can be one of either "*year*", "*quarter*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*".
+- `$amount` is a number representing the amount of days to add.
 
 ```php
-$newDateTime = $dateTime->endOf($timeUnit);
+$newDateTime = $dateTime->addDay($amount);
 ```
 
-**Start Of**
+**Add Hour**
 
-Set the date to the start of a unit of time in current time zone.
-
-- `$timeUnit` is a string representing the unit of time to use, and can be one of either "*year*", "*quarter*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*".
+Add a hour to the current date.
 
 ```php
-$newDateTime = $dateTime->startOf($timeUnit);
+$newDateTime = $dateTime->addHour();
 ```
 
-**Subtract**
+**Add Hours**
 
-- `$amount` is a number representing the amount of the `timeUnit` to subtract.
-- `$timeUnit` is a string representing the unit of time to subtract, and can be one of either "*year*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*", or their pluralized versions.
+Add hours to the current date.
+
+- `$amount` is a number representing the amount of hours to add.
 
 ```php
-$newDateTime = $dateTime->sub($amount, $timeUnit);
+$newDateTime = $dateTime->addHours($amount);
+```
+
+**Add Minute**
+
+Add a minute to the current date.
+
+```php
+$newDateTime = $dateTime->addMinute();
+```
+
+**Add Minutes**
+
+Add minutes to the current date.
+
+- `$amount` is a number representing the amount of minutes to add.
+
+```php
+$newDateTime = $dateTime->addMinutes($amount);
+```
+
+**Add Month**
+
+Add a month to the current date.
+
+```php
+$newDateTime = $dateTime->addMonth();
+```
+
+**Add Months**
+
+Add months to the current date.
+
+- `$amount` is a number representing the amount of months to add.
+
+```php
+$newDateTime = $dateTime->addMonths($amount);
+```
+
+**Add Second**
+
+Add a second to the current date.
+
+```php
+$newDateTime = $dateTime->addSecond();
+```
+
+**Add Seconds**
+
+Add seconds to the current date.
+
+- `$amount` is a number representing the amount of seconds to add.
+
+```php
+$newDateTime = $dateTime->addSeconds($amount);
+```
+
+**Add Week**
+
+Add a week to the current date.
+
+```php
+$newDateTime = $dateTime->addWeek();
+```
+
+**Add Weeks**
+
+Add weeks to the current date.
+
+- `$amount` is a number representing the amount of weeks to add.
+
+```php
+$newDateTime = $dateTime->addWeeks($amount);
+```
+
+**Add Year**
+
+Add a year to the current date.
+
+```php
+$newDateTime = $dateTime->addYear();
+```
+
+**Add Years**
+
+Add years to the current date.
+
+- `$amount` is a number representing the amount of years to add.
+
+```php
+$newDateTime = $dateTime->addYears($amount);
+```
+
+**End Of Day**
+
+Set the date to the end of the day in current time zone.
+
+```php
+$newDateTime = $dateTime->endOfDay();
+```
+
+**End Of Hour**
+
+Set the date to the end of the hour in current time zone.
+
+```php
+$newDateTime = $dateTime->endOfHour();
+```
+
+**End Of Minute**
+
+Set the date to the end of the minute in current time zone.
+
+```php
+$newDateTime = $dateTime->endOfMinute();
+```
+
+**End Of Month**
+
+Set the date to the end of the month in current time zone.
+
+```php
+$newDateTime = $dateTime->endOfMonth();
+```
+
+**End Of Quarter**
+
+Set the date to the end of the quarter in current time zone.
+
+```php
+$newDateTime = $dateTime->endOfQuarter();
+```
+
+**End Of Second**
+
+Set the date to the end of the second in current time zone.
+
+```php
+$newDateTime = $dateTime->endOfSecond();
+```
+
+**End Of Week**
+
+Set the date to the end of the week in current time zone.
+
+```php
+$newDateTime = $dateTime->endOfWeek();
+```
+
+**End Of Year**
+
+Set the date to the end of the year in current time zone.
+
+```php
+$newDateTime = $dateTime->endOfYear();
+```
+
+**Start Of Day**
+
+Set the date to the start of the day in current time zone.
+
+```php
+$newDateTime = $dateTime->startOfDay();
+```
+
+**Start Of Hour**
+
+Set the date to the start of the hour in current time zone.
+
+```php
+$newDateTime = $dateTime->startOfHour();
+```
+
+**Start Of Minute**
+
+Set the date to the start of the minute in current time zone.
+
+```php
+$newDateTime = $dateTime->startOfMinute();
+```
+
+**Start Of Month**
+
+Set the date to the start of the month in current time zone.
+
+```php
+$newDateTime = $dateTime->startOfMonth();
+```
+
+**Start Of Quarter**
+
+Set the date to the start of the quarter in current time zone.
+
+```php
+$newDateTime = $dateTime->startOfQuarter();
+```
+
+**Start Of Second**
+
+Set the date to the start of the second in current time zone.
+
+```php
+$newDateTime = $dateTime->startOfSecond();
+```
+
+**Start Of Week**
+
+Set the date to the start of the week in current time zone.
+
+```php
+$newDateTime = $dateTime->startOfWeek();
+```
+
+**Start Of Year**
+
+Set the date to the start of the year in current time zone.
+
+```php
+$newDateTime = $dateTime->startOfYear();
+```
+
+**Subtract Day**
+
+Subtract a day to the current date.
+
+```php
+$newDateTime = $dateTime->subtractDay();
+```
+
+**Subtract Days**
+
+Subtract days to the current date.
+
+- `$amount` is a number representing the amount of days to subtract.
+
+```php
+$newDateTime = $dateTime->subtractDay($amount);
+```
+
+**Subtract Hour**
+
+Subtract a hour to the current date.
+
+```php
+$newDateTime = $dateTime->subtractHour();
+```
+
+**Subtract Hours**
+
+Subtract hours to the current date.
+
+- `$amount` is a number representing the amount of hours to subtract.
+
+```php
+$newDateTime = $dateTime->subtractHours($amount);
+```
+
+**Subtract Minute**
+
+Subtract a minute to the current date.
+
+```php
+$newDateTime = $dateTime->subtractMinute();
+```
+
+**Subtract Minutes**
+
+Subtract minutes to the current date.
+
+- `$amount` is a number representing the amount of minutes to subtract.
+
+```php
+$newDateTime = $dateTime->subtractMinutes($amount);
+```
+
+**Subtract Month**
+
+Subtract a month to the current date.
+
+```php
+$newDateTime = $dateTime->subtractMonth();
+```
+
+**Subtract Months**
+
+Subtract months to the current date.
+
+- `$amount` is a number representing the amount of months to subtract.
+
+```php
+$newDateTime = $dateTime->subtractMonths($amount);
+```
+
+**Subtract Second**
+
+Subtract a second to the current date.
+
+```php
+$newDateTime = $dateTime->subtractSecond();
+```
+
+**Subtract Seconds**
+
+Subtract seconds to the current date.
+
+- `$amount` is a number representing the amount of seconds to subtract.
+
+```php
+$newDateTime = $dateTime->subtractSeconds($amount);
+```
+
+**Subtract Week**
+
+Subtract a week to the current date.
+
+```php
+$newDateTime = $dateTime->subtractWeek();
+```
+
+**Subtract Weeks**
+
+Subtract weeks to the current date.
+
+- `$amount` is a number representing the amount of weeks to subtract.
+
+```php
+$newDateTime = $dateTime->subtractWeeks($amount);
+```
+
+**Subtract Year**
+
+Subtract a year to the current date.
+
+```php
+$newDateTime = $dateTime->subtractYear();
+```
+
+**Subtract Years**
+
+Subtract years to the current date.
+
+- `$amount` is a number representing the amount of years to subtract.
+
+```php
+$newDateTime = $dateTime->subtractYears($amount);
+```
+
+
+## Comparisons
+
+**Difference**
+
+Get the difference between two dates in milliseconds.
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$diff = $dateTime->diff($other);
+```
+
+**Difference In Days**
+
+Get the difference between two dates in days.
+
+- `$other` is the *DateTime* object to compare to.
+- `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
+
+```php
+$diff = $dateTime->diffInDays($other, $relative);
+```
+
+If `$relative` is *true* (default) the value returned will be the relative difference, ignoring higher precision properties.
+
+**Difference In Hours**
+
+Get the difference between two dates in hours.
+
+- `$other` is the *DateTime* object to compare to.
+- `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
+
+```php
+$diff = $dateTime->diffInHours($other, $relative);
+```
+
+If `$relative` is *true* (default) the value returned will be the relative difference, ignoring higher precision properties.
+
+**Difference In Minutes**
+
+Get the difference between two dates in minutes.
+
+- `$other` is the *DateTime* object to compare to.
+- `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
+
+```php
+$diff = $dateTime->diffInMinutes($other, $relative);
+```
+
+If `$relative` is *true* (default) the value returned will be the relative difference, ignoring higher precision properties.
+
+**Difference In Months**
+
+Get the difference between two dates in months.
+
+- `$other` is the *DateTime* object to compare to.
+- `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
+
+```php
+$diff = $dateTime->diffInMonths($other, $relative);
+```
+
+If `$relative` is *true* (default) the value returned will be the relative difference, ignoring higher precision properties.
+
+**Difference In Seconds**
+
+Get the difference between two dates in seconds.
+
+- `$other` is the *DateTime* object to compare to.
+- `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
+
+```php
+$diff = $dateTime->diffInSeconds($other, $relative);
+```
+
+If `$relative` is *true* (default) the value returned will be the relative difference, ignoring higher precision properties.
+
+**Difference In Weeks**
+
+Get the difference between two dates in weeks.
+
+- `$other` is the *DateTime* object to compare to.
+- `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
+
+```php
+$diff = $dateTime->diffInWeeks($other, $relative);
+```
+
+If `$relative` is *true* (default) the value returned will be the relative difference, ignoring higher precision properties.
+
+**Difference In Years**
+
+Get the difference between two dates in years.
+
+- `$other` is the *DateTime* object to compare to.
+- `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
+
+```php
+$diff = $dateTime->diffInYears($other, $relative);
+```
+
+If `$relative` is *true* (default) the value returned will be the relative difference, ignoring higher precision properties.
+
+**Is After?**
+
+Return *true* if the *DateTime* is after another date.
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isAfter = $dateTime->isAfter($other);
+```
+
+**Is After Day?**
+
+Return *true* if the *DateTime* is after another date (comparing by day).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isAfter = $dateTime->isAfterDay($other);
+```
+
+**Is After Hour?**
+
+Return *true* if the *DateTime* is after another date (comparing by hour).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isAfter = $dateTime->isAfterHour($other);
+```
+
+**Is After Minute?**
+
+Return *true* if the *DateTime* is after another date (comparing by minute).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isAfter = $dateTime->isAfterMinute($other);
+```
+
+**Is After Month?**
+
+Return *true* if the *DateTime* is after another date (comparing by month).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isAfter = $dateTime->isAfterMonth($other);
+```
+
+**Is After Second?**
+
+Return *true* if the *DateTime* is after another date (comparing by second).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isAfter = $dateTime->isAfterSecond($other);
+```
+
+**Is After Week?**
+
+Return *true* if the *DateTime* is after another date (comparing by week).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isAfter = $dateTime->isAfterWeek($other);
+```
+
+**Is After Year?**
+
+Return *true* if the *DateTime* is after another date (comparing by year).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isAfter = $dateTime->isAfterYear($other);
+```
+
+**Is Before?**
+
+Return *true* if the *DateTime* is before another date.
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isBefore = $dateTime->isBefore($other);
+```
+
+**Is Before Day?**
+
+Return *true* if the *DateTime* is before another date (comparing by day).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isBefore = $dateTime->isBeforeDay($other);
+```
+
+**Is Before Hour?**
+
+Return *true* if the *DateTime* is before another date (comparing by hour).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isBefore = $dateTime->isBeforeHour($other);
+```
+
+**Is Before Minute?**
+
+Return *true* if the *DateTime* is before another date (comparing by minute).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isBefore = $dateTime->isBeforeMinute($other);
+```
+
+**Is Before Month?**
+
+Return *true* if the *DateTime* is before another date (comparing by month).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isBefore = $dateTime->isBeforeMonth($other);
+```
+
+**Is Before Second?**
+
+Return *true* if the *DateTime* is before another date (comparing by second).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isBefore = $dateTime->isBeforeSecond($other);
+```
+
+**Is Before Week?**
+
+Return *true* if the *DateTime* is before another date (comparing by week).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isBefore = $dateTime->isBeforeWeek($other);
+```
+
+**Is Before Year?**
+
+Return *true* if the *DateTime* is before another date (comparing by year).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isBefore = $dateTime->isBeforeYear($other);
+```
+
+**Is Between?**
+
+Return *true* if the *DateTime* is between two other dates.
+
+- `$start` is the starting *DateTime* object to compare to.
+- `$end` is the ending *DateTime* object to compare to.
+
+```php
+$isBetween = $dateTime->isBetween($start, $end);
+```
+
+**Is Between Day?**
+
+Return *true* if the *DateTime* is between two other dates (comparing by day).
+
+- `$start` is the starting *DateTime* object to compare to.
+- `$end` is the ending *DateTime* object to compare to.
+
+```php
+$isBetween = $dateTime->isBetweenDay($start, $end);
+```
+
+**Is Between Hour?**
+
+Return *true* if the *DateTime* is between two other dates (comparing by hour).
+
+- `$start` is the starting *DateTime* object to compare to.
+- `$end` is the ending *DateTime* object to compare to.
+
+```php
+$isBetween = $dateTime->isBetweenHour($start, $end);
+```
+
+**Is Between Minute?**
+
+Return *true* if the *DateTime* is between two other dates (comparing by minute).
+
+- `$start` is the starting *DateTime* object to compare to.
+- `$end` is the ending *DateTime* object to compare to.
+
+```php
+$isBetween = $dateTime->isBetweenMinute($start, $end);
+```
+
+**Is Between Month?**
+
+Return *true* if the *DateTime* is between two other dates (comparing by month).
+
+- `$start` is the starting *DateTime* object to compare to.
+- `$end` is the ending *DateTime* object to compare to.
+
+```php
+$isBetween = $dateTime->isBetweenMonth($start, $end);
+```
+
+**Is Between Second?**
+
+Return *true* if the *DateTime* is between two other dates (comparing by second).
+
+- `$start` is the starting *DateTime* object to compare to.
+- `$end` is the ending *DateTime* object to compare to.
+
+```php
+$isBetween = $dateTime->isBetweenSecond($start, $end);
+```
+
+**Is Between Week?**
+
+Return *true* if the *DateTime* is between two other dates (comparing by week).
+
+- `$start` is the starting *DateTime* object to compare to.
+- `$end` is the ending *DateTime* object to compare to.
+
+```php
+$isBetween = $dateTime->isBetweenWeek($start, $end);
+```
+
+**Is Between Year?**
+
+Return *true* if the *DateTime* is between two other dates (comparing by year).
+
+- `$start` is the starting *DateTime* object to compare to.
+- `$end` is the ending *DateTime* object to compare to.
+
+```php
+$isBetween = $dateTime->isBetweenYear($start, $end);
+```
+
+**Is Same?**
+
+Return *true* if the *DateTime* is the same as another date.
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSame = $dateTime->isSame($other);
+```
+
+**Is Same Day?**
+
+Return *true* if the *DateTime* is the same as another date (comparing by day).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSame = $dateTime->isSameDay($other);
+```
+
+**Is Same Hour?**
+
+Return *true* if the *DateTime* is the same as another date (comparing by hour).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSame = $dateTime->isSameHour($other);
+```
+
+**Is Same Minute?**
+
+Return *true* if the *DateTime* is the same as another date (comparing by minute).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSame = $dateTime->isSameMinute($other);
+```
+
+**Is Same Month?**
+
+Return *true* if the *DateTime* is the same as another date (comparing by month).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSame = $dateTime->isSameMonth($other);
+```
+
+**Is Same Second?**
+
+Return *true* if the *DateTime* is the same as another date (comparing by second).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSame = $dateTime->isSameSecond($other);
+```
+
+**Is Same Week?**
+
+Return *true* if the *DateTime* is the same as another date (comparing by week).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSame = $dateTime->isSameWeek($other);
+```
+
+**Is Same Year?**
+
+Return *true* if the *DateTime* is the same as another date (comparing by year).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSame = $dateTime->isSameYear($other);
+```
+
+**Is Same Or After?**
+
+Return *true* if the *DateTime* is the same as or after another date.
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrAfter = $dateTime->isSameOrAfter($other);
+```
+
+**Is Same Or After Day?**
+
+Return *true* if the *DateTime* is the same as or after another date (comparing by day).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrAfter = $dateTime->isSameOrAfterDay($other);
+```
+
+**Is Same Or After Hour?**
+
+Return *true* if the *DateTime* is the same as or after another date (comparing by hour).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrAfter = $dateTime->isSameOrAfterHour($other);
+```
+
+**Is Same Or After Minute?**
+
+Return *true* if the *DateTime* is the same as or after another date (comparing by minute).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrAfter = $dateTime->isSameOrAfterMinute($other);
+```
+
+**Is Same Or After Month?**
+
+Return *true* if the *DateTime* is the same as or after another date (comparing by month).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrAfter = $dateTime->isSameOrAfterMonth($other);
+```
+
+**Is Same Or After Second?**
+
+Return *true* if the *DateTime* is the same as or after another date (comparing by second).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrAfter = $dateTime->isSameOrAfterSecond($other);
+```
+
+**Is Same Or After Week?**
+
+Return *true* if the *DateTime* is the same as or after another date (comparing by week).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrAfter = $dateTime->isSameOrAfterWeek($other);
+```
+
+**Is Same Or After Year?**
+
+Return *true* if the *DateTime* is the same as or after another date (comparing by year).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrAfter = $dateTime->isSameOrAfterYear($other);
+```
+
+**Is Same Or Before?**
+
+Return *true* if the *DateTime* is the same as or before another date.
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrBefore = $dateTime->isSameOrBefore($other);
+```
+
+**Is Same Or Before Day?**
+
+Return *true* if the *DateTime* is the same as or before another date (comparing by day).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrBefore = $dateTime->isSameOrBeforeDay($other);
+```
+
+**Is Same Or Before Hour?**
+
+Return *true* if the *DateTime* is the same as or before another date (comparing by hour).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrBefore = $dateTime->isSameOrBeforeHour($other);
+```
+
+**Is Same Or Before Minute?**
+
+Return *true* if the *DateTime* is the same as or before another date (comparing by minute).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrBefore = $dateTime->isSameOrBeforeMinute($other);
+```
+
+**Is Same Or Before Month?**
+
+Return *true* if the *DateTime* is the same as or before another date (comparing by month).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrBefore = $dateTime->isSameOrBeforeMonth($other);
+```
+
+**Is Same Or Before Second?**
+
+Return *true* if the *DateTime* is the same as or before another date (comparing by second).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrBefore = $dateTime->isSameOrBeforeSecond($other);
+```
+
+**Is Same Or Before Week?**
+
+Return *true* if the *DateTime* is the same as or before another date (comparing by week).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrBefore = $dateTime->isSameOrBeforeWeek($other);
+```
+
+**Is Same Or Before Year?**
+
+Return *true* if the *DateTime* is the same as or before another date (comparing by year).
+
+- `$other` is the *DateTime* object to compare to.
+
+```php
+$isSameOrBefore = $dateTime->isSameOrBeforeYear($other);
 ```
 
 
@@ -666,29 +1600,6 @@ Get the number of days in the current year.
 $daysInYear = $dateTime->daysInYear();
 ```
 
-**Difference**
-
-Get the difference between two Dates.
-
-- `$other` is the *DateTime* object to compare to.
-- `$timeUnit` is a string representing the unit of time to return, and can be one of either "*year*", "*month*", "*week*", "*day*", "*hour*", "*minute*" or "*second*", or their pluralized versions.
-- `$relative` is a boolean indicating whether to return the relative difference, and will default to *true*.
-
-If the `$timeUnit` is omitted, this method will return the difference in milliseconds.
-
-```php
-$diff = $dateTime->diff($other, $timeUnit, $relative);
-```
-
-If `$relative` is *true* (default) the value returned will be the difference in the specified `$timeUnit`, ignoring less significant values.
-
-```php
-DateTime::fromFormat('yyyy-MM-dd', '2019-01-01')->diff(DateTime::fromFormat('yyyy-MM-dd', '2018-12-31'), 'years', true); // 1
-DateTime::fromFormat('yyyy-MM-dd', '2019-01-01')->diff(DateTime::fromFormat('yyyy-MM-dd', '2018-12-31'), 'years', false); // 0
-DateTime::fromFormat('yyyy-MM-dd', '2019-01-01')->diff(DateTime::fromFormat('yyyy-MM-dd', '2017-12-31'), 'years', true); // 2
-DateTime::fromFormat('yyyy-MM-dd', '2019-01-01')->diff(DateTime::fromFormat('yyyy-MM-dd', '2017-12-31'), 'years', false); // 1
-```
-
 **Era**
 
 Get the era in current time zone and locale.
@@ -698,46 +1609,6 @@ Get the era in current time zone and locale.
 ```php
 $era = $dateTime->era($type);
 ```
-
-**Is After?**
-
-Return *true* if the *DateTime* is after another date.
-
-- `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
-
-```php
-$isAfter = $dateTime->isAfter($other, $granularity);
-```
-
-If a `$granularity` is not specified, this method will compare the dates in milliseconds.
-
-**Is Before?**
-
-Return *true* if the *DateTime* is before another date.
-
-- `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
-
-```php
-$isBefore = $dateTime->isBefore($other, $granularity);
-```
-
-If a `$granularity` is not specified, this method will compare the dates in milliseconds.
-
-**Is Between?**
-
-Return *true* if the *DateTime* is between two other dates.
-
-- `$start` is the starting *DateTime* object to compare to.
-- `$end` is the ending *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
-
-```php
-$isBetween = $dateTime->isBetween($start, $end, $granularity);
-```
-
-If a `$granularity` is not specified, this method will compare the dates in milliseconds.
 
 **Is DST?**
 
@@ -754,45 +1625,6 @@ Return *true* if the year is a leap year.
 ```php
 $isLeapYear = $dateTime->isLeapYear();
 ```
-
-**Is Same?**
-
-Return *true* if the *DateTime* is the same as another date.
-
-- `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
-
-```php
-$isSame = $dateTime->isSame($other, $granularity);
-```
-
-If a `$granularity` is not specified, this method will compare the dates in milliseconds.
-
-**Is Same Or After?**
-
-Return *true* if the *DateTime* is the same or after another date.
-
-- `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
-
-```php
-$isSameOrAfter = $dateTime->isSameOrAfter($other, $granularity);
-```
-
-If a `$granularity` is not specified, this method will compare the dates in milliseconds.
-
-**Is Same Or Before?**
-
-Return *true* if the *DateTime* is the same or before another date.
-
-- `$other` is the *DateTime* object to compare to.
-- `$granularity` is a string specifying the level of granularity to use when comparing the dates, and can be one of either "*year*", "*month*", "*day*", "*hour*", "*minute*" or "*second*".
-
-```php
-$isSameOrBefore = $dateTime->isSameOrBefore($other, $granularity);
-```
-
-If a `$granularity` is not specified, this method will compare the dates in milliseconds.
 
 **Month Name**
 

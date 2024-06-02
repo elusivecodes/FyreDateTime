@@ -4,7 +4,6 @@ declare(strict_types=1);
 namespace Fyre\DateTime\Traits;
 
 use Fyre\DateTime\DateTime;
-use IntlCalendar;
 
 use function strtolower;
 
@@ -73,49 +72,6 @@ trait UtilityTrait
     }
 
     /**
-     * Get the difference between this and another Date.
-     * @param DateTime $other The date to compare to.
-     * @param string|null $timeUnit The unit of time.
-     * @param bool $relative Whether to use the relative difference.
-     * @return int The difference.
-     */
-    public function diff(DateTime $other, string|null $timeUnit = null, bool $relative = true): int
-    {
-        if ($timeUnit === null) {
-            return $this->getTime() - $other->getTime();
-        }
-
-        $timeUnit = strtolower($timeUnit);
-        $field = static::getAdjustmentField($timeUnit);
-
-        $calendar = clone $this->calendar;
-
-        if ($relative) {
-            $other = $other->setTimeZone($this->getTimeZone());
-            $adjust = false;
-
-            foreach (['year', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'] AS $timeUnit) {
-                $tempField = static::getAdjustmentField($timeUnit);
-
-                if ($field === IntlCalendar::FIELD_WEEK_OF_YEAR && $tempField === IntlCalendar::FIELD_DATE) {
-                    $tempField = IntlCalendar::FIELD_DAY_OF_WEEK;
-                }
-
-                if ($adjust) {
-                    $value = $this->calendar->get($tempField);
-                    $other->calendar->set($tempField, $value);
-                }
-
-                if ($tempField === $field) {
-                    $adjust = true;
-                }
-            }
-        }
-
-        return $calendar->fieldDifference($other->getTime(), $field) * -1;
-    }
-
-    /**
      * Get the era in current timeZone.
      * @param string $type The type of era to return.
      * @return string|null The era.
@@ -137,40 +93,6 @@ trait UtilityTrait
     }
 
     /**
-     * Determine whether this DateTime is after another date (optionally to a granularity).
-     * @param DateTime $other The date to compare to.
-     * @param string|null $granularity The level of granularity to use for comparison.
-     * @return bool TRUE if this DateTime is after the other date, otherwise FALSE.
-     */
-    public function isAfter(DateTime $other, string|null $granularity = null): bool
-    {
-        return $this->diff($other, $granularity) > 0;
-    }
-
-    /**
-     * Determine whether this DateTime is before another date (optionally to a granularity).
-     * @param DateTime $other The date to compare to.
-     * @param string|null $granularity The level of granularity to use for comparison.
-     * @return bool TRUE if this DateTime is before the other date, otherwise FALSE.
-     */
-    public function isBefore(DateTime $other, string|null $granularity = null): bool
-    {
-        return $this->diff($other, $granularity) < 0;
-    }
-
-    /**
-     * Determine whether this DateTime is between two other dates (optionally to a granularity).
-     * @param DateTime $start The first date to compare to.
-     * @param DateTime $end The second date to compare to.
-     * @param string|null $granularity The level of granularity to use for comparison.
-     * @return bool TRUE if this DateTime is between the other dates, otherwise FALSE.
-     */
-    public function isBetween(DateTime $start, DateTime $end, string|null $granularity = null): bool
-    {
-        return $this->diff($start, $granularity) > 0 && $this->diff($end, $granularity) < 0;
-    }
-
-    /**
      * Return true if the DateTime is in daylight savings.
      * @return bool TRUE if the current time is in daylight savings, otherwise FALSE.
      */
@@ -186,39 +108,6 @@ trait UtilityTrait
     public function isLeapYear(): bool
     {
         return (bool) $this->toDateTime()->format('L');
-    }
-
-    /**
-     * Determine whether this DateTime is the same as another date (optionally to a granularity).
-     * @param DateTime $other The date to compare to.
-     * @param string|null $granularity The level of granularity to use for comparison.
-     * @return bool TRUE if this DateTime is the same as the other date, otherwise FALSE.
-     */
-    public function isSame(DateTime $other, string|null $granularity = null): bool
-    {
-        return $this->diff($other, $granularity) === 0;
-    }
-
-    /**
-     * Determine whether this DateTime is the same or after another date (optionally to a granularity).
-     * @param DateTime $other The date to compare to.
-     * @param string|null $granularity The level of granularity to use for comparison.
-     * @return bool TRUE if this DateTime is the same or after the other date, otherwise FALSE.
-     */
-    public function isSameOrAfter(DateTime $other, string|null $granularity = null): bool
-    {
-        return $this->diff($other, $granularity) >= 0;
-    }
-
-    /**
-     * Determine whether this DateTime is the same or before another date.
-     * @param DateTime $other The date to compare to.
-     * @param string|null $granularity The level of granularity to use for comparison.
-     * @return bool TRUE if this DateTime is the same or before the other date, otherwise FALSE.
-     */
-    public function isSameOrBefore(DateTime $other, string|null $granularity = null): bool
-    {
-        return $this->diff($other, $granularity) <= 0;
     }
 
     /**

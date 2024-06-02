@@ -15,7 +15,7 @@ trait ManipulateTestTrait
     public function testAddYear(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(1, 'year');
+        $date2 = $date1->addYear();
 
         $this->assertNotSame(
             $date1,
@@ -31,7 +31,7 @@ trait ManipulateTestTrait
     public function testAddYears(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(2, 'years');
+        $date2 = $date1->addYears(2);
 
         $this->assertNotSame(
             $date1,
@@ -47,7 +47,7 @@ trait ManipulateTestTrait
     public function testAddMonth(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(1, 'month');
+        $date2 = $date1->addMonth();
 
         $this->assertNotSame(
             $date1,
@@ -63,7 +63,7 @@ trait ManipulateTestTrait
     public function testAddMonths(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(2, 'months');
+        $date2 = $date1->addMonths(2);
 
         $this->assertNotSame(
             $date1,
@@ -79,7 +79,7 @@ trait ManipulateTestTrait
     public function testAddWeek(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(1, 'week');
+        $date2 = $date1->addWeek();
 
         $this->assertNotSame(
             $date1,
@@ -95,7 +95,7 @@ trait ManipulateTestTrait
     public function testAddWeeks(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(2, 'weeks');
+        $date2 = $date1->addWeeks(2);
 
         $this->assertNotSame(
             $date1,
@@ -111,7 +111,7 @@ trait ManipulateTestTrait
     public function testAddDay(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(1, 'day');
+        $date2 = $date1->addDay();
 
         $this->assertNotSame(
             $date1,
@@ -127,7 +127,7 @@ trait ManipulateTestTrait
     public function testAddDays(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(2, 'days');
+        $date2 = $date1->addDays(2);
 
         $this->assertNotSame(
             $date1,
@@ -143,7 +143,7 @@ trait ManipulateTestTrait
     public function testAddHour(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(1, 'hour');
+        $date2 = $date1->addHour();
 
         $this->assertNotSame(
             $date1,
@@ -159,7 +159,7 @@ trait ManipulateTestTrait
     public function testAddHours(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(2, 'hours');
+        $date2 = $date1->addHours(2);
 
         $this->assertNotSame(
             $date1,
@@ -175,7 +175,7 @@ trait ManipulateTestTrait
     public function testAddMinute(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(1, 'minute');
+        $date2 = $date1->addMinute();
 
         $this->assertNotSame(
             $date1,
@@ -191,7 +191,7 @@ trait ManipulateTestTrait
     public function testAddMinutes(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(2, 'minutes');
+        $date2 = $date1->addMinutes(2);
 
         $this->assertNotSame(
             $date1,
@@ -207,7 +207,7 @@ trait ManipulateTestTrait
     public function testAddSecond(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(1, 'second');
+        $date2 = $date1->addSecond();
 
         $this->assertNotSame(
             $date1,
@@ -223,7 +223,7 @@ trait ManipulateTestTrait
     public function testAddSeconds(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->add(2, 'seconds');
+        $date2 = $date1->addSeconds(2);
 
         $this->assertNotSame(
             $date1,
@@ -243,7 +243,7 @@ trait ManipulateTestTrait
     public function testSubYear(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(1, 'year');
+        $date2 = $date1->subYear();
 
         $this->assertNotSame(
             $date1,
@@ -259,7 +259,7 @@ trait ManipulateTestTrait
     public function testSubYears(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(2, 'years');
+        $date2 = $date1->subYears(2);
 
         $this->assertNotSame(
             $date1,
@@ -275,7 +275,7 @@ trait ManipulateTestTrait
     public function testSubMonth(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(1, 'month');
+        $date2 = $date1->subMonth();
 
         $this->assertNotSame(
             $date1,
@@ -291,7 +291,7 @@ trait ManipulateTestTrait
     public function testSubMonths(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(2, 'months');
+        $date2 = $date1->subMonths(2);
 
         $this->assertNotSame(
             $date1,
@@ -307,7 +307,7 @@ trait ManipulateTestTrait
     public function testSubWeek(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(1, 'week');
+        $date2 = $date1->subWeek();
 
         $this->assertNotSame(
             $date1,
@@ -323,7 +323,7 @@ trait ManipulateTestTrait
     public function testSubWeeks(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(2, 'weeks');
+        $date2 = $date1->subWeeks(2);
 
         $this->assertNotSame(
             $date1,
@@ -339,7 +339,7 @@ trait ManipulateTestTrait
     public function testSubDay(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(1, 'day');
+        $date2 = $date1->subDay();
 
         $this->assertNotSame(
             $date1,
@@ -355,7 +355,7 @@ trait ManipulateTestTrait
     public function testSubDays(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(2, 'days');
+        $date2 = $date1->subDays(2);
 
         $this->assertNotSame(
             $date1,
@@ -371,7 +371,7 @@ trait ManipulateTestTrait
     public function testSubHour(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(1, 'hour');
+        $date2 = $date1->subHour();
 
         $this->assertNotSame(
             $date1,
@@ -387,7 +387,7 @@ trait ManipulateTestTrait
     public function testSubHours(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(2, 'hours');
+        $date2 = $date1->subHours(2);
 
         $this->assertNotSame(
             $date1,
@@ -403,7 +403,7 @@ trait ManipulateTestTrait
     public function testSubMinute(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(1, 'minute');
+        $date2 = $date1->subMinute();
 
         $this->assertNotSame(
             $date1,
@@ -419,7 +419,7 @@ trait ManipulateTestTrait
     public function testSubMinutes(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(2, 'minutes');
+        $date2 = $date1->subMinutes(2);
 
         $this->assertNotSame(
             $date1,
@@ -435,7 +435,7 @@ trait ManipulateTestTrait
     public function testSubSecond(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(1, 'second');
+        $date2 = $date1->subSecond();
 
         $this->assertNotSame(
             $date1,
@@ -451,7 +451,7 @@ trait ManipulateTestTrait
     public function testSubSeconds(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->sub(2, 'seconds');
+        $date2 = $date1->subSeconds(2);
 
         $this->assertNotSame(
             $date1,
@@ -471,7 +471,7 @@ trait ManipulateTestTrait
     public function testStartOfYear(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOf('year');
+        $date2 = $date1->startOfYear();
 
         $this->assertNotSame(
             $date1,
@@ -487,7 +487,7 @@ trait ManipulateTestTrait
     public function testStartOfQuarter(): void
     {
         $date1 = DateTime::fromArray([2018, 8, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOf('quarter');
+        $date2 = $date1->startOfQuarter();
 
         $this->assertNotSame(
             $date1,
@@ -503,7 +503,7 @@ trait ManipulateTestTrait
     public function testStartOfMonth(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOf('month');
+        $date2 = $date1->startOfMonth();
 
         $this->assertNotSame(
             $date1,
@@ -519,7 +519,7 @@ trait ManipulateTestTrait
     public function testStartOfWeek(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOf('week');
+        $date2 = $date1->startOfWeek();
 
         $this->assertNotSame(
             $date1,
@@ -535,7 +535,7 @@ trait ManipulateTestTrait
     public function testStartOfDay(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOf('day');
+        $date2 = $date1->startOfDay();
 
         $this->assertNotSame(
             $date1,
@@ -551,7 +551,7 @@ trait ManipulateTestTrait
     public function testStartOfHour(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOf('hour');
+        $date2 = $date1->startOfHour();
 
         $this->assertNotSame(
             $date1,
@@ -567,7 +567,7 @@ trait ManipulateTestTrait
     public function testStartOfMinute(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOf('minute');
+        $date2 = $date1->startOfMinute();
 
         $this->assertNotSame(
             $date1,
@@ -583,7 +583,7 @@ trait ManipulateTestTrait
     public function testStartOfSecond(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOf('second');
+        $date2 = $date1->startOfSecond();
 
         $this->assertNotSame(
             $date1,
@@ -603,7 +603,7 @@ trait ManipulateTestTrait
     public function testEndOfYear(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->EndOf('year');
+        $date2 = $date1->endOfYear();
 
         $this->assertNotSame(
             $date1,
@@ -619,7 +619,7 @@ trait ManipulateTestTrait
     public function testEndOfQuarter(): void
     {
         $date1 = DateTime::fromArray([2018, 8, 15, 11, 30, 30, 500]);
-        $date2 = $date1->EndOf('quarter');
+        $date2 = $date1->endOfQuarter();
 
         $this->assertNotSame(
             $date1,
@@ -635,7 +635,7 @@ trait ManipulateTestTrait
     public function testEndOfMonth(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->EndOf('month');
+        $date2 = $date1->endOfMonth();
 
         $this->assertNotSame(
             $date1,
@@ -651,7 +651,7 @@ trait ManipulateTestTrait
     public function testEndOfWeek(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->EndOf('week');
+        $date2 = $date1->endOfWeek();
 
         $this->assertNotSame(
             $date1,
@@ -667,7 +667,7 @@ trait ManipulateTestTrait
     public function testEndOfDay(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->EndOf('day');
+        $date2 = $date1->endOfDay();
 
         $this->assertNotSame(
             $date1,
@@ -683,7 +683,7 @@ trait ManipulateTestTrait
     public function testEndOfHour(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->EndOf('hour');
+        $date2 = $date1->endOfHour();
 
         $this->assertNotSame(
             $date1,
@@ -699,7 +699,7 @@ trait ManipulateTestTrait
     public function testEndOfMinute(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->EndOf('minute');
+        $date2 = $date1->endOfMinute();
 
         $this->assertNotSame(
             $date1,
@@ -715,7 +715,7 @@ trait ManipulateTestTrait
     public function testEndOfSecond(): void
     {
         $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->EndOf('second');
+        $date2 = $date1->endOfSecond();
 
         $this->assertNotSame(
             $date1,
