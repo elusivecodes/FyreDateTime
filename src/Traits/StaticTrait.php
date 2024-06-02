@@ -5,7 +5,6 @@ namespace Fyre\DateTime\Traits;
 
 use DateTimeZone;
 use IntlCalendar;
-use InvalidArgumentException;
 
 use function date_default_timezone_get;
 use function locale_get_default;
@@ -81,74 +80,45 @@ trait StaticTrait
      * Get the IntlCalendar constant for an adjustment field.
      * @param string $timeUnit The unit of time.
      * @return int The IntlCalendar constant.
-     * @throws InvalidArgumentException if the time unit is not valid.
      */
     protected static function getAdjustmentField(string $timeUnit): int
     {
-        switch ($timeUnit) {
-            case 'millisecond':
-                return IntlCalendar::FIELD_MILLISECOND;
-            case 'second':
-                return IntlCalendar::FIELD_SECOND;
-            case 'minute':
-                return IntlCalendar::FIELD_MINUTE;
-            case 'hour':
-                return IntlCalendar::FIELD_HOUR_OF_DAY;
-            case 'week':
-                return IntlCalendar::FIELD_WEEK_OF_YEAR;
-            case 'day':
-                return IntlCalendar::FIELD_DATE;
-            case 'month':
-                return IntlCalendar::FIELD_MONTH;
-            case 'year':
-                return IntlCalendar::FIELD_YEAR;
-            default:
-                throw new InvalidArgumentException('Invalid time unit supplied');
-        }
+        return match ($timeUnit) {
+            'day' => IntlCalendar::FIELD_DATE,
+            'hour' => IntlCalendar::FIELD_HOUR_OF_DAY,
+            'millisecond' => IntlCalendar::FIELD_MILLISECOND,
+            'minute' => IntlCalendar::FIELD_MINUTE,
+            'month' => IntlCalendar::FIELD_MONTH,
+            'second' => IntlCalendar::FIELD_SECOND,
+            'week' => IntlCalendar::FIELD_WEEK_OF_YEAR,
+            'year' => IntlCalendar::FIELD_YEAR
+        };
     }
 
     /**
      * Get the IntlCalendar constant for a  field.
      * @param string $timeUnit The unit of time.
      * @return int The IntlCalendar constant.
-     * @throws InvalidArgumentException if the time unit is not valid.
      */
     protected static function getField(string $timeUnit): int
     {
-        switch ($timeUnit) {
-            case 'date':
-                return IntlCalendar::FIELD_DATE;
-            case 'day':
-                return IntlCalendar::FIELD_DAY_OF_WEEK;
-            case 'dayOfYear':
-                return IntlCalendar::FIELD_DAY_OF_YEAR;
-            case 'era':
-                return IntlCalendar::FIELD_ERA;
-            case 'hour':
-                return IntlCalendar::FIELD_HOUR_OF_DAY;
-            case 'millisecond':
-                return IntlCalendar::FIELD_MILLISECOND;
-            case 'minute':
-                return IntlCalendar::FIELD_MINUTE;
-            case 'month':
-                return IntlCalendar::FIELD_MONTH;
-            case 'second':
-                return IntlCalendar::FIELD_SECOND;
-            case 'week':
-                return IntlCalendar::FIELD_WEEK_OF_YEAR;
-            case 'weekDay':
-                return IntlCalendar::FIELD_DOW_LOCAL;
-            case 'weekDayInMonth':
-                return IntlCalendar::FIELD_DAY_OF_WEEK_IN_MONTH;
-            case 'weekOfMonth':
-                return IntlCalendar::FIELD_WEEK_OF_MONTH;
-            case 'weekYear':
-                return IntlCalendar::FIELD_YEAR_WOY;
-            case 'year':
-                return IntlCalendar::FIELD_YEAR;
-            default:
-                throw new InvalidArgumentException('Invalid time unit supplied');
-        }
+        return match ($timeUnit) {
+            'date' => IntlCalendar::FIELD_DATE,
+            'day' => IntlCalendar::FIELD_DAY_OF_WEEK,
+            'dayOfYear' => IntlCalendar::FIELD_DAY_OF_YEAR,
+            'era' => IntlCalendar::FIELD_ERA,
+            'hour' => IntlCalendar::FIELD_HOUR_OF_DAY,
+            'millisecond' => IntlCalendar::FIELD_MILLISECOND,
+            'minute' => IntlCalendar::FIELD_MINUTE,
+            'month' => IntlCalendar::FIELD_MONTH,
+            'second' => IntlCalendar::FIELD_SECOND,
+            'week' => IntlCalendar::FIELD_WEEK_OF_YEAR,
+            'weekDay' => IntlCalendar::FIELD_DOW_LOCAL,
+            'weekDayInMonth' => IntlCalendar::FIELD_DAY_OF_WEEK_IN_MONTH,
+            'weekOfMonth' => IntlCalendar::FIELD_WEEK_OF_MONTH,
+            'weekYear' => IntlCalendar::FIELD_YEAR_WOY,
+            'year' => IntlCalendar::FIELD_YEAR
+        };
     }
 
     /**

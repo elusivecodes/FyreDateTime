@@ -22,16 +22,12 @@ trait UtilityTrait
     {
         $type = strtolower($type);
 
-        switch ($type) {
-            case 'short':
-                return $this->format('ccc');
-            case 'long':
-                return $this->format('cccc');
-            case 'narrow':
-                return $this->format('ccccc');
-        }
-
-        return null;
+        return match ($type) {
+            'short' => $this->format('ccc'),
+            'long' => $this->format('cccc'),
+            'narrow' => $this->format('ccccc'),
+            default => null
+        };
     }
 
     /**
@@ -43,14 +39,11 @@ trait UtilityTrait
     {
         $type = strtolower($type);
 
-        switch ($type) {
-            case 'short':
-                return $this->format('aaa');
-            case 'long':
-                return $this->format('aaaa');
-        }
-
-        return null;
+        return match ($type) {
+            'short' => $this->format('aaa'),
+            'long' => $this->format('aaaa'),
+            default => null
+        };
     }
 
     /**
@@ -80,16 +73,12 @@ trait UtilityTrait
     {
         $type = strtolower($type);
 
-        switch ($type) {
-            case 'short':
-                return $this->format('GGG');
-            case 'long':
-                return $this->format('GGGG');
-            case 'narrow':
-                return $this->format('GGGGG');
-        }
-
-        return null;
+        return match ($type) {
+            'short' => $this->format('GGG'),
+            'long' => $this->format('GGGG'),
+            'narrow' => $this->format('GGGGG'),
+            default => null
+        };
     }
 
     /**
@@ -115,20 +104,16 @@ trait UtilityTrait
      * @param string $type The type of month name to return.
      * @return string|null The name of the month.
      */
-    public function monthName($type = 'full'): string|null
+    public function monthName($type = 'long'): string|null
     {
         $type = strtolower($type);
 
-        switch ($type) {
-            case 'short':
-                return $this->format('LLL');
-            case 'full':
-                return $this->format('LLLL');
-            case 'narrow':
-                return $this->format('LLLLL');
-        }
-
-        return null;
+        return match ($type) {
+            'short' => $this->format('LLL'),
+            'long' => $this->format('LLLL'),
+            'narrow' => $this->format('LLLLL'),
+            default => null
+        };
     }
 
     /**
@@ -140,14 +125,11 @@ trait UtilityTrait
     {
         $type = strtolower($type);
 
-        switch ($type) {
-            case 'short':
-                return $this->format('zzz');
-            case 'full':
-                return $this->format('zzzz');
-        }
-
-        return null;
+        return match ($type) {
+            'short' => $this->format('zzz'),
+            'full' => $this->format('zzzz'),
+            default => null
+        };
     }
 
     /**
