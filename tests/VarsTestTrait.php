@@ -7,7 +7,6 @@ use Fyre\DateTime\DateTime;
 
 trait VarsTestTrait
 {
-
     public function testFormatsAtom(): void
     {
         $this->assertSame(
@@ -37,22 +36,6 @@ trait VarsTestTrait
         $this->assertSame(
             '2020-01-01T00:00:00+0000',
             DateTime::fromArray([2020])->format(DateTime::FORMATS['iso8601'])
-        );
-    }
-
-    public function testFormatsRfc822(): void
-    {
-        $this->assertSame(
-            'Wed, 01 Jan 20 00:00:00 +0000',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc822'])
-        );
-    }
-
-    public function testFormatsRfc850(): void
-    {
-        $this->assertSame(
-            'Wednesday 01-Jan-20 00:00:00 GMT',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc850'])
         );
     }
 
@@ -96,6 +79,22 @@ trait VarsTestTrait
         );
     }
 
+    public function testFormatsRfc822(): void
+    {
+        $this->assertSame(
+            'Wed, 01 Jan 20 00:00:00 +0000',
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc822'])
+        );
+    }
+
+    public function testFormatsRfc850(): void
+    {
+        $this->assertSame(
+            'Wednesday 01-Jan-20 00:00:00 GMT',
+            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc850'])
+        );
+    }
+
     public function testFormatsRss(): void
     {
         $this->assertSame(
@@ -127,5 +126,4 @@ trait VarsTestTrait
             DateTime::fromArray([2020])->format(DateTime::FORMATS['w3c'])
         );
     }
-
 }

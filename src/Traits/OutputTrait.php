@@ -10,7 +10,6 @@ use IntlDateFormatter;
  */
 trait OutputTrait
 {
-
     /**
      * Format the current date using "eee MMM dd yyyy HH:mm:ss xx (VV)".
      * @return string The formatted date string.
@@ -79,5 +78,4 @@ trait OutputTrait
             ->setTimeZone('UTC')
             ->toString();
     }
-
 }

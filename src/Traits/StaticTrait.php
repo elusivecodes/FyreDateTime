@@ -14,7 +14,6 @@ use function locale_get_default;
  */
 trait StaticTrait
 {
-
     /**
      * Get the default locale.
      * @return string The default locale.
@@ -140,5 +139,4 @@ trait StaticTrait
     {
         return new DateTimeZone($timeZone ?? static::getDefaultTimeZone());
     }
-
 }

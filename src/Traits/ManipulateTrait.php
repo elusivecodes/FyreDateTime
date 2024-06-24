@@ -3,15 +3,16 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
+use Fyre\DateTime\DateTime;
+
 /**
  * ManipulateTrait
  */
 trait ManipulateTrait
 {
-
     /**
      * Add a day to the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addDay(): static
     {
@@ -21,7 +22,7 @@ trait ManipulateTrait
     /**
      * Add days to the current DateTime.
      * @param int $amount The number of days to add.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addDays(int $amount): static
     {
@@ -32,7 +33,7 @@ trait ManipulateTrait
 
     /**
      * Add an hour to the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addHour(): static
     {
@@ -42,7 +43,7 @@ trait ManipulateTrait
     /**
      * Add hours to the current DateTime.
      * @param int $amount The number of hours to add.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addHours(int $amount): static
     {
@@ -53,7 +54,7 @@ trait ManipulateTrait
 
     /**
      * Add a minute to the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addMinute(): static
     {
@@ -63,7 +64,7 @@ trait ManipulateTrait
     /**
      * Add minutes to the current DateTime.
      * @param int $amount The number of minutes to add.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addMinutes(int $amount): static
     {
@@ -74,7 +75,7 @@ trait ManipulateTrait
 
     /**
      * Add a month to the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addMonth(): static
     {
@@ -84,7 +85,7 @@ trait ManipulateTrait
     /**
      * Add months to the current DateTime.
      * @param int $amount The number of months to add.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addMonths(int $amount): static
     {
@@ -95,7 +96,7 @@ trait ManipulateTrait
 
     /**
      * Add a second to the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addSecond(): static
     {
@@ -105,7 +106,7 @@ trait ManipulateTrait
     /**
      * Add seconds to the current DateTime.
      * @param int $amount The number of seconds to add.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addSeconds(int $amount): static
     {
@@ -116,7 +117,7 @@ trait ManipulateTrait
 
     /**
      * Add a week to the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addWeek(): static
     {
@@ -126,7 +127,7 @@ trait ManipulateTrait
     /**
      * Add weeks to the current DateTime.
      * @param int $amount The number of weeks to add.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addWeeks(int $amount): static
     {
@@ -137,7 +138,7 @@ trait ManipulateTrait
 
     /**
      * Add a year to the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addYear(): static
     {
@@ -147,7 +148,7 @@ trait ManipulateTrait
     /**
      * Add years to the current DateTime.
      * @param int $amount The number of years to add.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function addYears(int $amount): static
     {
@@ -158,7 +159,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the day.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function endOfDay(): static
     {
@@ -167,7 +168,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the hour.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function endOfHour(): static
     {
@@ -176,7 +177,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the minute.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function endOfMinute(): static
     {
@@ -185,7 +186,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the month.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function endOfMonth(): static
     {
@@ -195,7 +196,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the quarter.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function endOfQuarter(): static
     {
@@ -208,7 +209,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the second.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function endOfSecond(): static
     {
@@ -217,7 +218,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the week.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function endOfWeek(): static
     {
@@ -227,7 +228,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the year.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function endOfYear(): static
     {
@@ -237,7 +238,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the day.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function startOfDay(): static
     {
@@ -246,7 +247,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the hour.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function startOfHour(): static
     {
@@ -255,7 +256,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the minute.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function startOfMinute(): static
     {
@@ -264,7 +265,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the month.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function startOfMonth(): static
     {
@@ -274,7 +275,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the quarter.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function startOfQuarter(): static
     {
@@ -285,7 +286,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the second.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function startOfSecond(): static
     {
@@ -294,7 +295,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the week.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function startOfWeek(): static
     {
@@ -304,7 +305,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the year.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function startOfYear(): static
     {
@@ -314,7 +315,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a day from the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subDay(): static
     {
@@ -324,7 +325,7 @@ trait ManipulateTrait
     /**
      * Subtract days from the current DateTime.
      * @param int $amount The number of days to substract.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subDays(int $amount): static
     {
@@ -333,7 +334,7 @@ trait ManipulateTrait
 
     /**
      * Subtract an hour from the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subHour(): static
     {
@@ -343,7 +344,7 @@ trait ManipulateTrait
     /**
      * Subtract hours from the current DateTime.
      * @param int $amount The number of hours to subtract.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subHours(int $amount): static
     {
@@ -352,7 +353,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a minute from the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subMinute(): static
     {
@@ -362,7 +363,7 @@ trait ManipulateTrait
     /**
      * Subtract minutes from the current DateTime.
      * @param int $amount The number of minutes to subtract.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subMinutes(int $amount): static
     {
@@ -371,7 +372,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a month from the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subMonth(): static
     {
@@ -381,7 +382,7 @@ trait ManipulateTrait
     /**
      * Subtract months from the current DateTime.
      * @param int $amount The number of months to subtract.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subMonths(int $amount): static
     {
@@ -390,7 +391,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a second from the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subSecond(): static
     {
@@ -400,7 +401,7 @@ trait ManipulateTrait
     /**
      * Subtract seconds from the current DateTime.
      * @param int $amount The number of seconds to subtract.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subSeconds(int $amount): static
     {
@@ -409,7 +410,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a week from the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subWeek(): static
     {
@@ -419,7 +420,7 @@ trait ManipulateTrait
     /**
      * Subtract weeks from the current DateTime.
      * @param int $amount The number of weeks to subtract.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subWeeks(int $amount): static
     {
@@ -428,7 +429,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a year from the current DateTime.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subYear(): static
     {
@@ -438,11 +439,10 @@ trait ManipulateTrait
     /**
      * Subtract years from the current DateTime.
      * @param int $amount The number of years to subtract.
-     * @return \Fyre\DateTime\DateTime A new DateTime.
+     * @return DateTime A new DateTime.
      */
     public function subYears(int $amount): static
     {
         return $this->addYears(-$amount);
     }
-
 }

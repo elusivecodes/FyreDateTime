@@ -7,11 +7,6 @@ use Fyre\DateTime\DateTime;
 
 trait AttributesGetTestTrait
 {
-
-    /**
-     * #getDate
-     */
-
     public function testGetDate(): void
     {
         $this->assertSame(
@@ -19,10 +14,6 @@ trait AttributesGetTestTrait
             DateTime::fromArray([2019, 1, 31])->getDate()
         );
     }
-
-    /**
-     * #getDay
-     */
 
     public function testGetDay(): void
     {
@@ -40,18 +31,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    public function testGetDaySunday(): void
-    {
-        $this->assertSame(
-            0,
-            DateTime::fromArray([2018, 12, 30])->getDay()
-        );
-    }
-
-    /**
-     * #getDayOfYear
-     */
-
     public function testGetDayOfYear(): void
     {
         $this->assertSame(
@@ -60,9 +39,13 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getHours
-     */
+    public function testGetDaySunday(): void
+    {
+        $this->assertSame(
+            0,
+            DateTime::fromArray([2018, 12, 30])->getDay()
+        );
+    }
 
     public function testGetHours(): void
     {
@@ -80,10 +63,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getLocale
-     */
-
     public function testGetLocale(): void
     {
         $this->assertSame(
@@ -91,10 +70,6 @@ trait AttributesGetTestTrait
             DateTime::fromArray([2019])->getLocale()
         );
     }
-
-    /**
-     * #getMilliseconds
-     */
 
     public function testGetMilliseconds(): void
     {
@@ -104,10 +79,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getMinutes
-     */
-
     public function testGetMinutes(): void
     {
         $this->assertSame(
@@ -115,10 +86,6 @@ trait AttributesGetTestTrait
             DateTime::fromArray([2019, 1, 1, 0, 32])->getMinutes()
         );
     }
-
-    /**
-     * #getMonth
-     */
 
     public function testGetMonth(): void
     {
@@ -128,10 +95,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getQuarter
-     */
-
     public function testGetQuarter(): void
     {
         $this->assertSame(
@@ -139,10 +102,6 @@ trait AttributesGetTestTrait
             DateTime::fromArray([2019, 8, 1])->getQuarter()
         );
     }
-
-    /**
-     * #getSeconds
-     */
 
     public function testGetSeconds(): void
     {
@@ -152,10 +111,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getTime
-     */
-
     public function testGetTime(): void
     {
         $this->assertSame(
@@ -164,10 +119,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getTimestamp
-     */
-
     public function testGetTimestamp(): void
     {
         $this->assertSame(
@@ -175,10 +126,6 @@ trait AttributesGetTestTrait
             DateTime::fromTimestamp(1546300800)->getTimestamp()
         );
     }
-
-    /**
-     * #getTimeZone
-     */
 
     public function testGetTimeZone(): void
     {
@@ -204,10 +151,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getTimeZoneOffset
-     */
-
     public function testGetTimeZoneOffset(): void
     {
         $this->assertSame(
@@ -215,10 +158,6 @@ trait AttributesGetTestTrait
             DateTime::now('Australia/Brisbane')->getTimeZoneOffset()
         );
     }
-
-    /**
-     * #getWeek
-     */
 
     public function testGetWeek(): void
     {
@@ -228,23 +167,27 @@ trait AttributesGetTestTrait
         );
     }
 
-    public function testGetWeekUsesWeekYear(): void
-    {
-        $this->assertSame(
-            1,
-            DateTime::fromArray([2019, 12, 30])->getWeek()
-        );
-    }
-
-    /**
-     * #getWeekDay
-     */
-
     public function testGetWeekDay(): void
     {
         $this->assertSame(
             3,
             DateTime::fromArray([2019, 1, 1])->getWeekDay()
+        );
+    }
+
+    public function testGetWeekDayInMonth(): void
+    {
+        $this->assertSame(
+            1,
+            DateTime::fromArray([2019, 6, 1])->getWeekDayInMonth()
+        );
+    }
+
+    public function testGetWeekDayInMonthLocal(): void
+    {
+        $this->assertSame(
+            1,
+            DateTime::fromArray([2019, 6, 7])->getWeekDayInMonth()
         );
     }
 
@@ -264,30 +207,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getWeekDayInMonth
-     */
-
-    public function testGetWeekDayInMonth(): void
-    {
-        $this->assertSame(
-            1,
-            DateTime::fromArray([2019, 6, 1])->getWeekDayInMonth()
-        );
-    }
-
-    public function testGetWeekDayInMonthLocal(): void
-    {
-        $this->assertSame(
-            1,
-            DateTime::fromArray([2019, 6, 7])->getWeekDayInMonth()
-        );
-    }
-
-    /**
-     * #getWeekOfMonth
-     */
-
     public function testGetWeekOfMonth(): void
     {
         $this->assertSame(
@@ -304,9 +223,13 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getWeekYear
-     */
+    public function testGetWeekUsesWeekYear(): void
+    {
+        $this->assertSame(
+            1,
+            DateTime::fromArray([2019, 12, 30])->getWeek()
+        );
+    }
 
     public function testGetWeekYear(): void
     {
@@ -324,10 +247,6 @@ trait AttributesGetTestTrait
         );
     }
 
-    /**
-     * #getYear
-     */
-
     public function testGetYear(): void
     {
         $this->assertSame(
@@ -335,5 +254,4 @@ trait AttributesGetTestTrait
             DateTime::fromArray([2018])->getYear()
         );
     }
-
 }

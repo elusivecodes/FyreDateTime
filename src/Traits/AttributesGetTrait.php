@@ -10,8 +10,7 @@ use function floor;
  * AttributesGetTrait
  */
 trait AttributesGetTrait
-{ 
-
+{
     /**
      * Get the date of the month in current timeZone.
      * @return int The date of the month.
@@ -192,5 +191,4 @@ trait AttributesGetTrait
         $eraAdjust = $this->getCalendarField('era') ? 1 : -1;
         return $this->getCalendarField('year') * $eraAdjust;
     }
-
 }

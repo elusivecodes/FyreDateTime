@@ -14,7 +14,6 @@ use function array_pad;
  */
 trait CreateTrait
 {
-
     /**
      * Create a new DateTime from an array.
      * @param array $dateArray The date to parse.
@@ -114,5 +113,4 @@ trait CreateTrait
     {
         return new static('now', $timeZone, $locale);
     }
-
 }

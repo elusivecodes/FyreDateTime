@@ -7,11 +7,6 @@ use Fyre\DateTime\DateTime;
 
 trait AttributesSetTestTrait
 {
-
-    /**
-     * #setDate
-     */
-
     public function testSetDate(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -44,10 +39,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    /**
-     * #setDay
-     */
-
     public function testSetDay(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -76,6 +67,38 @@ trait AttributesSetTestTrait
 
         $this->assertSame(
             '2018-12-31T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testSetDayOfYear(): void
+    {
+        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date2 = $date1->setDayOfYear(235);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2019-08-23T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testSetDayOfYearWrap(): void
+    {
+        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date2 = $date1->setDayOfYear(500);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2020-05-14T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
@@ -112,46 +135,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    /**
-     * #setDayOfYear
-     */
-
-    public function testSetDayOfYear(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->setDayOfYear(235);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-08-23T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testSetDayOfYearWrap(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->setDayOfYear(500);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2020-05-14T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    /**
-     * #setHours
-     */
-
     public function testSetHours(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -180,6 +163,22 @@ trait AttributesSetTestTrait
 
         $this->assertSame(
             '2019-01-01T13:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testSetHoursWithMilliseconds(): void
+    {
+        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date2 = $date1->setHours(0, 0, 0, 303);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2019-01-01T00:00:00.303+00:00',
             $date2->toISOString()
         );
     }
@@ -216,22 +215,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    public function testSetHoursWithMilliseconds(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->setHours(0, 0, 0, 303);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-01-01T00:00:00.303+00:00',
-            $date2->toISOString()
-        );
-    }
-
     public function testSetHoursWrap(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -247,10 +230,6 @@ trait AttributesSetTestTrait
             $date2->toISOString()
         );
     }
-
-    /**
-     * #setMilliseconds
-     */
 
     public function testSetMilliseconds(): void
     {
@@ -284,10 +263,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    /**
-     * #setMinutes
-     */
-
     public function testSetMinutes(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -300,22 +275,6 @@ trait AttributesSetTestTrait
 
         $this->assertSame(
             '2019-01-01T00:15:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testSetMinutesWithSeconds(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->setMinutes(0, 32);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-01-01T00:00:32.000+00:00',
             $date2->toISOString()
         );
     }
@@ -336,6 +295,22 @@ trait AttributesSetTestTrait
         );
     }
 
+    public function testSetMinutesWithSeconds(): void
+    {
+        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date2 = $date1->setMinutes(0, 32);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2019-01-01T00:00:32.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
     public function testSetMinutesWrap(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -351,10 +326,6 @@ trait AttributesSetTestTrait
             $date2->toISOString()
         );
     }
-
-    /**
-     * #setMonth
-     */
 
     public function testSetMonth(): void
     {
@@ -386,6 +357,24 @@ trait AttributesSetTestTrait
             '2019-02-28T00:00:00.000+00:00',
             $date2->toISOString()
         );
+    }
+
+    public function testSetMonthNoClamp(): void
+    {
+        DateTime::setDateClamping(false);
+        $date1 = DateTime::fromArray([2019, 1, 31]);
+        $date2 = $date1->setMonth(2);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2019-03-03T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+        DateTime::setDateClamping(true);
     }
 
     public function testSetMonthWithDate(): void
@@ -420,28 +409,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    public function testSetMonthNoClamp(): void
-    {
-        DateTime::setDateClamping(false);
-        $date1 = DateTime::fromArray([2019, 1, 31]);
-        $date2 = $date1->setMonth(2);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-03-03T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-        DateTime::setDateClamping(true);
-    }
-
-    /**
-     * #setQuarter
-     */
-
     public function testSetQuarter(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -473,10 +440,6 @@ trait AttributesSetTestTrait
             $date2->toISOString()
         );
     }
-
-    /**
-     * #setSeconds
-     */
 
     public function testSetSeconds(): void
     {
@@ -526,10 +489,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    /**
-     * #setTime
-     */
-
     public function testSetTime(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1]);
@@ -561,10 +520,6 @@ trait AttributesSetTestTrait
             $date2->toISOString()
         );
     }
-
-    /**
-     * #setTimeZone
-     */
 
     public function testSetTimeZone(): void
     {
@@ -614,10 +569,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    /**
-     * #setTimeZoneOffset
-     */
-
     public function testSetTimeZoneOffset(): void
     {
         $date1 = DateTime::fromArray([2018, 1, 1]);
@@ -633,10 +584,6 @@ trait AttributesSetTestTrait
             $date2->getTimeZoneOffset()
         );
     }
-
-    /**
-     * #setWeek
-     */
 
     public function testSetWeek(): void
     {
@@ -654,58 +601,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    public function testSetWeekUsesWeekYear(): void
-    {
-        $date1 = DateTime::fromArray([2019, 12, 30]);
-        $date2 = $date1->setWeek(23);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2020-06-01T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testSetWeekWithDays(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->setWeek(1, 6);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-01-04T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testSetWeekWrap(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->setWeek(77);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2020-06-16T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    /**
-     * #setWeekDay
-     */
-
     public function testSetWeekDay(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -718,6 +613,38 @@ trait AttributesSetTestTrait
 
         $this->assertSame(
             '2019-01-04T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testSetWeekDayInMonth(): void
+    {
+        $date1 = DateTime::fromArray([2019, 6, 1]);
+        $date2 = $date1->setWeekDayInMonth(4);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2019-06-22T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testSetWeekDayInMonthLocal(): void
+    {
+        $date1 = DateTime::fromArray([2019, 6, 28]);
+        $date2 = $date1->setWeekDayInMonth(1);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2019-06-07T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
@@ -770,46 +697,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    /**
-     * #setWeekDayInMonth
-     */
-
-    public function testSetWeekDayInMonth(): void
-    {
-        $date1 = DateTime::fromArray([2019, 6, 1]);
-        $date2 = $date1->setWeekDayInMonth(4);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-06-22T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testSetWeekDayInMonthLocal(): void
-    {
-        $date1 = DateTime::fromArray([2019, 6, 28]);
-        $date2 = $date1->setWeekDayInMonth(1);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-06-07T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    /**
-     * #setWeekOfMonth
-     */
-
     public function testSetWeekOfMonth(): void
     {
         $date1 = DateTime::fromArray([2019, 6, 1]);
@@ -842,9 +729,53 @@ trait AttributesSetTestTrait
         );
     }
 
-    /**
-     * #setWeekYear
-     */
+    public function testSetWeekUsesWeekYear(): void
+    {
+        $date1 = DateTime::fromArray([2019, 12, 30]);
+        $date2 = $date1->setWeek(23);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2020-06-01T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testSetWeekWithDays(): void
+    {
+        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date2 = $date1->setWeek(1, 6);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2019-01-04T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testSetWeekWrap(): void
+    {
+        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date2 = $date1->setWeek(77);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2020-06-16T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
 
     public function testSetWeekYear(): void
     {
@@ -878,22 +809,6 @@ trait AttributesSetTestTrait
         );
     }
 
-    public function testSetWeekYearWithWeek(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->setWeekYear(2018, 14);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-04-03T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
     public function testSetWeekYearWithDays(): void
     {
         $date1 = DateTime::fromArray([2019, 1, 1]);
@@ -910,9 +825,21 @@ trait AttributesSetTestTrait
         );
     }
 
-    /**
-     * #setYear
-     */
+    public function testSetWeekYearWithWeek(): void
+    {
+        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date2 = $date1->setWeekYear(2018, 14);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-04-03T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
 
     public function testSetYear(): void
     {
@@ -926,22 +853,6 @@ trait AttributesSetTestTrait
 
         $this->assertSame(
             '2018-01-01T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testSetYearWithMonths(): void
-    {
-        $date1 = DateTime::fromArray([2019, 1, 1]);
-        $date2 = $date1->setYear(2018, 6);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-01T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
@@ -962,4 +873,19 @@ trait AttributesSetTestTrait
         );
     }
 
+    public function testSetYearWithMonths(): void
+    {
+        $date1 = DateTime::fromArray([2019, 1, 1]);
+        $date2 = $date1->setYear(2018, 6);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-01T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
 }

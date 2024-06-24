@@ -7,107 +7,6 @@ use Fyre\DateTime\DateTime;
 
 trait ManipulateTestTrait
 {
-
-    /**
-     * #add
-     */
-
-    public function testAddYear(): void
-    {
-        $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->addYear();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2019-01-01T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testAddYears(): void
-    {
-        $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->addYears(2);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2020-01-01T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testAddMonth(): void
-    {
-        $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->addMonth();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-02-01T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testAddMonths(): void
-    {
-        $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->addMonths(2);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-03-01T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testAddWeek(): void
-    {
-        $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->addWeek();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-01-08T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testAddWeeks(): void
-    {
-        $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->addWeeks(2);
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-01-15T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
     public function testAddDay(): void
     {
         $date1 = DateTime::fromArray([2018]);
@@ -204,6 +103,38 @@ trait ManipulateTestTrait
         );
     }
 
+    public function testAddMonth(): void
+    {
+        $date1 = DateTime::fromArray([2018]);
+        $date2 = $date1->addMonth();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-02-01T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testAddMonths(): void
+    {
+        $date1 = DateTime::fromArray([2018]);
+        $date2 = $date1->addMonths(2);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-03-01T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
     public function testAddSecond(): void
     {
         $date1 = DateTime::fromArray([2018]);
@@ -236,14 +167,10 @@ trait ManipulateTestTrait
         );
     }
 
-    /**
-     * #sub
-     */
-
-    public function testSubYear(): void
+    public function testAddWeek(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->subYear();
+        $date2 = $date1->addWeek();
 
         $this->assertNotSame(
             $date1,
@@ -251,15 +178,15 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2017-01-01T00:00:00.000+00:00',
+            '2018-01-08T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
 
-    public function testSubYears(): void
+    public function testAddWeeks(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->subYears(2);
+        $date2 = $date1->addWeeks(2);
 
         $this->assertNotSame(
             $date1,
@@ -267,15 +194,15 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2016-01-01T00:00:00.000+00:00',
+            '2018-01-15T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
 
-    public function testSubMonth(): void
+    public function testAddYear(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->subMonth();
+        $date2 = $date1->addYear();
 
         $this->assertNotSame(
             $date1,
@@ -283,15 +210,15 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2017-12-01T00:00:00.000+00:00',
+            '2019-01-01T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
 
-    public function testSubMonths(): void
+    public function testAddYears(): void
     {
         $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->subMonths(2);
+        $date2 = $date1->addYears(2);
 
         $this->assertNotSame(
             $date1,
@@ -299,15 +226,15 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2017-11-01T00:00:00.000+00:00',
+            '2020-01-01T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
 
-    public function testSubWeek(): void
+    public function testEndOfDay(): void
     {
-        $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->subWeek();
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->endOfDay();
 
         $this->assertNotSame(
             $date1,
@@ -315,15 +242,15 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2017-12-25T00:00:00.000+00:00',
+            '2018-06-15T23:59:59.999+00:00',
             $date2->toISOString()
         );
     }
 
-    public function testSubWeeks(): void
+    public function testEndOfHour(): void
     {
-        $date1 = DateTime::fromArray([2018]);
-        $date2 = $date1->subWeeks(2);
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->endOfHour();
 
         $this->assertNotSame(
             $date1,
@@ -331,7 +258,231 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2017-12-18T00:00:00.000+00:00',
+            '2018-06-15T11:59:59.999+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testEndOfMinute(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->endOfMinute();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-15T11:30:59.999+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testEndOfMonth(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->endOfMonth();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-30T23:59:59.999+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testEndOfQuarter(): void
+    {
+        $date1 = DateTime::fromArray([2018, 8, 15, 11, 30, 30, 500]);
+        $date2 = $date1->endOfQuarter();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-09-30T23:59:59.999+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testEndOfSecond(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->endOfSecond();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-15T11:30:30.999+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testEndOfWeek(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->endOfWeek();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-16T23:59:59.999+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testEndOfYear(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->endOfYear();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-12-31T23:59:59.999+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testStartOfDay(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->startOfDay();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-15T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testStartOfHour(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->startOfHour();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-15T11:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testStartOfMinute(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->startOfMinute();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-15T11:30:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testStartOfMonth(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->startOfMonth();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-01T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testStartOfQuarter(): void
+    {
+        $date1 = DateTime::fromArray([2018, 8, 15, 11, 30, 30, 500]);
+        $date2 = $date1->startOfQuarter();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-07-01T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testStartOfSecond(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->startOfSecond();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-15T11:30:30.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testStartOfWeek(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->startOfWeek();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-06-10T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testStartOfYear(): void
+    {
+        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
+        $date2 = $date1->startOfYear();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2018-01-01T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
@@ -432,6 +583,38 @@ trait ManipulateTestTrait
         );
     }
 
+    public function testSubMonth(): void
+    {
+        $date1 = DateTime::fromArray([2018]);
+        $date2 = $date1->subMonth();
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2017-12-01T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
+    public function testSubMonths(): void
+    {
+        $date1 = DateTime::fromArray([2018]);
+        $date2 = $date1->subMonths(2);
+
+        $this->assertNotSame(
+            $date1,
+            $date2
+        );
+
+        $this->assertSame(
+            '2017-11-01T00:00:00.000+00:00',
+            $date2->toISOString()
+        );
+    }
+
     public function testSubSecond(): void
     {
         $date1 = DateTime::fromArray([2018]);
@@ -464,14 +647,10 @@ trait ManipulateTestTrait
         );
     }
 
-    /**
-     * #startOf
-     */
-
-    public function testStartOfYear(): void
+    public function testSubWeek(): void
     {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOfYear();
+        $date1 = DateTime::fromArray([2018]);
+        $date2 = $date1->subWeek();
 
         $this->assertNotSame(
             $date1,
@@ -479,15 +658,15 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2018-01-01T00:00:00.000+00:00',
+            '2017-12-25T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
 
-    public function testStartOfQuarter(): void
+    public function testSubWeeks(): void
     {
-        $date1 = DateTime::fromArray([2018, 8, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOfQuarter();
+        $date1 = DateTime::fromArray([2018]);
+        $date2 = $date1->subWeeks(2);
 
         $this->assertNotSame(
             $date1,
@@ -495,15 +674,15 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2018-07-01T00:00:00.000+00:00',
+            '2017-12-18T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
 
-    public function testStartOfMonth(): void
+    public function testSubYear(): void
     {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOfMonth();
+        $date1 = DateTime::fromArray([2018]);
+        $date2 = $date1->subYear();
 
         $this->assertNotSame(
             $date1,
@@ -511,15 +690,15 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2018-06-01T00:00:00.000+00:00',
+            '2017-01-01T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
 
-    public function testStartOfWeek(): void
+    public function testSubYears(): void
     {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOfWeek();
+        $date1 = DateTime::fromArray([2018]);
+        $date2 = $date1->subYears(2);
 
         $this->assertNotSame(
             $date1,
@@ -527,205 +706,8 @@ trait ManipulateTestTrait
         );
 
         $this->assertSame(
-            '2018-06-10T00:00:00.000+00:00',
+            '2016-01-01T00:00:00.000+00:00',
             $date2->toISOString()
         );
     }
-
-    public function testStartOfDay(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOfDay();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-15T00:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testStartOfHour(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOfHour();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-15T11:00:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testStartOfMinute(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOfMinute();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-15T11:30:00.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testStartOfSecond(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->startOfSecond();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-15T11:30:30.000+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    /**
-     * #endOf
-     */
-
-    public function testEndOfYear(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->endOfYear();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-12-31T23:59:59.999+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testEndOfQuarter(): void
-    {
-        $date1 = DateTime::fromArray([2018, 8, 15, 11, 30, 30, 500]);
-        $date2 = $date1->endOfQuarter();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-09-30T23:59:59.999+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testEndOfMonth(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->endOfMonth();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-30T23:59:59.999+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testEndOfWeek(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->endOfWeek();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-16T23:59:59.999+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testEndOfDay(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->endOfDay();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-15T23:59:59.999+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testEndOfHour(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->endOfHour();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-15T11:59:59.999+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testEndOfMinute(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->endOfMinute();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-15T11:30:59.999+00:00',
-            $date2->toISOString()
-        );
-    }
-
-    public function testEndOfSecond(): void
-    {
-        $date1 = DateTime::fromArray([2018, 6, 15, 11, 30, 30, 500]);
-        $date2 = $date1->endOfSecond();
-
-        $this->assertNotSame(
-            $date1,
-            $date2
-        );
-
-        $this->assertSame(
-            '2018-06-15T11:30:30.999+00:00',
-            $date2->toISOString()
-        );
-    }
-
 }

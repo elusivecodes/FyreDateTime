@@ -12,7 +12,6 @@ use function strtolower;
  */
 trait UtilityTrait
 {
-
     /**
      * Get the name of the day of the week in current timeZone.
      * @param string $type The type of day name to return.
@@ -148,7 +147,7 @@ trait UtilityTrait
     public function weeksInYear(): int
     {
         $minimumDays = $this->calendar->getMinimalDaysInFirstWeek();
-        return (new static)
+        return (new static())
             ->setYear($this->getWeekYear(), 12, 24 + $minimumDays)
             ->getWeek();
     }
@@ -166,8 +165,8 @@ trait UtilityTrait
 
     /**
      * Set calendar field values.
-     * @param array $array The values to set.
      * @param bool $adjust Whether to adjust the current time fields.
+     * @param array $array The values to set.
      * @return DateTime a new DateTime.
      */
     protected function setCalendarFields(array $values, bool $adjust = false): static
@@ -177,7 +176,7 @@ trait UtilityTrait
         $temp = new static(null, $this->getTimeZone(), $this->locale);
         $temp->calendar->setTime($oldTime);
 
-        foreach ($values AS $field => $value) {
+        foreach ($values as $field => $value) {
             if ($value === null) {
                 continue;
             }
@@ -193,5 +192,4 @@ trait UtilityTrait
 
         return $temp;
     }
-
 }

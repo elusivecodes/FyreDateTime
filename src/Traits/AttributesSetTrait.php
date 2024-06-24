@@ -3,19 +3,18 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
-use const STR_PAD_LEFT;
-
 use function abs;
 use function floor;
 use function min;
 use function str_pad;
+
+use const STR_PAD_LEFT;
 
 /**
  * AttributesSetTrait
  */
 trait AttributesSetTrait
 {
-
     /**
      * Set the date of the month in current timeZone.
      * @param int $date The date of the month.
@@ -139,7 +138,8 @@ trait AttributesSetTrait
      * @return DateTime A new DateTime.
      */
     public function setQuarter(int $quarter): static
-    {   return $this->setYear(
+    {
+        return $this->setYear(
             $this->getYear(),
             ($quarter * 3 - 3) + 1
         );
@@ -317,5 +317,4 @@ trait AttributesSetTrait
             'date' => $date
         ]);
     }
-
 }

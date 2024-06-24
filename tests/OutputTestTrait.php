@@ -7,20 +7,19 @@ use Fyre\DateTime\DateTime;
 
 trait OutputTestTrait
 {
+    public function testAsString(): void
+    {
+        $this->assertSame(
+            'Mon Jan 01 2018 00:00:00 +1000 (Australia/Brisbane)',
+            ''.DateTime::fromArray([2018], 'Australia/Brisbane')
+        );
+    }
 
     public function testToDateString(): void
     {
         $this->assertSame(
             'Mon Jan 01 2018',
             DateTime::fromArray([2018])->toDateString()
-        );
-    }
-
-    public function testToTimeString(): void
-    {
-        $this->assertSame(
-            '00:00:00 +0000 (UTC)',
-            DateTime::fromArray([2018])->toTimeString()
         );
     }
 
@@ -40,6 +39,14 @@ trait OutputTestTrait
         );
     }
 
+    public function testToTimeString(): void
+    {
+        $this->assertSame(
+            '00:00:00 +0000 (UTC)',
+            DateTime::fromArray([2018])->toTimeString()
+        );
+    }
+
     public function testToUtcString(): void
     {
         $this->assertSame(
@@ -47,13 +54,4 @@ trait OutputTestTrait
             DateTime::fromArray([2018], 'Australia/Brisbane')->toUTCString()
         );
     }
-
-    public function testAsString(): void
-    {
-        $this->assertSame(
-            'Mon Jan 01 2018 00:00:00 +1000 (Australia/Brisbane)',
-            ''.DateTime::fromArray([2018], 'Australia/Brisbane')
-        );
-    }
-
 }

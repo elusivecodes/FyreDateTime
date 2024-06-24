@@ -8,16 +8,15 @@ use PHPUnit\Framework\TestCase;
 
 final class DateTimeTest extends TestCase
 {
-
     use AttributesGetTestTrait;
     use AttributesSetTestTrait;
     use ComparisonsTestTrait;
     use CreateTestTrait;
     use DiffTestTrait;
-    use FormatTestTrait;
     use FormatLocaleTestTrait;
-    use FromFormatTestTrait;
+    use FormatTestTrait;
     use FromFormatLocaleTestTrait;
+    use FromFormatTestTrait;
     use ManipulateTestTrait;
     use OutputTestTrait;
     use TransitionTestTrait;
@@ -29,5 +28,4 @@ final class DateTimeTest extends TestCase
         DateTime::setDefaultLocale('en');
         DateTime::setDefaultTimeZone('UTC');
     }
-    
 }

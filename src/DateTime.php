@@ -19,8 +19,16 @@ use IntlCalendar;
  */
 class DateTime
 {
+    use AttributesGetTrait;
+    use AttributesSetTrait;
+    use ComparisonsTrait;
+    use CreateTrait;
+    use ManipulateTrait;
+    use OutputTrait;
+    use StaticTrait;
+    use UtilityTrait;
 
-    const FORMATS = [
+    public const FORMATS = [
         'atom' => 'yyyy-MM-dd\'T\'HH:mm:ssxxx',
         'cookie' => 'eeee, dd-MMM-yyyy HH:mm:ss ZZZZ',
         'date' => 'eee MMM dd yyyy',
@@ -38,30 +46,21 @@ class DateTime
         'w3c' => 'yyyy-MM-dd\'T\'HH:mm:ssxxx'
     ];
 
+    protected IntlCalendar $calendar;
+
+    protected static bool $clampDates = true;
+
     protected static string|null $defaultLocale = null;
 
     protected static string|null $defaultTimeZone = null;
 
-    protected static $clampDates = true;
-
-    protected IntlCalendar $calendar;
-
     protected string $locale;
-
-    use AttributesGetTrait;
-    use AttributesSetTrait;
-    use ComparisonsTrait;
-    use CreateTrait;
-    use ManipulateTrait;
-    use OutputTrait;
-    use StaticTrait;
-    use UtilityTrait;
 
     /**
      * New DateTime constructor.
-     * @param string|null $dateString The date to parse.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
+     * @param string|null $dateString The date to parse.
      */
     public function __construct(string|null $time = null, string|null $timeZone = null, string|null $locale = null)
     {
@@ -73,5 +72,4 @@ class DateTime
 
         $this->calendar = static::createCalendar($timestamp * 1000, $timeZone, $this->locale);
     }
-
 }

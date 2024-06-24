@@ -11,7 +11,6 @@ use IntlCalendar;
  */
 trait ComparisonsTrait
 {
-
     /**
      * Get the difference between this and another Date in milliseconds.
      * @param DateTime $other The date to compare to.
@@ -398,36 +397,6 @@ trait ComparisonsTrait
     }
 
     /**
-     * Determine whether this DateTime is the same as another date (comparing by second).
-     * @param DateTime $other The date to compare to.
-     * @return bool TRUE if this DateTime is the same as the other date (comparing by second), otherwise FALSE.
-     */
-    public function isSameSecond(DateTime $other): bool
-    {
-        return $this->diffInSeconds($other) === 0;
-    }
-
-    /**
-     * Determine whether this DateTime is the same as another date (comparing by week).
-     * @param DateTime $other The date to compare to.
-     * @return bool TRUE if this DateTime is the same as the other date (comparing by week), otherwise FALSE.
-     */
-    public function isSameWeek(DateTime $other): bool
-    {
-        return $this->diffInWeeks($other) === 0;
-    }
-
-    /**
-     * Determine whether this DateTime is the same as another date (comparing by year).
-     * @param DateTime $other The date to compare to.
-     * @return bool TRUE if this DateTime is the same as the other date (comparing by year), otherwise FALSE.
-     */
-    public function isSameYear(DateTime $other): bool
-    {
-        return $this->diffInYears($other) === 0;
-    }
-
-    /**
      * Determine whether this DateTime is the same as or after another date.
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date, otherwise FALSE.
@@ -588,6 +557,36 @@ trait ComparisonsTrait
     }
 
     /**
+     * Determine whether this DateTime is the same as another date (comparing by second).
+     * @param DateTime $other The date to compare to.
+     * @return bool TRUE if this DateTime is the same as the other date (comparing by second), otherwise FALSE.
+     */
+    public function isSameSecond(DateTime $other): bool
+    {
+        return $this->diffInSeconds($other) === 0;
+    }
+
+    /**
+     * Determine whether this DateTime is the same as another date (comparing by week).
+     * @param DateTime $other The date to compare to.
+     * @return bool TRUE if this DateTime is the same as the other date (comparing by week), otherwise FALSE.
+     */
+    public function isSameWeek(DateTime $other): bool
+    {
+        return $this->diffInWeeks($other) === 0;
+    }
+
+    /**
+     * Determine whether this DateTime is the same as another date (comparing by year).
+     * @param DateTime $other The date to compare to.
+     * @return bool TRUE if this DateTime is the same as the other date (comparing by year), otherwise FALSE.
+     */
+    public function isSameYear(DateTime $other): bool
+    {
+        return $this->diffInYears($other) === 0;
+    }
+
+    /**
      * Calculate the difference between this and another Date.
      * @param DateTime $other The date to compare to.
      * @param string|null $timeUnit The unit of time.
@@ -604,7 +603,7 @@ trait ComparisonsTrait
             $other = $other->setTimeZone($this->getTimeZone());
             $adjust = false;
 
-            foreach (['year', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'] AS $timeUnit) {
+            foreach (['year', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'] as $timeUnit) {
                 $tempField = static::getAdjustmentField($timeUnit);
 
                 if ($field === IntlCalendar::FIELD_WEEK_OF_YEAR && $tempField === IntlCalendar::FIELD_DATE) {
@@ -624,5 +623,4 @@ trait ComparisonsTrait
 
         return $calendar->fieldDifference($other->getTime(), $field) * -1;
     }
-
 }
