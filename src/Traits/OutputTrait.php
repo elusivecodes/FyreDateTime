@@ -12,6 +12,7 @@ trait OutputTrait
 {
     /**
      * Format the current date using "eee MMM dd yyyy HH:mm:ss xx (VV)".
+     *
      * @return string The formatted date string.
      */
     public function __toString(): string
@@ -21,6 +22,7 @@ trait OutputTrait
 
     /**
      * Format the current date using a format string.
+     *
      * @param string $formatString The format string.
      * @return string The formatted date string.
      */
@@ -31,6 +33,7 @@ trait OutputTrait
 
     /**
      * Format the current date using "eee MMM dd yyyy".
+     *
      * @return string The formatted date string.
      */
     public function toDateString(): string
@@ -40,6 +43,7 @@ trait OutputTrait
 
     /**
      * Format the current date using "yyyy-MM-dd'THH:mm:ss.SSSSSSxxx".
+     *
      * @return string The formatted date string.
      */
     public function toISOString(): string
@@ -52,6 +56,7 @@ trait OutputTrait
 
     /**
      * Format the current date using "eee MMM dd yyyy HH:mm:ss xx (VV)".
+     *
      * @return string The formatted date string.
      */
     public function toString(): string
@@ -61,6 +66,7 @@ trait OutputTrait
 
     /**
      * Format the current date using "HH:mm:ss xx (VV)".
+     *
      * @return string The formatted date string.
      */
     public function toTimeString(): string
@@ -70,6 +76,7 @@ trait OutputTrait
 
     /**
      * Format the current date in UTC timeZone using "eee MMM dd yyyy HH:mm:ss xx (VV)".
+     *
      * @return string The formatted date string.
      */
     public function toUTCString(): string

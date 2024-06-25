@@ -13,6 +13,7 @@ trait ComparisonsTrait
 {
     /**
      * Get the difference between this and another Date in milliseconds.
+     *
      * @param DateTime $other The date to compare to.
      * @return int The difference in milliseconds.
      */
@@ -23,6 +24,7 @@ trait ComparisonsTrait
 
     /**
      * Get the difference between this and another Date in days.
+     *
      * @param DateTime $other The date to compare to.
      * @param bool $relative Whether to use the relative difference.
      * @return int The difference in days.
@@ -34,6 +36,7 @@ trait ComparisonsTrait
 
     /**
      * Get the difference between this and another Date in hours.
+     *
      * @param DateTime $other The date to compare to.
      * @param bool $relative Whether to use the relative difference.
      * @return int The difference in hours.
@@ -45,6 +48,7 @@ trait ComparisonsTrait
 
     /**
      * Get the difference between this and another Date in minutes.
+     *
      * @param DateTime $other The date to compare to.
      * @param bool $relative Whether to use the relative difference.
      * @return int The difference in minutes.
@@ -56,6 +60,7 @@ trait ComparisonsTrait
 
     /**
      * Get the difference between this and another Date in months.
+     *
      * @param DateTime $other The date to compare to.
      * @param bool $relative Whether to use the relative difference.
      * @return int The difference in months.
@@ -67,6 +72,7 @@ trait ComparisonsTrait
 
     /**
      * Get the difference between this and another Date in seconds.
+     *
      * @param DateTime $other The date to compare to.
      * @param bool $relative Whether to use the relative difference.
      * @return int The difference in seconds.
@@ -78,6 +84,7 @@ trait ComparisonsTrait
 
     /**
      * Get the difference between this and another Date in weeks.
+     *
      * @param DateTime $other The date to compare to.
      * @param bool $relative Whether to use the relative difference.
      * @return int The difference in weeks.
@@ -89,6 +96,7 @@ trait ComparisonsTrait
 
     /**
      * Get the difference between this and another Date in years.
+     *
      * @param DateTime $other The date to compare to.
      * @param bool $relative Whether to use the relative difference.
      * @return int The difference in years.
@@ -100,6 +108,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is after another date.
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is after the other date, otherwise FALSE.
      */
@@ -110,6 +119,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is after another date (comparing by day).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is after the other date (comparing by day), otherwise FALSE.
      */
@@ -120,6 +130,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is after another date (comparing by hour).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is after the other date (comparing by hour), otherwise FALSE.
      */
@@ -130,6 +141,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is after another date (comparing by minute).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is after the other date (comparing by minute), otherwise FALSE.
      */
@@ -140,6 +152,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is after another date (comparing by month).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is after the other date (comparing by month), otherwise FALSE.
      */
@@ -150,6 +163,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is after another date (comparing by second).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is after the other date (comparing by second), otherwise FALSE.
      */
@@ -160,6 +174,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is after another date (comparing by week).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is after the other date (comparing by week), otherwise FALSE.
      */
@@ -170,6 +185,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is after another date (comparing by year).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is after the other date (comparing by year), otherwise FALSE.
      */
@@ -180,6 +196,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is before another date.
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is before the other date, otherwise FALSE.
      */
@@ -190,6 +207,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is before another date (comparing by day).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is before the other date (comparing by day), otherwise FALSE.
      */
@@ -200,6 +218,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is before another date (comparing by hour).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is before the other date (comparing by hour), otherwise FALSE.
      */
@@ -210,6 +229,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is before another date (comparing by minute).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is before the other date (comparing by minute), otherwise FALSE.
      */
@@ -220,6 +240,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is before another date (comparing by month).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is before the other date (comparing by month), otherwise FALSE.
      */
@@ -230,6 +251,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is before another date (comparing by second).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is before the other date (comparing by second), otherwise FALSE.
      */
@@ -240,6 +262,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is before another date (comparing by week).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is before the other date (comparing by week), otherwise FALSE.
      */
@@ -250,6 +273,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is before another date (comparing by year).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is before the other date (comparing by year), otherwise FALSE.
      */
@@ -260,6 +284,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is between two other dates.
+     *
      * @param DateTime $start The first date to compare to.
      * @param DateTime $end The second date to compare to.
      * @return bool TRUE if this DateTime is between the other dates, otherwise FALSE.
@@ -271,6 +296,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is between two other dates (comparing by day).
+     *
      * @param DateTime $start The first date to compare to.
      * @param DateTime $end The second date to compare to.
      * @return bool TRUE if this DateTime is between the other dates (comparing by day), otherwise FALSE.
@@ -282,6 +308,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is between two other dates (comparing by hour).
+     *
      * @param DateTime $start The first date to compare to.
      * @param DateTime $end The second date to compare to.
      * @return bool TRUE if this DateTime is between the other dates (comparing by hour), otherwise FALSE.
@@ -293,6 +320,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is between two other dates (comparing by minute).
+     *
      * @param DateTime $start The first date to compare to.
      * @param DateTime $end The second date to compare to.
      * @return bool TRUE if this DateTime is between the other dates (comparing by minute), otherwise FALSE.
@@ -304,6 +332,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is between two other dates (comparing by month).
+     *
      * @param DateTime $start The first date to compare to.
      * @param DateTime $end The second date to compare to.
      * @return bool TRUE if this DateTime is between the other dates (comparing by month), otherwise FALSE.
@@ -315,6 +344,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is between two other dates (comparing by second).
+     *
      * @param DateTime $start The first date to compare to.
      * @param DateTime $end The second date to compare to.
      * @return bool TRUE if this DateTime is between the other dates (comparing by second), otherwise FALSE.
@@ -326,6 +356,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is between two other dates (comparing by week).
+     *
      * @param DateTime $start The first date to compare to.
      * @param DateTime $end The second date to compare to.
      * @return bool TRUE if this DateTime is between the other dates (comparing by week), otherwise FALSE.
@@ -337,6 +368,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is between two other dates (comparing by year).
+     *
      * @param DateTime $start The first date to compare to.
      * @param DateTime $end The second date to compare to.
      * @return bool TRUE if this DateTime is between the other dates (comparing by year), otherwise FALSE.
@@ -348,6 +380,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as another date.
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as the other date, otherwise FALSE.
      */
@@ -358,6 +391,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as another date (comparing by day).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as the other date (comparing by day), otherwise FALSE.
      */
@@ -368,6 +402,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as another date (comparing by hour).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as the other date (comparing by hour), otherwise FALSE.
      */
@@ -378,6 +413,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as another date (comparing by minute).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as the other date (comparing by minute), otherwise FALSE.
      */
@@ -388,6 +424,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as another date (comparing by month).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as the other date (comparing by month), otherwise FALSE.
      */
@@ -398,6 +435,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or after another date.
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date, otherwise FALSE.
      */
@@ -408,6 +446,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or after another date (comparing by day).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date (comparing by day), otherwise FALSE.
      */
@@ -418,6 +457,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or after another date (comparing by hour).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date (comparing by hour), otherwise FALSE.
      */
@@ -428,6 +468,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or after another date (comparing by minute).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date (comparing by minute), otherwise FALSE.
      */
@@ -438,6 +479,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or after another date (comparing by month).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date (comparing by month), otherwise FALSE.
      */
@@ -448,6 +490,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or after another date (comparing by second).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date (comparing by second), otherwise FALSE.
      */
@@ -458,6 +501,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or after another date (comparing by week).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date (comparing by week), otherwise FALSE.
      */
@@ -468,6 +512,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or after another date (comparing by year).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or after the other date (comparing by year), otherwise FALSE.
      */
@@ -478,6 +523,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or before another date.
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or before the other date, otherwise FALSE.
      */
@@ -488,6 +534,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or before another date (comparing by day).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or before the other date (comparing by day), otherwise FALSE.
      */
@@ -498,6 +545,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or before another date (comparing by hour).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or before the other date (comparing by hour), otherwise FALSE.
      */
@@ -508,6 +556,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or before another date (comparing by minute).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or before the other date (comparing by minute), otherwise FALSE.
      */
@@ -518,6 +567,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or before another date (comparing by month).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or before the other date (comparing by month), otherwise FALSE.
      */
@@ -528,6 +578,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or before another date (comparing by second).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or before the other date (comparing by second), otherwise FALSE.
      */
@@ -538,6 +589,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or before another date (comparing by week).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or before the other date (comparing by week), otherwise FALSE.
      */
@@ -548,6 +600,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as or before another date (comparing by year).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as or before the other date (comparing by year), otherwise FALSE.
      */
@@ -558,6 +611,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as another date (comparing by second).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as the other date (comparing by second), otherwise FALSE.
      */
@@ -568,6 +622,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as another date (comparing by week).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as the other date (comparing by week), otherwise FALSE.
      */
@@ -578,6 +633,7 @@ trait ComparisonsTrait
 
     /**
      * Determine whether this DateTime is the same as another date (comparing by year).
+     *
      * @param DateTime $other The date to compare to.
      * @return bool TRUE if this DateTime is the same as the other date (comparing by year), otherwise FALSE.
      */
@@ -588,6 +644,7 @@ trait ComparisonsTrait
 
     /**
      * Calculate the difference between this and another Date.
+     *
      * @param DateTime $other The date to compare to.
      * @param string|null $timeUnit The unit of time.
      * @param bool $relative Whether to use the relative difference.

@@ -13,6 +13,7 @@ trait AttributesGetTrait
 {
     /**
      * Get the date of the month in current timeZone.
+     *
      * @return int The date of the month.
      */
     public function getDate(): int
@@ -22,6 +23,7 @@ trait AttributesGetTrait
 
     /**
      * Get the day of the week in current timeZone.
+     *
      * @return int The day of the week. (0 - Sunday, 6 - Saturday)
      */
     public function getDay(): int
@@ -31,6 +33,7 @@ trait AttributesGetTrait
 
     /**
      * Get the day of the year in current timeZone.
+     *
      * @return int The day of the year. (1, 366)
      */
     public function getDayOfYear(): int
@@ -40,6 +43,7 @@ trait AttributesGetTrait
 
     /**
      * Get the hours of the day in current timeZone.
+     *
      * @return int The hours of the day. (0, 23)
      */
     public function getHours(): int
@@ -49,6 +53,7 @@ trait AttributesGetTrait
 
     /**
      * Get the name of the current locale.
+     *
      * @return string The name of the current locale.
      */
     public function getLocale(): string
@@ -58,6 +63,7 @@ trait AttributesGetTrait
 
     /**
      * Get the milliseconds in current timeZone.
+     *
      * @return int The milliseconds.
      */
     public function getMilliseconds(): int
@@ -67,6 +73,7 @@ trait AttributesGetTrait
 
     /**
      * Get the minutes in current timeZone.
+     *
      * @return int The minutes. (0, 59)
      */
     public function getMinutes(): int
@@ -76,6 +83,7 @@ trait AttributesGetTrait
 
     /**
      * Get the month in current timeZone.
+     *
      * @return int The month. (1, 12)
      */
     public function getMonth(): int
@@ -85,6 +93,7 @@ trait AttributesGetTrait
 
     /**
      * Get the quarter of the year in current timeZone.
+     *
      * @return int The quarter of the year. (1, 4)
      */
     public function getQuarter(): int
@@ -94,6 +103,7 @@ trait AttributesGetTrait
 
     /**
      * Get the seconds in current timeZone.
+     *
      * @return int The seconds. (0, 59)
      */
     public function getSeconds(): int
@@ -103,6 +113,7 @@ trait AttributesGetTrait
 
     /**
      * Get the number of milliseconds since the UNIX epoch.
+     *
      * @return int The number of milliseconds since the UNIX epoch.
      */
     public function getTime(): int
@@ -112,6 +123,7 @@ trait AttributesGetTrait
 
     /**
      * Get the number of seconds since the UNIX epoch.
+     *
      * @return int The number of seconds since the UNIX epoch.
      */
     public function getTimestamp(): int
@@ -121,6 +133,7 @@ trait AttributesGetTrait
 
     /**
      * Get the name of the current timeZone.
+     *
      * @return string The name of the current timeZone.
      */
     public function getTimeZone(): string
@@ -130,6 +143,7 @@ trait AttributesGetTrait
 
     /**
      * Get the UTC offset (in minutes) of the current timeZone.
+     *
      * @return int The UTC offset (in minutes) of the current timeZone.
      */
     public function getTimeZoneOffset(): int
@@ -139,6 +153,7 @@ trait AttributesGetTrait
 
     /**
      * Get the local week in current timeZone.
+     *
      * @return int The local week. (1, 53)
      */
     public function getWeek(): int
@@ -148,6 +163,7 @@ trait AttributesGetTrait
 
     /**
      * Get the local day of the week in current timeZone.
+     *
      * @return int The local day of the week. (1 - 7)
      */
     public function getWeekDay(): int
@@ -157,6 +173,7 @@ trait AttributesGetTrait
 
     /**
      * Get the week day in month in current timeZone.
+     *
      * @return int The week day in month.
      */
     public function getWeekDayInMonth(): int
@@ -166,6 +183,7 @@ trait AttributesGetTrait
 
     /**
      * Get the week of month in current timeZone.
+     *
      * @return int The week of month.
      */
     public function getWeekOfMonth(): int
@@ -175,6 +193,7 @@ trait AttributesGetTrait
 
     /**
      * Get the week year in current timeZone.
+     *
      * @return int The week year.
      */
     public function getWeekYear(): int
@@ -184,11 +203,13 @@ trait AttributesGetTrait
 
     /**
      * Get the year in current timeZone.
+     *
      * @return int The year.
      */
     public function getYear(): int
     {
         $eraAdjust = $this->getCalendarField('era') ? 1 : -1;
+
         return $this->getCalendarField('year') * $eraAdjust;
     }
 }

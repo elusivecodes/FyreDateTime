@@ -16,6 +16,7 @@ trait CreateTrait
 {
     /**
      * Create a new DateTime from an array.
+     *
      * @param array $dateArray The date to parse.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
@@ -38,6 +39,7 @@ trait CreateTrait
 
     /**
      * Create a new DateTime from a native DateTime.
+     *
      * @param DateTimeInterface $dateTime The native DateTime.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
@@ -50,6 +52,7 @@ trait CreateTrait
 
     /**
      * Create a new DateTime from a format string.
+     *
      * @param string $formatString The format string.
      * @param string $dateString The date string.
      * @param string|null $timeZone The timeZone to use.
@@ -72,6 +75,7 @@ trait CreateTrait
 
     /**
      * Create a new DateTime from an ISO format string.
+     *
      * @param string $dateString The date string.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
@@ -93,6 +97,7 @@ trait CreateTrait
 
     /**
      * Create a new DateTime from a timestamp.
+     *
      * @param int $timestamp The timestamp.
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
@@ -105,6 +110,7 @@ trait CreateTrait
 
     /**
      * Create a new DateTime for the current time.
+     *
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
      * @return DateTime A new DateTime.

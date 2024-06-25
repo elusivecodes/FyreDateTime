@@ -14,6 +14,7 @@ trait UtilityTrait
 {
     /**
      * Get the name of the day of the week in current timeZone.
+     *
      * @param string $type The type of day name to return.
      * @return string|null The name of the day of the week.
      */
@@ -31,6 +32,7 @@ trait UtilityTrait
 
     /**
      * Get the day period in current timeZone.
+     *
      * @param string $type The type of day period to return.
      * @return string|null The day period.
      */
@@ -47,6 +49,7 @@ trait UtilityTrait
 
     /**
      * Get the number of days in the current month.
+     *
      * @return int The number of days in the current month.
      */
     public function daysInMonth(): int
@@ -56,6 +59,7 @@ trait UtilityTrait
 
     /**
      * Get the number of days in the current year.
+     *
      * @return int The number of days in the current year.
      */
     public function daysInYear(): int
@@ -65,6 +69,7 @@ trait UtilityTrait
 
     /**
      * Get the era in current timeZone.
+     *
      * @param string $type The type of era to return.
      * @return string|null The era.
      */
@@ -82,6 +87,7 @@ trait UtilityTrait
 
     /**
      * Return true if the DateTime is in daylight savings.
+     *
      * @return bool TRUE if the current time is in daylight savings, otherwise FALSE.
      */
     public function isDST(): bool
@@ -91,6 +97,7 @@ trait UtilityTrait
 
     /**
      * Return true if the year is a leap year.
+     *
      * @return bool TRUE if the current year is a leap year, otherwise FALSE.
      */
     public function isLeapYear(): bool
@@ -100,6 +107,7 @@ trait UtilityTrait
 
     /**
      * Get the name of the month in current timeZone.
+     *
      * @param string $type The type of month name to return.
      * @return string|null The name of the month.
      */
@@ -117,6 +125,7 @@ trait UtilityTrait
 
     /**
      * Get the name of the current timeZone.
+     *
      * @param string $type The formatting type.
      * @return string|null The name of the time zone.
      */
@@ -133,6 +142,7 @@ trait UtilityTrait
 
     /**
      * Convert the object to a native DateTime.
+     *
      * @return \DateTime A native DateTime.
      */
     public function toDateTime(): \DateTime
@@ -142,11 +152,13 @@ trait UtilityTrait
 
     /**
      * Get the number of weeks in the current year.
+     *
      * @return int The number of weeks in the current year.
      */
     public function weeksInYear(): int
     {
         $minimumDays = $this->calendar->getMinimalDaysInFirstWeek();
+
         return (new static())
             ->setYear($this->getWeekYear(), 12, 24 + $minimumDays)
             ->getWeek();
@@ -154,17 +166,20 @@ trait UtilityTrait
 
     /**
      * Get the value for a calendar field.
+     *
      * @param string $field The field to get.
      * @return int The field value.
      */
     protected function getCalendarField(string $field): int
     {
         $key = static::getField($field);
+
         return $this->calendar->get($key);
     }
 
     /**
      * Set calendar field values.
+     *
      * @param bool $adjust Whether to adjust the current time fields.
      * @param array $array The values to set.
      * @return DateTime a new DateTime.

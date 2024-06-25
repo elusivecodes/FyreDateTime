@@ -16,6 +16,7 @@ trait StaticTrait
 {
     /**
      * Get the default locale.
+     *
      * @return string The default locale.
      */
     public static function getDefaultLocale(): string
@@ -25,6 +26,7 @@ trait StaticTrait
 
     /**
      * Get the default timeZone.
+     *
      * @return string The default timeZone.
      */
     public static function getDefaultTimeZone(): string
@@ -34,6 +36,7 @@ trait StaticTrait
 
     /**
      * Set whether dates will be clamped when changing months.
+     *
      * @param bool $clampDates Whether to clamp dates.
      */
     public static function setDateClamping(bool $clampDates): void
@@ -43,6 +46,7 @@ trait StaticTrait
 
     /**
      * Set the default locale.
+     *
      * @param string $locale The locale.
      */
     public static function setDefaultLocale(string|null $locale): void
@@ -52,6 +56,7 @@ trait StaticTrait
 
     /**
      * Set the default timeZone.
+     *
      * @param string $timeZone The name of the timeZone.
      */
     public static function setDefaultTimeZone(string|null $timeZone): void
@@ -61,6 +66,7 @@ trait StaticTrait
 
     /**
      * Create a new IntlCalendar.
+     *
      * @param int $time The number of milliseconds since the UNIX epoch.
      * @param DateTimeZone $timeZone The timeZone.
      * @param string $locale The locale.
@@ -77,6 +83,7 @@ trait StaticTrait
 
     /**
      * Get the IntlCalendar constant for an adjustment field.
+     *
      * @param string $timeUnit The unit of time.
      * @return int The IntlCalendar constant.
      */
@@ -96,6 +103,7 @@ trait StaticTrait
 
     /**
      * Get the IntlCalendar constant for a  field.
+     *
      * @param string $timeUnit The unit of time.
      * @return int The IntlCalendar constant.
      */
@@ -122,6 +130,7 @@ trait StaticTrait
 
     /**
      * Parse a locale value.
+     *
      * @param string|null $locale The locale.
      * @return string The parsed locale.
      */
@@ -132,6 +141,7 @@ trait StaticTrait
 
     /**
      * Parse a timeZone value.
+     *
      * @param string|null $timeZone The timeZone.
      * @return DateTimeZone The parsed timeZone.
      */

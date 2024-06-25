@@ -12,6 +12,7 @@ trait ManipulateTrait
 {
     /**
      * Add a day to the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function addDay(): static
@@ -21,18 +22,20 @@ trait ManipulateTrait
 
     /**
      * Add days to the current DateTime.
+     *
      * @param int $amount The number of days to add.
      * @return DateTime A new DateTime.
      */
     public function addDays(int $amount): static
     {
         return $this->setCalendarFields([
-            'day' => $amount
+            'day' => $amount,
         ], true);
     }
 
     /**
      * Add an hour to the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function addHour(): static
@@ -42,18 +45,20 @@ trait ManipulateTrait
 
     /**
      * Add hours to the current DateTime.
+     *
      * @param int $amount The number of hours to add.
      * @return DateTime A new DateTime.
      */
     public function addHours(int $amount): static
     {
         return $this->setCalendarFields([
-            'hour' => $amount
+            'hour' => $amount,
         ], true);
     }
 
     /**
      * Add a minute to the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function addMinute(): static
@@ -63,18 +68,20 @@ trait ManipulateTrait
 
     /**
      * Add minutes to the current DateTime.
+     *
      * @param int $amount The number of minutes to add.
      * @return DateTime A new DateTime.
      */
     public function addMinutes(int $amount): static
     {
         return $this->setCalendarFields([
-            'minute' => $amount
+            'minute' => $amount,
         ], true);
     }
 
     /**
      * Add a month to the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function addMonth(): static
@@ -84,18 +91,20 @@ trait ManipulateTrait
 
     /**
      * Add months to the current DateTime.
+     *
      * @param int $amount The number of months to add.
      * @return DateTime A new DateTime.
      */
     public function addMonths(int $amount): static
     {
         return $this->setCalendarFields([
-            'month' => $amount
+            'month' => $amount,
         ], true);
     }
 
     /**
      * Add a second to the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function addSecond(): static
@@ -105,18 +114,20 @@ trait ManipulateTrait
 
     /**
      * Add seconds to the current DateTime.
+     *
      * @param int $amount The number of seconds to add.
      * @return DateTime A new DateTime.
      */
     public function addSeconds(int $amount): static
     {
         return $this->setCalendarFields([
-            'second' => $amount
+            'second' => $amount,
         ], true);
     }
 
     /**
      * Add a week to the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function addWeek(): static
@@ -126,18 +137,20 @@ trait ManipulateTrait
 
     /**
      * Add weeks to the current DateTime.
+     *
      * @param int $amount The number of weeks to add.
      * @return DateTime A new DateTime.
      */
     public function addWeeks(int $amount): static
     {
         return $this->setCalendarFields([
-            'week' => $amount
+            'week' => $amount,
         ], true);
     }
 
     /**
      * Add a year to the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function addYear(): static
@@ -147,18 +160,20 @@ trait ManipulateTrait
 
     /**
      * Add years to the current DateTime.
+     *
      * @param int $amount The number of years to add.
      * @return DateTime A new DateTime.
      */
     public function addYears(int $amount): static
     {
         return $this->setCalendarFields([
-            'year' => $amount
+            'year' => $amount,
         ], true);
     }
 
     /**
      * Set the DateTime to the end of the day.
+     *
      * @return DateTime A new DateTime.
      */
     public function endOfDay(): static
@@ -168,6 +183,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the hour.
+     *
      * @return DateTime A new DateTime.
      */
     public function endOfHour(): static
@@ -177,6 +193,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the minute.
+     *
      * @return DateTime A new DateTime.
      */
     public function endOfMinute(): static
@@ -186,6 +203,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the month.
+     *
      * @return DateTime A new DateTime.
      */
     public function endOfMonth(): static
@@ -196,11 +214,13 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the quarter.
+     *
      * @return DateTime A new DateTime.
      */
     public function endOfQuarter(): static
     {
         $month = $this->getQuarter() * 3;
+
         return $this->setMonth(
             $month,
             static::fromArray([$this->getYear(), $month])->daysInMonth()
@@ -209,6 +229,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the second.
+     *
      * @return DateTime A new DateTime.
      */
     public function endOfSecond(): static
@@ -218,6 +239,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the week.
+     *
      * @return DateTime A new DateTime.
      */
     public function endOfWeek(): static
@@ -228,6 +250,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the end of the year.
+     *
      * @return DateTime A new DateTime.
      */
     public function endOfYear(): static
@@ -238,6 +261,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the day.
+     *
      * @return DateTime A new DateTime.
      */
     public function startOfDay(): static
@@ -247,6 +271,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the hour.
+     *
      * @return DateTime A new DateTime.
      */
     public function startOfHour(): static
@@ -256,6 +281,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the minute.
+     *
      * @return DateTime A new DateTime.
      */
     public function startOfMinute(): static
@@ -265,6 +291,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the month.
+     *
      * @return DateTime A new DateTime.
      */
     public function startOfMonth(): static
@@ -275,17 +302,20 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the quarter.
+     *
      * @return DateTime A new DateTime.
      */
     public function startOfQuarter(): static
     {
         $month = $this->getQuarter() * 3 - 2;
+
         return $this->setMonth($month, 1)
             ->startOfDay();
     }
 
     /**
      * Set the DateTime to the start of the second.
+     *
      * @return DateTime A new DateTime.
      */
     public function startOfSecond(): static
@@ -295,6 +325,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the week.
+     *
      * @return DateTime A new DateTime.
      */
     public function startOfWeek(): static
@@ -305,6 +336,7 @@ trait ManipulateTrait
 
     /**
      * Set the DateTime to the start of the year.
+     *
      * @return DateTime A new DateTime.
      */
     public function startOfYear(): static
@@ -315,6 +347,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a day from the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function subDay(): static
@@ -324,6 +357,7 @@ trait ManipulateTrait
 
     /**
      * Subtract days from the current DateTime.
+     *
      * @param int $amount The number of days to substract.
      * @return DateTime A new DateTime.
      */
@@ -334,6 +368,7 @@ trait ManipulateTrait
 
     /**
      * Subtract an hour from the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function subHour(): static
@@ -343,6 +378,7 @@ trait ManipulateTrait
 
     /**
      * Subtract hours from the current DateTime.
+     *
      * @param int $amount The number of hours to subtract.
      * @return DateTime A new DateTime.
      */
@@ -353,6 +389,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a minute from the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function subMinute(): static
@@ -362,6 +399,7 @@ trait ManipulateTrait
 
     /**
      * Subtract minutes from the current DateTime.
+     *
      * @param int $amount The number of minutes to subtract.
      * @return DateTime A new DateTime.
      */
@@ -372,6 +410,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a month from the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function subMonth(): static
@@ -381,6 +420,7 @@ trait ManipulateTrait
 
     /**
      * Subtract months from the current DateTime.
+     *
      * @param int $amount The number of months to subtract.
      * @return DateTime A new DateTime.
      */
@@ -391,6 +431,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a second from the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function subSecond(): static
@@ -400,6 +441,7 @@ trait ManipulateTrait
 
     /**
      * Subtract seconds from the current DateTime.
+     *
      * @param int $amount The number of seconds to subtract.
      * @return DateTime A new DateTime.
      */
@@ -410,6 +452,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a week from the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function subWeek(): static
@@ -419,6 +462,7 @@ trait ManipulateTrait
 
     /**
      * Subtract weeks from the current DateTime.
+     *
      * @param int $amount The number of weeks to subtract.
      * @return DateTime A new DateTime.
      */
@@ -429,6 +473,7 @@ trait ManipulateTrait
 
     /**
      * Subtract a year from the current DateTime.
+     *
      * @return DateTime A new DateTime.
      */
     public function subYear(): static
@@ -438,6 +483,7 @@ trait ManipulateTrait
 
     /**
      * Subtract years from the current DateTime.
+     *
      * @param int $amount The number of years to subtract.
      * @return DateTime A new DateTime.
      */

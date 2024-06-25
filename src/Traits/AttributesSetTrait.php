@@ -17,42 +17,46 @@ trait AttributesSetTrait
 {
     /**
      * Set the date of the month in current timeZone.
+     *
      * @param int $date The date of the month.
      * @return DateTime A new DateTime.
      */
     public function setDate(int $date): static
     {
         return $this->setCalendarFields([
-            'date' => $date
+            'date' => $date,
         ]);
     }
 
     /**
      * Set the day of the week in current timeZone.
+     *
      * @param int $day The day of the week. (0 - Sunday, 6 - Saturday)
      * @return DateTime A new DateTime.
      */
     public function setDay(int $day): static
     {
         return $this->setCalendarFields([
-            'date' => $this->getDate() - $this->getDay() + $day
+            'date' => $this->getDate() - $this->getDay() + $day,
         ]);
     }
 
     /**
      * Set the day of the year in current timeZone.
+     *
      * @param int $day The day of the year. (1, 366)
      * @return DateTime A new DateTime.
      */
     public function setDayOfYear(int $day): static
     {
         return $this->setCalendarFields([
-            'dayOfYear' => $day
+            'dayOfYear' => $day,
         ]);
     }
 
     /**
      * Set the hours in current timeZone (and optionally, minutes, seconds and milliseconds).
+     *
      * @param int $hours The hours. (0, 23)
      * @param int|null $minutes The minutes. (0, 59)
      * @param int|null $seconds The seconds. (0, 59)
@@ -65,12 +69,13 @@ trait AttributesSetTrait
             'hour' => $hours,
             'minute' => $minutes,
             'second' => $seconds,
-            'millisecond' => $milliseconds
+            'millisecond' => $milliseconds,
         ]);
     }
 
     /**
      * Set the current locale.
+     *
      * @param string $locale The name of the timeZone.
      * @return DateTime A new DateTime.
      */
@@ -86,18 +91,20 @@ trait AttributesSetTrait
 
     /**
      * Set the milliseconds in current timeZone.
+     *
      * @param int $milliseconds The milliseconds.
      * @return DateTime A new DateTime.
      */
     public function setMilliseconds(int $milliseconds): static
     {
         return $this->setCalendarFields([
-            'millisecond' => $milliseconds
+            'millisecond' => $milliseconds,
         ]);
     }
 
     /**
      * Set the minutes in current timeZone (and optionally, seconds and milliseconds).
+     *
      * @param int $minutes The minutes. (0, 59)
      * @param int|null $seconds The seconds. (0, 59)
      * @param int|null $milliseconds The milliseconds.
@@ -108,12 +115,13 @@ trait AttributesSetTrait
         return $this->setCalendarFields([
             'minute' => $minutes,
             'second' => $seconds,
-            'millisecond' => $milliseconds
+            'millisecond' => $milliseconds,
         ]);
     }
 
     /**
      * Set the month in current timeZone (and optionally, date).
+     *
      * @param int $month The month. (1, 12)
      * @param int|null $date The date of the month.
      * @return DateTime A new DateTime.
@@ -128,12 +136,13 @@ trait AttributesSetTrait
 
         return $this->setCalendarFields([
             'month' => $month - 1,
-            'date' => $date
+            'date' => $date,
         ]);
     }
 
     /**
      * Set the quarter of the year in current timeZone.
+     *
      * @param int $quarter The quarter of the year. (1, 4)
      * @return DateTime A new DateTime.
      */
@@ -147,6 +156,7 @@ trait AttributesSetTrait
 
     /**
      * Set the seconds in current timeZone (and optionally, milliseconds).
+     *
      * @param int $seconds The seconds. (0, 59)
      * @param int|null $milliseconds The milliseconds.
      * @return DateTime A new DateTime.
@@ -155,12 +165,13 @@ trait AttributesSetTrait
     {
         return $this->setCalendarFields([
             'second' => $seconds,
-            'millisecond' => $milliseconds
+            'millisecond' => $milliseconds,
         ]);
     }
 
     /**
      * Set the number of milliseconds since the UNIX epoch.
+     *
      * @param int $time The number of milliseconds since the UNIX epoch.
      * @return DateTime A new DateTime.
      */
@@ -175,6 +186,7 @@ trait AttributesSetTrait
 
     /**
      * Set the number of seconds since the UNIX epoch.
+     *
      * @param int $timestamp The number of seconds since the UNIX epoch.
      * @return DateTime A new DateTime.
      */
@@ -185,6 +197,7 @@ trait AttributesSetTrait
 
     /**
      * Set the current timeZone.
+     *
      * @param string $timeZone The name of the timeZone.
      * @return DateTime A new DateTime.
      */
@@ -200,6 +213,7 @@ trait AttributesSetTrait
 
     /**
      * Set the current UTC offset.
+     *
      * @param int $offset The UTC offset (in minutes).
      * @return DateTime A new DateTime.
      */
@@ -219,6 +233,7 @@ trait AttributesSetTrait
 
     /**
      * Set the local day of the week in current timeZone (and optionally, day of the week).
+     *
      * @param int $week The local week.
      * @param int|null $day The local day of the week. (1 - 7)
      * @return DateTime A new DateTime.
@@ -228,50 +243,56 @@ trait AttributesSetTrait
         $day ??= $this->getWeekDay();
 
         return $this->setCalendarFields([
-            'week' => $week
+            'week' => $week,
         ])->setWeekDay($day);
     }
 
     /**
      * Set the local day of the week in current timeZone.
+     *
      * @param int $day The local day of the week. (1 - 7)
      * @return DateTime A new DateTime.
      */
     public function setWeekDay(int $day): static
     {
         return $this->setCalendarFields([
-            'date' => $this->getDate() - $this->getWeekDay() + $day
+            'date' => $this->getDate() - $this->getWeekDay() + $day,
         ]);
     }
 
     /**
      * Set the week day in month in current timeZone.
+     *
      * @param int $week The week day in month.
      * @return DateTime A new DateTime.
      */
     public function setWeekDayInMonth(int $week): static
     {
         $day = $this->getWeekDay();
+
         return $this->setCalendarFields([
-            'weekDayInMonth' => $week
+            'weekDayInMonth' => $week,
         ])->setWeekDay($day);
     }
 
     /**
      * Set the week of month in current timeZone.
+     *
      * @param int $week The week of month.
      * @return DateTime A new DateTime.
      */
     public function setWeekOfMonth(int $week): static
     {
         $day = $this->getWeekDay();
+
         return $this->setCalendarFields([
-            'weekOfMonth' => $week
+            'weekOfMonth' => $week,
         ])->setWeekDay($day);
     }
 
     /**
      * Set the local day of the week in current timeZone (and optionally, week and day of the week).
+     *
      * @param int $year The local year.
      * @param int|null $week The local week.
      * @param int|null $day The local day of the week. (1 - 7)
@@ -290,12 +311,13 @@ trait AttributesSetTrait
 
         return $this->setCalendarFields([
             'weekYear' => $year,
-            'week' => $week
+            'week' => $week,
         ])->setWeekDay($day);
     }
 
     /**
      * Set the year in current timeZone (and optionally, month and date).
+     *
      * @param int $year The year.
      * @param int|null $month The month. (1, 12)
      * @param int|null $date The date of the month.
@@ -314,7 +336,7 @@ trait AttributesSetTrait
         return $this->setCalendarFields([
             'year' => $year,
             'month' => $month - 1,
-            'date' => $date
+            'date' => $date,
         ]);
     }
 }

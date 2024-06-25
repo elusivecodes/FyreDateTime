@@ -43,10 +43,8 @@ class DateTime
         'rss' => 'eee, dd MMM yyyy HH:mm:ss xx',
         'string' => 'eee MMM dd yyyy HH:mm:ss xx (VV)',
         'time' => 'HH:mm:ss xx (VV)',
-        'w3c' => 'yyyy-MM-dd\'T\'HH:mm:ssxxx'
+        'w3c' => 'yyyy-MM-dd\'T\'HH:mm:ssxxx',
     ];
-
-    protected IntlCalendar $calendar;
 
     protected static bool $clampDates = true;
 
@@ -54,10 +52,13 @@ class DateTime
 
     protected static string|null $defaultTimeZone = null;
 
+    protected IntlCalendar $calendar;
+
     protected string $locale;
 
     /**
      * New DateTime constructor.
+     *
      * @param string|null $timeZone The timeZone to use.
      * @param string|null $locale The locale to use.
      * @param string|null $dateString The date to parse.
