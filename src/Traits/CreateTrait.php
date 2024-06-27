@@ -47,7 +47,8 @@ trait CreateTrait
      */
     public static function fromDateTime(DateTimeInterface $dateTime, string|null $timeZone = null, string|null $locale = null): static
     {
-        return static::fromTimestamp($dateTime->getTimestamp(), $timeZone ?? $dateTime->format('e'), $locale);
+        return static::fromTimestamp($dateTime->getTimestamp(), $timeZone ?? $dateTime->format('e'), $locale)
+            ->setMilliseconds((int) $dateTime->format('v'));
     }
 
     /**

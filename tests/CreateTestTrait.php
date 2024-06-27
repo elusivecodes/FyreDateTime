@@ -50,6 +50,14 @@ trait CreateTestTrait
         );
     }
 
+    public function testConstructorMilliseconds(): void
+    {
+        $this->assertSame(
+            '2019-01-01T00:00:00.123+00:00',
+            (new DateTime('2019-01-01 00:00:00.123'))->toISOString()
+        );
+    }
+
     public function testConstructorWithLocale(): void
     {
         $this->assertSame(
@@ -177,6 +185,15 @@ trait CreateTestTrait
         $this->assertInstanceOf(
             DateTime::class,
             DateTime::fromDateTime($date)
+        );
+    }
+
+    public function testFromDateTimeMilliseconds(): void
+    {
+        $date = new \DateTime('2019-01-01 00:00:00.123');
+        $this->assertSame(
+            '2019-01-01T00:00:00.123+00:00',
+            DateTime::fromDateTime($date)->toISOString()
         );
     }
 

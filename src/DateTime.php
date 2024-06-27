@@ -69,8 +69,8 @@ class DateTime
 
         $timeZone = static::parseTimeZone($timeZone);
         $dateTime = new DateTimeImmutable($time ?? 'now', $timeZone);
-        $timestamp = $dateTime->getTimestamp();
+        $timestampMs = ($dateTime->getTimestamp() * 1000) + $dateTime->format('v');
 
-        $this->calendar = static::createCalendar($timestamp * 1000, $timeZone, $this->locale);
+        $this->calendar = static::createCalendar($timestampMs, $timeZone, $this->locale);
     }
 }
