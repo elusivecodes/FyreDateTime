@@ -3,9 +3,11 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime\Traits;
 
+use Closure;
 use DateTimeZone;
 use IntlCalendar;
 
+use function call_user_func;
 use function date_default_timezone_get;
 use function locale_get_default;
 
@@ -21,7 +23,11 @@ trait StaticTrait
      */
     public static function getDefaultLocale(): string
     {
-        return static::$defaultLocale ?? locale_get_default();
+        if (static::$defaultLocale && static::$defaultLocale instanceof Closure) {
+            return call_user_func(static::$defaultLocale);
+        }
+
+        return static::$defaultLocale ??= locale_get_default();
     }
 
     /**
@@ -31,7 +37,11 @@ trait StaticTrait
      */
     public static function getDefaultTimeZone(): string
     {
-        return static::$defaultTimeZone ?? date_default_timezone_get();
+        if (static::$defaultTimeZone && static::$defaultTimeZone instanceof Closure) {
+            return call_user_func(static::$defaultTimeZone);
+        }
+
+        return static::$defaultTimeZone ??= date_default_timezone_get();
     }
 
     /**
@@ -47,9 +57,9 @@ trait StaticTrait
     /**
      * Set the default locale.
      *
-     * @param string $locale The locale.
+     * @param Closure|string|null $locale The locale.
      */
-    public static function setDefaultLocale(string|null $locale): void
+    public static function setDefaultLocale(Closure|string|null $locale): void
     {
         static::$defaultLocale = $locale;
     }
@@ -57,9 +67,9 @@ trait StaticTrait
     /**
      * Set the default timeZone.
      *
-     * @param string $timeZone The name of the timeZone.
+     * @param Closure|string|null $timeZone The name of the timeZone.
      */
-    public static function setDefaultTimeZone(string|null $timeZone): void
+    public static function setDefaultTimeZone(Closure|string|null $timeZone): void
     {
         static::$defaultTimeZone = $timeZone;
     }

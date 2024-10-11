@@ -1687,7 +1687,7 @@ DateTime::setDateClamping($clampDates);
 
 Set the default locale.
 
-- `$locale` is the name of the locale.
+- `$locale` is the name of the locale, or a *Closure* that returns the locale.
 
 ```php
 DateTime::setDefaultLocale($locale);
@@ -1697,7 +1697,7 @@ DateTime::setDefaultLocale($locale);
 
 Set the default time zone.
 
-- `$timeZone` is the name of the time zone, which can be either "*UTC*", a supported value from the [IANA timeZone database](https://www.iana.org/time-zones) or an offset string.
+- `$timeZone` is the name of the time zone, which can be either "*UTC*", a supported value from the [IANA timeZone database](https://www.iana.org/time-zones), an offset string, or a *Closure* that returns the locale.
 
 ```php
 DateTime::setDefaultTimeZone($timeZone);

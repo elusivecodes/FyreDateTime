@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime;
 
+use Closure;
 use DateTimeImmutable;
 use Fyre\DateTime\Traits\AttributesGetTrait;
 use Fyre\DateTime\Traits\AttributesSetTrait;
@@ -48,9 +49,9 @@ class DateTime
 
     protected static bool $clampDates = true;
 
-    protected static string|null $defaultLocale = null;
+    protected static Closure|string|null $defaultLocale = null;
 
-    protected static string|null $defaultTimeZone = null;
+    protected static Closure|string|null $defaultTimeZone = null;
 
     protected IntlCalendar $calendar;
 

@@ -23,7 +23,27 @@ final class DateTimeTest extends TestCase
     use UtilityTestTrait;
     use VarsTestTrait;
 
-    public static function setUpBeforeClass(): void
+    public function testSetDefaultLocaleCallback(): void
+    {
+        DateTime::setDefaultLocale(fn(): string => 'ru');
+
+        $this->assertSame(
+            'ru',
+            DateTime::now()->getLocale()
+        );
+    }
+
+    public function testSetDefaultTimeZoneCallback(): void
+    {
+        DateTime::setDefaultTimeZone(fn(): string => '+10:00');
+
+        $this->assertSame(
+            '+10:00',
+            DateTime::now()->getTimeZone()
+        );
+    }
+
+    protected function setUp(): void
     {
         DateTime::setDefaultLocale('en');
         DateTime::setDefaultTimeZone('UTC');
