@@ -7,7 +7,6 @@ use Closure;
 use DateTimeZone;
 use IntlCalendar;
 
-use function call_user_func;
 use function date_default_timezone_get;
 use function locale_get_default;
 
@@ -24,7 +23,7 @@ trait StaticTrait
     public static function getDefaultLocale(): string
     {
         if (static::$defaultLocale && static::$defaultLocale instanceof Closure) {
-            return call_user_func(static::$defaultLocale);
+            return (static::$defaultLocale)();
         }
 
         return static::$defaultLocale ??= locale_get_default();
@@ -38,7 +37,7 @@ trait StaticTrait
     public static function getDefaultTimeZone(): string
     {
         if (static::$defaultTimeZone && static::$defaultTimeZone instanceof Closure) {
-            return call_user_func(static::$defaultTimeZone);
+            return (static::$defaultTimeZone)();
         }
 
         return static::$defaultTimeZone ??= date_default_timezone_get();
