@@ -7,6 +7,7 @@ It is a modern library, and features support for ICU formats, time zones and loc
 
 ## Table Of Contents
 - [Installation](#installation)
+- [Basic Usage](#basic-usage)
 - [Date Creation](#date-creation)
 - [Date Formatting](#date-formatting)
 - [Date Attributes](#date-attributes)
@@ -37,7 +38,7 @@ use Fyre\DateTime\DateTime;
 ```
 
 
-## Date Creation
+## Basic Usage
 
 - `$dateString` is a string representing the date, and will default to the current timestamp.
 - `$timeZone` is a string representing the time zone of the date, and will default to the system time zone.
@@ -46,6 +47,9 @@ use Fyre\DateTime\DateTime;
 ```php
 $dateTime = new DateTime($dateString, $timeZone, $locale);
 ```
+
+
+## Date Creation
 
 **From Array**
 
