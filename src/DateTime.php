@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Fyre\DateTime;
 
+use DateMalformedStringException;
 use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
@@ -15,6 +16,8 @@ use function array_pad;
 use function ceil;
 use function date_default_timezone_get;
 use function floor;
+use function intl_get_error_code;
+use function intl_get_error_message;
 use function locale_get_default;
 use function min;
 use function str_pad;
@@ -50,6 +53,8 @@ class DateTime
     protected static string|null $defaultLocale = null;
 
     protected static string|null $defaultTimeZone = null;
+
+    protected static array $formatters;
 
     protected IntlCalendar $calendar;
 
@@ -100,19 +105,37 @@ class DateTime
      * @param string|null $timeZone The time zone to use.
      * @param string|null $locale The locale to use.
      * @return DateTime A new DateTime.
+     *
+     * @throws DateMalformedStringException if the date string is not in the correct format.
      */
     public static function fromFormat(string $formatString, string $dateString, string|null $timeZone = null, string|null $locale = null): static
     {
-        $timestamp = (new IntlDateFormatter(
-            static::parseLocale($locale),
+        $locale = static::parseLocale($locale);
+        $timeZone = static::parseTimeZone($timeZone);
+        $timeZoneName = $timeZone->getName();
+
+        $key = $locale.$timeZoneName.$formatString;
+
+        static::$formatters[$key] ??= new IntlDateFormatter(
+            $locale,
             IntlDateFormatter::FULL,
             IntlDateFormatter::FULL,
-            static::parseTimeZone($timeZone),
+            $timeZone,
             null,
             $formatString
-        ))->parse($dateString);
+        );
 
-        return static::fromTimestamp((int) $timestamp, $timeZone, $locale);
+        $timestamp = static::$formatters[$key]->parse($dateString);
+
+        $code = intl_get_error_code();
+
+        if ($code !== 0) {
+            $message = intl_get_error_message();
+
+            throw new DateMalformedStringException($message, $code);
+        }
+
+        return static::fromTimestamp((int) $timestamp, $timeZoneName, $locale);
     }
 
     /**
@@ -125,16 +148,8 @@ class DateTime
      */
     public static function fromISOString(string $dateString, string|null $timeZone = null, string|null $locale = null): static
     {
-        $timestamp = (new IntlDateFormatter(
-            'en',
-            IntlDateFormatter::FULL,
-            IntlDateFormatter::FULL,
-            null,
-            null,
-            static::FORMATS['rfc3339_extended']
-        ))->parse($dateString);
-
-        return static::fromTimestamp($timestamp, $timeZone, $locale);
+        return static::fromFormat(static::FORMATS['rfc3339_extended'], $dateString, $timeZone, 'en')
+            ->setLocale($locale ?? static::getDefaultLocale());
     }
 
     /**

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use DateMalformedStringException;
 use Fyre\DateTime\DateTime;
 
 trait FromFormatTestTrait
@@ -39,9 +40,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Hour
-     */
     public function testFromFormat12Hour1Digit(): void
     {
         $this->assertSame(
@@ -146,9 +144,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Week Day
-     */
     public function testFromFormatAltWeekDayShort(): void
     {
         $this->assertSame(
@@ -165,9 +160,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Day
-     */
     public function testFromFormatDayOfMonth1DigitFull(): void
     {
         $this->assertSame(
@@ -272,9 +264,6 @@ trait FromFormatTestTrait
     //     );
     // }
 
-    /**
-     * Day Period
-     */
     public function testFromFormatDayPeriodShort(): void
     {
         $this->assertSame(
@@ -323,9 +312,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Era
-     */
     public function testFromFormatEraShort(): void
     {
         $this->assertSame(
@@ -350,9 +336,15 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Minute
-     */
+    public function testFromFormatInvalid(): void
+    {
+        $this->expectException(DateMalformedStringException::class);
+        $this->expectExceptionMessage('Date parsing failed: U_PARSE_ERROR');
+        $this->expectExceptionCode(9);
+
+        DateTime::fromFormat('yyyy', 'a');
+    }
+
     public function testFromFormatMinute1Digit(): void
     {
         $this->assertSame(
@@ -393,9 +385,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Month
-     */
     public function testFromFormatMonth1DigitFull(): void
     {
         $this->assertSame(
@@ -436,9 +425,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Quarter
-     */
     public function testFromFormatQuarter1Digit(): void
     {
         $this->assertSame(
@@ -455,9 +441,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Second
-     */
     public function testFromFormatSecond1Digit(): void
     {
         $this->assertSame(
@@ -610,9 +593,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Time Zone
-     */
     public function testFromFormatTimeZoneIso8601BasicAlt(): void
     {
         $this->assertSame(
@@ -813,9 +793,6 @@ trait FromFormatTestTrait
     //     );
     // }
 
-    /**
-     * Week
-     */
     public function testFromFormatWeek1DigitFull(): void
     {
         $this->assertSame(
@@ -896,9 +873,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Week Year
-     */
     public function testFromFormatWeekYear1DigitFull(): void
     {
         $this->assertSame(
@@ -963,9 +937,6 @@ trait FromFormatTestTrait
         );
     }
 
-    /**
-     * Year
-     */
     public function testFromFormatYear1DigitFull(): void
     {
         $this->assertSame(

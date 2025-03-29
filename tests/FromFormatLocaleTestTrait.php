@@ -39,9 +39,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Hour
-     */
     public function testFromFormatLocale12Hour1Digit(): void
     {
         $this->assertSame(
@@ -146,9 +143,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Week Day
-     */
     public function testFromFormatLocaleAltWeekDayShort(): void
     {
         $this->assertSame(
@@ -165,9 +159,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Day
-     */
     public function testFromFormatLocaleDayOfMonth1DigitFull(): void
     {
         $this->assertSame(
@@ -272,9 +263,6 @@ trait FromFormatLocaleTestTrait
     //     );
     // }
 
-    /**
-     * Day Period
-     */
     public function testFromFormatLocaleDayPeriodShort(): void
     {
         $this->assertSame(
@@ -323,9 +311,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Era
-     */
     public function testFromFormatLocaleEraShort(): void
     {
         $this->assertSame(
@@ -350,9 +335,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Minute
-     */
     public function testFromFormatLocaleMinute1Digit(): void
     {
         $this->assertSame(
@@ -393,9 +375,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Month
-     */
     public function testFromFormatLocaleMonth1DigitFull(): void
     {
         $this->assertSame(
@@ -436,9 +415,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Quarter
-     */
     public function testFromFormatLocaleQuarter1Digit(): void
     {
         $this->assertSame(
@@ -455,9 +431,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Second
-     */
     public function testFromFormatLocaleSecond1Digit(): void
     {
         $this->assertSame(
@@ -610,9 +583,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Time Zone
-     */
     public function testFromFormatLocaleTimeZoneIso8601BasicAlt(): void
     {
         $this->assertSame(
@@ -813,9 +783,6 @@ trait FromFormatLocaleTestTrait
     //     );
     // }
 
-    /**
-     * Week
-     */
     public function testFromFormatLocaleWeek1DigitFull(): void
     {
         $this->assertSame(
@@ -896,9 +863,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Week Year
-     */
     public function testFromFormatLocaleWeekYear1DigitFull(): void
     {
         $this->assertSame(
@@ -963,9 +927,6 @@ trait FromFormatLocaleTestTrait
         );
     }
 
-    /**
-     * Year
-     */
     public function testFromFormatLocaleYear1DigitFull(): void
     {
         $this->assertSame(
