@@ -4,7 +4,10 @@ declare(strict_types=1);
 namespace Tests;
 
 use Fyre\DateTime\DateTime;
+use Fyre\Utility\Traits\MacroTrait;
 use PHPUnit\Framework\TestCase;
+
+use function class_uses;
 
 final class DateTimeTest extends TestCase
 {
@@ -22,6 +25,14 @@ final class DateTimeTest extends TestCase
     use TransitionTestTrait;
     use UtilityTestTrait;
     use VarsTestTrait;
+
+    public function testMacroable(): void
+    {
+        $this->assertContains(
+            MacroTrait::class,
+            class_uses(DateTime::class)
+        );
+    }
 
     protected function setUp(): void
     {

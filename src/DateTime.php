@@ -7,6 +7,7 @@ use DateMalformedStringException;
 use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
+use Fyre\Utility\Traits\MacroTrait;
 use IntlCalendar;
 use IntlDateFormatter;
 
@@ -30,6 +31,8 @@ use const STR_PAD_LEFT;
  */
 class DateTime
 {
+    use MacroTrait;
+
     public const FORMATS = [
         'atom' => 'yyyy-MM-dd\'T\'HH:mm:ssxxx',
         'cookie' => 'eeee, dd-MMM-yyyy HH:mm:ss ZZZZ',
