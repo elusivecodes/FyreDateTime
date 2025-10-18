@@ -7,979 +7,979 @@ use Fyre\DateTime\DateTime;
 
 trait FromFormatLocaleTestTrait
 {
-    public function testFromFormatLocale11Hour1Digit(): void
+    public function testCreateFromFormatLocale11Hour1Digit(): void
     {
         $this->assertSame(
             11,
-            DateTime::fromFormat('K', '١١', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('K', '١١', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale11Hour1DigitPadding(): void
+    public function testCreateFromFormatLocale11Hour1DigitPadding(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('K', '٠', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('K', '٠', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale11Hour2Digits(): void
+    public function testCreateFromFormatLocale11Hour2Digits(): void
     {
         $this->assertSame(
             11,
-            DateTime::fromFormat('KK', '١١', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('KK', '١١', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale11Hour2DigitsPadding(): void
+    public function testCreateFromFormatLocale11Hour2DigitsPadding(): void
     {
         $this->assertSame(
             00,
-            DateTime::fromFormat('KK', '٠٠', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('KK', '٠٠', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale12Hour1Digit(): void
+    public function testCreateFromFormatLocale12Hour1Digit(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('h', '١٢', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('h', '١٢', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale12Hour1DigitPadding(): void
+    public function testCreateFromFormatLocale12Hour1DigitPadding(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('h', '١', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('h', '١', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale12Hour2Digits(): void
+    public function testCreateFromFormatLocale12Hour2Digits(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('hh', '١٢', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('hh', '١٢', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale12Hour2DigitsPadding(): void
+    public function testCreateFromFormatLocale12Hour2DigitsPadding(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('hh', '٠١', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('hh', '٠١', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale23Hour1Digit(): void
+    public function testCreateFromFormatLocale23Hour1Digit(): void
     {
         $this->assertSame(
             23,
-            DateTime::fromFormat('H', '٢٣', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('H', '٢٣', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale23Hour1DigitPadding(): void
+    public function testCreateFromFormatLocale23Hour1DigitPadding(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('H', '٠', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('H', '٠', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale23Hour2Digits(): void
+    public function testCreateFromFormatLocale23Hour2Digits(): void
     {
         $this->assertSame(
             23,
-            DateTime::fromFormat('HH', '٢٣', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('HH', '٢٣', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale23Hour2DigitsPadding(): void
+    public function testCreateFromFormatLocale23Hour2DigitsPadding(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('HH', '٠٠', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('HH', '٠٠', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale24Hour1Digit(): void
+    public function testCreateFromFormatLocale24Hour1Digit(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('k', '٢٤', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('k', '٢٤', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale24Hour1DigitPadding(): void
+    public function testCreateFromFormatLocale24Hour1DigitPadding(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('k', '١', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('k', '١', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale24Hour2Digits(): void
+    public function testCreateFromFormatLocale24Hour2Digits(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('kk', '٢٤', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('kk', '٢٤', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocale24Hour2DigitsPadding(): void
+    public function testCreateFromFormatLocale24Hour2DigitsPadding(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('kk', '٠١', null, 'ar-eg')->getHours()
+            DateTime::createFromFormat('kk', '٠١', null, 'ar-eg')->getHours()
         );
     }
 
-    public function testFromFormatLocaleAltWeekDayLong(): void
+    public function testCreateFromFormatLocaleAltWeekDayLong(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('EEEE', 'пятница', null, 'ru')->getWeekDay()
+            DateTime::createFromFormat('EEEE', 'пятница', null, 'ru')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleAltWeekDayShort(): void
+    public function testCreateFromFormatLocaleAltWeekDayShort(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('EEE', 'пт', null, 'ru')->getWeekDay()
+            DateTime::createFromFormat('EEE', 'пт', null, 'ru')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleDayOfMonth1Digit(): void
+    public function testCreateFromFormatLocaleDayOfMonth1Digit(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('d', '١', null, 'ar-eg')->getDate()
+            DateTime::createFromFormat('d', '١', null, 'ar-eg')->getDate()
         );
     }
 
-    public function testFromFormatLocaleDayOfMonth1DigitFull(): void
+    public function testCreateFromFormatLocaleDayOfMonth1DigitFull(): void
     {
         $this->assertSame(
             21,
-            DateTime::fromFormat('d', '٢١', null, 'ar-eg')->getDate()
+            DateTime::createFromFormat('d', '٢١', null, 'ar-eg')->getDate()
         );
     }
 
-    public function testFromFormatLocaleDayOfMonth2Digits(): void
+    public function testCreateFromFormatLocaleDayOfMonth2Digits(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('dd', '٠١', null, 'ar-eg')->getDate()
+            DateTime::createFromFormat('dd', '٠١', null, 'ar-eg')->getDate()
         );
     }
 
-    public function testFromFormatLocaleDayOfMonth2DigitsFull(): void
+    public function testCreateFromFormatLocaleDayOfMonth2DigitsFull(): void
     {
         $this->assertSame(
             21,
-            DateTime::fromFormat('dd', '٢١', null, 'ar-eg')->getDate()
+            DateTime::createFromFormat('dd', '٢١', null, 'ar-eg')->getDate()
         );
     }
 
-    public function testFromFormatLocaleDayOfWeekInMonthMonth(): void
+    public function testCreateFromFormatLocaleDayOfWeekInMonthMonth(): void
     {
         $this->assertSame(
             3,
-            DateTime::fromFormat('F', '٣', null, 'ar-eg')->getWeekDayInMonth()
+            DateTime::createFromFormat('F', '٣', null, 'ar-eg')->getWeekDayInMonth()
         );
     }
 
-    public function testFromFormatLocaleDayOfYear1Digit(): void
+    public function testCreateFromFormatLocaleDayOfYear1Digit(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('D', '١', null, 'ar-eg')->getDayOfYear()
+            DateTime::createFromFormat('D', '١', null, 'ar-eg')->getDayOfYear()
         );
     }
 
-    public function testFromFormatLocaleDayOfYear1DigitFull(): void
+    public function testCreateFromFormatLocaleDayOfYear1DigitFull(): void
     {
         $this->assertSame(
             152,
-            DateTime::fromFormat('D', '١٥٢', null, 'ar-eg')->getDayOfYear()
+            DateTime::createFromFormat('D', '١٥٢', null, 'ar-eg')->getDayOfYear()
         );
     }
 
-    public function testFromFormatLocaleDayOfYear2Digits(): void
+    public function testCreateFromFormatLocaleDayOfYear2Digits(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('DD', '٠١', null, 'ar-eg')->getDayOfYear()
+            DateTime::createFromFormat('DD', '٠١', null, 'ar-eg')->getDayOfYear()
         );
     }
 
-    public function testFromFormatLocaleDayOfYear2DigitsFull(): void
+    public function testCreateFromFormatLocaleDayOfYear2DigitsFull(): void
     {
         $this->assertSame(
             152,
-            DateTime::fromFormat('DD', '١٥٢', null, 'ar-eg')->getDayOfYear()
+            DateTime::createFromFormat('DD', '١٥٢', null, 'ar-eg')->getDayOfYear()
         );
     }
 
-    public function testFromFormatLocaleDayOfYear3Digits(): void
+    public function testCreateFromFormatLocaleDayOfYear3Digits(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('DDD', '٠٠١', null, 'ar-eg')->getDayOfYear()
+            DateTime::createFromFormat('DDD', '٠٠١', null, 'ar-eg')->getDayOfYear()
         );
     }
 
-    public function testFromFormatLocaleDayOfYear3DigitsFull(): void
+    public function testCreateFromFormatLocaleDayOfYear3DigitsFull(): void
     {
         $this->assertSame(
             152,
-            DateTime::fromFormat('DDD', '١٥٢', null, 'ar-eg')->getDayOfYear()
+            DateTime::createFromFormat('DDD', '١٥٢', null, 'ar-eg')->getDayOfYear()
         );
     }
 
-    public function testFromFormatLocaleDayPeriodLong(): void
+    public function testCreateFromFormatLocaleDayPeriodLong(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('aaaa', '上午', null, 'zh')->getHours()
+            DateTime::createFromFormat('aaaa', '上午', null, 'zh')->getHours()
         );
     }
 
-    public function testFromFormatLocaleDayPeriodLongPm(): void
+    public function testCreateFromFormatLocaleDayPeriodLongPm(): void
     {
         $this->assertSame(
             12,
-            DateTime::fromFormat('aaaa', '下午', null, 'zh')->getHours()
+            DateTime::createFromFormat('aaaa', '下午', null, 'zh')->getHours()
         );
     }
 
-    // public function testFromFormatLocaleStandaloneWeekDayNarrow(): void
+    // public function testCreateFromFormatLocaleStandaloneWeekDayNarrow(): void
     // {
     //     $this->assertSame(
     //         1,
-    //         DateTime::fromFormat('ccccc', 'П', null, 'ru')->getWeekDay()
+    //         DateTime::createFromFormat('ccccc', 'П', null, 'ru')->getWeekDay()
     //     );
     // }
 
-    public function testFromFormatLocaleDayPeriodShort(): void
+    public function testCreateFromFormatLocaleDayPeriodShort(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('aaa', '上午', null, 'zh')->getHours()
+            DateTime::createFromFormat('aaa', '上午', null, 'zh')->getHours()
         );
     }
 
-    public function testFromFormatLocaleDayPeriodShortPm(): void
+    public function testCreateFromFormatLocaleDayPeriodShortPm(): void
     {
         $this->assertSame(
             12,
-            DateTime::fromFormat('aaa', '下午', null, 'zh')->getHours()
+            DateTime::createFromFormat('aaa', '下午', null, 'zh')->getHours()
         );
     }
 
-    public function testFromFormatLocaleEraLong(): void
+    public function testCreateFromFormatLocaleEraLong(): void
     {
         $this->assertSame(
             1970,
-            DateTime::fromFormat('yyyy GGGG', '1970 от Рождества Христова', null, 'ru')->getYear()
+            DateTime::createFromFormat('yyyy GGGG', '1970 от Рождества Христова', null, 'ru')->getYear()
         );
     }
 
-    public function testFromFormatLocaleEraLongBc(): void
+    public function testCreateFromFormatLocaleEraLongBc(): void
     {
         $this->assertSame(
             -1970,
-            DateTime::fromFormat('yyyy GGGG', '1970 до Рождества Христова', null, 'ru')->getYear()
+            DateTime::createFromFormat('yyyy GGGG', '1970 до Рождества Христова', null, 'ru')->getYear()
         );
     }
 
-    public function testFromFormatLocaleEraNarrow(): void
+    public function testCreateFromFormatLocaleEraNarrow(): void
     {
         $this->assertSame(
             1970,
-            DateTime::fromFormat('yyyy GGGGG', '1970 н.э.', null, 'ru')->getYear()
+            DateTime::createFromFormat('yyyy GGGGG', '1970 н.э.', null, 'ru')->getYear()
         );
     }
 
-    public function testFromFormatLocaleEraNarrowBc(): void
+    public function testCreateFromFormatLocaleEraNarrowBc(): void
     {
         $this->assertSame(
             -1970,
-            DateTime::fromFormat('yyyy GGGGG', '1970 до н.э.', null, 'ru')->getYear()
+            DateTime::createFromFormat('yyyy GGGGG', '1970 до н.э.', null, 'ru')->getYear()
         );
     }
 
-    public function testFromFormatLocaleEraShort(): void
+    public function testCreateFromFormatLocaleEraShort(): void
     {
         $this->assertSame(
             1970,
-            DateTime::fromFormat('yyyy GGG', '1970 н. э.', null, 'ru')->getYear()
+            DateTime::createFromFormat('yyyy GGG', '1970 н. э.', null, 'ru')->getYear()
         );
     }
 
-    public function testFromFormatLocaleEraShortBc(): void
+    public function testCreateFromFormatLocaleEraShortBc(): void
     {
         $this->assertSame(
             -1970,
-            DateTime::fromFormat('yyyy GGG', '1970 до н. э.', null, 'ru')->getYear()
+            DateTime::createFromFormat('yyyy GGG', '1970 до н. э.', null, 'ru')->getYear()
         );
     }
 
-    public function testFromFormatLocaleFractional(): void
+    public function testCreateFromFormatLocaleFractional(): void
     {
         $this->assertSame(
             0,
-            DateTime::fromFormat('SSS', '١٢٣', null, 'ar-eg')->getMilliseconds()
+            DateTime::createFromFormat('SSS', '١٢٣', null, 'ar-eg')->getMilliseconds()
         );
     }
 
-    public function testFromFormatLocaleMinute1Digit(): void
+    public function testCreateFromFormatLocaleMinute1Digit(): void
     {
         $this->assertSame(
             25,
-            DateTime::fromFormat('m', '٢٥', null, 'ar-eg')->getMinutes()
+            DateTime::createFromFormat('m', '٢٥', null, 'ar-eg')->getMinutes()
         );
     }
 
-    public function testFromFormatLocaleMinute1DigitPadding(): void
+    public function testCreateFromFormatLocaleMinute1DigitPadding(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('m', '١', null, 'ar-eg')->getMinutes()
+            DateTime::createFromFormat('m', '١', null, 'ar-eg')->getMinutes()
         );
     }
 
-    public function testFromFormatLocaleMinute2Digits(): void
+    public function testCreateFromFormatLocaleMinute2Digits(): void
     {
         $this->assertSame(
             25,
-            DateTime::fromFormat('mm', '٢٥', null, 'ar-eg')->getMinutes()
+            DateTime::createFromFormat('mm', '٢٥', null, 'ar-eg')->getMinutes()
         );
     }
 
-    public function testFromFormatLocaleMinute2DigitsPadding(): void
+    public function testCreateFromFormatLocaleMinute2DigitsPadding(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('mm', '٠١', null, 'ar-eg')->getMinutes()
+            DateTime::createFromFormat('mm', '٠١', null, 'ar-eg')->getMinutes()
         );
     }
 
-    public function testFromFormatLocaleMonth1Digit(): void
+    public function testCreateFromFormatLocaleMonth1Digit(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('M', '١', null, 'ar-eg')->getMonth()
+            DateTime::createFromFormat('M', '١', null, 'ar-eg')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleMonth1DigitFull(): void
+    public function testCreateFromFormatLocaleMonth1DigitFull(): void
     {
         $this->assertSame(
             10,
-            DateTime::fromFormat('M', '١٠', null, 'ar-eg')->getMonth()
+            DateTime::createFromFormat('M', '١٠', null, 'ar-eg')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleMonth2Digits(): void
+    public function testCreateFromFormatLocaleMonth2Digits(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('MM', '٠١', null, 'ar-eg')->getMonth()
+            DateTime::createFromFormat('MM', '٠١', null, 'ar-eg')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleMonth2DigitsFull(): void
+    public function testCreateFromFormatLocaleMonth2DigitsFull(): void
     {
         $this->assertSame(
             10,
-            DateTime::fromFormat('MM', '١٠', null, 'ar-eg')->getMonth()
+            DateTime::createFromFormat('MM', '١٠', null, 'ar-eg')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleMonthLong(): void
+    public function testCreateFromFormatLocaleMonthLong(): void
     {
         $this->assertSame(
             10,
-            DateTime::fromFormat('MMMM', 'октября', null, 'ru')->getMonth()
+            DateTime::createFromFormat('MMMM', 'октября', null, 'ru')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleMonthShort(): void
+    public function testCreateFromFormatLocaleMonthShort(): void
     {
         $this->assertSame(
             10,
-            DateTime::fromFormat('MMM', 'окт.', null, 'ru')->getMonth()
+            DateTime::createFromFormat('MMM', 'окт.', null, 'ru')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleQuarter1Digit(): void
+    public function testCreateFromFormatLocaleQuarter1Digit(): void
     {
         $this->assertSame(
             3,
-            DateTime::fromFormat('q', '٣', null, 'ar-eg')->getQuarter()
+            DateTime::createFromFormat('q', '٣', null, 'ar-eg')->getQuarter()
         );
     }
 
-    public function testFromFormatLocaleQuarter2Digits(): void
+    public function testCreateFromFormatLocaleQuarter2Digits(): void
     {
         $this->assertSame(
             3,
-            DateTime::fromFormat('qq', '٠٣', null, 'ar-eg')->getQuarter()
+            DateTime::createFromFormat('qq', '٠٣', null, 'ar-eg')->getQuarter()
         );
     }
 
-    public function testFromFormatLocaleSecond1Digit(): void
+    public function testCreateFromFormatLocaleSecond1Digit(): void
     {
         $this->assertSame(
             25,
-            DateTime::fromFormat('s', '٢٥', null, 'ar-eg')->getSeconds()
+            DateTime::createFromFormat('s', '٢٥', null, 'ar-eg')->getSeconds()
         );
     }
 
-    public function testFromFormatLocaleSecond1DigitPadding(): void
+    public function testCreateFromFormatLocaleSecond1DigitPadding(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('s', '١', null, 'ar-eg')->getSeconds()
+            DateTime::createFromFormat('s', '١', null, 'ar-eg')->getSeconds()
         );
     }
 
-    public function testFromFormatLocaleSecond2Digits(): void
+    public function testCreateFromFormatLocaleSecond2Digits(): void
     {
         $this->assertSame(
             25,
-            DateTime::fromFormat('ss', '٢٥', null, 'ar-eg')->getSeconds()
+            DateTime::createFromFormat('ss', '٢٥', null, 'ar-eg')->getSeconds()
         );
     }
 
-    public function testFromFormatLocaleSecond2DigitsPadding(): void
+    public function testCreateFromFormatLocaleSecond2DigitsPadding(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('ss', '٠١', null, 'ar-eg')->getSeconds()
+            DateTime::createFromFormat('ss', '٠١', null, 'ar-eg')->getSeconds()
         );
     }
 
-    public function testFromFormatLocaleStandaloneMonth1Digit(): void
+    public function testCreateFromFormatLocaleStandaloneMonth1Digit(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('L', '١', null, 'ar-eg')->getMonth()
+            DateTime::createFromFormat('L', '١', null, 'ar-eg')->getMonth()
         );
     }
 
-    // public function testFromFormatLocaleMonthNarrow(): void
+    // public function testCreateFromFormatLocaleMonthNarrow(): void
     // {
     //     $this->assertSame(
     //         10,
-    //         DateTime::fromFormat('MMMMM', 'О', null, 'ru')->getMonth()
+    //         DateTime::createFromFormat('MMMMM', 'О', null, 'ru')->getMonth()
     //     );
     // }
 
-    public function testFromFormatLocaleStandaloneMonth1DigitFull(): void
+    public function testCreateFromFormatLocaleStandaloneMonth1DigitFull(): void
     {
         $this->assertSame(
             10,
-            DateTime::fromFormat('L', '١٠', null, 'ar-eg')->getMonth()
+            DateTime::createFromFormat('L', '١٠', null, 'ar-eg')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleStandaloneMonth2Digits(): void
+    public function testCreateFromFormatLocaleStandaloneMonth2Digits(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('LL', '٠١', null, 'ar-eg')->getMonth()
+            DateTime::createFromFormat('LL', '٠١', null, 'ar-eg')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleStandaloneMonth2DigitsFull(): void
+    public function testCreateFromFormatLocaleStandaloneMonth2DigitsFull(): void
     {
         $this->assertSame(
             10,
-            DateTime::fromFormat('LL', '١٠', null, 'ar-eg')->getMonth()
+            DateTime::createFromFormat('LL', '١٠', null, 'ar-eg')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleStandaloneMonthLong(): void
+    public function testCreateFromFormatLocaleStandaloneMonthLong(): void
     {
         $this->assertSame(
             10,
-            DateTime::fromFormat('LLLL', 'октябрь', null, 'ru')->getMonth()
+            DateTime::createFromFormat('LLLL', 'октябрь', null, 'ru')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleStandaloneMonthShort(): void
+    public function testCreateFromFormatLocaleStandaloneMonthShort(): void
     {
         $this->assertSame(
             10,
-            DateTime::fromFormat('LLL', 'окт.', null, 'ru')->getMonth()
+            DateTime::createFromFormat('LLL', 'окт.', null, 'ru')->getMonth()
         );
     }
 
-    public function testFromFormatLocaleStandaloneQuarter1Digit(): void
+    public function testCreateFromFormatLocaleStandaloneQuarter1Digit(): void
     {
         $this->assertSame(
             3,
-            DateTime::fromFormat('Q', '٣', null, 'ar-eg')->getQuarter()
+            DateTime::createFromFormat('Q', '٣', null, 'ar-eg')->getQuarter()
         );
     }
 
-    public function testFromFormatLocaleStandaloneQuarter2Digits(): void
+    public function testCreateFromFormatLocaleStandaloneQuarter2Digits(): void
     {
         $this->assertSame(
             3,
-            DateTime::fromFormat('QQ', '٠٣', null, 'ar-eg')->getQuarter()
+            DateTime::createFromFormat('QQ', '٠٣', null, 'ar-eg')->getQuarter()
         );
     }
 
-    // public function testFromFormatLocaleWeekDayNarrow(): void
+    // public function testCreateFromFormatLocaleWeekDayNarrow(): void
     // {
     //     $this->assertSame(
     //         1,
-    //         DateTime::fromFormat('eeeee', 'П', null, 'ru')->getWeekDay()
+    //         DateTime::createFromFormat('eeeee', 'П', null, 'ru')->getWeekDay()
     //     );
     // }
 
-    public function testFromFormatLocaleStandaloneWeekDay1Digit(): void
+    public function testCreateFromFormatLocaleStandaloneWeekDay1Digit(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('c', '٥', null, 'ar-eg')->getWeekDay()
+            DateTime::createFromFormat('c', '٥', null, 'ar-eg')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleStandaloneWeekDay2Digits(): void
+    public function testCreateFromFormatLocaleStandaloneWeekDay2Digits(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('cc', '٠٥', null, 'ar-eg')->getWeekDay()
+            DateTime::createFromFormat('cc', '٠٥', null, 'ar-eg')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleStandaloneWeekDayLong(): void
+    public function testCreateFromFormatLocaleStandaloneWeekDayLong(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('cccc', 'пятница', null, 'ru')->getWeekDay()
+            DateTime::createFromFormat('cccc', 'пятница', null, 'ru')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleStandaloneWeekDayShort(): void
+    public function testCreateFromFormatLocaleStandaloneWeekDayShort(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('ccc', 'пт', null, 'ru')->getWeekDay()
+            DateTime::createFromFormat('ccc', 'пт', null, 'ru')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601Basic(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601Basic(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +0000', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +0000', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicAlt(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicAlt(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +0000', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +0000', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicAltTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicAltTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +1000', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss ZZZ', '01/01/2019 00:00:00 +1000', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicShort(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicShort(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicShortTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicShortTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +10', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss x', '01/01/2019 00:00:00 +10', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicShortZ(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicShortZ(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 Z', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 Z', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicShortZTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicShortZTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 +10', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss X', '01/01/2019 00:00:00 +10', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +1000', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss xx', '01/01/2019 00:00:00 +1000', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicZ(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicZ(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 Z', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 Z', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601BasicZTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601BasicZTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 +1000', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss XX', '01/01/2019 00:00:00 +1000', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601Extended(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601Extended(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +00:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +00:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601ExtendedAlt(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601ExtendedAlt(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +00:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +00:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601ExtendedAltTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601ExtendedAltTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +10:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss ZZZZZ', '01/01/2019 00:00:00 +10:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601ExtendedTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601ExtendedTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +10:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss xxx', '01/01/2019 00:00:00 +10:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601ExtendedZ(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601ExtendedZ(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 Z', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 Z', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneIso8601ExtendedZTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneIso8601ExtendedZTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 +10:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss XXX', '01/01/2019 00:00:00 +10:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneLongBasic(): void
+    public function testCreateFromFormatLocaleTimeZoneLongBasic(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+00:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+00:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneLongBasicTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneLongBasicTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+10:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss ZZZZ', '01/01/2019 00:00:00 GMT+10:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneLongLocalized(): void
+    public function testCreateFromFormatLocaleTimeZoneLongLocalized(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+00:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+00:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneLongLocalizedTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneLongLocalizedTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+10:00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss OOOO', '01/01/2019 00:00:00 GMT+10:00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneLongTimeZoneId(): void
+    public function testCreateFromFormatLocaleTimeZoneLongTimeZoneId(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 UTC', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 UTC', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneLongTimeZoneIdTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneLongTimeZoneIdTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 Australia/Brisbane', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss VV', '01/01/2019 00:00:00 Australia/Brisbane', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneShortLocalized(): void
+    public function testCreateFromFormatLocaleTimeZoneShortLocalized(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+00', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+00', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleTimeZoneShortLocalizedTimeZone(): void
+    public function testCreateFromFormatLocaleTimeZoneShortLocalizedTimeZone(): void
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            DateTime::fromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+10', null, 'ru')->toISOString()
+            DateTime::createFromFormat('dd/MM/yyyy HH:mm:ss O', '01/01/2019 00:00:00 GMT+10', null, 'ru')->toIsoString()
         );
     }
 
-    public function testFromFormatLocaleWeek1Digit(): void
+    public function testCreateFromFormatLocaleWeek1Digit(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('w', '١', null, 'ar-eg')->getWeek()
+            DateTime::createFromFormat('w', '١', null, 'ar-eg')->getWeek()
         );
     }
 
-    // public function testFromFormatLocaleStandaloneMonthNarrow(): void
+    // public function testCreateFromFormatLocaleStandaloneMonthNarrow(): void
     // {
     //     $this->assertSame(
     //         10,
-    //         DateTime::fromFormat('LLLLL', 'О', null, 'ru')->getMonth()
+    //         DateTime::createFromFormat('LLLLL', 'О', null, 'ru')->getMonth()
     //     );
     // }
 
-    public function testFromFormatLocaleWeek1DigitFull(): void
+    public function testCreateFromFormatLocaleWeek1DigitFull(): void
     {
         $this->assertSame(
             22,
-            DateTime::fromFormat('w', '٢٢', null, 'ar-eg')->getWeek()
+            DateTime::createFromFormat('w', '٢٢', null, 'ar-eg')->getWeek()
         );
     }
 
-    public function testFromFormatLocaleWeek2Digits(): void
+    public function testCreateFromFormatLocaleWeek2Digits(): void
     {
         $this->assertSame(
             1,
-            DateTime::fromFormat('ww', '٠١', null, 'ar-eg')->getWeek()
+            DateTime::createFromFormat('ww', '٠١', null, 'ar-eg')->getWeek()
         );
     }
 
-    public function testFromFormatLocaleWeek2DigitsFull(): void
+    public function testCreateFromFormatLocaleWeek2DigitsFull(): void
     {
         $this->assertSame(
             22,
-            DateTime::fromFormat('ww', '٢٢', null, 'ar-eg')->getWeek()
+            DateTime::createFromFormat('ww', '٢٢', null, 'ar-eg')->getWeek()
         );
     }
 
-    // public function testFromFormatLocaleAltWeekDayNarrow(): void
+    // public function testCreateFromFormatLocaleAltWeekDayNarrow(): void
     // {
     //     $this->assertSame(
     //         1,
-    //         DateTime::fromFormat('EEEEE', 'П', null, 'ru')->getWeekDay()
+    //         DateTime::createFromFormat('EEEEE', 'П', null, 'ru')->getWeekDay()
     //     );
     // }
 
-    public function testFromFormatLocaleWeekDay1Digit(): void
+    public function testCreateFromFormatLocaleWeekDay1Digit(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('e', '٥', null, 'ar-eg')->getWeekDay()
+            DateTime::createFromFormat('e', '٥', null, 'ar-eg')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleWeekDay2Digits(): void
+    public function testCreateFromFormatLocaleWeekDay2Digits(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('ee', '٠٥', null, 'ar-eg')->getWeekDay()
+            DateTime::createFromFormat('ee', '٠٥', null, 'ar-eg')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleWeekDayLong(): void
+    public function testCreateFromFormatLocaleWeekDayLong(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('eeee', 'пятница', null, 'ru')->getWeekDay()
+            DateTime::createFromFormat('eeee', 'пятница', null, 'ru')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleWeekDayShort(): void
+    public function testCreateFromFormatLocaleWeekDayShort(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('eee', 'пт', null, 'ru')->getWeekDay()
+            DateTime::createFromFormat('eee', 'пт', null, 'ru')->getWeekDay()
         );
     }
 
-    public function testFromFormatLocaleWeekOfMonth(): void
+    public function testCreateFromFormatLocaleWeekOfMonth(): void
     {
         $this->assertSame(
             3,
-            DateTime::fromFormat('W', '٣', null, 'ar-eg')->getWeekOfMonth()
+            DateTime::createFromFormat('W', '٣', null, 'ar-eg')->getWeekOfMonth()
         );
     }
 
-    public function testFromFormatLocaleWeekYear1Digit(): void
+    public function testCreateFromFormatLocaleWeekYear1Digit(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('Y w e', '٥ ١ ١', null, 'ar-eg')->getWeekYear()
+            DateTime::createFromFormat('Y w e', '٥ ١ ١', null, 'ar-eg')->getWeekYear()
         );
     }
 
-    public function testFromFormatLocaleWeekYear1DigitFull(): void
+    public function testCreateFromFormatLocaleWeekYear1DigitFull(): void
     {
         $this->assertSame(
             2018,
-            DateTime::fromFormat('Y w e', '٢٠١٨ ١ ٣', null, 'ar-eg')->getWeekYear()
+            DateTime::createFromFormat('Y w e', '٢٠١٨ ١ ٣', null, 'ar-eg')->getWeekYear()
         );
     }
 
-    public function testFromFormatLocaleWeekYear2Digits(): void
+    public function testCreateFromFormatLocaleWeekYear2Digits(): void
     {
         $this->assertSame(
             1988,
-            DateTime::fromFormat('YY w e', '٨٨ ١ ٦', null, 'ar-eg')->getWeekYear()
+            DateTime::createFromFormat('YY w e', '٨٨ ١ ٦', null, 'ar-eg')->getWeekYear()
         );
     }
 
-    public function testFromFormatLocaleWeekYear2DigitsFull(): void
+    public function testCreateFromFormatLocaleWeekYear2DigitsFull(): void
     {
         $this->assertSame(
             2018,
-            DateTime::fromFormat('YY w e', '٢٠١٨ ١ ٣', null, 'ar-eg')->getWeekYear()
+            DateTime::createFromFormat('YY w e', '٢٠١٨ ١ ٣', null, 'ar-eg')->getWeekYear()
         );
     }
 
-    public function testFromFormatLocaleWeekYear3Digits(): void
+    public function testCreateFromFormatLocaleWeekYear3Digits(): void
     {
         $this->assertSame(
             88,
-            DateTime::fromFormat('YYY w e', '٠٨٨ ١ ٦', null, 'ar-eg')->getWeekYear()
+            DateTime::createFromFormat('YYY w e', '٠٨٨ ١ ٦', null, 'ar-eg')->getWeekYear()
         );
     }
 
-    public function testFromFormatLocaleWeekYear3DigitsFull(): void
+    public function testCreateFromFormatLocaleWeekYear3DigitsFull(): void
     {
         $this->assertSame(
             2018,
-            DateTime::fromFormat('YYY w e', '٢٠١٨ ١ ٣', null, 'ar-eg')->getWeekYear()
+            DateTime::createFromFormat('YYY w e', '٢٠١٨ ١ ٣', null, 'ar-eg')->getWeekYear()
         );
     }
 
-    public function testFromFormatLocaleWeekYear4Digits(): void
+    public function testCreateFromFormatLocaleWeekYear4Digits(): void
     {
         $this->assertSame(
             88,
-            DateTime::fromFormat('YYYY w e', '٠٠٨٨ ١ ٦', null, 'ar-eg')->getWeekYear()
+            DateTime::createFromFormat('YYYY w e', '٠٠٨٨ ١ ٦', null, 'ar-eg')->getWeekYear()
         );
     }
 
-    public function testFromFormatLocaleWeekYear4DigitsFull(): void
+    public function testCreateFromFormatLocaleWeekYear4DigitsFull(): void
     {
         $this->assertSame(
             2018,
-            DateTime::fromFormat('YYYY w e', '٢٠١٨ ١ ٣', null, 'ar-eg')->getWeekYear()
+            DateTime::createFromFormat('YYYY w e', '٢٠١٨ ١ ٣', null, 'ar-eg')->getWeekYear()
         );
     }
 
-    public function testFromFormatLocaleYear1Digit(): void
+    public function testCreateFromFormatLocaleYear1Digit(): void
     {
         $this->assertSame(
             5,
-            DateTime::fromFormat('y', '٥', null, 'ar-eg')->getYear()
+            DateTime::createFromFormat('y', '٥', null, 'ar-eg')->getYear()
         );
     }
 
-    public function testFromFormatLocaleYear1DigitFull(): void
+    public function testCreateFromFormatLocaleYear1DigitFull(): void
     {
         $this->assertSame(
             2018,
-            DateTime::fromFormat('y', '٢٠١٨', null, 'ar-eg')->getYear()
+            DateTime::createFromFormat('y', '٢٠١٨', null, 'ar-eg')->getYear()
         );
     }
 
-    public function testFromFormatLocaleYear2Digits(): void
+    public function testCreateFromFormatLocaleYear2Digits(): void
     {
         $this->assertSame(
             1988,
-            DateTime::fromFormat('yy', '٨٨', null, 'ar-eg')->getYear()
+            DateTime::createFromFormat('yy', '٨٨', null, 'ar-eg')->getYear()
         );
     }
 
-    public function testFromFormatLocaleYear2DigitsFull(): void
+    public function testCreateFromFormatLocaleYear2DigitsFull(): void
     {
         $this->assertSame(
             2018,
-            DateTime::fromFormat('yy', '٢٠١٨', null, 'ar-eg')->getYear()
+            DateTime::createFromFormat('yy', '٢٠١٨', null, 'ar-eg')->getYear()
         );
     }
 
-    public function testFromFormatLocaleYear3Digits(): void
+    public function testCreateFromFormatLocaleYear3Digits(): void
     {
         $this->assertSame(
             88,
-            DateTime::fromFormat('yyy', '٠٨٨', null, 'ar-eg')->getYear()
+            DateTime::createFromFormat('yyy', '٠٨٨', null, 'ar-eg')->getYear()
         );
     }
 
-    public function testFromFormatLocaleYear3DigitsFull(): void
+    public function testCreateFromFormatLocaleYear3DigitsFull(): void
     {
         $this->assertSame(
             2018,
-            DateTime::fromFormat('yyy', '٢٠١٨', null, 'ar-eg')->getYear()
+            DateTime::createFromFormat('yyy', '٢٠١٨', null, 'ar-eg')->getYear()
         );
     }
 
-    public function testFromFormatLocaleYear4Digits(): void
+    public function testCreateFromFormatLocaleYear4Digits(): void
     {
         $this->assertSame(
             88,
-            DateTime::fromFormat('yyyy', '٠٠٨٨', null, 'ar-eg')->getYear()
+            DateTime::createFromFormat('yyyy', '٠٠٨٨', null, 'ar-eg')->getYear()
         );
     }
 
-    public function testFromFormatLocaleYear4DigitsFull(): void
+    public function testCreateFromFormatLocaleYear4DigitsFull(): void
     {
         $this->assertSame(
             2018,
-            DateTime::fromFormat('yyyy', '٢٠١٨', null, 'ar-eg')->getYear()
+            DateTime::createFromFormat('yyyy', '٢٠١٨', null, 'ar-eg')->getYear()
         );
     }
 }

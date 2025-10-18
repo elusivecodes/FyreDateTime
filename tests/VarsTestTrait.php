@@ -11,7 +11,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             '2020-01-01T00:00:00+00:00',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['atom'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['atom'])
         );
     }
 
@@ -19,7 +19,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wednesday, 01-Jan-2020 00:00:00 GMT',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['cookie'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['cookie'])
         );
     }
 
@@ -27,7 +27,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wed Jan 01 2020',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['date'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['date'])
         );
     }
 
@@ -35,7 +35,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             '2020-01-01T00:00:00+0000',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['iso8601'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['iso8601'])
         );
     }
 
@@ -43,7 +43,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wed, 01 Jan 20 00:00:00 +0000',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc1036'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['rfc1036'])
         );
     }
 
@@ -51,7 +51,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wed, 01 Jan 2020 00:00:00 +0000',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc1123'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['rfc1123'])
         );
     }
 
@@ -59,7 +59,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wed, 01 Jan 2020 00:00:00 +0000',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc2822'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['rfc2822'])
         );
     }
 
@@ -67,7 +67,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             '2020-01-01T00:00:00+00:00',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc3339'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['rfc3339'])
         );
     }
 
@@ -75,7 +75,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             '2020-01-01T00:00:00.000+00:00',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc3339_extended'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['rfc3339_extended'])
         );
     }
 
@@ -83,7 +83,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wed, 01 Jan 20 00:00:00 +0000',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc822'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['rfc822'])
         );
     }
 
@@ -91,7 +91,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wednesday 01-Jan-20 00:00:00 GMT',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rfc850'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['rfc850'])
         );
     }
 
@@ -99,7 +99,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wed, 01 Jan 2020 00:00:00 +0000',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['rss'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['rss'])
         );
     }
 
@@ -107,7 +107,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             'Wed Jan 01 2020 00:00:00 +0000 (UTC)',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['string'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['string'])
         );
     }
 
@@ -115,7 +115,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             '00:00:00 +0000 (UTC)',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['time'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['time'])
         );
     }
 
@@ -123,7 +123,7 @@ trait VarsTestTrait
     {
         $this->assertSame(
             '2020-01-01T00:00:00+00:00',
-            DateTime::fromArray([2020])->format(DateTime::FORMATS['w3c'])
+            DateTime::createFromArray([2020])->format(DateTime::FORMATS['w3c'])
         );
     }
 }

@@ -11,7 +11,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             31,
-            DateTime::fromArray([2019, 1, 31])->getDate()
+            DateTime::createFromArray([2019, 1, 31])->getDate()
         );
     }
 
@@ -19,7 +19,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             2,
-            DateTime::fromArray([2019, 1, 1])->getDay()
+            DateTime::createFromArray([2019, 1, 1])->getDay()
         );
     }
 
@@ -27,7 +27,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             1,
-            DateTime::fromArray([2018, 12, 31])->getDay()
+            DateTime::createFromArray([2018, 12, 31])->getDay()
         );
     }
 
@@ -35,7 +35,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             152,
-            DateTime::fromArray([2019, 6, 1])->getDayOfYear()
+            DateTime::createFromArray([2019, 6, 1])->getDayOfYear()
         );
     }
 
@@ -43,7 +43,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             0,
-            DateTime::fromArray([2018, 12, 30])->getDay()
+            DateTime::createFromArray([2018, 12, 30])->getDay()
         );
     }
 
@@ -51,7 +51,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             6,
-            DateTime::fromArray([2019, 1, 1, 6])->getHours()
+            DateTime::createFromArray([2019, 1, 1, 6])->getHours()
         );
     }
 
@@ -59,7 +59,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             23,
-            DateTime::fromArray([2019, 1, 1, 23])->getHours()
+            DateTime::createFromArray([2019, 1, 1, 23])->getHours()
         );
     }
 
@@ -67,7 +67,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             'en',
-            DateTime::fromArray([2019])->getLocale()
+            DateTime::createFromArray([2019])->getLocale()
         );
     }
 
@@ -75,7 +75,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             550,
-            DateTime::fromArray([2019, 1, 1, 0, 0, 0, 550])->getMilliseconds()
+            DateTime::createFromArray([2019, 1, 1, 0, 0, 0, 550])->getMilliseconds()
         );
     }
 
@@ -83,7 +83,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             32,
-            DateTime::fromArray([2019, 1, 1, 0, 32])->getMinutes()
+            DateTime::createFromArray([2019, 1, 1, 0, 32])->getMinutes()
         );
     }
 
@@ -91,7 +91,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             6,
-            DateTime::fromArray([2019, 6, 1])->getMonth()
+            DateTime::createFromArray([2019, 6, 1])->getMonth()
         );
     }
 
@@ -99,7 +99,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             3,
-            DateTime::fromArray([2019, 8, 1])->getQuarter()
+            DateTime::createFromArray([2019, 8, 1])->getQuarter()
         );
     }
 
@@ -107,7 +107,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             25,
-            DateTime::fromArray([2019, 1, 1, 0, 0, 25])->getSeconds()
+            DateTime::createFromArray([2019, 1, 1, 0, 0, 25])->getSeconds()
         );
     }
 
@@ -115,7 +115,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             1546300800000,
-            DateTime::fromTimestamp(1546300800)->getTime()
+            DateTime::createFromTimestamp(1546300800)->getTime()
         );
     }
 
@@ -123,7 +123,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             1546300800,
-            DateTime::fromTimestamp(1546300800)->getTimestamp()
+            DateTime::createFromTimestamp(1546300800)->getTimestamp()
         );
     }
 
@@ -163,7 +163,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             22,
-            DateTime::fromArray([2019, 6, 1])->getWeek()
+            DateTime::createFromArray([2019, 6, 1])->getWeek()
         );
     }
 
@@ -171,7 +171,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             3,
-            DateTime::fromArray([2019, 1, 1])->getWeekDay()
+            DateTime::createFromArray([2019, 1, 1])->getWeekDay()
         );
     }
 
@@ -179,7 +179,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             1,
-            DateTime::fromArray([2019, 6, 1])->getWeekDayInMonth()
+            DateTime::createFromArray([2019, 6, 1])->getWeekDayInMonth()
         );
     }
 
@@ -187,7 +187,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             1,
-            DateTime::fromArray([2019, 6, 7])->getWeekDayInMonth()
+            DateTime::createFromArray([2019, 6, 7])->getWeekDayInMonth()
         );
     }
 
@@ -195,7 +195,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             2,
-            DateTime::fromArray([2018, 12, 31])->getWeekDay()
+            DateTime::createFromArray([2018, 12, 31])->getWeekDay()
         );
     }
 
@@ -203,7 +203,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             1,
-            DateTime::fromArray([2018, 12, 30])->getWeekDay()
+            DateTime::createFromArray([2018, 12, 30])->getWeekDay()
         );
     }
 
@@ -211,7 +211,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             1,
-            DateTime::fromArray([2019, 6, 1])->getWeekOfMonth()
+            DateTime::createFromArray([2019, 6, 1])->getWeekOfMonth()
         );
     }
 
@@ -219,7 +219,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             2,
-            DateTime::fromArray([2019, 6, 3])->getWeekOfMonth()
+            DateTime::createFromArray([2019, 6, 3])->getWeekOfMonth()
         );
     }
 
@@ -227,7 +227,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             1,
-            DateTime::fromArray([2019, 12, 30])->getWeek()
+            DateTime::createFromArray([2019, 12, 30])->getWeek()
         );
     }
 
@@ -235,7 +235,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             2019,
-            DateTime::fromArray([2019, 1, 1])->getWeekYear()
+            DateTime::createFromArray([2019, 1, 1])->getWeekYear()
         );
     }
 
@@ -243,7 +243,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             2020,
-            DateTime::fromArray([2019, 12, 30])->getWeekYear()
+            DateTime::createFromArray([2019, 12, 30])->getWeekYear()
         );
     }
 
@@ -251,7 +251,7 @@ trait AttributesGetTestTrait
     {
         $this->assertSame(
             2018,
-            DateTime::fromArray([2018])->getYear()
+            DateTime::createFromArray([2018])->getYear()
         );
     }
 }

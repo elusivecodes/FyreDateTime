@@ -11,7 +11,7 @@ trait OutputTestTrait
     {
         $this->assertSame(
             'Mon Jan 01 2018 00:00:00 +1000 (Australia/Brisbane)',
-            ''.DateTime::fromArray([2018], 'Australia/Brisbane')
+            ''.DateTime::createFromArray([2018], 'Australia/Brisbane')
         );
     }
 
@@ -19,7 +19,7 @@ trait OutputTestTrait
     {
         $this->assertSame(
             'Mon Jan 01 2018',
-            DateTime::fromArray([2018])->toDateString()
+            DateTime::createFromArray([2018])->toDateString()
         );
     }
 
@@ -27,7 +27,7 @@ trait OutputTestTrait
     {
         $this->assertSame(
             '2017-12-31T14:00:00.000+00:00',
-            DateTime::fromArray([2018], 'Australia/Brisbane')->toISOString()
+            DateTime::createFromArray([2018], 'Australia/Brisbane')->toIsoString()
         );
     }
 
@@ -35,7 +35,7 @@ trait OutputTestTrait
     {
         $this->assertSame(
             'Mon Jan 01 2018 00:00:00 +1000 (Australia/Brisbane)',
-            DateTime::fromArray([2018], 'Australia/Brisbane')->toString()
+            DateTime::createFromArray([2018], 'Australia/Brisbane')->toString()
         );
     }
 
@@ -43,7 +43,7 @@ trait OutputTestTrait
     {
         $this->assertSame(
             '00:00:00 +0000 (UTC)',
-            DateTime::fromArray([2018])->toTimeString()
+            DateTime::createFromArray([2018])->toTimeString()
         );
     }
 
@@ -51,7 +51,7 @@ trait OutputTestTrait
     {
         $this->assertSame(
             'Sun Dec 31 2017 14:00:00 +0000 (UTC)',
-            DateTime::fromArray([2018], 'Australia/Brisbane')->toUTCString()
+            DateTime::createFromArray([2018], 'Australia/Brisbane')->toUTCString()
         );
     }
 }

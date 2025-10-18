@@ -11,7 +11,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '11',
-            DateTime::fromArray([2018, 1, 1, 23])->format('K')
+            DateTime::createFromArray([2018, 1, 1, 23])->format('K')
         );
     }
 
@@ -19,7 +19,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '0',
-            DateTime::fromArray([2018, 1, 1, 0])->format('K')
+            DateTime::createFromArray([2018, 1, 1, 0])->format('K')
         );
     }
 
@@ -27,7 +27,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '11',
-            DateTime::fromArray([2018, 1, 1, 23])->format('KK')
+            DateTime::createFromArray([2018, 1, 1, 23])->format('KK')
         );
     }
 
@@ -35,7 +35,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '00',
-            DateTime::fromArray([2018, 1, 1, 0])->format('KK')
+            DateTime::createFromArray([2018, 1, 1, 0])->format('KK')
         );
     }
 
@@ -43,7 +43,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '12',
-            DateTime::fromArray([2018, 1, 1, 12])->format('h')
+            DateTime::createFromArray([2018, 1, 1, 12])->format('h')
         );
     }
 
@@ -51,7 +51,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1, 1, 1])->format('h')
+            DateTime::createFromArray([2018, 1, 1, 1])->format('h')
         );
     }
 
@@ -59,7 +59,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '11',
-            DateTime::fromArray([2018, 1, 1, 23])->format('hh')
+            DateTime::createFromArray([2018, 1, 1, 23])->format('hh')
         );
     }
 
@@ -67,7 +67,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1, 1, 1])->format('hh')
+            DateTime::createFromArray([2018, 1, 1, 1])->format('hh')
         );
     }
 
@@ -75,7 +75,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '23',
-            DateTime::fromArray([2018, 1, 1, 23])->format('H')
+            DateTime::createFromArray([2018, 1, 1, 23])->format('H')
         );
     }
 
@@ -83,7 +83,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '0',
-            DateTime::fromArray([2018, 1, 1, 0])->format('H')
+            DateTime::createFromArray([2018, 1, 1, 0])->format('H')
         );
     }
 
@@ -91,7 +91,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '23',
-            DateTime::fromArray([2018, 1, 1, 23])->format('HH')
+            DateTime::createFromArray([2018, 1, 1, 23])->format('HH')
         );
     }
 
@@ -99,7 +99,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '00',
-            DateTime::fromArray([2018, 1, 1, 0])->format('HH')
+            DateTime::createFromArray([2018, 1, 1, 0])->format('HH')
         );
     }
 
@@ -107,7 +107,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '24',
-            DateTime::fromArray([2018, 1, 1, 0])->format('k')
+            DateTime::createFromArray([2018, 1, 1, 0])->format('k')
         );
     }
 
@@ -115,7 +115,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1, 1, 1])->format('k')
+            DateTime::createFromArray([2018, 1, 1, 1])->format('k')
         );
     }
 
@@ -123,7 +123,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '24',
-            DateTime::fromArray([2018, 1, 1, 0])->format('kk')
+            DateTime::createFromArray([2018, 1, 1, 0])->format('kk')
         );
     }
 
@@ -131,7 +131,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1, 1, 1])->format('kk')
+            DateTime::createFromArray([2018, 1, 1, 1])->format('kk')
         );
     }
 
@@ -139,7 +139,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Friday',
-            DateTime::fromArray([2018, 6, 1])->format('EEEE')
+            DateTime::createFromArray([2018, 6, 1])->format('EEEE')
         );
     }
 
@@ -147,7 +147,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'F',
-            DateTime::fromArray([2018, 6, 1])->format('EEEEE')
+            DateTime::createFromArray([2018, 6, 1])->format('EEEEE')
         );
     }
 
@@ -155,7 +155,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Fri',
-            DateTime::fromArray([2018, 6, 1])->format('EEE')
+            DateTime::createFromArray([2018, 6, 1])->format('EEE')
         );
     }
 
@@ -163,7 +163,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '21',
-            DateTime::fromArray([2018, 1, 21])->format('d')
+            DateTime::createFromArray([2018, 1, 21])->format('d')
         );
     }
 
@@ -171,7 +171,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1, 1])->format('d')
+            DateTime::createFromArray([2018, 1, 1])->format('d')
         );
     }
 
@@ -179,7 +179,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '21',
-            DateTime::fromArray([2018, 1, 21])->format('dd')
+            DateTime::createFromArray([2018, 1, 21])->format('dd')
         );
     }
 
@@ -187,7 +187,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1, 1])->format('dd')
+            DateTime::createFromArray([2018, 1, 1])->format('dd')
         );
     }
 
@@ -195,7 +195,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 6, 1])->format('F')
+            DateTime::createFromArray([2018, 6, 1])->format('F')
         );
     }
 
@@ -203,7 +203,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 6, 7])->format('F')
+            DateTime::createFromArray([2018, 6, 7])->format('F')
         );
     }
 
@@ -211,7 +211,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '152',
-            DateTime::fromArray([2018, 6, 1])->format('D')
+            DateTime::createFromArray([2018, 6, 1])->format('D')
         );
     }
 
@@ -219,7 +219,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1, 1])->format('D')
+            DateTime::createFromArray([2018, 1, 1])->format('D')
         );
     }
 
@@ -227,7 +227,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '152',
-            DateTime::fromArray([2018, 6, 1])->format('DD')
+            DateTime::createFromArray([2018, 6, 1])->format('DD')
         );
     }
 
@@ -235,7 +235,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1, 1])->format('DD')
+            DateTime::createFromArray([2018, 1, 1])->format('DD')
         );
     }
 
@@ -243,7 +243,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '152',
-            DateTime::fromArray([2018, 6, 1])->format('DDD')
+            DateTime::createFromArray([2018, 6, 1])->format('DDD')
         );
     }
 
@@ -251,7 +251,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '001',
-            DateTime::fromArray([2018, 1, 1])->format('DDD')
+            DateTime::createFromArray([2018, 1, 1])->format('DDD')
         );
     }
 
@@ -259,7 +259,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'AM',
-            DateTime::fromArray([2018, 1, 1, 0])->format('aaaa')
+            DateTime::createFromArray([2018, 1, 1, 0])->format('aaaa')
         );
     }
 
@@ -267,7 +267,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'PM',
-            DateTime::fromArray([2018, 1, 1, 12])->format('aaaa')
+            DateTime::createFromArray([2018, 1, 1, 12])->format('aaaa')
         );
     }
 
@@ -275,7 +275,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'AM',
-            DateTime::fromArray([2018, 1, 1, 0])->format('aaa')
+            DateTime::createFromArray([2018, 1, 1, 0])->format('aaa')
         );
     }
 
@@ -283,7 +283,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'PM',
-            DateTime::fromArray([2018, 1, 1, 12])->format('aaa')
+            DateTime::createFromArray([2018, 1, 1, 12])->format('aaa')
         );
     }
 
@@ -291,7 +291,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Anno Domini',
-            DateTime::fromArray([2018])->format('GGGG')
+            DateTime::createFromArray([2018])->format('GGGG')
         );
     }
 
@@ -299,7 +299,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Before Christ',
-            DateTime::fromArray([-5])->format('GGGG')
+            DateTime::createFromArray([-5])->format('GGGG')
         );
     }
 
@@ -307,7 +307,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'A',
-            DateTime::fromArray([2018])->format('GGGGG')
+            DateTime::createFromArray([2018])->format('GGGGG')
         );
     }
 
@@ -315,7 +315,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'B',
-            DateTime::fromArray([-5])->format('GGGGG')
+            DateTime::createFromArray([-5])->format('GGGGG')
         );
     }
 
@@ -323,7 +323,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'AD',
-            DateTime::fromArray([2018])->format('GGG')
+            DateTime::createFromArray([2018])->format('GGG')
         );
     }
 
@@ -331,7 +331,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'BC',
-            DateTime::fromArray([-5])->format('GGG')
+            DateTime::createFromArray([-5])->format('GGG')
         );
     }
 
@@ -339,7 +339,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '123',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123])->format('SSS')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 0, 123])->format('SSS')
         );
     }
 
@@ -347,7 +347,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '123000',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123])->format('SSSSSS')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 0, 123])->format('SSSSSS')
         );
     }
 
@@ -355,7 +355,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123])->format('S')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 0, 123])->format('S')
         );
     }
 
@@ -363,7 +363,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '25',
-            DateTime::fromArray([2018, 1, 1, 0, 25])->format('m')
+            DateTime::createFromArray([2018, 1, 1, 0, 25])->format('m')
         );
     }
 
@@ -371,7 +371,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1, 1, 0, 1])->format('m')
+            DateTime::createFromArray([2018, 1, 1, 0, 1])->format('m')
         );
     }
 
@@ -379,7 +379,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '25',
-            DateTime::fromArray([2018, 1, 1, 0, 25])->format('mm')
+            DateTime::createFromArray([2018, 1, 1, 0, 25])->format('mm')
         );
     }
 
@@ -387,7 +387,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1, 1, 0, 1])->format('mm')
+            DateTime::createFromArray([2018, 1, 1, 0, 1])->format('mm')
         );
     }
 
@@ -395,7 +395,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '10',
-            DateTime::fromArray([2018, 10])->format('M')
+            DateTime::createFromArray([2018, 10])->format('M')
         );
     }
 
@@ -403,7 +403,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1])->format('M')
+            DateTime::createFromArray([2018, 1])->format('M')
         );
     }
 
@@ -411,7 +411,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '10',
-            DateTime::fromArray([2018, 10])->format('MM')
+            DateTime::createFromArray([2018, 10])->format('MM')
         );
     }
 
@@ -419,7 +419,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1])->format('MM')
+            DateTime::createFromArray([2018, 1])->format('MM')
         );
     }
 
@@ -427,7 +427,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'October',
-            DateTime::fromArray([2018, 10])->format('MMMM')
+            DateTime::createFromArray([2018, 10])->format('MMMM')
         );
     }
 
@@ -435,7 +435,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'O',
-            DateTime::fromArray([2018, 10])->format('MMMMM')
+            DateTime::createFromArray([2018, 10])->format('MMMMM')
         );
     }
 
@@ -443,7 +443,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Oct',
-            DateTime::fromArray([2018, 10])->format('MMM')
+            DateTime::createFromArray([2018, 10])->format('MMM')
         );
     }
 
@@ -451,7 +451,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '3',
-            DateTime::fromArray([2018, 8])->format('q')
+            DateTime::createFromArray([2018, 8])->format('q')
         );
     }
 
@@ -459,7 +459,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '03',
-            DateTime::fromArray([2018, 8])->format('qq')
+            DateTime::createFromArray([2018, 8])->format('qq')
         );
     }
 
@@ -467,7 +467,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '25',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 25])->format('s')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 25])->format('s')
         );
     }
 
@@ -475,7 +475,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 1])->format('s')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 1])->format('s')
         );
     }
 
@@ -483,7 +483,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '25',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 25])->format('ss')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 25])->format('ss')
         );
     }
 
@@ -491,7 +491,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 1])->format('ss')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 1])->format('ss')
         );
     }
 
@@ -499,7 +499,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '10',
-            DateTime::fromArray([2018, 10])->format('L')
+            DateTime::createFromArray([2018, 10])->format('L')
         );
     }
 
@@ -507,7 +507,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1])->format('L')
+            DateTime::createFromArray([2018, 1])->format('L')
         );
     }
 
@@ -515,7 +515,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '10',
-            DateTime::fromArray([2018, 10])->format('LL')
+            DateTime::createFromArray([2018, 10])->format('LL')
         );
     }
 
@@ -523,7 +523,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1])->format('LL')
+            DateTime::createFromArray([2018, 1])->format('LL')
         );
     }
 
@@ -531,7 +531,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'October',
-            DateTime::fromArray([2018, 10])->format('LLLL')
+            DateTime::createFromArray([2018, 10])->format('LLLL')
         );
     }
 
@@ -539,7 +539,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'O',
-            DateTime::fromArray([2018, 10])->format('LLLLL')
+            DateTime::createFromArray([2018, 10])->format('LLLLL')
         );
     }
 
@@ -547,7 +547,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Oct',
-            DateTime::fromArray([2018, 10])->format('LLL')
+            DateTime::createFromArray([2018, 10])->format('LLL')
         );
     }
 
@@ -555,7 +555,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '3',
-            DateTime::fromArray([2018, 8])->format('Q')
+            DateTime::createFromArray([2018, 8])->format('Q')
         );
     }
 
@@ -563,7 +563,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '03',
-            DateTime::fromArray([2018, 8])->format('QQ')
+            DateTime::createFromArray([2018, 8])->format('QQ')
         );
     }
 
@@ -571,7 +571,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '6',
-            DateTime::fromArray([2018, 6, 1])->format('c')
+            DateTime::createFromArray([2018, 6, 1])->format('c')
         );
     }
 
@@ -579,7 +579,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '6',
-            DateTime::fromArray([2018, 6, 1])->format('cc')
+            DateTime::createFromArray([2018, 6, 1])->format('cc')
         );
     }
 
@@ -587,7 +587,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Friday',
-            DateTime::fromArray([2018, 6, 1])->format('cccc')
+            DateTime::createFromArray([2018, 6, 1])->format('cccc')
         );
     }
 
@@ -595,7 +595,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'F',
-            DateTime::fromArray([2018, 6, 1])->format('ccccc')
+            DateTime::createFromArray([2018, 6, 1])->format('ccccc')
         );
     }
 
@@ -603,7 +603,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Fri',
-            DateTime::fromArray([2018, 6, 1])->format('ccc')
+            DateTime::createFromArray([2018, 6, 1])->format('ccc')
         );
     }
 
@@ -835,7 +835,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '6',
-            DateTime::fromArray([2018, 6, 1])->format('e')
+            DateTime::createFromArray([2018, 6, 1])->format('e')
         );
     }
 
@@ -843,7 +843,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '06',
-            DateTime::fromArray([2018, 6, 1])->format('ee')
+            DateTime::createFromArray([2018, 6, 1])->format('ee')
         );
     }
 
@@ -851,7 +851,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Friday',
-            DateTime::fromArray([2018, 6, 1])->format('eeee')
+            DateTime::createFromArray([2018, 6, 1])->format('eeee')
         );
     }
 
@@ -859,7 +859,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'F',
-            DateTime::fromArray([2018, 6, 1])->format('eeeee')
+            DateTime::createFromArray([2018, 6, 1])->format('eeeee')
         );
     }
 
@@ -867,7 +867,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             'Fri',
-            DateTime::fromArray([2018, 6, 1])->format('eee')
+            DateTime::createFromArray([2018, 6, 1])->format('eee')
         );
     }
 
@@ -875,7 +875,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 6, 1])->format('W')
+            DateTime::createFromArray([2018, 6, 1])->format('W')
         );
     }
 
@@ -883,7 +883,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2',
-            DateTime::fromArray([2018, 6, 3])->format('W')
+            DateTime::createFromArray([2018, 6, 3])->format('W')
         );
     }
 
@@ -891,7 +891,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '22',
-            DateTime::fromArray([2018, 6])->format('w')
+            DateTime::createFromArray([2018, 6])->format('w')
         );
     }
 
@@ -899,7 +899,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '1',
-            DateTime::fromArray([2018, 1])->format('w')
+            DateTime::createFromArray([2018, 1])->format('w')
         );
     }
 
@@ -907,7 +907,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '22',
-            DateTime::fromArray([2018, 6])->format('ww')
+            DateTime::createFromArray([2018, 6])->format('ww')
         );
     }
 
@@ -915,7 +915,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '01',
-            DateTime::fromArray([2018, 1])->format('ww')
+            DateTime::createFromArray([2018, 1])->format('ww')
         );
     }
 
@@ -923,7 +923,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2018',
-            DateTime::fromArray([2018])->format('Y')
+            DateTime::createFromArray([2018])->format('Y')
         );
     }
 
@@ -931,7 +931,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2020',
-            DateTime::fromArray([2019, 12, 30])->format('Y')
+            DateTime::createFromArray([2019, 12, 30])->format('Y')
         );
     }
 
@@ -939,7 +939,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '5',
-            DateTime::fromArray([5])->format('Y')
+            DateTime::createFromArray([5])->format('Y')
         );
     }
 
@@ -947,7 +947,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '18',
-            DateTime::fromArray([2018])->format('YY')
+            DateTime::createFromArray([2018])->format('YY')
         );
     }
 
@@ -955,7 +955,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '20',
-            DateTime::fromArray([2019, 12, 30])->format('YY')
+            DateTime::createFromArray([2019, 12, 30])->format('YY')
         );
     }
 
@@ -963,7 +963,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '05',
-            DateTime::fromArray([5])->format('YY')
+            DateTime::createFromArray([5])->format('YY')
         );
     }
 
@@ -971,7 +971,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2018',
-            DateTime::fromArray([2018])->format('YYY')
+            DateTime::createFromArray([2018])->format('YYY')
         );
     }
 
@@ -979,7 +979,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2020',
-            DateTime::fromArray([2019, 12, 30])->format('YYY')
+            DateTime::createFromArray([2019, 12, 30])->format('YYY')
         );
     }
 
@@ -987,7 +987,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '005',
-            DateTime::fromArray([5])->format('YYY')
+            DateTime::createFromArray([5])->format('YYY')
         );
     }
 
@@ -995,7 +995,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2018',
-            DateTime::fromArray([2018])->format('YYYY')
+            DateTime::createFromArray([2018])->format('YYYY')
         );
     }
 
@@ -1003,7 +1003,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2020',
-            DateTime::fromArray([2019, 12, 30])->format('YYYY')
+            DateTime::createFromArray([2019, 12, 30])->format('YYYY')
         );
     }
 
@@ -1011,7 +1011,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '0005',
-            DateTime::fromArray([5])->format('YYYY')
+            DateTime::createFromArray([5])->format('YYYY')
         );
     }
 
@@ -1019,7 +1019,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2018',
-            DateTime::fromArray([2018])->format('y')
+            DateTime::createFromArray([2018])->format('y')
         );
     }
 
@@ -1027,7 +1027,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '5',
-            DateTime::fromArray([5])->format('y')
+            DateTime::createFromArray([5])->format('y')
         );
     }
 
@@ -1035,7 +1035,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '18',
-            DateTime::fromArray([2018])->format('yy')
+            DateTime::createFromArray([2018])->format('yy')
         );
     }
 
@@ -1043,7 +1043,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '05',
-            DateTime::fromArray([5])->format('yy')
+            DateTime::createFromArray([5])->format('yy')
         );
     }
 
@@ -1051,7 +1051,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2018',
-            DateTime::fromArray([2018])->format('yyy')
+            DateTime::createFromArray([2018])->format('yyy')
         );
     }
 
@@ -1059,7 +1059,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '005',
-            DateTime::fromArray([5])->format('yyy')
+            DateTime::createFromArray([5])->format('yyy')
         );
     }
 
@@ -1067,7 +1067,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '2018',
-            DateTime::fromArray([2018])->format('yyyy')
+            DateTime::createFromArray([2018])->format('yyyy')
         );
     }
 
@@ -1075,7 +1075,7 @@ trait FormatTestTrait
     {
         $this->assertSame(
             '0005',
-            DateTime::fromArray([5])->format('yyyy')
+            DateTime::createFromArray([5])->format('yyyy')
         );
     }
 }

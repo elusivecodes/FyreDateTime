@@ -229,39 +229,39 @@ Get the year in current time zone.
 $year = $dateTime->getYear();
 ```
 
-**Set Date**
+**With Date**
 
-Set the date in current time zone.
+Clone the *DateTime* with a new date in current time zone.
 
 - `$date` is a number representing the date.
 
 ```php
-$newDate = $dateTime->setDate($date);
+$newDate = $dateTime->withDate($date);
 ```
 
-**Set Day**
+**With Day**
 
-Set the day of the week in current time zone.
+Clone the *DateTime* with a new day of the week in current time zone.
 
 - `$day` is a number representing the day of the week (between *0* and *6*).
 
 ```php
-$newDateTime = $dateTime->setDay($day);
+$newDateTime = $dateTime->withDay($day);
 ```
 
-**Set Day Of Year**
+**With Day Of Year**
 
-Set the day of the year in current time zone.
+Clone the *DateTime* with a new day of the year in current time zone.
 
 - `$dayOfYear` is a number representing the day of the year (between *0* and *365*).
 
 ```php
-$newDateTime = $dateTime->setDayOfYear($dayOfYear);
+$newDateTime = $dateTime->withDayOfYear($dayOfYear);
 ```
 
-**Set Month**
+**With Month**
 
-Set the month in current time zone.
+Clone the *DateTime* with a new month in current time zone.
 
 - `$month` is a number representing the month (between *1* and *12*).
 - `$date` is a number representing the date, and will default to the current value.
@@ -271,22 +271,22 @@ If the `$date` argument is omitted, and the new month contains less days than th
 To disable date clamping, use the method `DateTime::setDateClamping()` using *false* as the argument.
 
 ```php
-$newDateTime = $dateTime->setMonth($month, $date);
+$newDateTime = $dateTime->withMonth($month, $date);
 ```
 
-**Set Quarter**
+**With Quarter**
 
-Set the quarter of the year in current time zone.
+Clone the *DateTime* with a new quarter of the year in current time zone.
 
 - `$quarter` is a number representing the quarter between *1* and *4*.
 
 ```php
-$newDateTime = $dateTime->setQuarter($quarter);
+$newDateTime = $dateTime->withQuarter($quarter);
 ```
 
-**Set Year**
+**With Year**
 
-Set the year in current time zone.
+Clone the *DateTime* with a new year in current time zone.
 
 - `$year` is a number representing the year.
 - `$month` is a number representing the month (between *1* and *12*), and will default to the current value.
@@ -297,7 +297,7 @@ If the `$date` argument is omitted, and the new month contains less days than th
 To disable date clamping, use the method `DateTime::setDateClamping()` using *false* as the argument.
 
 ```php
-$newDateTime = $dateTime->setYear($year, $month, $date);
+$newDateTime = $dateTime->withYear($year, $month, $date);
 ```
 
 
@@ -353,57 +353,57 @@ This method is identical to `getYear()` except in cases where the week belongs t
 $weekYear = $dateTime->getWeekYear();
 ```
 
-**Set Week**
+**With Week**
 
-Set the week in current time zone.
+Clone the *DateTime* with a new week in current time zone.
 
 - `$week` is a number representing the week.
 - `$weekDay` is a number representing the day (between *1* and *7*), and will default to the current value.
 
 ```php
-$newDateTime = $dateTime->setWeek($week, $weekDay);
+$newDateTime = $dateTime->withWeek($week, $weekDay);
 ```
 
-**Set Week Day**
+**With Week Day**
 
-Set the local day of the week in current time zone.
+Clone the *DateTime* with a new local day of the week in current time zone.
 
 - `$weekDay` is a number representing the week day (between *1* and *7*).
 
 ```php
-$newDateTime = $dateTime->setWeekDay($weekDay);
+$newDateTime = $dateTime->withWeekDay($weekDay);
 ```
 
-**Set Week Day In Month**
+**With Week Day In Month**
 
-Set the day of the week in the month, in current time zone.
+Clone the *DateTime* with a new day of the week in the month, in current time zone.
 
 - `$weekDayInMonth` is a number representing the day of the week in month (between *1* and *5*).
 
 ```php
-$newDateTime = $dateTime->setWeekDayInMonth($weekDayInMonth);
+$newDateTime = $dateTime->withWeekDayInMonth($weekDayInMonth);
 ```
 
-**Set Week Of Month**
+**With Week Of Month**
 
-Set the week of the month in current time zone.
+Clone the *DateTime* with a new week of the month in current time zone.
 
 - `$weekOfMonth` is a number representing the week of the month (between *1*  and *5*).
 
 ```php
-$newDateTime = $dateTime->setWeekOfMonth($weekOfMonth);
+$newDateTime = $dateTime->withWeekOfMonth($weekOfMonth);
 ```
 
-**Set Week Year**
+**With Week Year**
 
-Set the week year in current time zone.
+Clone the *DateTime* with a new week year in current time zone.
 
 - `$weekYear` is a number representing the year.
 - `$week` is a number representing the week, and will default to the current value.
 - `$weekDay` is a number representing the day (between *1* and *7*), and will default to the current value.
 
 ```php
-$newDateTime = $dateTime->setWeekYear($weekYear, $week, $weekDay);
+$newDateTime = $dateTime->withWeekYear($weekYear, $week, $weekDay);
 ```
 
 
@@ -449,9 +449,9 @@ The `$seconds` returned will be between *0* and *59*.
 $seconds = $dateTime->getSeconds();
 ```
 
-**Set Hours**
+**With Hours**
 
-Set the hours of the day in current time zone.
+Clone the *DateTime* with a new hours of the day in current time zone.
 
 - `$hours` is a number representing the hours of the day (between *0* and *23*).
 - `$minutes` is a number representing the minutes of the hour (between *0* and *59*), and will default to the current value.
@@ -459,40 +459,40 @@ Set the hours of the day in current time zone.
 - `$milliseconds` is a number representing the milliseconds of the second (between *0* and *999*), and will default to the current value.
 
 ```php
-$newDateTime = $dateTime->setHours($hours, $minutes, $seconds, $milliseconds);
+$newDateTime = $dateTime->withHours($hours, $minutes, $seconds, $milliseconds);
 ```
 
-**Set Milliseconds**
+**With Milliseconds**
 
-Set the milliseconds of the second in current time zone.
+Clone the *DateTime* with a new milliseconds of the second in current time zone.
 
 - `$milliseconds` is a number representing the milliseconds of the second (between *0* and *999*).
 
 ```php
-$newDateTime = $dateTime->setMilliseconds($milliseconds);
+$newDateTime = $dateTime->withMilliseconds($milliseconds);
 ```
 
-**Set Minutes**
+**With Minutes**
 
-Set the minutes of the hour in current time zone.
+Clone the *DateTime* with a new minutes of the hour in current time zone.
 
 - `$minutes` is a number representing the minutes of the hour (between *0* and *59*).
 - `$seconds` is a number representing the seconds of the minute (between *0* and *59*), and will default to the current value.
 - `$milliseconds` is a number representing the milliseconds of the second (between *0* and *999*), and will default to the current value.
 
 ```php
-$newDateTime = $dateTime->setMinutes($minutes, $seconds, $milliseconds);
+$newDateTime = $dateTime->withMinutes($minutes, $seconds, $milliseconds);
 ```
 
-**Set Seconds**
+**With Seconds**
 
-Set the seconds of the minute in current time zone.
+Clone the *DateTime* with a new seconds of the minute in current time zone.
 
 - `$seconds` is a number representing the seconds of the minute (between *0* and *59*).
 - `$milliseconds` is a number representing the milliseconds of the second (between *0* and *999*), and will default to the current value.
 
 ```php
-$newDateTime = $dateTime->setSeconds($seconds, $milliseconds);
+$newDateTime = $dateTime->withSeconds($seconds, $milliseconds);
 ```
 
 
@@ -514,20 +514,20 @@ Get the number of seconds since the UNIX epoch.
 $timestamp = $dateTime->getTimestamp();
 ```
 
-**Set Milliseconds**
+**With Milliseconds**
 
-Set the number of milliseconds since the UNIX epoch.
+Clone the *DateTime* with a new number of milliseconds since the UNIX epoch.
 
 ```php
-$newDateTime = $dateTime->setTime($time);
+$newDateTime = $dateTime->withTime($time);
 ```
 
-**Set Seconds**
+**With Seconds**
 
-Set the number of seconds since the UNIX epoch.
+Clone the *DateTime* with a new number of seconds since the UNIX epoch.
 
 ```php
-$newDateTime = $dateTime->setTimestamp($timestamp);
+$newDateTime = $dateTime->withTimestamp($timestamp);
 ```
 
 
@@ -549,24 +549,24 @@ Get the UTC offset (in minutes) of the current time zone.
 $offset = $dateTime->getTimeZoneOffset();
 ```
 
-**Set Time Zone**
+**With Time Zone**
 
-Set the current time zone.
+Clone the *DateTime* with a new time zone.
 
 - `$timeZone` is the name of the new time zone, which can be either "*UTC*", a supported value from the [IANA timeZone database](https://www.iana.org/time-zones) or an offset string.
 
 ```php
-$newDateTime = $dateTime->setTimeZone($timeZone);
+$newDateTime = $dateTime->withTimeZone($timeZone);
 ```
 
-**Set Time Zone Offset**
+**With Time Zone Offset**
 
-Set the UTC offset (in minutes).
+Clone the *DateTime* with a new UTC offset (in minutes).
 
 - `$offset` is the UTC offset (in minutes).
 
 ```php
-$newDateTime = $dateTime->setTimeZoneOffset($offset);
+$newDateTime = $dateTime->withTimeZoneOffset($offset);
 ```
 
 
@@ -580,14 +580,14 @@ Get the name of the current locale.
 $locale = $dateTime->getLocale();
 ```
 
-**Set Locale**
+**With Locale**
 
-Set the current locale.
+Clone the *DateTime* with a new locale.
 
 - `$locale` is the name of the new locale.
 
 ```php
-$newDateTime = $dateTime->setLocale($locale);
+$newDateTime = $dateTime->withLocale($locale);
 ```
 
 

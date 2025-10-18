@@ -13,8 +13,8 @@ trait UtilityTestTrait
         foreach ($dayNames as $i => $dayName) {
             $this->assertSame(
                 $dayName,
-                DateTime::fromArray([2019, 1, 1])
-                    ->setDay($i)
+                DateTime::createFromArray([2019, 1, 1])
+                    ->withDay($i)
                     ->dayName(),
             );
         }
@@ -26,8 +26,8 @@ trait UtilityTestTrait
         foreach ($dayNames as $i => $dayName) {
             $this->assertSame(
                 $dayName,
-                DateTime::fromArray([2019, 1, 1])
-                    ->setDay($i)
+                DateTime::createFromArray([2019, 1, 1])
+                    ->withDay($i)
                     ->dayName('narrow'),
             );
         }
@@ -39,8 +39,8 @@ trait UtilityTestTrait
         foreach ($dayNames as $i => $dayName) {
             $this->assertSame(
                 $dayName,
-                DateTime::fromArray([2019, 1, 1])
-                    ->setDay($i)
+                DateTime::createFromArray([2019, 1, 1])
+                    ->withDay($i)
                     ->dayName('short'),
             );
         }
@@ -50,7 +50,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'AM',
-            DateTime::fromArray([2019, 1, 1, 0])
+            DateTime::createFromArray([2019, 1, 1, 0])
                 ->dayPeriod(),
         );
     }
@@ -59,7 +59,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'PM',
-            DateTime::fromArray([2019, 1, 1, 12])
+            DateTime::createFromArray([2019, 1, 1, 12])
                 ->dayPeriod(),
         );
     }
@@ -68,7 +68,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'AM',
-            DateTime::fromArray([2019, 1, 1, 0])
+            DateTime::createFromArray([2019, 1, 1, 0])
                 ->dayPeriod('short'),
         );
     }
@@ -77,7 +77,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'PM',
-            DateTime::fromArray([2019, 1, 1, 12])
+            DateTime::createFromArray([2019, 1, 1, 12])
                 ->dayPeriod('short'),
         );
     }
@@ -88,7 +88,7 @@ trait UtilityTestTrait
         foreach ($monthDays as $i => $daysInMonth) {
             $this->assertSame(
                 $daysInMonth,
-                DateTime::fromArray([2018, $i + 1, 1])
+                DateTime::createFromArray([2018, $i + 1, 1])
                     ->daysInMonth(),
             );
         }
@@ -98,7 +98,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             29,
-            DateTime::fromArray([2020, 2, 1])
+            DateTime::createFromArray([2020, 2, 1])
                 ->daysInMonth(),
         );
     }
@@ -107,7 +107,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             365,
-            DateTime::fromArray([2018, 1, 1])
+            DateTime::createFromArray([2018, 1, 1])
                 ->daysInYear(),
         );
     }
@@ -116,7 +116,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             366,
-            DateTime::fromArray([2020, 1, 1])
+            DateTime::createFromArray([2020, 1, 1])
                 ->daysInYear(),
         );
     }
@@ -125,7 +125,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'Anno Domini',
-            DateTime::fromArray([2018])
+            DateTime::createFromArray([2018])
                 ->era(),
         );
     }
@@ -134,7 +134,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'Before Christ',
-            DateTime::fromArray([-5])
+            DateTime::createFromArray([-5])
                 ->era(),
         );
     }
@@ -143,7 +143,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'A',
-            DateTime::fromArray([2018])
+            DateTime::createFromArray([2018])
                 ->era('narrow'),
         );
     }
@@ -152,7 +152,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'B',
-            DateTime::fromArray([-5])
+            DateTime::createFromArray([-5])
                 ->era('narrow'),
         );
     }
@@ -161,7 +161,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'AD',
-            DateTime::fromArray([2018])
+            DateTime::createFromArray([2018])
                 ->era('short'),
         );
     }
@@ -170,7 +170,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'BC',
-            DateTime::fromArray([-5])
+            DateTime::createFromArray([-5])
                 ->era('short'),
         );
     }
@@ -178,7 +178,7 @@ trait UtilityTestTrait
     public function testIsDst(): void
     {
         $this->assertFalse(
-            DateTime::fromArray([2018, 1, 1])
+            DateTime::createFromArray([2018, 1, 1])
                 ->isDST(),
         );
     }
@@ -186,7 +186,7 @@ trait UtilityTestTrait
     public function testIsDstDst(): void
     {
         $this->assertTrue(
-            DateTime::fromArray([2018, 6, 1], 'America/New_York')
+            DateTime::createFromArray([2018, 6, 1], 'America/New_York')
                 ->isDST(),
         );
     }
@@ -194,7 +194,7 @@ trait UtilityTestTrait
     public function testIsLeapYear(): void
     {
         $this->assertFalse(
-            DateTime::fromArray([2019])
+            DateTime::createFromArray([2019])
                 ->isLeapYear(),
         );
     }
@@ -202,7 +202,7 @@ trait UtilityTestTrait
     public function testIsLeapYearLeapYear(): void
     {
         $this->assertTrue(
-            DateTime::fromArray([2020])
+            DateTime::createFromArray([2020])
                 ->isLeapYear(),
         );
     }
@@ -213,7 +213,7 @@ trait UtilityTestTrait
         foreach ($monthNames as $i => $monthName) {
             $this->assertSame(
                 $monthName,
-                DateTime::fromArray([2019, $i + 1, 1])
+                DateTime::createFromArray([2019, $i + 1, 1])
                     ->monthName(),
             );
         }
@@ -225,7 +225,7 @@ trait UtilityTestTrait
         foreach ($monthNames as $i => $monthName) {
             $this->assertSame(
                 $monthName,
-                DateTime::fromArray([2019, $i + 1, 1])
+                DateTime::createFromArray([2019, $i + 1, 1])
                     ->monthName('narrow'),
             );
         }
@@ -237,7 +237,7 @@ trait UtilityTestTrait
         foreach ($monthNames as $i => $monthName) {
             $this->assertSame(
                 $monthName,
-                DateTime::fromArray([2019, $i + 1, 1])
+                DateTime::createFromArray([2019, $i + 1, 1])
                     ->monthName('short'),
             );
         }
@@ -247,7 +247,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'Australian Eastern Standard Time',
-            DateTime::fromArray([2018], 'Australia/Brisbane')
+            DateTime::createFromArray([2018], 'Australia/Brisbane')
                 ->timeZoneName(),
         );
     }
@@ -256,7 +256,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'GMT+10:00',
-            DateTime::fromArray([2018], '+10:00')
+            DateTime::createFromArray([2018], '+10:00')
                 ->timeZoneName(),
         );
     }
@@ -265,7 +265,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'GMT+10',
-            DateTime::fromArray([2018], 'Australia/Brisbane')
+            DateTime::createFromArray([2018], 'Australia/Brisbane')
                 ->timeZoneName('short'),
         );
     }
@@ -274,7 +274,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             'GMT+10',
-            DateTime::fromArray([2018], '+10:00')
+            DateTime::createFromArray([2018], '+10:00')
                 ->timeZoneName('short'),
         );
     }
@@ -283,7 +283,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             52,
-            DateTime::fromArray([2018, 1, 1])
+            DateTime::createFromArray([2018, 1, 1])
                 ->weeksInYear(),
         );
     }
@@ -292,7 +292,7 @@ trait UtilityTestTrait
     {
         $this->assertSame(
             53,
-            DateTime::fromArray([2016, 1, 1])
+            DateTime::createFromArray([2016, 1, 1])
                 ->weeksInYear(),
         );
     }

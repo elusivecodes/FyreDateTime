@@ -30,7 +30,7 @@ trait CreateTestTrait
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            (new DateTime('January 1, 2019'))->toISOString()
+            (new DateTime('January 1, 2019'))->toIsoString()
         );
     }
 
@@ -38,7 +38,7 @@ trait CreateTestTrait
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            (new DateTime('January 1, 2019 00:00:00'))->toISOString()
+            (new DateTime('January 1, 2019 00:00:00'))->toIsoString()
         );
     }
 
@@ -46,7 +46,7 @@ trait CreateTestTrait
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            (new DateTime('2019-01-01T00:00:00'))->toISOString()
+            (new DateTime('2019-01-01T00:00:00'))->toIsoString()
         );
     }
 
@@ -54,7 +54,7 @@ trait CreateTestTrait
     {
         $this->assertSame(
             '2019-01-01T00:00:00.123+00:00',
-            (new DateTime('2019-01-01 00:00:00.123'))->toISOString()
+            (new DateTime('2019-01-01 00:00:00.123'))->toIsoString()
         );
     }
 
@@ -70,7 +70,7 @@ trait CreateTestTrait
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            (new DateTime('January 1, 2019 00:00:00', 'Australia/Brisbane'))->toISOString()
+            (new DateTime('January 1, 2019 00:00:00', 'Australia/Brisbane'))->toIsoString()
         );
     }
 
@@ -78,7 +78,7 @@ trait CreateTestTrait
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            (new DateTime('January 1, 2019 00:00:00', '+10:00'))->toISOString()
+            (new DateTime('January 1, 2019 00:00:00', '+10:00'))->toIsoString()
         );
     }
 
@@ -86,196 +86,196 @@ trait CreateTestTrait
     {
         $this->assertSame(
             '2018-12-31T14:00:00.000+00:00',
-            (new DateTime('January 1, 2019 00:00:00', '+1000'))->toISOString()
+            (new DateTime('January 1, 2019 00:00:00', '+1000'))->toIsoString()
         );
     }
 
-    public function testFromArray(): void
+    public function testCreateFromArray(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromArray([2019])->toISOString()
+            DateTime::createFromArray([2019])->toIsoString()
         );
     }
 
-    public function testFromArrayDate(): void
+    public function testCreateFromArrayDate(): void
     {
         $this->assertSame(
             '2019-01-02T00:00:00.000+00:00',
-            DateTime::fromArray([2019, 1, 2])->toISOString()
+            DateTime::createFromArray([2019, 1, 2])->toIsoString()
         );
     }
 
-    public function testFromArrayHour(): void
+    public function testCreateFromArrayHour(): void
     {
         $this->assertSame(
             '2019-01-01T01:00:00.000+00:00',
-            DateTime::fromArray([2019, 1, 1, 1])->toISOString()
+            DateTime::createFromArray([2019, 1, 1, 1])->toIsoString()
         );
     }
 
-    public function testFromArrayInstanceOf(): void
+    public function testCreateFromArrayInstanceOf(): void
     {
         $this->assertInstanceOf(
             DateTime::class,
-            DateTime::fromArray([2018])
+            DateTime::createFromArray([2018])
         );
     }
 
-    public function testFromArrayMillisecond(): void
+    public function testCreateFromArrayMillisecond(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.001+00:00',
-            DateTime::fromArray([2019, 1, 1, 0, 0, 0, 1])->toISOString()
+            DateTime::createFromArray([2019, 1, 1, 0, 0, 0, 1])->toIsoString()
         );
     }
 
-    public function testFromArrayMinute(): void
+    public function testCreateFromArrayMinute(): void
     {
         $this->assertSame(
             '2019-01-01T00:01:00.000+00:00',
-            DateTime::fromArray([2019, 1, 1, 0, 1])->toISOString()
+            DateTime::createFromArray([2019, 1, 1, 0, 1])->toIsoString()
         );
     }
 
-    public function testFromArrayMonth(): void
+    public function testCreateFromArrayMonth(): void
     {
         $this->assertSame(
             '2019-02-01T00:00:00.000+00:00',
-            DateTime::fromArray([2019, 2])->toISOString()
+            DateTime::createFromArray([2019, 2])->toIsoString()
         );
     }
 
-    public function testFromArraySecond(): void
+    public function testCreateFromArraySecond(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:01.000+00:00',
-            DateTime::fromArray([2019, 1, 1, 0, 0, 1])->toISOString()
+            DateTime::createFromArray([2019, 1, 1, 0, 0, 1])->toIsoString()
         );
     }
 
-    public function testFromArrayWithLocale(): void
+    public function testCreateFromArrayWithLocale(): void
     {
         $this->assertSame(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
-            DateTime::fromArray([2019, 1, 1, 0, 0, 0], null, 'ar-eg')->toString()
+            DateTime::createFromArray([2019, 1, 1, 0, 0, 0], null, 'ar-eg')->toString()
         );
     }
 
-    public function testFromArrayWithTimeZone(): void
+    public function testCreateFromArrayWithTimeZone(): void
     {
         $this->assertSame(
             'Tue Jan 01 2019 00:00:00 +1000 (Australia/Brisbane)',
-            DateTime::fromArray([2019, 1, 1, 0, 0, 0], 'Australia/Brisbane')->toString()
+            DateTime::createFromArray([2019, 1, 1, 0, 0, 0], 'Australia/Brisbane')->toString()
         );
     }
 
-    public function testFromDateTime(): void
+    public function testCreateFromIsoString(): void
+    {
+        $this->assertSame(
+            '2019-01-01T00:00:00.000+00:00',
+            DateTime::createFromIsoString('2019-01-01T00:00:00.000+00:00')->toIsoString()
+        );
+    }
+
+    public function testCreateFromIsoStringInstanceOf(): void
+    {
+        $this->assertInstanceOf(
+            DateTime::class,
+            DateTime::createFromIsoString('2019-01-01T00:00:00.000+00:00')
+        );
+    }
+
+    public function testCreateFromIsoStringWithLocale(): void
+    {
+        $this->assertSame(
+            'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
+            DateTime::createFromIsoString('2019-01-01T00:00:00.000+00:00', null, 'ar-eg')->toString()
+        );
+    }
+
+    public function testCreateFromIsoStringWithTimeZone(): void
+    {
+        $this->assertSame(
+            'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
+            DateTime::createFromIsoString('2019-01-01T00:00:00.000+00:00', 'Australia/Brisbane')->toString()
+        );
+    }
+
+    public function testCreateFromNativeDateTime(): void
     {
         $date = new \DateTime('@1546300800');
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromDateTime($date)->toISOString()
+            DateTime::createFromNativeDateTime($date)->toIsoString()
         );
     }
 
-    public function testFromDateTimeInstanceOf(): void
+    public function testCreateFromNativeDateTimeInstanceOf(): void
     {
         $date = new \DateTime('@1546300800');
         $this->assertInstanceOf(
             DateTime::class,
-            DateTime::fromDateTime($date)
+            DateTime::createFromNativeDateTime($date)
         );
     }
 
-    public function testFromDateTimeMilliseconds(): void
+    public function testCreateFromNativeDateTimeMilliseconds(): void
     {
         $date = new \DateTime('2019-01-01 00:00:00.123');
         $this->assertSame(
             '2019-01-01T00:00:00.123+00:00',
-            DateTime::fromDateTime($date)->toISOString()
+            DateTime::createFromNativeDateTime($date)->toIsoString()
         );
     }
 
-    public function testFromDateTimeWithLocale(): void
+    public function testCreateFromNativeDateTimeWithLocale(): void
     {
         $date = new \DateTime('@1546300800');
         $this->assertSame(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (GMT)',
-            DateTime::fromDateTime($date, null, 'ar-eg')->toString()
+            DateTime::createFromNativeDateTime($date, null, 'ar-eg')->toString()
         );
     }
 
-    public function testFromDateTimeWithTimeZone(): void
+    public function testCreateFromNativeDateTimeWithTimeZone(): void
     {
         $date = new \DateTime('@1546300800');
         $this->assertSame(
             'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
-            DateTime::fromDateTime($date, 'Australia/Brisbane')->toString()
+            DateTime::createFromNativeDateTime($date, 'Australia/Brisbane')->toString()
         );
     }
 
-    public function testFromIsoString(): void
+    public function testCreateFromTimestamp(): void
     {
         $this->assertSame(
             '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromISOString('2019-01-01T00:00:00.000+00:00')->toISOString()
+            DateTime::createFromTimestamp(1546300800)->toIsoString()
         );
     }
 
-    public function testFromIsoStringInstanceOf(): void
+    public function testCreateFromTimestampInstanceOf(): void
     {
         $this->assertInstanceOf(
             DateTime::class,
-            DateTime::fromISOString('2019-01-01T00:00:00.000+00:00')
+            DateTime::createFromTimestamp(1546300800)
         );
     }
 
-    public function testFromIsoStringWithLocale(): void
+    public function testCreateFromTimestampWithLocale(): void
     {
         $this->assertSame(
             'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
-            DateTime::fromISOString('2019-01-01T00:00:00.000+00:00', null, 'ar-eg')->toString()
+            DateTime::createFromTimestamp(1546300800, null, 'ar-eg')->toString()
         );
     }
 
-    public function testFromIsoStringWithTimeZone(): void
+    public function testCreateFromTimestampWithTimeZone(): void
     {
         $this->assertSame(
             'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
-            DateTime::fromISOString('2019-01-01T00:00:00.000+00:00', 'Australia/Brisbane')->toString()
-        );
-    }
-
-    public function testFromTimestamp(): void
-    {
-        $this->assertSame(
-            '2019-01-01T00:00:00.000+00:00',
-            DateTime::fromTimestamp(1546300800)->toISOString()
-        );
-    }
-
-    public function testFromTimestampInstanceOf(): void
-    {
-        $this->assertInstanceOf(
-            DateTime::class,
-            DateTime::fromTimestamp(1546300800)
-        );
-    }
-
-    public function testFromTimestampWithLocale(): void
-    {
-        $this->assertSame(
-            'الثلاثاء يناير ٠١ ٢٠١٩ ٠٠:٠٠:٠٠ +0000 (UTC)',
-            DateTime::fromTimestamp(1546300800, null, 'ar-eg')->toString()
-        );
-    }
-
-    public function testFromTimestampWithTimeZone(): void
-    {
-        $this->assertSame(
-            'Tue Jan 01 2019 10:00:00 +1000 (Australia/Brisbane)',
-            DateTime::fromTimestamp(1546300800, 'Australia/Brisbane')->toString()
+            DateTime::createFromTimestamp(1546300800, 'Australia/Brisbane')->toString()
         );
     }
 

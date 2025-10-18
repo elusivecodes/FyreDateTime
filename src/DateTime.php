@@ -8,6 +8,7 @@ use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 use Fyre\Utility\Traits\MacroTrait;
+use Fyre\Utility\Traits\StaticMacroTrait;
 use IntlCalendar;
 use IntlDateFormatter;
 
@@ -32,6 +33,7 @@ use const STR_PAD_LEFT;
 class DateTime
 {
     use MacroTrait;
+    use StaticMacroTrait;
 
     public const FORMATS = [
         'atom' => 'yyyy-MM-dd\'T\'HH:mm:ssxxx',
@@ -59,9 +61,9 @@ class DateTime
 
     protected static array $formatters;
 
-    protected IntlCalendar $calendar;
+    protected readonly IntlCalendar $calendar;
 
-    protected string $locale;
+    protected readonly string $locale;
 
     /**
      * Create a new DateTime from an array.
@@ -71,7 +73,7 @@ class DateTime
      * @param string|null $locale The locale to use.
      * @return DateTime A new DateTime.
      */
-    public static function fromArray(array $dateArray, string|null $timeZone = null, string|null $locale = null): static
+    public static function createFromArray(array $dateArray, string|null $timeZone = null, string|null $locale = null): static
     {
         $dateTime = new static(null, $timeZone, $locale);
 
@@ -83,21 +85,7 @@ class DateTime
 
         $values = array_combine($keys, $dateArray);
 
-        return $dateTime->setCalendarFields($values);
-    }
-
-    /**
-     * Create a new DateTime from a native DateTime.
-     *
-     * @param DateTimeInterface $dateTime The native DateTime.
-     * @param string|null $timeZone The time zone to use.
-     * @param string|null $locale The locale to use.
-     * @return DateTime A new DateTime.
-     */
-    public static function fromDateTime(DateTimeInterface $dateTime, string|null $timeZone = null, string|null $locale = null): static
-    {
-        return static::fromTimestamp($dateTime->getTimestamp(), $timeZone ?? $dateTime->format('e'), $locale)
-            ->setMilliseconds((int) $dateTime->format('v'));
+        return $dateTime->withCalendarFields($values);
     }
 
     /**
@@ -111,7 +99,7 @@ class DateTime
      *
      * @throws DateMalformedStringException if the date string is not in the correct format.
      */
-    public static function fromFormat(string $formatString, string $dateString, string|null $timeZone = null, string|null $locale = null): static
+    public static function createFromFormat(string $formatString, string $dateString, string|null $timeZone = null, string|null $locale = null): static
     {
         $locale = static::parseLocale($locale);
         $timeZone = static::parseTimeZone($timeZone);
@@ -138,7 +126,7 @@ class DateTime
             throw new DateMalformedStringException($message, $code);
         }
 
-        return static::fromTimestamp((int) $timestamp, $timeZoneName, $locale);
+        return static::createFromTimestamp((int) $timestamp, $timeZoneName, $locale);
     }
 
     /**
@@ -149,10 +137,24 @@ class DateTime
      * @param string|null $locale The locale to use.
      * @return DateTime A new DateTime.
      */
-    public static function fromISOString(string $dateString, string|null $timeZone = null, string|null $locale = null): static
+    public static function createFromIsoString(string $dateString, string|null $timeZone = null, string|null $locale = null): static
     {
-        return static::fromFormat(static::FORMATS['rfc3339_extended'], $dateString, $timeZone, 'en')
-            ->setLocale($locale ?? static::getDefaultLocale());
+        return static::createFromFormat(static::FORMATS['rfc3339_extended'], $dateString, $timeZone, 'en')
+            ->withLocale($locale ?? static::getDefaultLocale());
+    }
+
+    /**
+     * Create a new DateTime from a native DateTime.
+     *
+     * @param DateTimeInterface $dateTime The native DateTime.
+     * @param string|null $timeZone The time zone to use.
+     * @param string|null $locale The locale to use.
+     * @return DateTime A new DateTime.
+     */
+    public static function createFromNativeDateTime(DateTimeInterface $dateTime, string|null $timeZone = null, string|null $locale = null): static
+    {
+        return static::createFromTimestamp($dateTime->getTimestamp(), $timeZone ?? $dateTime->format('e'), $locale)
+            ->withMilliseconds((int) $dateTime->format('v'));
     }
 
     /**
@@ -163,7 +165,7 @@ class DateTime
      * @param string|null $locale The locale to use.
      * @return DateTime A new DateTime.
      */
-    public static function fromTimestamp(int $timestamp, string|null $timeZone = null, string|null $locale = null): static
+    public static function createFromTimestamp(int $timestamp, string|null $timeZone = null, string|null $locale = null): static
     {
         return new static('@'.$timestamp, $timeZone, $locale);
     }
@@ -201,16 +203,6 @@ class DateTime
     }
 
     /**
-     * Set whether dates will be clamped when changing months.
-     *
-     * @param bool $clampDates Whether to clamp dates.
-     */
-    public static function setDateClamping(bool $clampDates): void
-    {
-        static::$clampDates = $clampDates;
-    }
-
-    /**
      * Set the default locale.
      *
      * @param string|null $locale The locale.
@@ -231,6 +223,16 @@ class DateTime
     }
 
     /**
+     * Set whether dates will be clamped when changing months.
+     *
+     * @param bool $clampDates Whether to clamp dates.
+     */
+    public static function withDateClamping(bool $clampDates): void
+    {
+        static::$clampDates = $clampDates;
+    }
+
+    /**
      * New DateTime constructor.
      *
      * @param string|null $timeZone The time zone to use.
@@ -246,6 +248,19 @@ class DateTime
         $timestampMs = ($dateTime->getTimestamp() * 1000) + $dateTime->format('v');
 
         $this->calendar = static::createCalendar($timestampMs, $timeZone, $this->locale);
+    }
+
+    /**
+     * Get the debug info of the object.
+     *
+     * @return array The debug info.
+     */
+    public function __debugInfo(): array
+    {
+        return [
+            'time' => $this->toIsoString(),
+            'timeZone' => $this->getTimeZone(),
+        ];
     }
 
     /**
@@ -276,7 +291,7 @@ class DateTime
      */
     public function addDays(int $amount): static
     {
-        return $this->setCalendarFields([
+        return $this->withCalendarFields([
             'day' => $amount,
         ], true);
     }
@@ -299,7 +314,7 @@ class DateTime
      */
     public function addHours(int $amount): static
     {
-        return $this->setCalendarFields([
+        return $this->withCalendarFields([
             'hour' => $amount,
         ], true);
     }
@@ -322,7 +337,7 @@ class DateTime
      */
     public function addMinutes(int $amount): static
     {
-        return $this->setCalendarFields([
+        return $this->withCalendarFields([
             'minute' => $amount,
         ], true);
     }
@@ -345,7 +360,7 @@ class DateTime
      */
     public function addMonths(int $amount): static
     {
-        return $this->setCalendarFields([
+        return $this->withCalendarFields([
             'month' => $amount,
         ], true);
     }
@@ -368,7 +383,7 @@ class DateTime
      */
     public function addSeconds(int $amount): static
     {
-        return $this->setCalendarFields([
+        return $this->withCalendarFields([
             'second' => $amount,
         ], true);
     }
@@ -391,7 +406,7 @@ class DateTime
      */
     public function addWeeks(int $amount): static
     {
-        return $this->setCalendarFields([
+        return $this->withCalendarFields([
             'week' => $amount,
         ], true);
     }
@@ -414,7 +429,7 @@ class DateTime
      */
     public function addYears(int $amount): static
     {
-        return $this->setCalendarFields([
+        return $this->withCalendarFields([
             'year' => $amount,
         ], true);
     }
@@ -461,7 +476,7 @@ class DateTime
      */
     public function daysInMonth(): int
     {
-        return (int) $this->toDateTime()->format('t');
+        return (int) $this->toNativeDateTime()->format('t');
     }
 
     /**
@@ -576,7 +591,7 @@ class DateTime
      */
     public function endOfDay(): static
     {
-        return $this->setHours(23, 59, 59, 999);
+        return $this->withHours(23, 59, 59, 999);
     }
 
     /**
@@ -586,7 +601,7 @@ class DateTime
      */
     public function endOfHour(): static
     {
-        return $this->setMinutes(59, 59, 999);
+        return $this->withMinutes(59, 59, 999);
     }
 
     /**
@@ -596,7 +611,7 @@ class DateTime
      */
     public function endOfMinute(): static
     {
-        return $this->setSeconds(59, 999);
+        return $this->withSeconds(59, 999);
     }
 
     /**
@@ -606,7 +621,7 @@ class DateTime
      */
     public function endOfMonth(): static
     {
-        return $this->setDate($this->daysInMonth())
+        return $this->withDate($this->daysInMonth())
             ->endOfDay();
     }
 
@@ -619,9 +634,9 @@ class DateTime
     {
         $month = $this->getQuarter() * 3;
 
-        return $this->setMonth(
+        return $this->withMonth(
             $month,
-            static::fromArray([$this->getYear(), $month])->daysInMonth()
+            static::createFromArray([$this->getYear(), $month])->daysInMonth()
         )->endOfDay();
     }
 
@@ -632,7 +647,7 @@ class DateTime
      */
     public function endOfSecond(): static
     {
-        return $this->setMilliseconds(999);
+        return $this->withMilliseconds(999);
     }
 
     /**
@@ -642,7 +657,7 @@ class DateTime
      */
     public function endOfWeek(): static
     {
-        return $this->setWeekDay(7)
+        return $this->withWeekDay(7)
             ->endOfDay();
     }
 
@@ -653,7 +668,7 @@ class DateTime
      */
     public function endOfYear(): static
     {
-        return $this->setMonth(12, 31)
+        return $this->withMonth(12, 31)
             ->endOfDay();
     }
 
@@ -813,7 +828,7 @@ class DateTime
      */
     public function getTimeZone(): string
     {
-        return $this->toDateTime()->format('e');
+        return $this->toNativeDateTime()->format('e');
     }
 
     /**
@@ -823,7 +838,7 @@ class DateTime
      */
     public function getTimeZoneOffset(): int
     {
-        return $this->toDateTime()->getOffset() / 60 * -1;
+        return $this->toNativeDateTime()->getOffset() / 60 * -1;
     }
 
     /**
@@ -1167,7 +1182,7 @@ class DateTime
      */
     public function isDST(): bool
     {
-        return (bool) $this->toDateTime()->format('I');
+        return (bool) $this->toNativeDateTime()->format('I');
     }
 
     /**
@@ -1177,7 +1192,7 @@ class DateTime
      */
     public function isLeapYear(): bool
     {
-        return (bool) $this->toDateTime()->format('L');
+        return (bool) $this->toNativeDateTime()->format('L');
     }
 
     /**
@@ -1463,338 +1478,13 @@ class DateTime
     }
 
     /**
-     * Set the date of the month in current time zone.
-     *
-     * @param int $date The date of the month.
-     * @return DateTime A new DateTime.
-     */
-    public function setDate(int $date): static
-    {
-        return $this->setCalendarFields([
-            'date' => $date,
-        ]);
-    }
-
-    /**
-     * Set the day of the week in current time zone.
-     *
-     * @param int $day The day of the week. (0 - Sunday, 6 - Saturday)
-     * @return DateTime A new DateTime.
-     */
-    public function setDay(int $day): static
-    {
-        return $this->setCalendarFields([
-            'date' => $this->getDate() - $this->getDay() + $day,
-        ]);
-    }
-
-    /**
-     * Set the day of the year in current time zone.
-     *
-     * @param int $day The day of the year. (1, 366)
-     * @return DateTime A new DateTime.
-     */
-    public function setDayOfYear(int $day): static
-    {
-        return $this->setCalendarFields([
-            'dayOfYear' => $day,
-        ]);
-    }
-
-    /**
-     * Set the hours in current time zone (and optionally, minutes, seconds and milliseconds).
-     *
-     * @param int $hours The hours. (0, 23)
-     * @param int|null $minutes The minutes. (0, 59)
-     * @param int|null $seconds The seconds. (0, 59)
-     * @param int|null $milliseconds The milliseconds.
-     * @return DateTime A new DateTime.
-     */
-    public function setHours(int $hours, int|null $minutes = null, int|null $seconds = null, int|null $milliseconds = null): static
-    {
-        return $this->setCalendarFields([
-            'hour' => $hours,
-            'minute' => $minutes,
-            'second' => $seconds,
-            'millisecond' => $milliseconds,
-        ]);
-    }
-
-    /**
-     * Set the current locale.
-     *
-     * @param string $locale The name of the time zone.
-     * @return DateTime A new DateTime.
-     */
-    public function setLocale(string $locale): static
-    {
-        $temp = new static(null, $this->getTimeZone(), $locale);
-
-        $time = $this->getTime();
-        $temp->calendar->setTime($time);
-
-        return $temp;
-    }
-
-    /**
-     * Set the milliseconds in current time zone.
-     *
-     * @param int $milliseconds The milliseconds.
-     * @return DateTime A new DateTime.
-     */
-    public function setMilliseconds(int $milliseconds): static
-    {
-        return $this->setCalendarFields([
-            'millisecond' => $milliseconds,
-        ]);
-    }
-
-    /**
-     * Set the minutes in current time zone (and optionally, seconds and milliseconds).
-     *
-     * @param int $minutes The minutes. (0, 59)
-     * @param int|null $seconds The seconds. (0, 59)
-     * @param int|null $milliseconds The milliseconds.
-     * @return DateTime A new DateTime.
-     */
-    public function setMinutes(int $minutes, int|null $seconds = null, int|null $milliseconds = null): static
-    {
-        return $this->setCalendarFields([
-            'minute' => $minutes,
-            'second' => $seconds,
-            'millisecond' => $milliseconds,
-        ]);
-    }
-
-    /**
-     * Set the month in current time zone (and optionally, date).
-     *
-     * @param int $month The month. (1, 12)
-     * @param int|null $date The date of the month.
-     * @return DateTime A new DateTime.
-     */
-    public function setMonth(int $month, int|null $date = null): static
-    {
-        if ($date === null && static::$clampDates) {
-            $date = $this->getDate();
-            $daysInMonth = static::fromArray([$this->getYear(), $month])->daysInMonth();
-            $date = min($date, $daysInMonth);
-        }
-
-        return $this->setCalendarFields([
-            'month' => $month - 1,
-            'date' => $date,
-        ]);
-    }
-
-    /**
-     * Set the quarter of the year in current time zone.
-     *
-     * @param int $quarter The quarter of the year. (1, 4)
-     * @return DateTime A new DateTime.
-     */
-    public function setQuarter(int $quarter): static
-    {
-        return $this->setYear(
-            $this->getYear(),
-            ($quarter * 3 - 3) + 1
-        );
-    }
-
-    /**
-     * Set the seconds in current time zone (and optionally, milliseconds).
-     *
-     * @param int $seconds The seconds. (0, 59)
-     * @param int|null $milliseconds The milliseconds.
-     * @return DateTime A new DateTime.
-     */
-    public function setSeconds(int $seconds, int|null $milliseconds = null): static
-    {
-        return $this->setCalendarFields([
-            'second' => $seconds,
-            'millisecond' => $milliseconds,
-        ]);
-    }
-
-    /**
-     * Set the number of milliseconds since the UNIX epoch.
-     *
-     * @param int $time The number of milliseconds since the UNIX epoch.
-     * @return DateTime A new DateTime.
-     */
-    public function setTime(int $time): static
-    {
-        $temp = new static(null, $this->getTimeZone(), $this->locale);
-
-        $temp->calendar->setTime($time);
-
-        return $temp;
-    }
-
-    /**
-     * Set the number of seconds since the UNIX epoch.
-     *
-     * @param int $timestamp The number of seconds since the UNIX epoch.
-     * @return DateTime A new DateTime.
-     */
-    public function setTimestamp(int $timestamp): static
-    {
-        return $this->setTime($timestamp * 1000);
-    }
-
-    /**
-     * Set the current time zone.
-     *
-     * @param string $timeZone The name of the time zone.
-     * @return DateTime A new DateTime.
-     */
-    public function setTimeZone(string $timeZone): static
-    {
-        $temp = new static(null, $timeZone, $this->locale);
-
-        $time = $this->getTime();
-        $temp->calendar->setTime($time);
-
-        return $temp;
-    }
-
-    /**
-     * Set the current UTC offset.
-     *
-     * @param int $offset The UTC offset (in minutes).
-     * @return DateTime A new DateTime.
-     */
-    public function setTimeZoneOffset(int $offset): static
-    {
-        $offset *= -1;
-        $prefix = $offset >= 0 ? '+' : '-';
-        $offset = abs($offset);
-
-        $timeZone = $prefix.
-            str_pad((string) floor($offset / 60), 2, '0', STR_PAD_LEFT).
-            ':'.
-            str_pad((string) ($offset % 60), 2, '0', STR_PAD_LEFT);
-
-        return $this->setTimeZone($timeZone);
-    }
-
-    /**
-     * Set the local day of the week in current time zone (and optionally, day of the week).
-     *
-     * @param int $week The local week.
-     * @param int|null $day The local day of the week. (1 - 7)
-     * @return DateTime A new DateTime.
-     */
-    public function setWeek(int $week, int|null $day = null): static
-    {
-        $day ??= $this->getWeekDay();
-
-        return $this->setCalendarFields([
-            'week' => $week,
-        ])->setWeekDay($day);
-    }
-
-    /**
-     * Set the local day of the week in current time zone.
-     *
-     * @param int $day The local day of the week. (1 - 7)
-     * @return DateTime A new DateTime.
-     */
-    public function setWeekDay(int $day): static
-    {
-        return $this->setCalendarFields([
-            'date' => $this->getDate() - $this->getWeekDay() + $day,
-        ]);
-    }
-
-    /**
-     * Set the week day in month in current time zone.
-     *
-     * @param int $week The week day in month.
-     * @return DateTime A new DateTime.
-     */
-    public function setWeekDayInMonth(int $week): static
-    {
-        $day = $this->getWeekDay();
-
-        return $this->setCalendarFields([
-            'weekDayInMonth' => $week,
-        ])->setWeekDay($day);
-    }
-
-    /**
-     * Set the week of month in current time zone.
-     *
-     * @param int $week The week of month.
-     * @return DateTime A new DateTime.
-     */
-    public function setWeekOfMonth(int $week): static
-    {
-        $day = $this->getWeekDay();
-
-        return $this->setCalendarFields([
-            'weekOfMonth' => $week,
-        ])->setWeekDay($day);
-    }
-
-    /**
-     * Set the local day of the week in current time zone (and optionally, week and day of the week).
-     *
-     * @param int $year The local year.
-     * @param int|null $week The local week.
-     * @param int|null $day The local day of the week. (1 - 7)
-     * @return DateTime A new DateTime.
-     */
-    public function setWeekYear(int $year, int|null $week = null, int|null $day = null): static
-    {
-        if ($week === null) {
-            $week = min(
-                $this->getWeek(),
-                static::fromArray([$year, 1, 4])->weeksInYear()
-            );
-        }
-
-        $day ??= $this->getWeekDay();
-
-        return $this->setCalendarFields([
-            'weekYear' => $year,
-            'week' => $week,
-        ])->setWeekDay($day);
-    }
-
-    /**
-     * Set the year in current time zone (and optionally, month and date).
-     *
-     * @param int $year The year.
-     * @param int|null $month The month. (1, 12)
-     * @param int|null $date The date of the month.
-     * @return DateTime A new DateTime.
-     */
-    public function setYear(int $year, int|null $month = null, int|null $date = null): static
-    {
-        $month ??= $this->getMonth();
-
-        if ($date === null && static::$clampDates) {
-            $date = $this->getDate();
-            $daysInMonth = static::fromArray([$year, $month])->daysInMonth();
-            $date = min($date, $daysInMonth);
-        }
-
-        return $this->setCalendarFields([
-            'year' => $year,
-            'month' => $month - 1,
-            'date' => $date,
-        ]);
-    }
-
-    /**
      * Set the DateTime to the start of the day.
      *
      * @return DateTime A new DateTime.
      */
     public function startOfDay(): static
     {
-        return $this->setHours(0, 0, 0, 0);
+        return $this->withHours(0, 0, 0, 0);
     }
 
     /**
@@ -1804,7 +1494,7 @@ class DateTime
      */
     public function startOfHour(): static
     {
-        return $this->setMinutes(0, 0, 0);
+        return $this->withMinutes(0, 0, 0);
     }
 
     /**
@@ -1814,7 +1504,7 @@ class DateTime
      */
     public function startOfMinute(): static
     {
-        return $this->setSeconds(0, 0);
+        return $this->withSeconds(0, 0);
     }
 
     /**
@@ -1824,7 +1514,7 @@ class DateTime
      */
     public function startOfMonth(): static
     {
-        return $this->setDate(1)
+        return $this->withDate(1)
             ->startOfDay();
     }
 
@@ -1837,7 +1527,7 @@ class DateTime
     {
         $month = $this->getQuarter() * 3 - 2;
 
-        return $this->setMonth($month, 1)
+        return $this->withMonth($month, 1)
             ->startOfDay();
     }
 
@@ -1848,7 +1538,7 @@ class DateTime
      */
     public function startOfSecond(): static
     {
-        return $this->setMilliseconds(0);
+        return $this->withMilliseconds(0);
     }
 
     /**
@@ -1858,7 +1548,7 @@ class DateTime
      */
     public function startOfWeek(): static
     {
-        return $this->setWeekDay(1)
+        return $this->withWeekDay(1)
             ->startOfDay();
     }
 
@@ -1869,7 +1559,7 @@ class DateTime
      */
     public function startOfYear(): static
     {
-        return $this->setMonth(1, 1)
+        return $this->withMonth(1, 1)
             ->startOfDay();
     }
 
@@ -2048,26 +1738,26 @@ class DateTime
     }
 
     /**
-     * Convert the object to a native DateTime.
-     *
-     * @return \DateTime A native DateTime.
-     */
-    public function toDateTime(): \DateTime
-    {
-        return $this->calendar->toDateTime();
-    }
-
-    /**
      * Format the current date using "yyyy-MM-dd'THH:mm:ss.SSSSSSxxx".
      *
      * @return string The formatted date string.
      */
-    public function toISOString(): string
+    public function toIsoString(): string
     {
         return $this
-            ->setLocale('en')
-            ->setTimeZone('UTC')
+            ->withLocale('en')
+            ->withTimeZone('UTC')
             ->format(static::FORMATS['rfc3339_extended']);
+    }
+
+    /**
+     * Convert the object to a native DateTime.
+     *
+     * @return \DateTime A native DateTime.
+     */
+    public function toNativeDateTime(): \DateTime
+    {
+        return $this->calendar->toDateTime();
     }
 
     /**
@@ -2098,7 +1788,7 @@ class DateTime
     public function toUTCString(): string
     {
         return $this
-            ->setTimeZone('UTC')
+            ->withTimeZone('UTC')
             ->toString();
     }
 
@@ -2112,8 +1802,333 @@ class DateTime
         $minimumDays = $this->calendar->getMinimalDaysInFirstWeek();
 
         return (new static())
-            ->setYear($this->getWeekYear(), 12, 24 + $minimumDays)
+            ->withYear($this->getWeekYear(), 12, 24 + $minimumDays)
             ->getWeek();
+    }
+
+    /**
+     * Clone the DateTime with a new date of the month in current time zone.
+     *
+     * @param int $date The date of the month.
+     * @return DateTime A new DateTime.
+     */
+    public function withDate(int $date): static
+    {
+        return $this->withCalendarFields([
+            'date' => $date,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new day of the week in current time zone.
+     *
+     * @param int $day The day of the week. (0 - Sunday, 6 - Saturday)
+     * @return DateTime A new DateTime.
+     */
+    public function withDay(int $day): static
+    {
+        return $this->withCalendarFields([
+            'date' => $this->getDate() - $this->getDay() + $day,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new day of the year in current time zone.
+     *
+     * @param int $day The day of the year. (1, 366)
+     * @return DateTime A new DateTime.
+     */
+    public function withDayOfYear(int $day): static
+    {
+        return $this->withCalendarFields([
+            'dayOfYear' => $day,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new hours in current time zone (and optionally, minutes, seconds and milliseconds).
+     *
+     * @param int $hours The hours. (0, 23)
+     * @param int|null $minutes The minutes. (0, 59)
+     * @param int|null $seconds The seconds. (0, 59)
+     * @param int|null $milliseconds The milliseconds.
+     * @return DateTime A new DateTime.
+     */
+    public function withHours(int $hours, int|null $minutes = null, int|null $seconds = null, int|null $milliseconds = null): static
+    {
+        return $this->withCalendarFields([
+            'hour' => $hours,
+            'minute' => $minutes,
+            'second' => $seconds,
+            'millisecond' => $milliseconds,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new current locale.
+     *
+     * @param string $locale The name of the time zone.
+     * @return DateTime A new DateTime.
+     */
+    public function withLocale(string $locale): static
+    {
+        $temp = new static(null, $this->getTimeZone(), $locale);
+
+        $time = $this->getTime();
+        $temp->calendar->setTime($time);
+
+        return $temp;
+    }
+
+    /**
+     * Clone the DateTime with a new milliseconds in current time zone.
+     *
+     * @param int $milliseconds The milliseconds.
+     * @return DateTime A new DateTime.
+     */
+    public function withMilliseconds(int $milliseconds): static
+    {
+        return $this->withCalendarFields([
+            'millisecond' => $milliseconds,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new minutes in current time zone (and optionally, seconds and milliseconds).
+     *
+     * @param int $minutes The minutes. (0, 59)
+     * @param int|null $seconds The seconds. (0, 59)
+     * @param int|null $milliseconds The milliseconds.
+     * @return DateTime A new DateTime.
+     */
+    public function withMinutes(int $minutes, int|null $seconds = null, int|null $milliseconds = null): static
+    {
+        return $this->withCalendarFields([
+            'minute' => $minutes,
+            'second' => $seconds,
+            'millisecond' => $milliseconds,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new month in current time zone (and optionally, date).
+     *
+     * @param int $month The month. (1, 12)
+     * @param int|null $date The date of the month.
+     * @return DateTime A new DateTime.
+     */
+    public function withMonth(int $month, int|null $date = null): static
+    {
+        if ($date === null && static::$clampDates) {
+            $date = $this->getDate();
+            $daysInMonth = static::createFromArray([$this->getYear(), $month])->daysInMonth();
+            $date = min($date, $daysInMonth);
+        }
+
+        return $this->withCalendarFields([
+            'month' => $month - 1,
+            'date' => $date,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new quarter of the year in current time zone.
+     *
+     * @param int $quarter The quarter of the year. (1, 4)
+     * @return DateTime A new DateTime.
+     */
+    public function withQuarter(int $quarter): static
+    {
+        return $this->withYear(
+            $this->getYear(),
+            ($quarter * 3 - 3) + 1
+        );
+    }
+
+    /**
+     * Clone the DateTime with a new seconds in current time zone (and optionally, milliseconds).
+     *
+     * @param int $seconds The seconds. (0, 59)
+     * @param int|null $milliseconds The milliseconds.
+     * @return DateTime A new DateTime.
+     */
+    public function withSeconds(int $seconds, int|null $milliseconds = null): static
+    {
+        return $this->withCalendarFields([
+            'second' => $seconds,
+            'millisecond' => $milliseconds,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new number of milliseconds since the UNIX epoch.
+     *
+     * @param int $time The number of milliseconds since the UNIX epoch.
+     * @return DateTime A new DateTime.
+     */
+    public function withTime(int $time): static
+    {
+        $temp = new static(null, $this->getTimeZone(), $this->locale);
+
+        $temp->calendar->setTime($time);
+
+        return $temp;
+    }
+
+    /**
+     * Clone the DateTime with a new number of seconds since the UNIX epoch.
+     *
+     * @param int $timestamp The number of seconds since the UNIX epoch.
+     * @return DateTime A new DateTime.
+     */
+    public function withTimestamp(int $timestamp): static
+    {
+        return $this->withTime($timestamp * 1000);
+    }
+
+    /**
+     * Clone the DateTime with a new current time zone.
+     *
+     * @param string $timeZone The name of the time zone.
+     * @return DateTime A new DateTime.
+     */
+    public function withTimeZone(string $timeZone): static
+    {
+        $temp = new static(null, $timeZone, $this->locale);
+
+        $time = $this->getTime();
+        $temp->calendar->setTime($time);
+
+        return $temp;
+    }
+
+    /**
+     * Clone the DateTime with a new current UTC offset.
+     *
+     * @param int $offset The UTC offset (in minutes).
+     * @return DateTime A new DateTime.
+     */
+    public function withTimeZoneOffset(int $offset): static
+    {
+        $offset *= -1;
+        $prefix = $offset >= 0 ? '+' : '-';
+        $offset = abs($offset);
+
+        $timeZone = $prefix.
+            str_pad((string) floor($offset / 60), 2, '0', STR_PAD_LEFT).
+            ':'.
+            str_pad((string) ($offset % 60), 2, '0', STR_PAD_LEFT);
+
+        return $this->withTimeZone($timeZone);
+    }
+
+    /**
+     * Clone the DateTime with a new local day of the week in current time zone (and optionally, day of the week).
+     *
+     * @param int $week The local week.
+     * @param int|null $day The local day of the week. (1 - 7)
+     * @return DateTime A new DateTime.
+     */
+    public function withWeek(int $week, int|null $day = null): static
+    {
+        $day ??= $this->getWeekDay();
+
+        return $this->withCalendarFields([
+            'week' => $week,
+        ])->withWeekDay($day);
+    }
+
+    /**
+     * Clone the DateTime with a new local day of the week in current time zone.
+     *
+     * @param int $day The local day of the week. (1 - 7)
+     * @return DateTime A new DateTime.
+     */
+    public function withWeekDay(int $day): static
+    {
+        return $this->withCalendarFields([
+            'date' => $this->getDate() - $this->getWeekDay() + $day,
+        ]);
+    }
+
+    /**
+     * Clone the DateTime with a new week day in month in current time zone.
+     *
+     * @param int $week The week day in month.
+     * @return DateTime A new DateTime.
+     */
+    public function withWeekDayInMonth(int $week): static
+    {
+        $day = $this->getWeekDay();
+
+        return $this->withCalendarFields([
+            'weekDayInMonth' => $week,
+        ])->withWeekDay($day);
+    }
+
+    /**
+     * Clone the DateTime with a new week of month in current time zone.
+     *
+     * @param int $week The week of month.
+     * @return DateTime A new DateTime.
+     */
+    public function withWeekOfMonth(int $week): static
+    {
+        $day = $this->getWeekDay();
+
+        return $this->withCalendarFields([
+            'weekOfMonth' => $week,
+        ])->withWeekDay($day);
+    }
+
+    /**
+     * Clone the DateTime with a new local day of the week in current time zone (and optionally, week and day of the week).
+     *
+     * @param int $year The local year.
+     * @param int|null $week The local week.
+     * @param int|null $day The local day of the week. (1 - 7)
+     * @return DateTime A new DateTime.
+     */
+    public function withWeekYear(int $year, int|null $week = null, int|null $day = null): static
+    {
+        if ($week === null) {
+            $week = min(
+                $this->getWeek(),
+                static::createFromArray([$year, 1, 4])->weeksInYear()
+            );
+        }
+
+        $day ??= $this->getWeekDay();
+
+        return $this->withCalendarFields([
+            'weekYear' => $year,
+            'week' => $week,
+        ])->withWeekDay($day);
+    }
+
+    /**
+     * Clone the DateTime with a new year in current time zone (and optionally, month and date).
+     *
+     * @param int $year The year.
+     * @param int|null $month The month. (1, 12)
+     * @param int|null $date The date of the month.
+     * @return DateTime A new DateTime.
+     */
+    public function withYear(int $year, int|null $month = null, int|null $date = null): static
+    {
+        $month ??= $this->getMonth();
+
+        if ($date === null && static::$clampDates) {
+            $date = $this->getDate();
+            $daysInMonth = static::createFromArray([$year, $month])->daysInMonth();
+            $date = min($date, $daysInMonth);
+        }
+
+        return $this->withCalendarFields([
+            'year' => $year,
+            'month' => $month - 1,
+            'date' => $date,
+        ]);
     }
 
     /**
@@ -2128,10 +2143,8 @@ class DateTime
     {
         $field = static::getAdjustmentField($timeUnit);
 
-        $calendar = clone $this->calendar;
-
         if ($relative) {
-            $other = $other->setTimeZone($this->getTimeZone());
+            $other = $other->withTimeZone($this->getTimeZone());
             $adjust = false;
 
             foreach (['year', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'] as $timeUnit) {
@@ -2151,6 +2164,8 @@ class DateTime
                 }
             }
         }
+
+        $calendar = clone $this->calendar;
 
         return $calendar->fieldDifference($other->getTime(), $field) * -1;
     }
@@ -2175,7 +2190,7 @@ class DateTime
      * @param array $array The values to set.
      * @return DateTime a new DateTime.
      */
-    protected function setCalendarFields(array $values, bool $adjust = false): static
+    protected function withCalendarFields(array $values, bool $adjust = false): static
     {
         $oldTime = $this->getTime();
 

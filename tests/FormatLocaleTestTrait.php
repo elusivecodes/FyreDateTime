@@ -11,7 +11,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١١',
-            DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('K')
+            DateTime::createFromArray([2018, 1, 1, 23], null, 'ar-eg')->format('K')
         );
     }
 
@@ -19,7 +19,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠',
-            DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('K')
+            DateTime::createFromArray([2018, 1, 1, 0], null, 'ar-eg')->format('K')
         );
     }
 
@@ -27,7 +27,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١١',
-            DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('KK')
+            DateTime::createFromArray([2018, 1, 1, 23], null, 'ar-eg')->format('KK')
         );
     }
 
@@ -35,7 +35,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٠',
-            DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('KK')
+            DateTime::createFromArray([2018, 1, 1, 0], null, 'ar-eg')->format('KK')
         );
     }
 
@@ -43,7 +43,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٢',
-            DateTime::fromArray([2018, 1, 1, 12], null, 'ar-eg')->format('h')
+            DateTime::createFromArray([2018, 1, 1, 12], null, 'ar-eg')->format('h')
         );
     }
 
@@ -51,7 +51,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2018, 1, 1, 1], null, 'ar-eg')->format('h')
+            DateTime::createFromArray([2018, 1, 1, 1], null, 'ar-eg')->format('h')
         );
     }
 
@@ -59,7 +59,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١١',
-            DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('hh')
+            DateTime::createFromArray([2018, 1, 1, 23], null, 'ar-eg')->format('hh')
         );
     }
 
@@ -67,7 +67,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2018, 1, 1, 1], null, 'ar-eg')->format('hh')
+            DateTime::createFromArray([2018, 1, 1, 1], null, 'ar-eg')->format('hh')
         );
     }
 
@@ -75,7 +75,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٣',
-            DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('H')
+            DateTime::createFromArray([2018, 1, 1, 23], null, 'ar-eg')->format('H')
         );
     }
 
@@ -83,7 +83,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠',
-            DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('H')
+            DateTime::createFromArray([2018, 1, 1, 0], null, 'ar-eg')->format('H')
         );
     }
 
@@ -91,7 +91,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٣',
-            DateTime::fromArray([2018, 1, 1, 23], null, 'ar-eg')->format('HH')
+            DateTime::createFromArray([2018, 1, 1, 23], null, 'ar-eg')->format('HH')
         );
     }
 
@@ -99,7 +99,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٠',
-            DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('HH')
+            DateTime::createFromArray([2018, 1, 1, 0], null, 'ar-eg')->format('HH')
         );
     }
 
@@ -107,7 +107,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٤',
-            DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('k')
+            DateTime::createFromArray([2018, 1, 1, 0], null, 'ar-eg')->format('k')
         );
     }
 
@@ -115,7 +115,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2018, 1, 1, 1], null, 'ar-eg')->format('k')
+            DateTime::createFromArray([2018, 1, 1, 1], null, 'ar-eg')->format('k')
         );
     }
 
@@ -123,7 +123,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٤',
-            DateTime::fromArray([2018, 1, 1, 0], null, 'ar-eg')->format('kk')
+            DateTime::createFromArray([2018, 1, 1, 0], null, 'ar-eg')->format('kk')
         );
     }
 
@@ -131,7 +131,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2018, 1, 1, 1], null, 'ar-eg')->format('kk')
+            DateTime::createFromArray([2018, 1, 1, 1], null, 'ar-eg')->format('kk')
         );
     }
 
@@ -139,7 +139,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'пятница',
-            DateTime::fromArray([2018, 6, 1], null, 'ru')->format('EEEE')
+            DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('EEEE')
         );
     }
 
@@ -147,7 +147,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'пт',
-            DateTime::fromArray([2018, 6, 1], null, 'ru')->format('EEE')
+            DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('EEE')
         );
     }
 
@@ -155,7 +155,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢١',
-            DateTime::fromArray([2019, 1, 21], null, 'ar-eg')->format('d')
+            DateTime::createFromArray([2019, 1, 21], null, 'ar-eg')->format('d')
         );
     }
 
@@ -163,7 +163,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('d')
+            DateTime::createFromArray([2019, 1, 1], null, 'ar-eg')->format('d')
         );
     }
 
@@ -171,7 +171,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢١',
-            DateTime::fromArray([2019, 1, 21], null, 'ar-eg')->format('dd')
+            DateTime::createFromArray([2019, 1, 21], null, 'ar-eg')->format('dd')
         );
     }
 
@@ -179,7 +179,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('dd')
+            DateTime::createFromArray([2019, 1, 1], null, 'ar-eg')->format('dd')
         );
     }
 
@@ -187,7 +187,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('F')
+            DateTime::createFromArray([2019, 1, 1], null, 'ar-eg')->format('F')
         );
     }
 
@@ -195,7 +195,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2019, 6, 7], null, 'ar-eg')->format('F')
+            DateTime::createFromArray([2019, 6, 7], null, 'ar-eg')->format('F')
         );
     }
 
@@ -203,7 +203,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٥٢',
-            DateTime::fromArray([2019, 6, 1], null, 'ar-eg')->format('D')
+            DateTime::createFromArray([2019, 6, 1], null, 'ar-eg')->format('D')
         );
     }
 
@@ -211,7 +211,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('D')
+            DateTime::createFromArray([2019, 1, 1], null, 'ar-eg')->format('D')
         );
     }
 
@@ -219,7 +219,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٥٢',
-            DateTime::fromArray([2019, 6, 1], null, 'ar-eg')->format('DD')
+            DateTime::createFromArray([2019, 6, 1], null, 'ar-eg')->format('DD')
         );
     }
 
@@ -227,7 +227,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('DD')
+            DateTime::createFromArray([2019, 1, 1], null, 'ar-eg')->format('DD')
         );
     }
 
@@ -235,7 +235,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٥٢',
-            DateTime::fromArray([2019, 6, 1], null, 'ar-eg')->format('DDD')
+            DateTime::createFromArray([2019, 6, 1], null, 'ar-eg')->format('DDD')
         );
     }
 
@@ -243,7 +243,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٠١',
-            DateTime::fromArray([2019, 1, 1], null, 'ar-eg')->format('DDD')
+            DateTime::createFromArray([2019, 1, 1], null, 'ar-eg')->format('DDD')
         );
     }
 
@@ -251,7 +251,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '上午',
-            DateTime::fromArray([2018, 1, 1, 0], null, 'zh')->format('aaaa')
+            DateTime::createFromArray([2018, 1, 1, 0], null, 'zh')->format('aaaa')
         );
     }
 
@@ -259,7 +259,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '下午',
-            DateTime::fromArray([2018, 1, 1, 12], null, 'zh')->format('aaaa')
+            DateTime::createFromArray([2018, 1, 1, 12], null, 'zh')->format('aaaa')
         );
     }
 
@@ -267,7 +267,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '上午',
-            DateTime::fromArray([2018, 1, 1, 0], null, 'zh')->format('aaa')
+            DateTime::createFromArray([2018, 1, 1, 0], null, 'zh')->format('aaa')
         );
     }
 
@@ -275,7 +275,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '下午',
-            DateTime::fromArray([2018, 1, 1, 12], null, 'zh')->format('aaa')
+            DateTime::createFromArray([2018, 1, 1, 12], null, 'zh')->format('aaa')
         );
     }
 
@@ -283,7 +283,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'от Рождества Христова',
-            DateTime::fromArray([2018], null, 'ru')->format('GGGG')
+            DateTime::createFromArray([2018], null, 'ru')->format('GGGG')
         );
     }
 
@@ -291,7 +291,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'до Рождества Христова',
-            DateTime::fromArray([-5], null, 'ru')->format('GGGG')
+            DateTime::createFromArray([-5], null, 'ru')->format('GGGG')
         );
     }
 
@@ -299,7 +299,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'н.э.',
-            DateTime::fromArray([2018], null, 'ru')->format('GGGGG')
+            DateTime::createFromArray([2018], null, 'ru')->format('GGGGG')
         );
     }
 
@@ -307,7 +307,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'до н.э.',
-            DateTime::fromArray([-5], null, 'ru')->format('GGGGG')
+            DateTime::createFromArray([-5], null, 'ru')->format('GGGGG')
         );
     }
 
@@ -315,7 +315,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'н. э.',
-            DateTime::fromArray([2018], null, 'ru')->format('GGG')
+            DateTime::createFromArray([2018], null, 'ru')->format('GGG')
         );
     }
 
@@ -323,7 +323,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'до н. э.',
-            DateTime::fromArray([-5], null, 'ru')->format('GGG')
+            DateTime::createFromArray([-5], null, 'ru')->format('GGG')
         );
     }
 
@@ -331,7 +331,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٢٣',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('SSS')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('SSS')
         );
     }
 
@@ -339,7 +339,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٢٣٠٠٠',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('SSSSSS')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('SSSSSS')
         );
     }
 
@@ -347,7 +347,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('S')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 0, 123], null, 'ar-eg')->format('S')
         );
     }
 
@@ -355,7 +355,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٥',
-            DateTime::fromArray([2018, 1, 1, 0, 25], null, 'ar-eg')->format('m')
+            DateTime::createFromArray([2018, 1, 1, 0, 25], null, 'ar-eg')->format('m')
         );
     }
 
@@ -363,7 +363,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2018, 1, 1, 0, 1], null, 'ar-eg')->format('m')
+            DateTime::createFromArray([2018, 1, 1, 0, 1], null, 'ar-eg')->format('m')
         );
     }
 
@@ -371,7 +371,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٥',
-            DateTime::fromArray([2018, 1, 1, 0, 25], null, 'ar-eg')->format('mm')
+            DateTime::createFromArray([2018, 1, 1, 0, 25], null, 'ar-eg')->format('mm')
         );
     }
 
@@ -379,7 +379,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2018, 1, 1, 0, 1], null, 'ar-eg')->format('mm')
+            DateTime::createFromArray([2018, 1, 1, 0, 1], null, 'ar-eg')->format('mm')
         );
     }
 
@@ -387,7 +387,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٠',
-            DateTime::fromArray([2018, 10], null, 'ar-eg')->format('M')
+            DateTime::createFromArray([2018, 10], null, 'ar-eg')->format('M')
         );
     }
 
@@ -395,7 +395,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2018, 1], null, 'ar-eg')->format('M')
+            DateTime::createFromArray([2018, 1], null, 'ar-eg')->format('M')
         );
     }
 
@@ -403,7 +403,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٠',
-            DateTime::fromArray([2018, 10], null, 'ar-eg')->format('MM')
+            DateTime::createFromArray([2018, 10], null, 'ar-eg')->format('MM')
         );
     }
 
@@ -411,7 +411,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2018, 1], null, 'ar-eg')->format('MM')
+            DateTime::createFromArray([2018, 1], null, 'ar-eg')->format('MM')
         );
     }
 
@@ -419,7 +419,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'октября',
-            DateTime::fromArray([2018, 10], null, 'ru')->format('MMMM')
+            DateTime::createFromArray([2018, 10], null, 'ru')->format('MMMM')
         );
     }
 
@@ -427,7 +427,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'О',
-            DateTime::fromArray([2018, 10], null, 'ru')->format('MMMMM')
+            DateTime::createFromArray([2018, 10], null, 'ru')->format('MMMMM')
         );
     }
 
@@ -435,7 +435,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'окт.',
-            DateTime::fromArray([2018, 10], null, 'ru')->format('MMM')
+            DateTime::createFromArray([2018, 10], null, 'ru')->format('MMM')
         );
     }
 
@@ -443,7 +443,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٣',
-            DateTime::fromArray([2018, 8], null, 'ar-eg')->format('q')
+            DateTime::createFromArray([2018, 8], null, 'ar-eg')->format('q')
         );
     }
 
@@ -451,7 +451,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٣',
-            DateTime::fromArray([2018, 8], null, 'ar-eg')->format('qq')
+            DateTime::createFromArray([2018, 8], null, 'ar-eg')->format('qq')
         );
     }
 
@@ -459,7 +459,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٥',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 25], null, 'ar-eg')->format('s')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 25], null, 'ar-eg')->format('s')
         );
     }
 
@@ -467,7 +467,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 1], null, 'ar-eg')->format('s')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 1], null, 'ar-eg')->format('s')
         );
     }
 
@@ -475,7 +475,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٥',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 25], null, 'ar-eg')->format('ss')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 25], null, 'ar-eg')->format('ss')
         );
     }
 
@@ -483,7 +483,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2018, 1, 1, 0, 0, 1], null, 'ar-eg')->format('ss')
+            DateTime::createFromArray([2018, 1, 1, 0, 0, 1], null, 'ar-eg')->format('ss')
         );
     }
 
@@ -491,7 +491,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٠',
-            DateTime::fromArray([2018, 10], null, 'ar-eg')->format('L')
+            DateTime::createFromArray([2018, 10], null, 'ar-eg')->format('L')
         );
     }
 
@@ -499,7 +499,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2018, 1], null, 'ar-eg')->format('L')
+            DateTime::createFromArray([2018, 1], null, 'ar-eg')->format('L')
         );
     }
 
@@ -507,7 +507,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٠',
-            DateTime::fromArray([2018, 10], null, 'ar-eg')->format('LL')
+            DateTime::createFromArray([2018, 10], null, 'ar-eg')->format('LL')
         );
     }
 
@@ -515,7 +515,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2018, 1], null, 'ar-eg')->format('LL')
+            DateTime::createFromArray([2018, 1], null, 'ar-eg')->format('LL')
         );
     }
 
@@ -523,7 +523,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'октябрь',
-            DateTime::fromArray([2018, 10], null, 'ru')->format('LLLL')
+            DateTime::createFromArray([2018, 10], null, 'ru')->format('LLLL')
         );
     }
 
@@ -531,7 +531,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'О',
-            DateTime::fromArray([2018, 10], null, 'ru')->format('LLLLL')
+            DateTime::createFromArray([2018, 10], null, 'ru')->format('LLLLL')
         );
     }
 
@@ -539,7 +539,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'окт.',
-            DateTime::fromArray([2018, 10], null, 'ru')->format('LLL')
+            DateTime::createFromArray([2018, 10], null, 'ru')->format('LLL')
         );
     }
 
@@ -547,7 +547,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٣',
-            DateTime::fromArray([2018, 8], null, 'ar-eg')->format('Q')
+            DateTime::createFromArray([2018, 8], null, 'ar-eg')->format('Q')
         );
     }
 
@@ -555,7 +555,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٣',
-            DateTime::fromArray([2018, 8], null, 'ar-eg')->format('QQ')
+            DateTime::createFromArray([2018, 8], null, 'ar-eg')->format('QQ')
         );
     }
 
@@ -563,7 +563,7 @@ trait FormatLocaleTestTrait
     // {
     //     $this->assertSame(
     //         'П',
-    //         DateTime::fromArray([2018, 6, 1], null, 'ru')->format('eeeee')
+    //         DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('eeeee')
     //     );
     // }
 
@@ -571,7 +571,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٧',
-            DateTime::fromArray([2018, 6, 1], null, 'ar-eg')->format('c')
+            DateTime::createFromArray([2018, 6, 1], null, 'ar-eg')->format('c')
         );
     }
 
@@ -579,7 +579,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٧',
-            DateTime::fromArray([2018, 6, 1], null, 'ar-eg')->format('cc')
+            DateTime::createFromArray([2018, 6, 1], null, 'ar-eg')->format('cc')
         );
     }
 
@@ -587,7 +587,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'пятница',
-            DateTime::fromArray([2018, 6, 1], null, 'ru')->format('cccc')
+            DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('cccc')
         );
     }
 
@@ -595,7 +595,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'П',
-            DateTime::fromArray([2018, 6, 1], null, 'ru')->format('ccccc')
+            DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('ccccc')
         );
     }
 
@@ -603,7 +603,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'пт',
-            DateTime::fromArray([2018, 6, 1], null, 'ru')->format('ccc')
+            DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('ccc')
         );
     }
 
@@ -835,7 +835,7 @@ trait FormatLocaleTestTrait
     // {
     //     $this->assertSame(
     //         'П',
-    //         DateTime::fromArray([2018, 6, 1], null, 'ru')->format('EEEEE')
+    //         DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('EEEEE')
     //     );
     // }
 
@@ -843,7 +843,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٧',
-            DateTime::fromArray([2018, 6, 1], null, 'ar-eg')->format('e')
+            DateTime::createFromArray([2018, 6, 1], null, 'ar-eg')->format('e')
         );
     }
 
@@ -851,7 +851,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٧',
-            DateTime::fromArray([2018, 6, 1], null, 'ar-eg')->format('ee')
+            DateTime::createFromArray([2018, 6, 1], null, 'ar-eg')->format('ee')
         );
     }
 
@@ -859,7 +859,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'пятница',
-            DateTime::fromArray([2018, 6, 1], null, 'ru')->format('eeee')
+            DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('eeee')
         );
     }
 
@@ -867,7 +867,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             'пт',
-            DateTime::fromArray([2018, 6, 1], null, 'ru')->format('eee')
+            DateTime::createFromArray([2018, 6, 1], null, 'ru')->format('eee')
         );
     }
 
@@ -875,7 +875,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2019, 6, 1], null, 'ar-eg')->format('W')
+            DateTime::createFromArray([2019, 6, 1], null, 'ar-eg')->format('W')
         );
     }
 
@@ -883,7 +883,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢',
-            DateTime::fromArray([2019, 6, 8], null, 'ar-eg')->format('W')
+            DateTime::createFromArray([2019, 6, 8], null, 'ar-eg')->format('W')
         );
     }
 
@@ -891,7 +891,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٢',
-            DateTime::fromArray([2018, 6], null, 'ar-eg')->format('w')
+            DateTime::createFromArray([2018, 6], null, 'ar-eg')->format('w')
         );
     }
 
@@ -899,7 +899,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١',
-            DateTime::fromArray([2018, 1], null, 'ar-eg')->format('w')
+            DateTime::createFromArray([2018, 1], null, 'ar-eg')->format('w')
         );
     }
 
@@ -907,7 +907,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٢',
-            DateTime::fromArray([2018, 6], null, 'ar-eg')->format('ww')
+            DateTime::createFromArray([2018, 6], null, 'ar-eg')->format('ww')
         );
     }
 
@@ -915,7 +915,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠١',
-            DateTime::fromArray([2018, 1], null, 'ar-eg')->format('ww')
+            DateTime::createFromArray([2018, 1], null, 'ar-eg')->format('ww')
         );
     }
 
@@ -923,7 +923,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠١٨',
-            DateTime::fromArray([2018], null, 'ar-eg')->format('Y')
+            DateTime::createFromArray([2018], null, 'ar-eg')->format('Y')
         );
     }
 
@@ -931,7 +931,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠٢٠',
-            DateTime::fromArray([2019, 12, 30], null, 'ar-eg')->format('Y')
+            DateTime::createFromArray([2019, 12, 30], null, 'ar-eg')->format('Y')
         );
     }
 
@@ -939,7 +939,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٥',
-            DateTime::fromArray([5, 2], null, 'ar-eg')->format('Y')
+            DateTime::createFromArray([5, 2], null, 'ar-eg')->format('Y')
         );
     }
 
@@ -947,7 +947,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٨',
-            DateTime::fromArray([2018], null, 'ar-eg')->format('YY')
+            DateTime::createFromArray([2018], null, 'ar-eg')->format('YY')
         );
     }
 
@@ -955,7 +955,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠',
-            DateTime::fromArray([2019, 12, 30], null, 'ar-eg')->format('YY')
+            DateTime::createFromArray([2019, 12, 30], null, 'ar-eg')->format('YY')
         );
     }
 
@@ -963,7 +963,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٥',
-            DateTime::fromArray([5, 2], null, 'ar-eg')->format('YY')
+            DateTime::createFromArray([5, 2], null, 'ar-eg')->format('YY')
         );
     }
 
@@ -971,7 +971,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠١٨',
-            DateTime::fromArray([2018], null, 'ar-eg')->format('YYY')
+            DateTime::createFromArray([2018], null, 'ar-eg')->format('YYY')
         );
     }
 
@@ -979,7 +979,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠٢٠',
-            DateTime::fromArray([2019, 12, 30], null, 'ar-eg')->format('YYY')
+            DateTime::createFromArray([2019, 12, 30], null, 'ar-eg')->format('YYY')
         );
     }
 
@@ -987,7 +987,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٠٥',
-            DateTime::fromArray([5], null, 'ar-eg')->format('YYY')
+            DateTime::createFromArray([5], null, 'ar-eg')->format('YYY')
         );
     }
 
@@ -995,7 +995,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠١٨',
-            DateTime::fromArray([2018], null, 'ar-eg')->format('YYYY')
+            DateTime::createFromArray([2018], null, 'ar-eg')->format('YYYY')
         );
     }
 
@@ -1003,7 +1003,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠٢٠',
-            DateTime::fromArray([2019, 12, 30], null, 'ar-eg')->format('YYYY')
+            DateTime::createFromArray([2019, 12, 30], null, 'ar-eg')->format('YYYY')
         );
     }
 
@@ -1011,7 +1011,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٠٠٥',
-            DateTime::fromArray([5], null, 'ar-eg')->format('YYYY')
+            DateTime::createFromArray([5], null, 'ar-eg')->format('YYYY')
         );
     }
 
@@ -1019,7 +1019,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠١٨',
-            DateTime::fromArray([2018], null, 'ar-eg')->format('y')
+            DateTime::createFromArray([2018], null, 'ar-eg')->format('y')
         );
     }
 
@@ -1027,7 +1027,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٥',
-            DateTime::fromArray([5], null, 'ar-eg')->format('y')
+            DateTime::createFromArray([5], null, 'ar-eg')->format('y')
         );
     }
 
@@ -1035,7 +1035,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '١٨',
-            DateTime::fromArray([2018], null, 'ar-eg')->format('yy')
+            DateTime::createFromArray([2018], null, 'ar-eg')->format('yy')
         );
     }
 
@@ -1043,7 +1043,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٥',
-            DateTime::fromArray([5], null, 'ar-eg')->format('yy')
+            DateTime::createFromArray([5], null, 'ar-eg')->format('yy')
         );
     }
 
@@ -1051,7 +1051,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠١٨',
-            DateTime::fromArray([2018], null, 'ar-eg')->format('yyy')
+            DateTime::createFromArray([2018], null, 'ar-eg')->format('yyy')
         );
     }
 
@@ -1059,7 +1059,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٠٥',
-            DateTime::fromArray([5], null, 'ar-eg')->format('yyy')
+            DateTime::createFromArray([5], null, 'ar-eg')->format('yyy')
         );
     }
 
@@ -1067,7 +1067,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٢٠١٨',
-            DateTime::fromArray([2018], null, 'ar-eg')->format('yyyy')
+            DateTime::createFromArray([2018], null, 'ar-eg')->format('yyyy')
         );
     }
 
@@ -1075,7 +1075,7 @@ trait FormatLocaleTestTrait
     {
         $this->assertSame(
             '٠٠٠٥',
-            DateTime::fromArray([5], null, 'ar-eg')->format('yyyy')
+            DateTime::createFromArray([5], null, 'ar-eg')->format('yyyy')
         );
     }
 }

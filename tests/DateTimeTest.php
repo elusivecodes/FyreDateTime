@@ -5,8 +5,10 @@ namespace Tests;
 
 use Fyre\DateTime\DateTime;
 use Fyre\Utility\Traits\MacroTrait;
+use Fyre\Utility\Traits\StaticMacroTrait;
 use PHPUnit\Framework\TestCase;
 
+use function array_diff;
 use function class_uses;
 
 final class DateTimeTest extends TestCase
@@ -26,11 +28,21 @@ final class DateTimeTest extends TestCase
     use UtilityTestTrait;
     use VarsTestTrait;
 
+    public function testDebug(): void
+    {
+        $this->assertSame(
+            [
+                'time' => '2019-01-01T00:00:00.000+00:00',
+                'timeZone' => 'UTC'
+            ],
+            (new DateTime('January 1, 2019'))->__debugInfo()
+        );
+    }
+
     public function testMacroable(): void
     {
-        $this->assertContains(
-            MacroTrait::class,
-            class_uses(DateTime::class)
+        $this->assertEmpty(
+            array_diff([MacroTrait::class, StaticMacroTrait::class], class_uses(DateTime::class))
         );
     }
 
