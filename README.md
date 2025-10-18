@@ -51,29 +51,29 @@ $dateTime = new DateTime($dateString, $timeZone, $locale);
 
 ## Date Creation
 
-**From Array**
+**Create From Array**
 
 - `$dateArray` is an array containing the year, month, date, hours, minutes, seconds and milliseconds.
 - `$timeZone` is a string representing the time zone of the date, and will default to the system time zone.
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$dateTime = DateTime::fromArray($dateArray, $timeZone, $locale);
+$dateTime = DateTime::createFromArray($dateArray, $timeZone, $locale);
 ```
 
 The month and date in the `$dateArray` will default to 1 if not set. The hours, minutes, seconds and milliseconds will default to 0.
 
-**From DateTime**
+**Create From Native DateTime**
 
 - `$dateTime` is an instance of a class implementing *DateTimeInterface*.
 - `$timeZone` is a string representing the time zone of the date, and will default to the system time zone.
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$newDateTime = DateTime::fromDateTime($dateTime, $timeZone, $locale);
+$newDateTime = DateTime::createFromNativeDateTime($dateTime, $timeZone, $locale);
 ```
 
-**From Format**
+**Create From Format**
 
 - `$formatString` is a string containing the format you wish to use for parsing.
 - `$dateString` is a string representing the date you are parsing.
@@ -83,27 +83,27 @@ $newDateTime = DateTime::fromDateTime($dateTime, $timeZone, $locale);
 The `$formatString` supports tokens described in the [ICU specification](https://unicode-org.github.io/icu/userguide/format_parse/datetime/#datetime-format-syntax).
 
 ```php
-$dateTime = DateTime::fromFormat($formatString, $dateString, $timeZone, $locale);
+$dateTime = DateTime::createFromFormat($formatString, $dateString, $timeZone, $locale);
 ```
 
-**From ISO String**
+**Create From Iso String**
 
 - `$dateString` is a string representing the date you are parsing.
 - `$timeZone` is a string representing the time zone of the date, and will default to the system time zone.
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$dateTime = DateTime::fromISOString($dateString, $timeZone, $locale);
+$dateTime = DateTime::createFromIsoString($dateString, $timeZone, $locale);
 ```
 
-**From Timestamp**
+**Create From Timestamp**
 
 - `$timestamp` is the number of seconds since the UNIX epoch.
 - `$timeZone` is a string representing the time zone of the date, and will default to the system time zone.
 - `$locale` is a string representing the locale of the date, and will default to the system locale.
 
 ```php
-$dateTime = DateTime::fromTimestamp($timestamp, $timeZone, $locale);
+$dateTime = DateTime::createFromTimestamp($timestamp, $timeZone, $locale);
 ```
 
 **Now**
@@ -146,12 +146,20 @@ Format the current date using "*eee MMM dd yyyy*".
 $dateString = $dateTime->toDateString();
 ```
 
-**To ISO String**
+**To Iso String**
 
 Format the current date using "*yyyy-MM-dd'T'HH:mm:ss.SSSxxx*" (in English and UTC time zone).
 
 ```php
-$isoString = $dateTime->toISOString();
+$isoString = $dateTime->toIsoString();
+```
+
+**To Native DateTime**
+
+Convert the object to a native *DateTime*.
+
+```php
+$nativeDateTime = $dateTime->toNativeDateTime();
 ```
 
 **To Time String**
