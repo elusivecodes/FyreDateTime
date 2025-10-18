@@ -63,16 +63,6 @@ $dateTime = DateTime::createFromArray($dateArray, $timeZone, $locale);
 
 The month and date in the `$dateArray` will default to 1 if not set. The hours, minutes, seconds and milliseconds will default to 0.
 
-**Create From Native DateTime**
-
-- `$dateTime` is an instance of a class implementing *DateTimeInterface*.
-- `$timeZone` is a string representing the time zone of the date, and will default to the system time zone.
-- `$locale` is a string representing the locale of the date, and will default to the system locale.
-
-```php
-$newDateTime = DateTime::createFromNativeDateTime($dateTime, $timeZone, $locale);
-```
-
 **Create From Format**
 
 - `$formatString` is a string containing the format you wish to use for parsing.
@@ -94,6 +84,16 @@ $dateTime = DateTime::createFromFormat($formatString, $dateString, $timeZone, $l
 
 ```php
 $dateTime = DateTime::createFromIsoString($dateString, $timeZone, $locale);
+```
+
+**Create From Native DateTime**
+
+- `$dateTime` is an instance of a class implementing *DateTimeInterface*.
+- `$timeZone` is a string representing the time zone of the date, and will default to the system time zone.
+- `$locale` is a string representing the locale of the date, and will default to the system locale.
+
+```php
+$newDateTime = DateTime::createFromNativeDateTime($dateTime, $timeZone, $locale);
 ```
 
 **Create From Timestamp**
