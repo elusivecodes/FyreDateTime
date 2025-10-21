@@ -10,6 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 use function array_diff;
 use function class_uses;
+use function serialize;
+use function unserialize;
 
 final class DateTimeTest extends TestCase
 {
@@ -33,7 +35,8 @@ final class DateTimeTest extends TestCase
         $this->assertSame(
             [
                 'time' => '2019-01-01T00:00:00.000+00:00',
-                'timeZone' => 'UTC'
+                'timeZone' => 'UTC',
+                'locale' => 'en',
             ],
             (new DateTime('January 1, 2019'))->__debugInfo()
         );
@@ -43,6 +46,16 @@ final class DateTimeTest extends TestCase
     {
         $this->assertEmpty(
             array_diff([MacroTrait::class, StaticMacroTrait::class], class_uses(DateTime::class))
+        );
+    }
+
+    public function testSerializable(): void
+    {
+        $date = new DateTime('January 1, 2019');
+
+        $this->assertSame(
+            $date->toIsoString(),
+            unserialize(serialize($date))->toIsoString()
         );
     }
 

@@ -260,6 +260,21 @@ class DateTime
         return [
             'time' => $this->toIsoString(),
             'timeZone' => $this->getTimeZone(),
+            'locale' => $this->getLocale(),
+        ];
+    }
+
+    /**
+     * Serialize the object.
+     *
+     * @return array The serialized data.
+     */
+    public function __serialize(): array
+    {
+        return [
+            'time' => $this->getTime(),
+            'timeZone' => $this->getTimeZone(),
+            'locale' => $this->getLocale(),
         ];
     }
 
@@ -271,6 +286,17 @@ class DateTime
     public function __toString(): string
     {
         return $this->toString();
+    }
+
+    /**
+     * Unserialize the object.
+     *
+     * @param array $data The serialized data.
+     */
+    public function __unserialize(array $data): void
+    {
+        $this->__construct(null, $data['timeZone'] ?? null, $data['locale'] ?? null);
+        $this->calendar->setTime($data['time'] ?? 0);
     }
 
     /**
