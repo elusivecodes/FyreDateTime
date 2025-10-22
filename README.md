@@ -1627,7 +1627,7 @@ $era = $dateTime->era($type);
 Determine whether the *DateTime* is in daylight savings.
 
 ```php
-$isDST = $dateTime->isDST();
+$isDst = $dateTime->isDst();
 ```
 
 **Is Leap Year?**

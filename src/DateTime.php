@@ -11,6 +11,7 @@ use Fyre\Utility\Traits\MacroTrait;
 use Fyre\Utility\Traits\StaticMacroTrait;
 use IntlCalendar;
 use IntlDateFormatter;
+use Stringable;
 
 use function abs;
 use function array_combine;
@@ -30,7 +31,7 @@ use const STR_PAD_LEFT;
 /**
  * DateTime
  */
-class DateTime
+class DateTime implements Stringable
 {
     use MacroTrait;
     use StaticMacroTrait;
@@ -1206,7 +1207,7 @@ class DateTime
      *
      * @return bool TRUE if the current time is in daylight savings, otherwise FALSE.
      */
-    public function isDST(): bool
+    public function isDst(): bool
     {
         return (bool) $this->toNativeDateTime()->format('I');
     }

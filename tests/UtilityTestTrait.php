@@ -179,7 +179,7 @@ trait UtilityTestTrait
     {
         $this->assertFalse(
             DateTime::createFromArray([2018, 1, 1])
-                ->isDST(),
+                ->isDst(),
         );
     }
 
@@ -187,7 +187,7 @@ trait UtilityTestTrait
     {
         $this->assertTrue(
             DateTime::createFromArray([2018, 6, 1], 'America/New_York')
-                ->isDST(),
+                ->isDst(),
         );
     }
 
