@@ -10,6 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 use function array_diff;
 use function class_uses;
+use function json_encode;
 use function serialize;
 use function unserialize;
 
@@ -39,6 +40,16 @@ final class DateTimeTest extends TestCase
                 'locale' => 'en',
             ],
             (new DateTime('January 1, 2019'))->__debugInfo()
+        );
+    }
+
+    public function testJsonSerialize(): void
+    {
+        $date = new DateTime('January 1, 2019');
+
+        $this->assertSame(
+            '"2019-01-01T00:00:00.000+00:00"',
+            json_encode($date)
         );
     }
 

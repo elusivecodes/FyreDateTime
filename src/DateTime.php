@@ -11,6 +11,7 @@ use Fyre\Utility\Traits\MacroTrait;
 use Fyre\Utility\Traits\StaticMacroTrait;
 use IntlCalendar;
 use IntlDateFormatter;
+use JsonSerializable;
 use Stringable;
 
 use function abs;
@@ -31,7 +32,7 @@ use const STR_PAD_LEFT;
 /**
  * DateTime
  */
-class DateTime implements Stringable
+class DateTime implements JsonSerializable, Stringable
 {
     use MacroTrait;
     use StaticMacroTrait;
@@ -1484,6 +1485,16 @@ class DateTime implements Stringable
     public function isSameYear(DateTime $other): bool
     {
         return $this->diffInYears($other) === 0;
+    }
+
+    /**
+     * Convert the DateTime to a string for JSON serializing.
+     *
+     * @return string The string for serializing.
+     */
+    public function jsonSerialize(): string
+    {
+        return $this->toIsoString();
     }
 
     /**
