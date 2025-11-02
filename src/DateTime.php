@@ -12,6 +12,7 @@ use Fyre\Utility\Traits\StaticMacroTrait;
 use IntlCalendar;
 use IntlDateFormatter;
 use JsonSerializable;
+use Override;
 use Stringable;
 
 use function abs;
@@ -285,6 +286,7 @@ class DateTime implements JsonSerializable, Stringable
      *
      * @return string The formatted date string.
      */
+    #[Override]
     public function __toString(): string
     {
         return $this->toString();
@@ -1492,6 +1494,7 @@ class DateTime implements JsonSerializable, Stringable
      *
      * @return string The string for serializing.
      */
+    #[Override]
     public function jsonSerialize(): string
     {
         return $this->toIsoString();
